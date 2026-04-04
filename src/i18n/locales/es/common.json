@@ -1,0 +1,53 @@
+{
+  "app": {
+    "title": "Lazy Prompt",
+    "tagline": "Crea prompts de AI rápidamente"
+  },
+  "nav": {
+    "home": "Inicio",
+    "goBack": "Volver"
+  },
+  "theme": {
+    "switchToLight": "Cambiar a tema claro",
+    "switchToDark": "Cambiar a tema oscuro"
+  },
+  "language": {
+    "label": "Idioma",
+    "en": "English",
+    "zh-CN": "简体中文",
+    "zh-TW": "繁體中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "es": "Español"
+  },
+  "bubble": {
+    "whatYouWant": "¿Qué quieres hacer?",
+    "clickToExplore": "Haz clic en una burbuja para explorar",
+    "layerN": "Capa {{n}}",
+    "buildPrompt": "¡Crear Prompt!",
+    "selectFromList": "Selecciona una categoría"
+  },
+  "prompt": {
+    "copy": "Copiar",
+    "copied": "¡Copiado!",
+    "sendTo": "Enviar a...",
+    "editHint": "Haz clic en el texto coloreado para editar",
+    "addItem": "Haz clic para añadir",
+    "result": "Tu Prompt",
+    "copiedAndOpening": "¡Prompt copiado! Abriendo {{name}}...",
+    "copyAndOpen": "Copiar prompt y abrir sitio"
+  },
+  "about": {
+    "description": "Lazy Prompt es una aplicación web interactiva basada en burbujas que te ayuda a crear prompts de IA detallados y bien estructurados en segundos. Navega por categorías visuales, personaliza campos editables y envía directamente a tu proveedor de IA favorito.",
+    "features": "Características",
+    "feature1": "Navegación visual con burbujas por categorías de prompts",
+    "feature2": "Plantillas de prompts editables con sugerencias de autocompletado",
+    "feature3": "Activar/desactivar secciones individuales del prompt",
+    "feature4": "Enviar a ChatGPT, Claude, Gemini, Perplexity y Copilot",
+    "feature5": "6 idiomas soportados: inglés, chino, japonés, coreano, español",
+    "contact": "Contacto"
+  },
+  "footer": {
+    "builtWith": "Hecho con ❤️"
+  }
+}

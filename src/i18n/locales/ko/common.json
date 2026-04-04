@@ -1,0 +1,53 @@
+{
+  "app": {
+    "title": "Lazy Prompt",
+    "tagline": "AI 프롬프트를 빠르게 만들기"
+  },
+  "nav": {
+    "home": "홈",
+    "goBack": "뒤로 가기"
+  },
+  "theme": {
+    "switchToLight": "라이트 테마로 전환",
+    "switchToDark": "다크 테마로 전환"
+  },
+  "language": {
+    "label": "언어",
+    "en": "English",
+    "zh-CN": "简体中文",
+    "zh-TW": "繁體中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "es": "Español"
+  },
+  "bubble": {
+    "whatYouWant": "무엇을 하고 싶으세요?",
+    "clickToExplore": "버블을 클릭하여 탐색하세요",
+    "layerN": "레이어 {{n}}",
+    "buildPrompt": "프롬프트 생성!",
+    "selectFromList": "카테고리 선택"
+  },
+  "prompt": {
+    "copy": "복사",
+    "copied": "복사됨!",
+    "sendTo": "보내기...",
+    "editHint": "색상 텍스트를 클릭하여 편집",
+    "addItem": "클릭하여 추가",
+    "result": "당신의 프롬프트",
+    "copiedAndOpening": "프롬프트가 복사되었습니다! {{name}} 열는 중...",
+    "copyAndOpen": "프롬프트 복사 후 사이트 열기"
+  },
+  "about": {
+    "description": "Lazy Prompt는 인터랙티브한 버블 탐색 웹 앱입니다. 몇 초 만에 상세하고 구조화된 AI 프롬프트를 작성할 수 있습니다. 시각적 카테고리를 탐색하고 편집 가능한 필드를 사용자 정의한 후 즐겨 사용하는 AI 서비스로 직접 보낼 수 있습니다.",
+    "features": "기능",
+    "feature1": "시각적 버블 탐색으로 프롬프트 카테고리 찾기",
+    "feature2": "자동 완성 기능이 있는 편집 가능한 프롬프트 템플릿",
+    "feature3": "프롬프트 섹션 표시/숨기기 전환",
+    "feature4": "ChatGPT, Claude, Gemini, Perplexity, Copilot으로 전송",
+    "feature5": "6개 언어 지원: 영어, 중국어, 일본어, 한국어, 스페인어",
+    "contact": "연락처"
+  },
+  "footer": {
+    "builtWith": "❤️ 로 제작"
+  }
+}

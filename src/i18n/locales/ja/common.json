@@ -1,0 +1,53 @@
+{
+  "app": {
+    "title": "Lazy Prompt",
+    "tagline": "AI プロンプトをすばやく作成"
+  },
+  "nav": {
+    "home": "ホーム",
+    "goBack": "戻る"
+  },
+  "theme": {
+    "switchToLight": "ライトテーマに切り替え",
+    "switchToDark": "ダークテーマに切り替え"
+  },
+  "language": {
+    "label": "言語",
+    "en": "English",
+    "zh-CN": "简体中文",
+    "zh-TW": "繁體中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "es": "Español"
+  },
+  "bubble": {
+    "whatYouWant": "何をしたいですか？",
+    "clickToExplore": "バブルをクリックして探索",
+    "layerN": "レイヤー {{n}}",
+    "buildPrompt": "プロンプトを作成！",
+    "selectFromList": "カテゴリを選択"
+  },
+  "prompt": {
+    "copy": "コピー",
+    "copied": "コピーしました！",
+    "sendTo": "送信先...",
+    "editHint": "色付きテキストをクリックして編集",
+    "addItem": "クリックして追加",
+    "result": "あなたのプロンプト",
+    "copiedAndOpening": "プロンプトをコピーしました！{{name}}を開いています...",
+    "copyAndOpen": "プロンプトをコピーしてサイトを開く"
+  },
+  "about": {
+    "description": "Lazy Prompt は、インタラクティブなバブルナビゲーション Web アプリです。数秒で詳細で構造化された AI プロンプトを作成できます。ビジュアルカテゴリを通じてナビゲートし、編集可能なフィールドをカスタマイズして、お気に入りの AI プロバイダに直接送信できます。",
+    "features": "機能",
+    "feature1": "ビジュアルバブルナビゲーションでプロンプトカテゴリを閲覧",
+    "feature2": "オートコンプリート付き編集可能なプロンプトテンプレート",
+    "feature3": "プロンプトセクションの表示/非表示を切り替え",
+    "feature4": "ChatGPT、Claude、Gemini、Perplexity、Copilot に送信",
+    "feature5": "6言語対応：英語、中国語、日本語、韓国語、スペイン語",
+    "contact": "お問い合わせ"
+  },
+  "footer": {
+    "builtWith": "❤️ で作成"
+  }
+}
