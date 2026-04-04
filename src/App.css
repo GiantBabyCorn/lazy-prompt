@@ -1,0 +1,111 @@
+/* ============================================================
+   Lazy Prompt — Global Styles & Design Tokens
+   ============================================================ */
+
+/* --- CSS Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Dark Theme (default) --- */
+:root,
+[data-theme='dark'] {
+  --color-bg: #0d1117;
+  --color-surface: #161b22;
+  --color-border: #30363d;
+  --color-text: #e6edf3;
+  --color-text-secondary: #8b949e;
+  --color-green: #00ff88;
+  --color-cyan: #00d4ff;
+  --color-yellow: #ffd700;
+  --color-orange: #ff6b35;
+}
+
+/* --- Light Theme --- */
+[data-theme='light'] {
+  --color-bg: #ffffff;
+  --color-surface: #f6f8fa;
+  --color-border: #d0d7de;
+  --color-text: #1f2328;
+  --color-text-secondary: #656d76;
+  --color-green: #00a654;
+  --color-cyan: #0088cc;
+  --color-yellow: #cc8800;
+  --color-orange: #d4380d;
+}
+
+/* --- Base Typography --- */
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+code,
+pre,
+.font-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas,
+    monospace;
+}
+
+/* --- Smooth theme transitions --- */
+*,
+*::before,
+*::after {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Opt out of universal transition for elements that need snappy interaction */
+button:active,
+input:focus,
+textarea:focus {
+  transition: none;
+}
+
+/* --- Utility --- */
+a {
+  color: var(--color-cyan);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+::selection {
+  background-color: var(--color-cyan);
+  color: var(--color-bg);
+}
+
+/* Scrollbar styling (Webkit) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
