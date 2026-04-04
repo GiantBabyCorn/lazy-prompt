@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBubbleNavigation } from '../hooks/useBubbleNavigation';
 import { useDocumentHead } from '../hooks/useDocumentHead';
@@ -8,7 +8,7 @@ import PromptResult from '../components/PromptResult';
 import { AIProviderLinks } from '../components/AIProviderLinks';
 import { promptTemplates } from '../data/promptTemplates';
 import { buildPromptString } from '../utils/promptBuilder';
-import type { BubbleNode, PromptTemplate } from '../data/types';
+import type { BubbleNode } from '../data/types';
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(
@@ -29,6 +29,7 @@ function useIsMobile(breakpoint = 768) {
 export default function HomePage() {
   const { t } = useTranslation('common');
   const { t: tPrompts } = useTranslation('prompts');
+
   useDocumentHead(
     `${t('app.title')} — ${t('app.tagline')}`,
     'Build detailed AI prompts quickly with an interactive bubble-based interface.',
@@ -44,53 +45,57 @@ export default function HomePage() {
     animationPhase,
     clickedNodeId,
     previousNode,
+    parentNode,
   } = useBubbleNavigation();
 
   const isAtRoot = navigationPath.length === 0;
   const isMobile = useIsMobile();
+  const [viewMode, setViewMode] = useState<'bubble' | 'list'>(() => isMobile ? 'list' : 'bubble');
 
-  const [selectedLeaf, setSelectedLeaf] = useState<{
-    node: BubbleNode;
-    template: PromptTemplate;
-  } | null>(null);
+  // Leaf detection: if currentNode has a promptTemplateId and no children,
+  // show the prompt interface. URL is just /read/document/ — no /prompt/ suffix.
+  const leafTemplate = useMemo(() => {
+    if (!currentNode.promptTemplateId) return null;
+    if (currentNode.children && currentNode.children.length > 0) return null;
+    return promptTemplates.find((tp) => tp.id === currentNode.promptTemplateId) ?? null;
+  }, [currentNode]);
 
   const [editedValues, setEditedValues] = useState<Record<string, string>>({});
   const [addedItems, setAddedItems] = useState<Record<string, string[]>>({});
 
-  const handleLeafClick = useCallback((node: BubbleNode) => {
-    if (node.promptTemplateId) {
-      const template = promptTemplates.find(
-        (t) => t.id === node.promptTemplateId,
-      );
-      if (template) {
-        setSelectedLeaf({ node, template });
-      }
+  // Reset editable state when leaving a leaf (navigating back)
+  useEffect(() => {
+    if (!leafTemplate) {
+      setEditedValues({});
+      setAddedItems({});
     }
-  }, []);
+  }, [leafTemplate]);
+
+  const handleLeafClick = useCallback(
+    (node: BubbleNode) => {
+      // Leaf click uses the normal navigateTo — the URL becomes /category/leaf/
+      // and HomePage detects it's a leaf via currentNode.promptTemplateId.
+      navigateTo(node.id);
+    },
+    [navigateTo],
+  );
 
   const handleGoBackFromResult = useCallback(() => {
-    setSelectedLeaf(null);
-    setEditedValues({});
-    setAddedItems({});
-  }, []);
+    goBack();
+  }, [goBack]);
 
   const getPromptText = useCallback(() => {
-    if (!selectedLeaf) return '';
-    return buildPromptString(
-      selectedLeaf.template,
-      editedValues,
-      addedItems,
-      tPrompts,
-    );
-  }, [selectedLeaf, editedValues, addedItems, tPrompts]);
+    if (!leafTemplate) return '';
+    return buildPromptString(leafTemplate, editedValues, addedItems, tPrompts);
+  }, [leafTemplate, editedValues, addedItems, tPrompts]);
 
-  // Show prompt result when a leaf is selected
-  if (selectedLeaf) {
-    const categoryLabel = tPrompts(selectedLeaf.node.labelKey);
+  // Show prompt result when at a leaf node
+  if (leafTemplate) {
+    const categoryLabel = tPrompts(currentNode.labelKey);
     return (
       <div className="prompt-result-page animate-slide-up">
         <PromptResult
-          template={selectedLeaf.template}
+          template={leafTemplate}
           categoryLabel={categoryLabel}
           onGoBack={handleGoBackFromResult}
           onEditedValuesChange={setEditedValues}
@@ -101,15 +106,35 @@ export default function HomePage() {
     );
   }
 
-  // Show bubble canvas (desktop) or bubble list (mobile) for navigation
+  const showList = viewMode === 'list';
+
+  // Show bubble canvas or list view for navigation
   return (
     <div className="bubble-view">
-      <div className="bubble-view__subtitle">
-        {t('bubble.clickToExplore')}
+      <div className="bubble-view__subtitle" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, position: 'relative' }}>
+        <span>{t('bubble.clickToExplore')}</span>
+        {/* View mode toggle */}
+        <button
+          onClick={() => setViewMode(showList ? 'bubble' : 'list')}
+          style={{
+            position: 'absolute',
+            right: 16,
+            background: 'transparent',
+            border: '1px solid var(--color-border)',
+            borderRadius: 6,
+            color: 'var(--color-text-secondary)',
+            cursor: 'pointer',
+            fontSize: '0.75rem',
+            padding: '3px 8px',
+          }}
+          title={showList ? 'Bubble view' : 'List view'}
+        >
+          {showList ? '◉' : '☰'}
+        </button>
       </div>
 
       <div className="bubble-view__content">
-        {isMobile ? (
+        {showList ? (
           <BubbleList
             currentNode={currentNode}
             currentChildren={currentChildren}
@@ -122,6 +147,7 @@ export default function HomePage() {
           <BubbleCanvas
             currentNode={currentNode}
             currentChildren={currentChildren}
+            navigationPath={navigationPath}
             isAtRoot={isAtRoot}
             onNavigate={navigateTo}
             onGoBack={isAtRoot ? reset : goBack}
@@ -129,6 +155,7 @@ export default function HomePage() {
             animationPhase={animationPhase}
             clickedNodeId={clickedNodeId}
             previousNode={previousNode}
+            parentNode={parentNode}
           />
         )}
       </div>

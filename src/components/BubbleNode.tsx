@@ -1,18 +1,37 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
+export type BubbleVariant = 'hub' | 'primary' | 'secondary' | 'preview';
+
 export interface BubbleNodeProps {
   cx: number;
   cy: number;
   radius: number;
   labelKey: string;
   descriptionKeys?: string[];
-  variant: 'hub' | 'primary' | 'secondary';
+  variant: BubbleVariant;
   onClick?: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
   exitState?: 'none' | 'fading' | 'clicked';
   enterDelay?: number;
   isEntering?: boolean;
+  isHovered?: boolean;
+  isPreview?: boolean;
+  /** If set, the node morphs from this position/size instead of popping in. */
+  initialPosition?: { cx: number; cy: number; radius: number } | null;
+  /** If set during exit, overrides exitState — the node springs to this target. */
+  morphTarget?: { cx: number; cy: number; scale: number; opacity: number } | null;
+  /** Leaf node — shows "Build Prompt!" tooltip on hover. */
+  isLeaf?: boolean;
 }
+
+const POS_SPRING = { type: 'spring' as const, stiffness: 200, damping: 22 };
+const SCALE_SPRING = {
+  type: 'spring' as const,
+  stiffness: 300,
+  damping: 20,
+};
 
 export function BubbleNodeSvg({
   cx,
@@ -22,60 +41,114 @@ export function BubbleNodeSvg({
   descriptionKeys,
   variant,
   onClick,
+  onMouseEnter,
+  onMouseLeave,
   exitState = 'none',
   enterDelay = 0,
   isEntering = false,
+  isHovered = false,
+  isPreview = false,
+  initialPosition = null,
+  morphTarget = null,
+  isLeaf = false,
 }: BubbleNodeProps) {
   const { t } = useTranslation('prompts');
+  const { t: tCommon } = useTranslation('common');
 
-  const borderWidth = variant === 'secondary' ? 2 : 3;
-  const fontSize = variant === 'secondary' ? 10 : variant === 'hub' ? 14 : 12;
+  const borderWidth = variant === 'preview' ? 1.5 : variant === 'secondary' ? 2 : 3;
+  const fontSize =
+    variant === 'preview' ? 8 : variant === 'secondary' ? 11 : variant === 'hub' ? 14 : 12;
+  const descFontSize = variant === 'secondary' ? 9 : 10;
   const label = t(labelKey);
-  const descriptions = descriptionKeys?.map((k) => t(k));
+  const descriptions = variant !== 'preview' ? descriptionKeys?.map((k) => t(k)) : undefined;
 
-  // Compute animation props based on state
-  const getMotionProps = () => {
-    if (isEntering) {
+  const strokeColor =
+    variant === 'preview' || isHovered ? 'var(--color-cyan)' : 'var(--color-green)';
+  const effectiveBorder = isHovered && variant !== 'preview' ? borderWidth + 1 : borderWidth;
+
+  // --- Animation values ---
+  const getAnimate = () => {
+    // morphTarget completely overrides exit behavior
+    if (morphTarget) {
       return {
-        initial: { opacity: 0, scale: 0.6 } as const,
-        animate: { opacity: 1, scale: 1 } as const,
-        transition: {
-          duration: 0.4,
-          ease: [0.34, 1.56, 0.64, 1] as [number, number, number, number],
-          delay: enterDelay,
-        },
+        x: morphTarget.cx,
+        y: morphTarget.cy,
+        scale: morphTarget.scale,
+        opacity: morphTarget.opacity,
       };
     }
-    if (exitState === 'fading') {
+    const base = { x: cx, y: cy };
+    if (exitState === 'fading') return { ...base, opacity: 0, scale: 0.7 };
+    if (exitState === 'clicked') return { ...base, opacity: 1, scale: 1.15 };
+    return { ...base, opacity: 1, scale: 1 };
+  };
+
+  const getInitial = () => {
+    if (initialPosition) {
+      // Morph from the source position/size (full opacity, scaled proportionally)
       return {
-        animate: { opacity: 0, scale: 0.85 } as const,
-        transition: { duration: 0.3, ease: 'easeIn' as const },
+        x: initialPosition.cx,
+        y: initialPosition.cy,
+        opacity: 1,
+        scale: initialPosition.radius / radius,
       };
     }
-    if (exitState === 'clicked') {
+    if (isEntering || isPreview)
+      return { x: cx, y: cy, opacity: 0, scale: 0.4 };
+    return false as const;
+  };
+
+  const getTransition = () => {
+    // morphTarget uses spring physics for smooth morph
+    if (morphTarget) {
       return {
-        animate: { opacity: 1, scale: 1.1 } as const,
-        transition: { duration: 0.2 },
+        x: POS_SPRING,
+        y: POS_SPRING,
+        scale: SCALE_SPRING,
+        // Quick fade for hub disappearing; normal for child morphing to center
+        opacity: { duration: morphTarget.opacity === 0 ? 0.1 : 0.25 },
       };
+    }
+    if (isEntering || isPreview) {
+      return {
+        opacity: { duration: 0.3, delay: enterDelay },
+        scale: { ...SCALE_SPRING, delay: enterDelay },
+        x: POS_SPRING,
+        y: POS_SPRING,
+      };
+    }
+    if (exitState !== 'none') {
+      return { duration: 0.3, ease: 'easeIn' as const };
     }
     return {
-      animate: { opacity: 1, scale: 1 } as const,
-      transition: { duration: 0.3 },
+      x: POS_SPRING,
+      y: POS_SPRING,
+      opacity: { duration: 0.2 },
+      scale: SCALE_SPRING,
     };
   };
 
-  const motionProps = getMotionProps();
+  const isInteractive = variant !== 'hub' && variant !== 'preview';
 
   return (
     <motion.g
-      style={{ cursor: variant === 'hub' ? 'default' : 'pointer' }}
+      style={{ cursor: isInteractive ? 'pointer' : 'default' }}
       onClick={(e) => {
         e.stopPropagation();
-        if (variant !== 'hub' && onClick) onClick();
+        if (isInteractive && onClick) onClick();
       }}
-      {...motionProps}
+      onMouseEnter={isInteractive ? onMouseEnter : undefined}
+      onMouseLeave={isInteractive ? onMouseLeave : undefined}
+      initial={getInitial()}
+      animate={getAnimate()}
+      exit={
+        isPreview
+          ? { opacity: 0, scale: 0.3, transition: { duration: 0.2 } }
+          : undefined
+      }
+      transition={getTransition()}
       whileHover={
-        variant !== 'hub'
+        isInteractive
           ? {
               scale: 1.08,
               filter: 'drop-shadow(0 0 12px rgba(0, 255, 136, 0.5))',
@@ -83,66 +156,99 @@ export function BubbleNodeSvg({
           : undefined
       }
     >
-      {/* Circle */}
+      {/* Circle — rendered at local origin; motion.g handles position */}
       <circle
-        cx={cx}
-        cy={cy}
-        r={radius - borderWidth / 2}
-        fill="var(--color-surface)"
-        stroke="var(--color-green)"
-        strokeWidth={borderWidth}
+        cx={0}
+        cy={0}
+        r={radius - effectiveBorder / 2}
+        fill={variant === 'preview' ? 'var(--color-bg)' : 'var(--color-surface)'}
+        stroke={strokeColor}
+        strokeWidth={effectiveBorder}
       />
 
-      {/* Label text */}
+      {/* Label */}
       <text
-        x={cx}
-        y={descriptions && descriptions.length > 0 ? cy - 6 : cy}
+        x={0}
+        y={descriptions && descriptions.length > 0 ? -6 : 0}
         textAnchor="middle"
         dominantBaseline="central"
-        fill="var(--color-text)"
+        fill={variant === 'preview' ? 'var(--color-cyan)' : 'var(--color-text)'}
         fontSize={fontSize}
         fontWeight={600}
         fontFamily="'Inter', sans-serif"
         style={{ pointerEvents: 'none', userSelect: 'none' }}
       >
-        {wrapText(label, radius * 1.4, fontSize, cx)}
+        {wrapText(label, radius * 1.4, fontSize)}
       </text>
 
       {/* Description text */}
       {descriptions && descriptions.length > 0 && (
         <text
-          x={cx}
-          y={cy + fontSize / 2 + 4}
+          x={0}
+          y={fontSize / 2 + 4}
           textAnchor="middle"
           dominantBaseline="hanging"
           fill="var(--color-text-secondary)"
-          fontSize={8}
+          fontSize={descFontSize}
           fontFamily="'Inter', sans-serif"
           style={{ pointerEvents: 'none', userSelect: 'none' }}
         >
-          {descriptions.map((desc, i) => (
-            <tspan key={i} x={cx} dy={i === 0 ? 0 : 11}>
-              {desc}{i < descriptions.length - 1 ? ',' : ''}
-            </tspan>
-          ))}
+          {descriptions
+            .slice(0, variant === 'secondary' ? 2 : 3)
+            .map((desc, i) => (
+              <tspan key={i} x={0} dy={i === 0 ? 0 : descFontSize + 2}>
+                {desc}
+                {i < descriptions.length - 1 ? ',' : ''}
+              </tspan>
+            ))}
         </text>
+      )}
+
+      {/* Leaf tooltip — "Build Prompt!" */}
+      {isLeaf && isHovered && (
+        <motion.g
+          initial={{ opacity: 0, y: 4 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.15 }}
+          style={{ pointerEvents: 'none' }}
+        >
+          <rect
+            x={-52}
+            y={-(radius + 28)}
+            width={104}
+            height={22}
+            rx={6}
+            fill="var(--color-cyan)"
+            opacity={0.9}
+          />
+          <text
+            x={0}
+            y={-(radius + 17)}
+            textAnchor="middle"
+            dominantBaseline="central"
+            fill="var(--color-bg)"
+            fontSize={11}
+            fontWeight={700}
+            fontFamily="'Inter', sans-serif"
+          >
+            {tCommon('bubble.buildPrompt')}
+          </text>
+        </motion.g>
       )}
     </motion.g>
   );
 }
 
+// --- Utility: wrap long text into <tspan> lines ---
 function wrapText(
   text: string,
   maxWidth: number,
   fontSize: number,
-  anchorX: number,
 ): React.ReactNode {
   const charWidth = fontSize * 0.55;
   const maxChars = Math.floor(maxWidth / charWidth);
 
-  if (text.length <= maxChars) {
-    return text;
-  }
+  if (text.length <= maxChars) return text;
 
   const words = text.split(' ');
   const lines: string[] = [];
@@ -171,7 +277,7 @@ function wrapText(
   return (
     <>
       {displayLines.map((line, i) => (
-        <tspan key={i} x={anchorX} dy={i === 0 ? startY : lineHeight}>
+        <tspan key={i} x={0} dy={i === 0 ? startY : lineHeight}>
           {line}
         </tspan>
       ))}

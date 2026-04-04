@@ -23,7 +23,8 @@
   "bubble": {
     "whatYouWant": "What you want?",
     "clickToExplore": "Click a bubble to explore",
-    "layerN": "Layer {{n}}"
+    "layerN": "Layer {{n}}",
+    "buildPrompt": "Build Prompt!"
   },
   "prompt": {
     "copy": "Copy",
@@ -31,7 +32,19 @@
     "sendTo": "Send to...",
     "editHint": "Click colored text to edit",
     "addItem": "Click to add",
-    "result": "Your Prompt"
+    "result": "Your Prompt",
+    "copiedAndOpening": "Prompt copied! Opening {{name}}...",
+    "copyAndOpen": "Copy prompt & open site"
+  },
+  "about": {
+    "description": "Lazy Prompt is an interactive bubble-based web app that helps you build detailed, well-structured AI prompts in seconds. Navigate through visual categories, customize your prompt with editable fields, and send it directly to your favorite AI provider.",
+    "features": "Features",
+    "feature1": "Visual bubble navigation through prompt categories",
+    "feature2": "Editable prompt templates with autocomplete suggestions",
+    "feature3": "Toggle individual prompt sections on/off",
+    "feature4": "Send to ChatGPT, Claude, Gemini, Perplexity, and Copilot",
+    "feature5": "6 languages supported: English, Chinese, Japanese, Korean, Spanish",
+    "contact": "Contact"
   },
   "footer": {
     "builtWith": "Built with ❤️"

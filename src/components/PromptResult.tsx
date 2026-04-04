@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { PromptTemplate, PromptSection } from '../data/types';
 import { buildPromptString } from '../utils/promptBuilder';
@@ -25,6 +25,8 @@ export default function PromptResult({
   const { t: tCommon } = useTranslation('common');
   const [editedValues, setEditedValues] = useState<Record<string, string>>({});
   const [addedItems, setAddedItems] = useState<Record<string, string[]>>({});
+  const [hiddenSections, setHiddenSections] = useState<Set<string>>(new Set());
+  const [hiddenItems, setHiddenItems] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     onEditedValuesChange?.(editedValues);
@@ -45,9 +47,36 @@ export default function PromptResult({
     }));
   }, []);
 
+  const toggleSection = useCallback((sectionId: string) => {
+    setHiddenSections((prev) => {
+      const next = new Set(prev);
+      if (next.has(sectionId)) next.delete(sectionId);
+      else next.add(sectionId);
+      return next;
+    });
+  }, []);
+
+  const toggleItem = useCallback((key: string) => {
+    setHiddenItems((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  }, []);
+
   const getPromptText = useCallback(() => {
-    return buildPromptString(template, editedValues, addedItems, t);
-  }, [template, editedValues, addedItems, t]);
+    return buildPromptString(template, editedValues, addedItems, t, hiddenSections, hiddenItems);
+  }, [template, editedValues, addedItems, t, hiddenSections, hiddenItems]);
+
+  // Visible numbering skips hidden sections
+  const sectionNumbers = useMemo(() => {
+    let num = 0;
+    return template.sections.map((s) => {
+      if (hiddenSections.has(s.id)) return null;
+      return ++num;
+    });
+  }, [template.sections, hiddenSections]);
 
   const renderSectionText = (section: PromptSection) => {
     const rawText = t(section.textKey);
@@ -83,6 +112,18 @@ export default function PromptResult({
       </>
     );
   };
+
+  const toggleBtnStyle = (active: boolean, size: 'section' | 'item'): React.CSSProperties => ({
+    background: 'transparent',
+    border: 'none',
+    cursor: 'pointer',
+    color: active ? (size === 'section' ? 'var(--color-cyan)' : 'var(--color-green)') : 'var(--color-text-secondary)',
+    fontSize: size === 'section' ? '0.7rem' : '0.6rem',
+    padding: size === 'section' ? '2px 4px' : '1px 3px',
+    lineHeight: '1.8',
+    flexShrink: 0,
+    opacity: active ? 0.8 : 0.4,
+  });
 
   return (
     <div
@@ -147,39 +188,92 @@ export default function PromptResult({
         className="font-mono"
         style={{ fontSize: '0.9rem', lineHeight: '1.8' }}
       >
-        {template.sections.map((section, index) => (
-          <div key={section.id} style={{ marginBottom: '4px' }}>
-            <div>
-              <span
-                style={{
-                  color: 'var(--color-text-secondary)',
-                  marginRight: '8px',
-                }}
-              >
-                {index + 1}.
-              </span>
-              {renderSectionText(section)}
-            </div>
+        {template.sections.map((section, index) => {
+          const isHidden = hiddenSections.has(section.id);
+          const num = sectionNumbers[index];
 
-            {section.type === 'extensible' && section.defaultItems && (
-              <div style={{ paddingLeft: '24px' }}>
-                {section.defaultItems.map((item) => (
-                  <div key={item.id} style={{ color: 'var(--color-text)' }}>
-                    - {t(item.textKey)}
+          return (
+            <div key={section.id} style={{ marginBottom: '4px' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '2px' }}>
+                <button
+                  onClick={() => toggleSection(section.id)}
+                  style={toggleBtnStyle(!isHidden, 'section')}
+                  title={isHidden ? 'Show this line' : 'Hide this line'}
+                >
+                  {isHidden ? '○' : '●'}
+                </button>
+
+                {isHidden ? (
+                  <span style={{ color: 'var(--color-text-secondary)', opacity: 0.4, fontStyle: 'italic' }}>
+                    ( * {renderSectionText(section)} )
+                  </span>
+                ) : (
+                  <div style={{ flex: 1 }}>
+                    <span style={{ color: 'var(--color-text-secondary)', marginRight: '8px' }}>
+                      {num}.
+                    </span>
+                    {renderSectionText(section)}
                   </div>
-                ))}
-                {addedItems[section.id]?.map((text, i) => (
-                  <div key={`added-${i}`} style={{ color: 'var(--color-text)' }}>
-                    - {text}
-                  </div>
-                ))}
-                <AddItemButton
-                  onAdd={(text) => handleAddItem(section.id, text)}
-                />
+                )}
               </div>
-            )}
-          </div>
-        ))}
+
+              {/* Extensible items — only when section is visible */}
+              {!isHidden && section.type === 'extensible' && section.defaultItems && (
+                <div style={{ paddingLeft: '24px' }}>
+                  {section.defaultItems.map((item) => {
+                    const itemKey = `${section.id}:${item.id}`;
+                    const itemHidden = hiddenItems.has(itemKey);
+                    return (
+                      <div key={item.id} style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
+                        <button
+                          onClick={() => toggleItem(itemKey)}
+                          style={toggleBtnStyle(!itemHidden, 'item')}
+                          title={itemHidden ? 'Show this item' : 'Hide this item'}
+                        >
+                          {itemHidden ? '○' : '●'}
+                        </button>
+                        <span style={{
+                          color: itemHidden ? 'var(--color-text-secondary)' : 'var(--color-text)',
+                          opacity: itemHidden ? 0.35 : 1,
+                          fontStyle: itemHidden ? 'italic' : 'normal',
+                          textDecoration: itemHidden ? 'line-through' : 'none',
+                        }}>
+                          - {t(item.textKey)}
+                        </span>
+                      </div>
+                    );
+                  })}
+
+                  {addedItems[section.id]?.map((text, i) => {
+                    const itemKey = `${section.id}:added:${i}`;
+                    const itemHidden = hiddenItems.has(itemKey);
+                    return (
+                      <div key={`added-${i}`} style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
+                        <button
+                          onClick={() => toggleItem(itemKey)}
+                          style={toggleBtnStyle(!itemHidden, 'item')}
+                          title={itemHidden ? 'Show this item' : 'Hide this item'}
+                        >
+                          {itemHidden ? '○' : '●'}
+                        </button>
+                        <span style={{
+                          color: itemHidden ? 'var(--color-text-secondary)' : 'var(--color-text)',
+                          opacity: itemHidden ? 0.35 : 1,
+                          fontStyle: itemHidden ? 'italic' : 'normal',
+                          textDecoration: itemHidden ? 'line-through' : 'none',
+                        }}>
+                          - {text}
+                        </span>
+                      </div>
+                    );
+                  })}
+
+                  <AddItemButton onAdd={(text) => handleAddItem(section.id, text)} />
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
 
       {/* Hint */}

@@ -23,7 +23,8 @@
   "bubble": {
     "whatYouWant": "你想做什么？",
     "clickToExplore": "点击气泡开始探索",
-    "layerN": "第 {{n}} 层"
+    "layerN": "第 {{n}} 层",
+    "buildPrompt": "生成提示词！"
   },
   "prompt": {
     "copy": "复制",
@@ -31,7 +32,19 @@
     "sendTo": "发送到...",
     "editHint": "点击彩色文字进行编辑",
     "addItem": "点击添加",
-    "result": "你的提示词"
+    "result": "你的提示词",
+    "copiedAndOpening": "提示词已复制！正在打开 {{name}}...",
+    "copyAndOpen": "复制提示词并打开网站"
+  },
+  "about": {
+    "description": "Lazy Prompt 是一款互动式泡泡导航网页应用，帮助你在几秒内构建详细、结构化的 AI 提示词。通过可视化分类浏览，自定义可编辑字段，并直接发送到你喜欢的 AI 服务。",
+    "features": "功能特点",
+    "feature1": "可视化泡泡导航浏览提示词分类",
+    "feature2": "可编辑的提示词模板，带自动补全建议",
+    "feature3": "可切换显示/隐藏各个提示词段落",
+    "feature4": "发送至 ChatGPT、Claude、Gemini、Perplexity 和 Copilot",
+    "feature5": "支持6种语言：英语、中文、日语、韩语、西班牙语",
+    "contact": "联系方式"
   },
   "footer": {
     "builtWith": "用 ❤️ 构建"

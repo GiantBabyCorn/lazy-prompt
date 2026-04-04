@@ -6,8 +6,8 @@ export const promptTemplates: PromptTemplate[] = [
     id: 'buildWebsite',
     sections: [
       { id: 'bw1', textKey: 'templates.buildWebsite.line1', type: 'fixed', editableSpans: [{ id: 'bw1-name', placeholder: 'OOO', color: 'yellow' }] },
-      { id: 'bw2', textKey: 'templates.buildWebsite.line2', type: 'fixed', editableSpans: [{ id: 'bw2-fw', placeholder: 'React', color: 'cyan' }, { id: 'bw2-router', placeholder: 'React Router', color: 'cyan' }] },
-      { id: 'bw3', textKey: 'templates.buildWebsite.line3', type: 'fixed', editableSpans: [{ id: 'bw3-langs', placeholder: 'English, Chinese, Japanese', color: 'green' }] },
+      { id: 'bw2', textKey: 'templates.buildWebsite.line2', type: 'fixed', editableSpans: [{ id: 'bw2-fw', placeholder: 'React', color: 'cyan', suggestions: ['React', 'Vue', 'Angular', 'Svelte', 'Next.js', 'Nuxt', 'Astro', 'SolidJS', 'Remix', 'Gatsby'] }, { id: 'bw2-router', placeholder: 'React Router', color: 'cyan', suggestions: ['React Router', 'TanStack Router', 'Vue Router', 'SvelteKit', 'Next.js App Router'] }] },
+      { id: 'bw3', textKey: 'templates.buildWebsite.line3', type: 'fixed', editableSpans: [{ id: 'bw3-langs', placeholder: 'English, Chinese, Japanese', color: 'green', inputType: 'labels', suggestions: ['English', 'Chinese', 'Japanese', 'Korean', 'Spanish', 'French', 'German', 'Portuguese', 'Russian', 'Arabic', 'Hindi', 'Thai', 'Vietnamese', 'Italian', 'Dutch'] }] },
       { id: 'bw4', textKey: 'templates.buildWebsite.line4', type: 'fixed' },
       { id: 'bw5', textKey: 'templates.buildWebsite.line5', type: 'extensible', defaultItems: [
         { id: 'bw5-landing', textKey: 'templates.buildWebsite.pages.landing' },
@@ -34,8 +34,8 @@ export const promptTemplates: PromptTemplate[] = [
     id: 'buildApp',
     sections: [
       { id: 'ba1', textKey: 'templates.buildApp.line1', type: 'fixed', editableSpans: [{ id: 'ba1-name', placeholder: 'OOO', color: 'yellow' }] },
-      { id: 'ba2', textKey: 'templates.buildApp.line2', type: 'fixed', editableSpans: [{ id: 'ba2-fw', placeholder: 'React Native', color: 'cyan' }] },
-      { id: 'ba3', textKey: 'templates.buildApp.line3', type: 'fixed', editableSpans: [{ id: 'ba3-platforms', placeholder: 'iOS and Android', color: 'green' }] },
+      { id: 'ba2', textKey: 'templates.buildApp.line2', type: 'fixed', editableSpans: [{ id: 'ba2-fw', placeholder: 'React Native', color: 'cyan', suggestions: ['React Native', 'Flutter', 'SwiftUI', 'Kotlin Multiplatform', 'Ionic', 'Expo', '.NET MAUI', 'Capacitor'] }] },
+      { id: 'ba3', textKey: 'templates.buildApp.line3', type: 'fixed', editableSpans: [{ id: 'ba3-platforms', placeholder: 'iOS, Android', color: 'green', inputType: 'labels', suggestions: ['iOS', 'Android', 'Web', 'macOS', 'Windows', 'Linux'] }] },
       { id: 'ba4', textKey: 'templates.buildApp.line4', type: 'fixed' },
       { id: 'ba5', textKey: 'templates.buildApp.line5', type: 'extensible', defaultItems: [
         { id: 'ba5-splash', textKey: 'templates.buildApp.screens.splash' },
@@ -60,8 +60,8 @@ export const promptTemplates: PromptTemplate[] = [
     sections: [
       { id: 'bp1', textKey: 'templates.buildPresentations.line1', type: 'fixed', editableSpans: [{ id: 'bp1-topic', placeholder: 'OOO', color: 'yellow' }] },
       { id: 'bp2', textKey: 'templates.buildPresentations.line2', type: 'fixed', editableSpans: [{ id: 'bp2-audience', placeholder: 'technical stakeholders', color: 'green' }] },
-      { id: 'bp3', textKey: 'templates.buildPresentations.line3', type: 'fixed', editableSpans: [{ id: 'bp3-count', placeholder: '15', color: 'cyan' }] },
-      { id: 'bp4', textKey: 'templates.buildPresentations.line4', type: 'fixed', editableSpans: [{ id: 'bp4-duration', placeholder: '20 minutes', color: 'cyan' }] },
+      { id: 'bp3', textKey: 'templates.buildPresentations.line3', type: 'fixed', editableSpans: [{ id: 'bp3-count', placeholder: '15', color: 'cyan', inputType: 'number', min: 1, max: 100 }] },
+      { id: 'bp4', textKey: 'templates.buildPresentations.line4', type: 'fixed', editableSpans: [{ id: 'bp4-duration', placeholder: '20 minutes', color: 'cyan', suggestions: ['5 minutes', '10 minutes', '15 minutes', '20 minutes', '30 minutes', '45 minutes', '1 hour'] }] },
       { id: 'bp5', textKey: 'templates.buildPresentations.line5', type: 'extensible', defaultItems: [
         { id: 'bp5-title', textKey: 'templates.buildPresentations.slides.title' },
         { id: 'bp5-agenda', textKey: 'templates.buildPresentations.slides.agenda' },
@@ -81,9 +81,9 @@ export const promptTemplates: PromptTemplate[] = [
   {
     id: 'buildApi',
     sections: [
-      { id: 'bapi1', textKey: 'templates.buildApi.line1', type: 'fixed', editableSpans: [{ id: 'bapi1-name', placeholder: 'OOO', color: 'yellow' }, { id: 'bapi1-style', placeholder: 'REST', color: 'cyan' }] },
-      { id: 'bapi2', textKey: 'templates.buildApi.line2', type: 'fixed', editableSpans: [{ id: 'bapi2-lang', placeholder: 'Node.js with Express', color: 'cyan' }] },
-      { id: 'bapi3', textKey: 'templates.buildApi.line3', type: 'fixed', editableSpans: [{ id: 'bapi3-db', placeholder: 'PostgreSQL', color: 'cyan' }] },
+      { id: 'bapi1', textKey: 'templates.buildApi.line1', type: 'fixed', editableSpans: [{ id: 'bapi1-name', placeholder: 'OOO', color: 'yellow' }, { id: 'bapi1-style', placeholder: 'REST', color: 'cyan', suggestions: ['REST', 'GraphQL', 'gRPC', 'WebSocket', 'tRPC'] }] },
+      { id: 'bapi2', textKey: 'templates.buildApi.line2', type: 'fixed', editableSpans: [{ id: 'bapi2-lang', placeholder: 'Node.js with Express', color: 'cyan', suggestions: ['Node.js with Express', 'Node.js with Fastify', 'Python with FastAPI', 'Python with Django', 'Go with Gin', 'Go with Fiber', 'Rust with Actix', 'Java with Spring Boot', 'C# with ASP.NET'] }] },
+      { id: 'bapi3', textKey: 'templates.buildApi.line3', type: 'fixed', editableSpans: [{ id: 'bapi3-db', placeholder: 'PostgreSQL', color: 'cyan', suggestions: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'SQLite', 'DynamoDB', 'Supabase', 'PlanetScale', 'CockroachDB'] }] },
       { id: 'bapi4', textKey: 'templates.buildApi.line4', type: 'fixed' },
       { id: 'bapi5', textKey: 'templates.buildApi.line5', type: 'extensible', defaultItems: [
         { id: 'bapi5-users', textKey: 'templates.buildApi.endpoints.users' },
@@ -104,7 +104,7 @@ export const promptTemplates: PromptTemplate[] = [
   {
     id: 'buildDatabase',
     sections: [
-      { id: 'bdb1', textKey: 'templates.buildDatabase.line1', type: 'fixed', editableSpans: [{ id: 'bdb1-name', placeholder: 'OOO', color: 'yellow' }, { id: 'bdb1-engine', placeholder: 'PostgreSQL', color: 'cyan' }] },
+      { id: 'bdb1', textKey: 'templates.buildDatabase.line1', type: 'fixed', editableSpans: [{ id: 'bdb1-name', placeholder: 'OOO', color: 'yellow' }, { id: 'bdb1-engine', placeholder: 'PostgreSQL', color: 'cyan', suggestions: ['PostgreSQL', 'MySQL', 'MongoDB', 'SQLite', 'MariaDB', 'Oracle', 'SQL Server', 'CockroachDB', 'Supabase'] }] },
       { id: 'bdb2', textKey: 'templates.buildDatabase.line2', type: 'fixed', editableSpans: [{ id: 'bdb2-domain', placeholder: 'e-commerce platform', color: 'green' }] },
       { id: 'bdb3', textKey: 'templates.buildDatabase.line3', type: 'extensible', defaultItems: [
         { id: 'bdb3-users', textKey: 'templates.buildDatabase.tables.users' },
@@ -126,7 +126,7 @@ export const promptTemplates: PromptTemplate[] = [
     id: 'buildScript',
     sections: [
       { id: 'bs1', textKey: 'templates.buildScript.line1', type: 'fixed', editableSpans: [{ id: 'bs1-task', placeholder: 'OOO', color: 'yellow' }] },
-      { id: 'bs2', textKey: 'templates.buildScript.line2', type: 'fixed', editableSpans: [{ id: 'bs2-lang', placeholder: 'Python', color: 'cyan' }] },
+      { id: 'bs2', textKey: 'templates.buildScript.line2', type: 'fixed', editableSpans: [{ id: 'bs2-lang', placeholder: 'Python', color: 'cyan', suggestions: ['Python', 'Bash', 'PowerShell', 'Node.js', 'Go', 'Rust', 'Ruby', 'Perl'] }] },
       { id: 'bs3', textKey: 'templates.buildScript.line3', type: 'fixed', editableSpans: [{ id: 'bs3-input', placeholder: 'CSV files in a directory', color: 'green' }] },
       { id: 'bs4', textKey: 'templates.buildScript.line4', type: 'fixed', editableSpans: [{ id: 'bs4-output', placeholder: 'consolidated report', color: 'green' }] },
       { id: 'bs5', textKey: 'templates.buildScript.line5', type: 'fixed' },
@@ -141,8 +141,8 @@ export const promptTemplates: PromptTemplate[] = [
     id: 'buildBot',
     sections: [
       { id: 'bb1', textKey: 'templates.buildBot.line1', type: 'fixed', editableSpans: [{ id: 'bb1-name', placeholder: 'OOO', color: 'yellow' }] },
-      { id: 'bb2', textKey: 'templates.buildBot.line2', type: 'fixed', editableSpans: [{ id: 'bb2-platform', placeholder: 'Discord', color: 'cyan' }] },
-      { id: 'bb3', textKey: 'templates.buildBot.line3', type: 'fixed', editableSpans: [{ id: 'bb3-lang', placeholder: 'Node.js', color: 'cyan' }] },
+      { id: 'bb2', textKey: 'templates.buildBot.line2', type: 'fixed', editableSpans: [{ id: 'bb2-platform', placeholder: 'Discord', color: 'cyan', suggestions: ['Discord', 'Telegram', 'Slack', 'LINE', 'WhatsApp', 'Microsoft Teams', 'Facebook Messenger'] }] },
+      { id: 'bb3', textKey: 'templates.buildBot.line3', type: 'fixed', editableSpans: [{ id: 'bb3-lang', placeholder: 'Node.js', color: 'cyan', suggestions: ['Node.js', 'Python', 'Go', 'Rust', 'Java', 'TypeScript', 'C#'] }] },
       { id: 'bb4', textKey: 'templates.buildBot.line4', type: 'extensible', defaultItems: [
         { id: 'bb4-greet', textKey: 'templates.buildBot.features.greet' },
         { id: 'bb4-faq', textKey: 'templates.buildBot.features.faq' },

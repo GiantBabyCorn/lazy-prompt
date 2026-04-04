@@ -4,28 +4,33 @@
 
 Lazy Prompt — an interactive bubble-based web app that helps users build detailed, well-structured AI prompts quickly. Users navigate through visual bubble layers (categories → sub-categories → leaf) until their intent is clear, then the app generates a rich, editable prompt they can copy or send directly to AI providers.
 
+**Live URL:** https://lazy-prompt.giantbabycorn.finance/
+
 ## Tech Stack
 
 - **React 19** + **React Router 7** — component-based SPA with client-side routing
 - **Vite 6** — build tool with hot module replacement
 - **TypeScript** — type safety throughout
-- **@xyflow/react** — SVG-based bubble/node graph visualization
+- **framer-motion** — spring-based morph animations for bubble transitions
 - **i18next** — internationalization (6 languages: en, zh-CN, zh-TW, ja, ko, es)
 - **CSS custom properties** — dark/light theming (no CSS framework)
 
 ## Project Structure
 
 ```
-index.html              # Vite entry point with SEO meta tags + JSON-LD
+index.html              # Vite entry point with SEO meta tags + JSON-LD + OG tags
 vite.config.ts          # Vite configuration
 package.json            # Dependencies and npm scripts
 CLAUDE.md               # THIS FILE — project-level agent instructions
+LICENSE                 # MIT License
+README.md               # Project documentation
 .claude/
   settings.json         # Agent permissions
   commands/
     check-progress.md   # Progress checking command
 public/
   logo.svg              # Logo and favicon
+  og-image.png          # Open Graph preview image (1200x630)
 scripts/
   add-bubble.ts         # CLI: add a new bubble node
   edit-bubble.ts        # CLI: edit an existing bubble node
@@ -34,9 +39,10 @@ scripts/
   edit-template.ts      # CLI: edit an existing prompt template
   list-data.ts          # CLI: list bubbles/templates with tree view
   validate-data.ts      # CLI: validate bubble tree + template integrity
+  generate-og-image.ts  # Generate OG preview image from SVG template
 src/
   main.tsx              # React entry point, BrowserRouter + i18n setup
-  App.tsx               # Root layout: ThemeProvider + routes
+  App.tsx               # Root layout: ThemeProvider + routes (/*, /about)
   App.css               # Global styles, CSS custom properties, theme vars
   i18n/
     config.ts           # i18next setup (lazy-loaded locales)
@@ -46,30 +52,33 @@ src/
   hooks/
     useDocumentHead.ts  # Dynamic <title>/<meta> for SEO
     useClipboard.ts     # Copy to clipboard utility
-    useBubbleNavigation.ts  # Navigate bubble tree layers, track path
+    useBubbleNavigation.ts  # Navigate bubble tree layers, track path, URL sync
   components/
-    Header.tsx          # Logo, language selector, theme toggle
-    BubbleCanvas.tsx    # React Flow canvas
-    BubbleNode.tsx      # Custom React Flow node (circle bubbles)
-    BubbleEdge.tsx      # Custom React Flow edge (dashed green lines)
-    GoBackButton.tsx    # Navigate to previous layer
-    PromptResult.tsx    # Final prompt display with editable sections
-    EditableText.tsx    # Inline-editable colored text spans
+    Header.tsx          # Logo, breadcrumb navigation, language/theme controls
+    BubbleCanvas.tsx    # SVG canvas with radial bubble layout + morph animations
+    BubbleNode.tsx      # Individual bubble (SVG circle + label + leaf tooltip)
+    BubbleList.tsx      # List-based navigation (alternative view mode)
+    GoBackButton.tsx    # (unused; go-back is inline in BubbleCanvas)
+    PromptResult.tsx    # Prompt display with toggle hide/show, editable fields
+    EditableText.tsx    # Inline-editable spans (text/number/date/time/labels + autocomplete)
     CopyButton.tsx      # Copy prompt to clipboard
-    AIProviderLinks.tsx # Buttons to open AI providers with prompt
+    AIProviderLinks.tsx # Send-to buttons (copy+open fallback for Gemini/Copilot)
     AddItemButton.tsx   # "Click to add" for extensible prompt lists
     LanguageSelector.tsx # i18n language switcher
     ThemeToggle.tsx     # Dark/light theme switch
   pages/
-    HomePage.tsx        # Main bubble navigation screen (route: /)
-    ResultPage.tsx      # Final prompt result screen (route: /result)
+    HomePage.tsx        # Main bubble navigation + prompt result (route: /*)
+    AboutPage.tsx       # About page with social links (route: /about)
   data/
-    types.ts            # TypeScript interfaces (BubbleNode, PromptTemplate, etc.)
+    types.ts            # TypeScript interfaces (BubbleNode, PromptTemplate, EditableSpan, etc.)
     bubbleTree.ts       # Complete bubble tree data structure
     promptTemplates.ts  # Prompt template definitions per leaf path
   utils/
-    aiProviders.ts      # AI provider URL builders
-    promptBuilder.ts    # Assembles final prompt from selections
+    aiProviders.ts      # AI provider definitions with SVG icons
+    promptBuilder.ts    # Assembles final prompt from selections (respects hidden sections/items)
+    bubbleRouting.ts    # URL ↔ navigationPath conversion for breadcrumb routing
+  assets/
+    icons/              # SVG icons: chatgpt, claude, gemini, perplexity, copilot, x, telegram, github
 ```
 
 ## CLI Scripts
@@ -93,11 +102,11 @@ npm run validate         # Validate bubble tree + template integrity
 ### BubbleNode
 ```typescript
 {
-  id: string;                        // Unique identifier
+  id: string;                        // Unique identifier (e.g., "build-website")
   labelKey: string;                  // i18n key for display label
   descriptionKeys?: string[];        // i18n keys for sub-items shown under bubble
-  type: 'primary' | 'secondary';    // Determines bubble size
-  children?: BubbleNode[];           // Next layer (undefined = leaf)
+  type: 'primary' | 'secondary';    // primary = larger/prominent, secondary = smaller
+  children?: BubbleNode[];           // Next layer (undefined = leaf node)
   promptTemplateId?: string;         // For leaf nodes: which template to use
 }
 ```
@@ -110,6 +119,92 @@ npm run validate         # Validate bubble tree + template integrity
 }
 ```
 
+### PromptSection
+```typescript
+{
+  id: string;
+  textKey: string;                   // i18n key for the line text
+  type: 'fixed' | 'extensible';     // extensible = has default items + user can add more
+  editableSpans?: EditableSpan[];    // Inline editable colored fields
+  defaultItems?: PromptDefaultItem[];// For extensible: bullet-point items
+}
+```
+
+### EditableSpan
+```typescript
+{
+  id: string;
+  placeholder: string;              // Default display value
+  color: 'cyan' | 'yellow' | 'green';
+  inputType?: 'text' | 'number' | 'time' | 'date' | 'labels';
+  suggestions?: string[];           // Autocomplete dropdown options
+  step?: number;                    // For number: +/- button step (default: 1)
+  min?: number; max?: number;       // For number: bounds
+}
+```
+
+## How to Add/Edit Content
+
+### Adding a New Leaf Node (Prompt Category)
+
+1. **Add the bubble node** in `src/data/bubbleTree.ts`:
+   ```typescript
+   // Under an existing parent's children array:
+   { id: 'build-game', labelKey: 'subcategories.build.game', type: 'secondary', promptTemplateId: 'buildGame' },
+   ```
+
+2. **Add the prompt template** in `src/data/promptTemplates.ts`:
+   ```typescript
+   {
+     id: 'buildGame',
+     sections: [
+       { id: 'bg1', textKey: 'templates.buildGame.line1', type: 'fixed',
+         editableSpans: [{ id: 'bg1-name', placeholder: 'OOO', color: 'yellow' }] },
+       { id: 'bg2', textKey: 'templates.buildGame.line2', type: 'fixed',
+         editableSpans: [{ id: 'bg2-engine', placeholder: 'Unity', color: 'cyan',
+           suggestions: ['Unity', 'Unreal', 'Godot', 'Phaser'] }] },
+       // ... more sections
+     ],
+   },
+   ```
+
+3. **Add i18n translations** in ALL 6 locale files:
+   - `src/i18n/locales/en/prompts.json` — add `subcategories.build.game` and `templates.buildGame.*`
+   - Repeat for `zh-CN`, `zh-TW`, `ja`, `ko`, `es`
+
+4. **Validate**: `npm run validate`
+
+### Adding Suggestions to an Existing Editable Span
+
+In `src/data/promptTemplates.ts`, find the span and add `suggestions`:
+```typescript
+{ id: 'bw2-fw', placeholder: 'React', color: 'cyan',
+  suggestions: ['React', 'Vue', 'Angular', 'Svelte', 'Next.js'] }
+```
+
+### Changing Input Type
+
+Set `inputType` on the span:
+- `'number'` — shows +/- stepper buttons; set `min`, `max`, `step`
+- `'labels'` — chip-based multi-value with autocomplete; comma-separated output
+- `'time'` — native time picker
+- `'date'` — native date picker
+
+### Adding a New Sub-layer (Non-leaf Branch)
+
+Add a node WITH `children` array (no `promptTemplateId`):
+```typescript
+{
+  id: 'build-mobile',
+  labelKey: 'subcategories.build.mobile',
+  type: 'primary',
+  children: [
+    { id: 'build-mobile-ios', labelKey: '...', type: 'primary', promptTemplateId: 'buildIos' },
+    { id: 'build-mobile-android', labelKey: '...', type: 'secondary', promptTemplateId: 'buildAndroid' },
+  ],
+}
+```
+
 ## Agent Rules (CRITICAL)
 
 1. **Read CLAUDE.md first** — know the project structure and what's done
@@ -118,6 +213,9 @@ npm run validate         # Validate bubble tree + template integrity
 4. **Use CRUD scripts** for data changes when possible
 5. **Run `npm run validate`** after data changes
 6. **Follow commit format**: `[lazy-prompt] Task N: <brief description>`
+7. **All 6 locales must be updated together** — never add i18n keys to only some locales
+8. **Node ID convention**: `{parentId}-{slug}` (e.g., `build-website`, `translation-en-zh`)
+9. **Template ID convention**: camelCase matching the leaf purpose (e.g., `buildWebsite`, `readDocument`)
 
 ## Supported Languages
 
@@ -136,9 +234,23 @@ npm run validate         # Validate bubble tree + template integrity
 - [x] Task 2: Theme System
 - [x] Task 3: i18n Setup (6 languages: en, zh-CN, zh-TW, ja, ko, es)
 - [x] Task 4: Data Model + CRUD Scripts (19 templates, 76 nodes, 7 scripts)
-- [x] Task 5: Bubble Canvas with React Flow
+- [x] Task 5: Bubble Canvas (custom SVG + framer-motion)
 - [x] Task 6: Prompt Result + Editable Text
 - [x] Task 7: AI Provider Links (ChatGPT, Claude, Gemini, Perplexity, Copilot)
 - [x] Task 8: App Layout + Routing + Header
-- [x] Task 9: Responsive Layout (Mobile — BubbleList for <768px)
+- [x] Task 9: Responsive Layout (BubbleList + BubbleCanvas toggle)
 - [x] Task 10: Polish + Animations (hover effects, entrance animations, focus-visible)
+- [x] Task 11: Enhanced Navigation + URL Routing
+  - Radial hover previews (all children), edge-aware positioning
+  - Morph animations: child→hub, hub→go-back, previews→children
+  - URL-based breadcrumb routing with deep linking
+- [x] Task 12: UX Enhancements
+  - Header breadcrumb navigation
+  - Gemini/Copilot copy+open fallback
+  - Section & list item toggle hide/show with renumbering
+  - Autocomplete suggestions, number steppers, label-style multi-value inputs
+  - Responsive scaling (0.8x–1.4x based on viewport)
+  - SVG brand icons for AI providers (from glincker/thesvg)
+  - OG preview image for social sharing
+  - About page, MIT License
+  - "Build Prompt!" tooltip on leaf node hover

@@ -29,6 +29,16 @@ export interface EditableSpan {
   id: string;
   placeholder: string;
   color: 'cyan' | 'yellow' | 'green';
+  /** Input type for specialized controls. Default: 'text'. */
+  inputType?: 'text' | 'number' | 'time' | 'date' | 'labels';
+  /** Autocomplete suggestions (filtered by user input). */
+  suggestions?: string[];
+  /** For number type: step for +/- buttons. Default: 1. */
+  step?: number;
+  /** For number type: min value. */
+  min?: number;
+  /** For number type: max value. */
+  max?: number;
 }
 
 export interface AIProvider {
@@ -36,4 +46,6 @@ export interface AIProvider {
   name: string;
   icon: string;
   buildUrl: (prompt: string) => string;
+  /** If false, prompt can't be injected via URL — will copy to clipboard + open site. */
+  supportsPromptUrl?: boolean;
 }

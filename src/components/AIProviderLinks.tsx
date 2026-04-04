@@ -1,5 +1,7 @@
+import { useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { aiProviders } from '../utils/aiProviders';
+import type { AIProvider } from '../data/types';
 
 interface AIProviderLinksProps {
   getPromptText: () => string;
@@ -7,15 +9,31 @@ interface AIProviderLinksProps {
 
 export function AIProviderLinks({ getPromptText }: AIProviderLinksProps) {
   const { t } = useTranslation('common');
+  const [toast, setToast] = useState<string | null>(null);
 
-  const handleClick = (buildUrl: (prompt: string) => string) => {
-    const promptText = getPromptText();
-    const url = buildUrl(promptText);
-    window.open(url, '_blank');
-  };
+  const handleClick = useCallback(
+    (provider: AIProvider) => {
+      const promptText = getPromptText();
+
+      if (provider.supportsPromptUrl !== false) {
+        // Supported: open URL with prompt injected
+        window.open(provider.buildUrl(promptText), '_blank');
+      } else {
+        // Unsupported: copy prompt to clipboard, then open site
+        navigator.clipboard.writeText(promptText).then(() => {
+          setToast(t('prompt.copiedAndOpening', { name: provider.name }));
+          setTimeout(() => setToast(null), 3000);
+          setTimeout(() => {
+            window.open(provider.buildUrl(promptText), '_blank');
+          }, 300);
+        });
+      }
+    },
+    [getPromptText, t],
+  );
 
   return (
-    <div style={{ marginTop: 16 }}>
+    <div style={{ marginTop: 16, position: 'relative' }}>
       <span
         style={{
           color: 'var(--color-text)',
@@ -37,7 +55,7 @@ export function AIProviderLinks({ getPromptText }: AIProviderLinksProps) {
         {aiProviders.map((provider) => (
           <button
             key={provider.id}
-            onClick={() => handleClick(provider.buildUrl)}
+            onClick={() => handleClick(provider)}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -61,11 +79,33 @@ export function AIProviderLinks({ getPromptText }: AIProviderLinksProps) {
               e.currentTarget.style.transform = 'scale(1)';
             }}
           >
-            <span style={{ fontSize: 16 }}>{provider.icon}</span>
+            <img src={provider.icon} alt={provider.name} width={18} height={18} style={{ display: 'block' }} />
             {provider.name}
+            {provider.supportsPromptUrl === false && (
+              <span style={{ fontSize: 10, opacity: 0.5 }} title={t('prompt.copyAndOpen')}>📋</span>
+            )}
           </button>
         ))}
       </div>
+
+      {/* Toast notification for copy+open */}
+      {toast && (
+        <div
+          style={{
+            position: 'absolute',
+            bottom: -40,
+            left: 0,
+            right: 0,
+            textAlign: 'center',
+            color: 'var(--color-green)',
+            fontSize: 13,
+            fontWeight: 500,
+            animation: 'fade-in 0.2s ease',
+          }}
+        >
+          {toast}
+        </div>
+      )}
     </div>
   );
 }

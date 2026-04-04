@@ -23,7 +23,8 @@
   "bubble": {
     "whatYouWant": "你想做什麼？",
     "clickToExplore": "點擊氣泡開始探索",
-    "layerN": "第 {{n}} 層"
+    "layerN": "第 {{n}} 層",
+    "buildPrompt": "建立提示詞！"
   },
   "prompt": {
     "copy": "複製",
@@ -31,7 +32,19 @@
     "sendTo": "傳送到...",
     "editHint": "點擊彩色文字進行編輯",
     "addItem": "點擊新增",
-    "result": "你的提示詞"
+    "result": "你的提示詞",
+    "copiedAndOpening": "提示詞已複製！正在開啟 {{name}}...",
+    "copyAndOpen": "複製提示詞並開啟網站"
+  },
+  "about": {
+    "description": "Lazy Prompt 是一款互動式泡泡導航網頁應用，幫助你在幾秒內建構詳細、結構化的 AI 提示詞。透過視覺化分類瀏覽，自訂可編輯欄位，並直接傳送到你喜歡的 AI 服務。",
+    "features": "功能特點",
+    "feature1": "視覺化泡泡導航瀏覽提示詞分類",
+    "feature2": "可編輯的提示詞範本，帶自動補全建議",
+    "feature3": "可切換顯示/隱藏各個提示詞段落",
+    "feature4": "傳送至 ChatGPT、Claude、Gemini、Perplexity 和 Copilot",
+    "feature5": "支援6種語言：英語、中文、日語、韓語、西班牙語",
+    "contact": "聯絡方式"
   },
   "footer": {
     "builtWith": "用 ❤️ 打造"
