@@ -117,9 +117,26 @@ a:hover {
   outline-offset: 2px;
 }
 
-/* --- React Flow attribution hide (backup) --- */
-.react-flow__attribution {
-  display: none !important;
+/* --- GoBack Button --- */
+.go-back-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px dashed var(--color-cyan);
+  background: transparent;
+  color: var(--color-yellow);
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.go-back-button:hover {
+  transform: scale(1.1);
+  border-color: var(--color-yellow);
 }
 
 /* ============================================================

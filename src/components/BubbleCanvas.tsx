@@ -1,17 +1,18 @@
-import { useMemo } from 'react';
-import { ReactFlow } from '@xyflow/react';
-import type { Node, Edge } from '@xyflow/react';
-import '@xyflow/react/dist/style.css';
-
-import { bubbleNodeTypes } from './BubbleNode';
-import type { BubbleNodeData } from './BubbleNode';
-import { bubbleEdgeTypes } from './BubbleEdge';
-import { GoBackButton } from './GoBackButton';
+import { useMemo, useRef, useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import type { BubbleNode as BubbleNodeType } from '../data/types';
+import type { AnimationPhase } from '../hooks/useBubbleNavigation';
+import { BubbleNodeSvg } from './BubbleNode';
 
-const CENTER_X = 400;
-const CENTER_Y = 300;
-const RADIUS = 250;
+const SIZES = { hub: 70, primary: 60, secondary: 40 } as const;
+
+interface ChildPosition {
+  node: BubbleNodeType;
+  cx: number;
+  cy: number;
+  radius: number;
+}
 
 interface BubbleCanvasProps {
   currentNode: BubbleNodeType;
@@ -20,6 +21,27 @@ interface BubbleCanvasProps {
   onNavigate: (nodeId: string) => void;
   onGoBack: () => void;
   onLeafClick: (node: BubbleNodeType) => void;
+  animationPhase: AnimationPhase;
+  clickedNodeId: string | null;
+  previousNode: BubbleNodeType | null;
+}
+
+function computeRadialPositions(
+  centerX: number,
+  centerY: number,
+  children: BubbleNodeType[],
+  radius: number,
+): ChildPosition[] {
+  return children.map((child, index) => {
+    const angle = (2 * Math.PI * index) / children.length - Math.PI / 2;
+    const r = child.type === 'primary' ? SIZES.primary : SIZES.secondary;
+    return {
+      node: child,
+      cx: centerX + radius * Math.cos(angle),
+      cy: centerY + radius * Math.sin(angle),
+      radius: r,
+    };
+  });
 }
 
 export function BubbleCanvas({
@@ -29,86 +51,178 @@ export function BubbleCanvas({
   onNavigate,
   onGoBack,
   onLeafClick,
+  animationPhase,
+  clickedNodeId,
 }: BubbleCanvasProps) {
-  const { nodes, edges } = useMemo(() => {
-    const hubSize = 140;
-    const hubNode: Node<BubbleNodeData, 'bubble'> = {
-      id: currentNode.id,
-      type: 'bubble',
-      position: { x: CENTER_X - hubSize / 2, y: CENTER_Y - hubSize / 2 },
-      data: {
-        labelKey: currentNode.labelKey,
-        descriptionKeys: currentNode.descriptionKeys,
-        bubbleType: currentNode.type,
-        isHub: true,
-      },
-    };
+  const { t } = useTranslation('common');
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [dims, setDims] = useState({ w: 800, h: 600 });
 
-    const childNodes: Node<BubbleNodeData, 'bubble'>[] = currentChildren.map(
-      (child, index) => {
-        const angle =
-          (2 * Math.PI * index) / currentChildren.length - Math.PI / 2;
-        const size = child.type === 'primary' ? 120 : 80;
-        const x = CENTER_X + RADIUS * Math.cos(angle) - size / 2;
-        const y = CENTER_Y + RADIUS * Math.sin(angle) - size / 2;
+  // Responsive: measure container
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const obs = new ResizeObserver(([entry]) => {
+      setDims({ w: entry.contentRect.width, h: entry.contentRect.height });
+    });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
-        return {
-          id: child.id,
-          type: 'bubble' as const,
-          position: { x, y },
-          data: {
-            labelKey: child.labelKey,
-            descriptionKeys: child.descriptionKeys,
-            bubbleType: child.type,
-            isHub: false,
-            onClick: () => {
-              if (child.children && child.children.length > 0) {
-                onNavigate(child.id);
-              } else if (child.promptTemplateId) {
-                onLeafClick(child);
-              }
-            },
-          },
-        };
-      },
-    );
+  const cx = dims.w / 2;
+  const cy = dims.h / 2;
+  const layoutRadius = Math.min(dims.w, dims.h) * 0.35;
 
-    const childEdges: Edge[] = currentChildren.map((child) => ({
-      id: `edge-${currentNode.id}-${child.id}`,
-      source: currentNode.id,
-      target: child.id,
-      type: 'bubbleEdge',
-    }));
+  // Compute child positions
+  const childPositions = useMemo(
+    () => computeRadialPositions(cx, cy, currentChildren, layoutRadius),
+    [cx, cy, currentChildren, layoutRadius],
+  );
 
-    return {
-      nodes: [hubNode, ...childNodes],
-      edges: childEdges,
-    };
-  }, [currentNode, currentChildren, onNavigate, onLeafClick]);
+  // Handle child click
+  const handleChildClick = (child: BubbleNodeType) => {
+    if (animationPhase !== 'idle') return;
+    if (child.children && child.children.length > 0) {
+      onNavigate(child.id);
+    } else if (child.promptTemplateId) {
+      onLeafClick(child);
+    }
+  };
+
+  const isExiting = animationPhase === 'exiting';
+  const isEntering = animationPhase === 'entering';
 
   return (
-    <div style={{ width: '100%', height: '100%', position: 'relative' }}>
-      <GoBackButton onClick={onGoBack} visible={!isAtRoot} />
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        nodeTypes={bubbleNodeTypes}
-        edgeTypes={bubbleEdgeTypes}
-        fitView
-        nodesDraggable={false}
-        nodesConnectable={false}
-        panOnDrag={false}
-        zoomOnScroll={false}
-        zoomOnPinch={false}
-        zoomOnDoubleClick={false}
-        proOptions={{ hideAttribution: true }}
-        style={{ background: 'transparent' }}
-      />
+    <div
+      ref={containerRef}
+      style={{
+        width: '100%',
+        height: '100%',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
+      <svg
+        width={dims.w}
+        height={dims.h}
+        viewBox={`0 0 ${dims.w} ${dims.h}`}
+        style={{ display: 'block' }}
+      >
+        {/* Dashed connector lines */}
+        <AnimatePresence>
+          {childPositions.map((child, i) => (
+            <motion.line
+              key={`line-${child.node.id}`}
+              x1={cx}
+              y1={cy}
+              x2={child.cx}
+              y2={child.cy}
+              stroke="var(--color-green)"
+              strokeWidth={2}
+              strokeDasharray="8 4"
+              initial={isEntering ? { opacity: 0, pathLength: 0 } : false}
+              animate={{
+                opacity: isExiting
+                  ? clickedNodeId === child.node.id
+                    ? 1
+                    : 0
+                  : 1,
+                pathLength: 1,
+              }}
+              transition={{
+                duration: isExiting ? 0.3 : 0.4,
+                delay: isEntering ? 0.1 + i * 0.04 : 0,
+                ease: 'easeOut',
+              }}
+              style={{
+                animation:
+                  animationPhase === 'idle'
+                    ? 'bubble-edge-dash 0.6s linear infinite'
+                    : 'none',
+              }}
+            />
+          ))}
+        </AnimatePresence>
+
+        {/* GoBack button (top-left, appears when not at root) */}
+        {!isAtRoot && animationPhase === 'idle' && (
+          <motion.g
+            style={{ cursor: 'pointer' }}
+            onClick={onGoBack}
+            initial={{ opacity: 0, scale: 0.6 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            whileHover={{
+              scale: 1.1,
+              filter: 'drop-shadow(0 0 8px rgba(0, 212, 255, 0.5))',
+            }}
+          >
+            <circle
+              cx={50}
+              cy={50}
+              r={28}
+              fill="transparent"
+              stroke="var(--color-cyan)"
+              strokeWidth={2}
+              strokeDasharray="6 3"
+            />
+            <text
+              x={50}
+              y={50}
+              textAnchor="middle"
+              dominantBaseline="central"
+              fill="var(--color-yellow)"
+              fontSize={10}
+              fontWeight={700}
+              fontFamily="'Inter', sans-serif"
+              style={{ userSelect: 'none' }}
+            >
+              {t('nav.goBack')}
+            </text>
+          </motion.g>
+        )}
+
+        {/* Hub (center) bubble */}
+        <BubbleNodeSvg
+          cx={cx}
+          cy={cy}
+          radius={SIZES.hub}
+          labelKey={currentNode.labelKey}
+          descriptionKeys={currentNode.descriptionKeys}
+          variant="hub"
+          isEntering={isEntering}
+          enterDelay={0}
+          exitState={isExiting ? 'fading' : 'none'}
+        />
+
+        {/* Child bubbles */}
+        {childPositions.map((child, i) => (
+          <BubbleNodeSvg
+            key={child.node.id}
+            cx={child.cx}
+            cy={child.cy}
+            radius={child.radius}
+            labelKey={child.node.labelKey}
+            descriptionKeys={child.node.descriptionKeys}
+            variant={child.node.type}
+            onClick={() => handleChildClick(child.node)}
+            isEntering={isEntering}
+            enterDelay={0.15 + i * 0.05}
+            exitState={
+              isExiting
+                ? clickedNodeId === child.node.id
+                  ? 'clicked'
+                  : 'fading'
+                : 'none'
+            }
+          />
+        ))}
+      </svg>
+
+      {/* Edge dash animation keyframes */}
       <style>{`
         @keyframes bubble-edge-dash {
-          to {
-            stroke-dashoffset: -12;
-          }
+          to { stroke-dashoffset: -12; }
         }
       `}</style>
     </div>

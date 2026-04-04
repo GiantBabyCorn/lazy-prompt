@@ -41,34 +41,32 @@ export default function HomePage() {
     navigateTo,
     goBack,
     reset,
+    animationPhase,
+    clickedNodeId,
+    previousNode,
   } = useBubbleNavigation();
 
   const isAtRoot = navigationPath.length === 0;
   const isMobile = useIsMobile();
 
-  // When a leaf node is clicked, show its prompt template
   const [selectedLeaf, setSelectedLeaf] = useState<{
     node: BubbleNode;
     template: PromptTemplate;
   } | null>(null);
 
-  // Track edited values for the prompt builder (used by AIProviderLinks)
   const [editedValues, setEditedValues] = useState<Record<string, string>>({});
   const [addedItems, setAddedItems] = useState<Record<string, string[]>>({});
 
-  const handleLeafClick = useCallback(
-    (node: BubbleNode) => {
-      if (node.promptTemplateId) {
-        const template = promptTemplates.find(
-          (t) => t.id === node.promptTemplateId,
-        );
-        if (template) {
-          setSelectedLeaf({ node, template });
-        }
+  const handleLeafClick = useCallback((node: BubbleNode) => {
+    if (node.promptTemplateId) {
+      const template = promptTemplates.find(
+        (t) => t.id === node.promptTemplateId,
+      );
+      if (template) {
+        setSelectedLeaf({ node, template });
       }
-    },
-    [],
-  );
+    }
+  }, []);
 
   const handleGoBackFromResult = useCallback(() => {
     setSelectedLeaf(null);
@@ -106,13 +104,11 @@ export default function HomePage() {
   // Show bubble canvas (desktop) or bubble list (mobile) for navigation
   return (
     <div className="bubble-view">
-      {/* Subtitle */}
       <div className="bubble-view__subtitle">
         {t('bubble.clickToExplore')}
       </div>
 
-      {/* Canvas or List */}
-      <div className="bubble-view__content animate-fade-in" key={currentNode.id}>
+      <div className="bubble-view__content">
         {isMobile ? (
           <BubbleList
             currentNode={currentNode}
@@ -130,6 +126,9 @@ export default function HomePage() {
             onNavigate={navigateTo}
             onGoBack={isAtRoot ? reset : goBack}
             onLeafClick={handleLeafClick}
+            animationPhase={animationPhase}
+            clickedNodeId={clickedNodeId}
+            previousNode={previousNode}
           />
         )}
       </div>
