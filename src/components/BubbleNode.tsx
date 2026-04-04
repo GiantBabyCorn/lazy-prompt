@@ -27,7 +27,7 @@ export function BubbleNodeComponent({ data }: NodeProps<BubbleFlowNode>) {
 
   return (
     <div
-      className={`bubble-node bubble-node--${variant}`}
+      className={`bubble-node bubble-node--${variant} bubble-node-entrance`}
       style={{
         width: size,
         height: size,
@@ -51,9 +51,9 @@ export function BubbleNodeComponent({ data }: NodeProps<BubbleFlowNode>) {
       }}
       onMouseEnter={(e) => {
         if (!data.isHub) {
-          e.currentTarget.style.transform = 'scale(1.1)';
+          e.currentTarget.style.transform = 'scale(1.08)';
           e.currentTarget.style.boxShadow =
-            '0 0 20px rgba(0, 255, 136, 0.4)';
+            '0 0 16px rgba(0, 255, 136, 0.5), 0 0 32px rgba(0, 255, 136, 0.2)';
         }
       }}
       onMouseLeave={(e) => {

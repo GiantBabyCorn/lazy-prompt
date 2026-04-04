@@ -1,13 +1,30 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBubbleNavigation } from '../hooks/useBubbleNavigation';
 import { useDocumentHead } from '../hooks/useDocumentHead';
 import { BubbleCanvas } from '../components/BubbleCanvas';
+import { BubbleList } from '../components/BubbleList';
 import PromptResult from '../components/PromptResult';
 import { AIProviderLinks } from '../components/AIProviderLinks';
 import { promptTemplates } from '../data/promptTemplates';
 import { buildPromptString } from '../utils/promptBuilder';
 import type { BubbleNode, PromptTemplate } from '../data/types';
+
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== 'undefined' && window.innerWidth < breakpoint,
+  );
+
+  useEffect(() => {
+    const mql = window.matchMedia(`(max-width: ${breakpoint - 1}px)`);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mql.addEventListener('change', handler);
+    setIsMobile(mql.matches);
+    return () => mql.removeEventListener('change', handler);
+  }, [breakpoint]);
+
+  return isMobile;
+}
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -27,6 +44,7 @@ export default function HomePage() {
   } = useBubbleNavigation();
 
   const isAtRoot = navigationPath.length === 0;
+  const isMobile = useIsMobile();
 
   // When a leaf node is clicked, show its prompt template
   const [selectedLeaf, setSelectedLeaf] = useState<{
@@ -72,15 +90,7 @@ export default function HomePage() {
   if (selectedLeaf) {
     const categoryLabel = tPrompts(selectedLeaf.node.labelKey);
     return (
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          padding: '40px 20px',
-          minHeight: 'calc(100vh - 61px)',
-        }}
-      >
+      <div className="prompt-result-page animate-slide-up">
         <PromptResult
           template={selectedLeaf.template}
           categoryLabel={categoryLabel}
@@ -93,37 +103,35 @@ export default function HomePage() {
     );
   }
 
-  // Show bubble canvas for navigation
+  // Show bubble canvas (desktop) or bubble list (mobile) for navigation
   return (
-    <div
-      style={{
-        height: 'calc(100vh - 61px)',
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
+    <div className="bubble-view">
       {/* Subtitle */}
-      <div
-        style={{
-          textAlign: 'center',
-          padding: '16px 0 0',
-          color: 'var(--color-text-secondary)',
-          fontSize: '0.9rem',
-        }}
-      >
+      <div className="bubble-view__subtitle">
         {t('bubble.clickToExplore')}
       </div>
 
-      {/* Canvas */}
-      <div style={{ flex: 1 }}>
-        <BubbleCanvas
-          currentNode={currentNode}
-          currentChildren={currentChildren}
-          isAtRoot={isAtRoot}
-          onNavigate={navigateTo}
-          onGoBack={isAtRoot ? reset : goBack}
-          onLeafClick={handleLeafClick}
-        />
+      {/* Canvas or List */}
+      <div className="bubble-view__content animate-fade-in" key={currentNode.id}>
+        {isMobile ? (
+          <BubbleList
+            currentNode={currentNode}
+            currentChildren={currentChildren}
+            isAtRoot={isAtRoot}
+            onNavigate={navigateTo}
+            onGoBack={isAtRoot ? reset : goBack}
+            onLeafClick={handleLeafClick}
+          />
+        ) : (
+          <BubbleCanvas
+            currentNode={currentNode}
+            currentChildren={currentChildren}
+            isAtRoot={isAtRoot}
+            onNavigate={navigateTo}
+            onGoBack={isAtRoot ? reset : goBack}
+            onLeafClick={handleLeafClick}
+          />
+        )}
       </div>
     </div>
   );

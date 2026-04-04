@@ -41,6 +41,7 @@
 /* --- Base Typography --- */
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -108,4 +109,295 @@ a:hover {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-text-secondary);
+}
+
+/* --- Focus-visible for keyboard navigation --- */
+*:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 2px;
+}
+
+/* --- React Flow attribution hide (backup) --- */
+.react-flow__attribution {
+  display: none !important;
+}
+
+/* ============================================================
+   Keyframe Animations
+   ============================================================ */
+
+@keyframes bubble-entrance {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-click {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* --- Animation utility classes --- */
+.animate-fade-in {
+  animation: fade-in 0.35s ease-out both;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out both;
+}
+
+/* --- BubbleNode entrance animation --- */
+.bubble-node-entrance {
+  animation: bubble-entrance 0.4s ease-out both;
+}
+
+.bubble-node:active:not(.bubble-node--hub) {
+  animation: pulse-click 0.15s ease-in-out;
+}
+
+/* ============================================================
+   Bubble View (HomePage canvas/list wrapper)
+   ============================================================ */
+
+.bubble-view {
+  height: calc(100vh - 61px);
+  display: flex;
+  flex-direction: column;
+}
+
+.bubble-view__subtitle {
+  text-align: center;
+  padding: 16px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.bubble-view__content {
+  flex: 1;
+}
+
+/* ============================================================
+   Prompt Result Page
+   ============================================================ */
+
+.prompt-result-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: calc(100vh - 61px);
+}
+
+/* ============================================================
+   BubbleList (mobile navigation)
+   ============================================================ */
+
+.bubble-list {
+  padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.bubble-list__header {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.bubble-list__back {
+  background: transparent;
+  border: none;
+  color: var(--color-cyan);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 4px 0;
+  margin-bottom: 8px;
+  font-family: inherit;
+}
+
+.bubble-list__back:hover {
+  text-decoration: underline;
+}
+
+.bubble-list__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.bubble-list__desc {
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.bubble-list__items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bubble-list__item {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  position: relative;
+  animation: slide-in-left 0.35s ease-out both;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+
+.bubble-list__item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 2px 12px rgba(0, 255, 136, 0.15);
+}
+
+.bubble-list__item:active {
+  transform: scale(0.98);
+}
+
+.bubble-list__item--primary {
+  border-left: 4px solid var(--color-green);
+  padding-left: 16px;
+}
+
+.bubble-list__item--secondary {
+  border-left: 3px solid var(--color-border);
+  margin-left: 12px;
+  padding: 10px 14px;
+}
+
+.bubble-list__item-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.bubble-list__item--secondary .bubble-list__item-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.bubble-list__item-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+.bubble-list__item-arrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: var(--color-text-secondary);
+  font-weight: 300;
+}
+
+/* ============================================================
+   GoBackButton polish
+   ============================================================ */
+
+/* Already has inline hover via JS, no extra CSS needed */
+
+/* ============================================================
+   Responsive — Mobile (< 768px)
+   ============================================================ */
+
+@media (max-width: 767px) {
+  /* Header: stack vertically */
+  header {
+    flex-wrap: wrap;
+    padding: 10px 14px !important;
+    gap: 8px;
+  }
+
+  header h1 {
+    font-size: 1rem !important;
+  }
+
+  /* Bubble view */
+  .bubble-view {
+    height: auto;
+    min-height: calc(100vh - 61px);
+  }
+
+  .bubble-view__subtitle {
+    font-size: 0.8rem;
+    padding: 12px 16px 0;
+  }
+
+  /* Prompt result */
+  .prompt-result-page {
+    padding: 20px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 0.9rem !important;
+  }
+
+  .bubble-list__title {
+    font-size: 1.1rem;
+  }
+
+  .bubble-list__item {
+    padding: 12px 14px;
+  }
+
+  .bubble-list__item--secondary {
+    margin-left: 8px;
+    padding: 8px 12px;
+  }
 }

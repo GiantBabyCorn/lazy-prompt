@@ -26,7 +26,7 @@ export default function CopyButton({ getText }: CopyButtonProps) {
         whiteSpace: 'nowrap',
       }}
     >
-      {copied ? 'Copied!' : 'Copy'}
+      {copied ? '✓' : 'Copy'}
     </button>
   );
 }
