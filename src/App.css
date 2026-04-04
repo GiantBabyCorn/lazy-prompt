@@ -1,0 +1,465 @@
+/* ============================================================
+   Lazy Prompt — Global Styles & Design Tokens
+   ============================================================ */
+
+/* --- CSS Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Dark Theme (default) --- */
+:root,
+[data-theme='dark'] {
+  --color-bg: #0d1117;
+  --color-surface: #161b22;
+  --color-border: #30363d;
+  --color-text: #e6edf3;
+  --color-text-secondary: #8b949e;
+  --color-green: #00ff88;
+  --color-cyan: #00d4ff;
+  --color-yellow: #ffd700;
+  --color-orange: #ff6b35;
+}
+
+/* --- Light Theme --- */
+[data-theme='light'] {
+  --color-bg: #ffffff;
+  --color-surface: #f6f8fa;
+  --color-border: #d0d7de;
+  --color-text: #1f2328;
+  --color-text-secondary: #656d76;
+  --color-green: #00a654;
+  --color-cyan: #0088cc;
+  --color-yellow: #cc8800;
+  --color-orange: #d4380d;
+}
+
+/* --- Base Typography --- */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+code,
+pre,
+.font-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas,
+    monospace;
+}
+
+/* --- Smooth theme transitions --- */
+*,
+*::before,
+*::after {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Opt out of universal transition for elements that need snappy interaction */
+button:active,
+input:focus,
+textarea:focus {
+  transition: none;
+}
+
+/* --- Utility --- */
+a {
+  color: var(--color-cyan);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+::selection {
+  background-color: var(--color-cyan);
+  color: var(--color-bg);
+}
+
+/* Scrollbar styling (Webkit) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+/* --- Focus-visible for keyboard navigation --- */
+*:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 2px;
+}
+
+/* --- GoBack Button --- */
+.go-back-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px dashed var(--color-cyan);
+  background: transparent;
+  color: var(--color-yellow);
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.go-back-button:hover {
+  transform: scale(1.1);
+  border-color: var(--color-yellow);
+}
+
+/* ============================================================
+   Keyframe Animations
+   ============================================================ */
+
+@keyframes bubble-entrance {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-click {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* --- Animation utility classes --- */
+.animate-fade-in {
+  animation: fade-in 0.35s ease-out both;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out both;
+}
+
+/* --- BubbleNode entrance animation --- */
+.bubble-node-entrance {
+  animation: bubble-entrance 0.4s ease-out both;
+}
+
+.bubble-node:active:not(.bubble-node--hub) {
+  animation: pulse-click 0.15s ease-in-out;
+}
+
+/* ============================================================
+   Bubble View (HomePage canvas/list wrapper)
+   ============================================================ */
+
+.bubble-view {
+  height: calc(100vh - 61px);
+  display: flex;
+  flex-direction: column;
+}
+
+.bubble-view__subtitle {
+  text-align: center;
+  padding: 16px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.bubble-view__content {
+  flex: 1;
+}
+
+/* ============================================================
+   Prompt Result Page
+   ============================================================ */
+
+.prompt-result-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: calc(100vh - 61px);
+}
+
+.prompt-result-page__scroll {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.prompt-result-page__footer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   BubbleList (mobile navigation)
+   ============================================================ */
+
+.bubble-list {
+  padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.bubble-list__header {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.bubble-list__back {
+  background: transparent;
+  border: none;
+  color: var(--color-cyan);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 4px 0;
+  margin-bottom: 8px;
+  font-family: inherit;
+}
+
+.bubble-list__back:hover {
+  text-decoration: underline;
+}
+
+.bubble-list__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.bubble-list__desc {
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.bubble-list__items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bubble-list__item {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  position: relative;
+  animation: slide-in-left 0.35s ease-out both;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+
+.bubble-list__item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 2px 12px rgba(0, 255, 136, 0.15);
+}
+
+.bubble-list__item:active {
+  transform: scale(0.98);
+}
+
+.bubble-list__item--primary {
+  border-left: 4px solid var(--color-green);
+  padding-left: 16px;
+}
+
+.bubble-list__item--secondary {
+  border-left: 3px solid var(--color-border);
+  margin-left: 12px;
+  padding: 10px 14px;
+}
+
+.bubble-list__item-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.bubble-list__item--secondary .bubble-list__item-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.bubble-list__item-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+.bubble-list__item-arrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: var(--color-text-secondary);
+  font-weight: 300;
+}
+
+/* ============================================================
+   GoBackButton polish
+   ============================================================ */
+
+/* Already has inline hover via JS, no extra CSS needed */
+
+/* ============================================================
+   Responsive — Mobile (< 768px)
+   ============================================================ */
+
+/* Header responsive classes */
+.header-breadcrumb-desktop { display: flex; }
+.header-breadcrumb-mobile { display: none !important; }
+.lang-selector-full { display: inline-flex !important; }
+.lang-selector-compact { display: none !important; }
+.header-about-icon { display: none !important; }
+
+@media (max-width: 767px) {
+  .header-breadcrumb-desktop { display: none !important; }
+  .header-breadcrumb-mobile { display: flex !important; }
+  .lang-selector-full { display: none !important; }
+  .lang-selector-compact { display: inline-flex !important; }
+  .header-about-link { display: none !important; }
+  .header-about-icon { display: inline-flex !important; }
+
+  /* Header */
+  header {
+    padding: 8px 12px !important;
+  }
+
+  header h1 {
+    font-size: 1rem !important;
+  }
+
+  /* Bubble view */
+  .bubble-view {
+    height: auto;
+    min-height: calc(100vh - 61px);
+  }
+
+  .bubble-view__subtitle {
+    font-size: 0.8rem;
+    padding: 12px 16px 0;
+  }
+
+  /* Prompt result — normal block flow + fixed footer bar */
+  .prompt-result-page {
+    display: block;
+    padding: 12px 12px 0;
+    min-height: auto;
+    padding-bottom: 160px; /* spacer for fixed footer (2 rows of buttons + padding) */
+  }
+
+  .prompt-result-page__scroll {
+    display: block;
+  }
+
+  .prompt-result-page__footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    padding: 10px 12px;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 0.9rem !important;
+  }
+
+  .bubble-list__title {
+    font-size: 1.1rem;
+  }
+
+  .bubble-list__item {
+    padding: 12px 14px;
+  }
+
+  .bubble-list__item--secondary {
+    margin-left: 8px;
+    padding: 8px 12px;
+  }
+}

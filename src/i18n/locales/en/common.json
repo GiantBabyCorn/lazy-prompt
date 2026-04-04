@@ -1,0 +1,53 @@
+{
+  "app": {
+    "title": "Lazy Prompt",
+    "tagline": "Build AI prompts quickly"
+  },
+  "nav": {
+    "home": "Home",
+    "goBack": "Go Back"
+  },
+  "theme": {
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "zh-CN": "简体中文",
+    "zh-TW": "繁體中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "es": "Español"
+  },
+  "bubble": {
+    "whatYouWant": "What you want?",
+    "clickToExplore": "Click a bubble to explore",
+    "layerN": "Layer {{n}}",
+    "buildPrompt": "Build Prompt!",
+    "selectFromList": "Select a category"
+  },
+  "prompt": {
+    "copy": "Copy",
+    "copied": "Copied!",
+    "sendTo": "Send to...",
+    "editHint": "Click colored text to edit",
+    "addItem": "Click to add",
+    "result": "Your Prompt",
+    "copiedAndOpening": "Prompt copied! Opening {{name}}...",
+    "copyAndOpen": "Copy prompt & open site"
+  },
+  "about": {
+    "description": "Lazy Prompt is an interactive bubble-based web app that helps you build detailed, well-structured AI prompts in seconds. Navigate through visual categories, customize your prompt with editable fields, and send it directly to your favorite AI provider.",
+    "features": "Features",
+    "feature1": "Visual bubble navigation through prompt categories",
+    "feature2": "Editable prompt templates with autocomplete suggestions",
+    "feature3": "Toggle individual prompt sections on/off",
+    "feature4": "Send to ChatGPT, Claude, Gemini, Perplexity, and Copilot",
+    "feature5": "6 languages supported: English, Chinese, Japanese, Korean, Spanish",
+    "contact": "Contact"
+  },
+  "footer": {
+    "builtWith": "Built with ❤️"
+  }
+}
