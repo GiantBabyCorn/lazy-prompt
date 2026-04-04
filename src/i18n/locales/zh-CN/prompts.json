@@ -1,0 +1,192 @@
+{
+  "categories": {
+    "translation": "翻译",
+    "read": "阅读",
+    "build": "构建",
+    "organize": "整理",
+    "summarize": "总结",
+    "debug": "调试",
+    "brainstorm": "头脑风暴",
+    "learn": "学习",
+    "write": "写作",
+    "explain": "解释"
+  },
+  "subcategories": {
+    "build": {
+      "website": "网站",
+      "app": "APP",
+      "presentations": "演示文稿",
+      "api": "API",
+      "database": "数据库",
+      "script": "脚本",
+      "bot": "Bot",
+      "extension": "扩展程序",
+      "game": "游戏",
+      "cliTool": "CLI 工具"
+    },
+    "translation": {
+      "enZh": "英语 ↔ 中文",
+      "enJa": "英语 ↔ 日语",
+      "enKo": "英语 ↔ 韩语",
+      "enEs": "英语 ↔ 西班牙语",
+      "custom": "自定义语言对",
+      "formal": "正式",
+      "casual": "日常",
+      "technical": "技术",
+      "literary": "文学",
+      "localized": "本地化"
+    },
+    "read": {
+      "webpage": "网页",
+      "document": "文档",
+      "email": "邮件",
+      "code": "代码",
+      "researchPaper": "研究论文",
+      "summaryMode": "摘要模式",
+      "keyPoints": "关键要点",
+      "fullAnalysis": "完整分析",
+      "compare": "对比",
+      "factCheck": "事实核查"
+    },
+    "organize": {
+      "reports": "报告",
+      "accounts": "账目",
+      "productLists": "产品列表",
+      "schedule": "日程",
+      "notes": "笔记",
+      "csvExcel": "CSV/Excel",
+      "database": "数据库",
+      "summaryTable": "汇总表",
+      "timeline": "时间线",
+      "dashboard": "仪表盘"
+    },
+    "debug": {
+      "frontend": "前端",
+      "backend": "后端",
+      "database": "数据库",
+      "api": "API",
+      "devops": "DevOps"
+    },
+    "brainstorm": {
+      "product": "产品",
+      "marketing": "营销",
+      "content": "内容",
+      "design": "设计",
+      "strategy": "策略"
+    },
+    "learn": {
+      "programming": "编程",
+      "language": "语言",
+      "math": "数学",
+      "science": "科学",
+      "business": "商业"
+    },
+    "write": {
+      "email": "邮件",
+      "blog": "博客",
+      "documentation": "文档",
+      "proposal": "提案",
+      "story": "故事"
+    },
+    "explain": {
+      "code": "代码",
+      "concept": "概念",
+      "process": "流程",
+      "error": "错误",
+      "architecture": "架构"
+    }
+  },
+  "descriptions": {
+    "build": ["网站", "APP", "演示文稿"],
+    "read": ["网页", "文档", "邮件"],
+    "organize": ["报告", "账目", "产品列表"],
+    "translation": []
+  },
+  "templates": {
+    "buildWebsite": {
+      "line1": "为我构建一个 {{name}} 网站",
+      "line2": "使用 {{framework}} 和 {{router}}",
+      "line3": "使用 i18n 实现多语言支持，语言包括 {{languages}}",
+      "line4": "完整的 SEO 元信息",
+      "line5": "必须包含以下页面：",
+      "pages": {
+        "landing": "落地页",
+        "about": "关于",
+        "contact": "联系我们",
+        "blog": "博客",
+        "faq": "常见问题",
+        "privacy": "隐私政策",
+        "terms": "服务条款"
+      },
+      "line6": "包含手机和平板的响应式设计",
+      "line7": "添加深色/浅色主题切换",
+      "line8": "包含正确的错误处理和 404 页面",
+      "line9": "使用 TypeScript 确保类型安全",
+      "line10": "包含加载状态和骨架屏",
+      "line11": "添加正确的表单验证",
+      "line12": "包含无障碍功能（WCAG 2.1 AA 合规）",
+      "line13": "设置 CI/CD 流水线配置",
+      "line14": "包含使用测试库的单元测试设置",
+      "line15": "添加正确的 Git 工作流和 .gitignore"
+    },
+    "buildApp": {
+      "line1": "为我构建一个 {{name}} 移动应用",
+      "line2": "使用 {{framework}} 框架",
+      "line3": "支持 {{platforms}} 平台",
+      "line4": "包含用户认证和授权",
+      "line5": "必须包含以下页面：",
+      "screens": {
+        "splash": "启动页",
+        "login": "登录 / 注册",
+        "home": "首页仪表盘",
+        "profile": "用户资料",
+        "settings": "设置",
+        "notifications": "通知"
+      },
+      "line6": "包含推送通知支持",
+      "line7": "添加离线数据缓存",
+      "line8": "包含使用堆栈和标签导航器的正确导航",
+      "line9": "添加生物识别认证选项",
+      "line10": "包含应用状态管理",
+      "line11": "添加正确的错误边界和崩溃报告",
+      "line12": "包含深层链接支持",
+      "line13": "添加应用商店部署配置"
+    },
+    "translationGeneral": {
+      "line1": "将以下文本从 {{sourceLang}} 翻译为 {{targetLang}}",
+      "line2": "保持原有的语气和风格：{{tone}}",
+      "line3": "保留所有技术术语和专有名词",
+      "line4": "保持格式和结构不变",
+      "line5": "在适用的地方提供文化背景注释",
+      "line6": "标记任何无法直接翻译的习语或表达",
+      "line7": "确保目标语言的语法和标点正确",
+      "line8": "如果有多种有效翻译，提供最自然的一种",
+      "line9": "保持段落分隔和列表格式",
+      "line10": "在括号中为模糊部分添加译者注释"
+    },
+    "readDocument": {
+      "line1": "阅读并分析以下 {{docType}}",
+      "line2": "分析模式：{{analysisMode}}",
+      "line3": "提供带有清晰标题的结构化摘要",
+      "line4": "突出关键发现和重要数据点",
+      "line5": "识别任何不一致或潜在问题",
+      "line6": "提取可操作的项目和建议",
+      "line7": "标注任何供进一步阅读的参考或引用",
+      "line8": "总结主要论点或论题",
+      "line9": "评估文档的可信度和完整性",
+      "line10": "根据内容提出后续问题"
+    },
+    "organizeReports": {
+      "line1": "整理以下 {{dataType}} 数据",
+      "line2": "输出格式：{{outputFormat}}",
+      "line3": "按 {{sortCriteria}} 以 {{sortOrder}} 顺序排序",
+      "line4": "按类别分组相关项目",
+      "line5": "添加汇总统计（总计、平均值、计数）",
+      "line6": "突出异常值或异常情况",
+      "line7": "包含目录或索引",
+      "line8": "使用正确的分隔符和单位格式化数字",
+      "line9": "添加章节标题和清晰的标签",
+      "line10": "在顶部包含简要的执行摘要"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "app": {
+    "title": "Lazy Prompt",
+    "tagline": "AI プロンプトをすばやく作成"
+  },
+  "nav": {
+    "home": "ホーム",
+    "goBack": "戻る"
+  },
+  "theme": {
+    "switchToLight": "ライトテーマに切り替え",
+    "switchToDark": "ダークテーマに切り替え"
+  },
+  "language": {
+    "label": "言語",
+    "en": "English",
+    "zh-CN": "简体中文",
+    "zh-TW": "繁體中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "es": "Español"
+  },
+  "bubble": {
+    "whatYouWant": "何をしたいですか？",
+    "clickToExplore": "バブルをクリックして探索",
+    "layerN": "レイヤー {{n}}"
+  },
+  "prompt": {
+    "copy": "コピー",
+    "copied": "コピーしました！",
+    "sendTo": "送信先...",
+    "editHint": "色付きテキストをクリックして編集",
+    "addItem": "クリックして追加",
+    "result": "あなたのプロンプト"
+  },
+  "footer": {
+    "builtWith": "❤️ で作成"
+  }
+}

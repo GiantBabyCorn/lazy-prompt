@@ -1,0 +1,192 @@
+{
+  "categories": {
+    "translation": "Translation",
+    "read": "Read",
+    "build": "Build",
+    "organize": "Organize",
+    "summarize": "Summarize",
+    "debug": "Debug",
+    "brainstorm": "Brainstorm",
+    "learn": "Learn",
+    "write": "Write",
+    "explain": "Explain"
+  },
+  "subcategories": {
+    "build": {
+      "website": "Website",
+      "app": "APP",
+      "presentations": "Presentations",
+      "api": "API",
+      "database": "Database",
+      "script": "Script",
+      "bot": "Bot",
+      "extension": "Extension",
+      "game": "Game",
+      "cliTool": "CLI Tool"
+    },
+    "translation": {
+      "enZh": "English ↔ Chinese",
+      "enJa": "English ↔ Japanese",
+      "enKo": "English ↔ Korean",
+      "enEs": "English ↔ Spanish",
+      "custom": "Custom Pair",
+      "formal": "Formal",
+      "casual": "Casual",
+      "technical": "Technical",
+      "literary": "Literary",
+      "localized": "Localized"
+    },
+    "read": {
+      "webpage": "Webpage",
+      "document": "Document",
+      "email": "Email",
+      "code": "Code",
+      "researchPaper": "Research Paper",
+      "summaryMode": "Summary Mode",
+      "keyPoints": "Key Points",
+      "fullAnalysis": "Full Analysis",
+      "compare": "Compare",
+      "factCheck": "Fact-Check"
+    },
+    "organize": {
+      "reports": "Reports",
+      "accounts": "Accounts",
+      "productLists": "Product Lists",
+      "schedule": "Schedule",
+      "notes": "Notes",
+      "csvExcel": "CSV/Excel",
+      "database": "Database",
+      "summaryTable": "Summary Table",
+      "timeline": "Timeline",
+      "dashboard": "Dashboard"
+    },
+    "debug": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "api": "API",
+      "devops": "DevOps"
+    },
+    "brainstorm": {
+      "product": "Product",
+      "marketing": "Marketing",
+      "content": "Content",
+      "design": "Design",
+      "strategy": "Strategy"
+    },
+    "learn": {
+      "programming": "Programming",
+      "language": "Language",
+      "math": "Math",
+      "science": "Science",
+      "business": "Business"
+    },
+    "write": {
+      "email": "Email",
+      "blog": "Blog",
+      "documentation": "Documentation",
+      "proposal": "Proposal",
+      "story": "Story"
+    },
+    "explain": {
+      "code": "Code",
+      "concept": "Concept",
+      "process": "Process",
+      "error": "Error",
+      "architecture": "Architecture"
+    }
+  },
+  "descriptions": {
+    "build": ["Website", "APP", "Presentations"],
+    "read": ["Webpage", "Document", "Email"],
+    "organize": ["Reports", "Accounts", "Product Lists"],
+    "translation": []
+  },
+  "templates": {
+    "buildWebsite": {
+      "line1": "Build me a {{name}} Website",
+      "line2": "Use {{framework}} and {{router}}",
+      "line3": "Use i18n for Multi-language with {{languages}}",
+      "line4": "Full SEO meta information",
+      "line5": "It must contain following pages:",
+      "pages": {
+        "landing": "Landing",
+        "about": "About",
+        "contact": "Contact",
+        "blog": "Blog",
+        "faq": "FAQ",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service"
+      },
+      "line6": "Include responsive design for mobile and tablet",
+      "line7": "Add dark/light theme toggle",
+      "line8": "Include proper error handling and 404 page",
+      "line9": "Use TypeScript for type safety",
+      "line10": "Include loading states and skeleton screens",
+      "line11": "Add proper form validation",
+      "line12": "Include accessibility (WCAG 2.1 AA compliance)",
+      "line13": "Set up CI/CD pipeline configuration",
+      "line14": "Include unit test setup with testing library",
+      "line15": "Add proper Git workflow with .gitignore"
+    },
+    "buildApp": {
+      "line1": "Build me a {{name}} mobile application",
+      "line2": "Use {{framework}} framework",
+      "line3": "Support {{platforms}} platforms",
+      "line4": "Include user authentication and authorization",
+      "line5": "It must contain following screens:",
+      "screens": {
+        "splash": "Splash Screen",
+        "login": "Login / Register",
+        "home": "Home Dashboard",
+        "profile": "User Profile",
+        "settings": "Settings",
+        "notifications": "Notifications"
+      },
+      "line6": "Include push notification support",
+      "line7": "Add offline data caching",
+      "line8": "Include proper navigation with stack and tab navigators",
+      "line9": "Add biometric authentication option",
+      "line10": "Include app state management",
+      "line11": "Add proper error boundaries and crash reporting",
+      "line12": "Include deep linking support",
+      "line13": "Add app store deployment configuration"
+    },
+    "translationGeneral": {
+      "line1": "Translate the following text from {{sourceLang}} to {{targetLang}}",
+      "line2": "Maintain the original tone and style: {{tone}}",
+      "line3": "Preserve all technical terms and proper nouns",
+      "line4": "Keep the formatting and structure intact",
+      "line5": "Provide cultural context notes where applicable",
+      "line6": "Flag any idioms or expressions that don't translate directly",
+      "line7": "Ensure grammar and punctuation are correct in the target language",
+      "line8": "If there are multiple valid translations, provide the most natural one",
+      "line9": "Maintain paragraph breaks and list formatting",
+      "line10": "Add translator notes in brackets for ambiguous sections"
+    },
+    "readDocument": {
+      "line1": "Read and analyze the following {{docType}}",
+      "line2": "Analysis mode: {{analysisMode}}",
+      "line3": "Provide a structured summary with clear headings",
+      "line4": "Highlight key findings and important data points",
+      "line5": "Identify any inconsistencies or potential issues",
+      "line6": "Extract actionable items and recommendations",
+      "line7": "Note any references or citations for further reading",
+      "line8": "Summarize the main argument or thesis",
+      "line9": "Rate the document's credibility and completeness",
+      "line10": "Suggest follow-up questions based on the content"
+    },
+    "organizeReports": {
+      "line1": "Organize the following {{dataType}} data",
+      "line2": "Output format: {{outputFormat}}",
+      "line3": "Sort by {{sortCriteria}} in {{sortOrder}} order",
+      "line4": "Group related items by category",
+      "line5": "Add summary statistics (totals, averages, counts)",
+      "line6": "Highlight outliers or anomalies",
+      "line7": "Include a table of contents or index",
+      "line8": "Format numbers with proper separators and units",
+      "line9": "Add section headers and clear labels",
+      "line10": "Include a brief executive summary at the top"
+    }
+  }
+}

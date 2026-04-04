@@ -1,0 +1,39 @@
+{
+  "app": {
+    "title": "Lazy Prompt",
+    "tagline": "Build AI prompts quickly"
+  },
+  "nav": {
+    "home": "Home",
+    "goBack": "Go Back"
+  },
+  "theme": {
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "zh-CN": "简体中文",
+    "zh-TW": "繁體中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "es": "Español"
+  },
+  "bubble": {
+    "whatYouWant": "What you want?",
+    "clickToExplore": "Click a bubble to explore",
+    "layerN": "Layer {{n}}"
+  },
+  "prompt": {
+    "copy": "Copy",
+    "copied": "Copied!",
+    "sendTo": "Send to...",
+    "editHint": "Click colored text to edit",
+    "addItem": "Click to add",
+    "result": "Your Prompt"
+  },
+  "footer": {
+    "builtWith": "Built with ❤️"
+  }
+}

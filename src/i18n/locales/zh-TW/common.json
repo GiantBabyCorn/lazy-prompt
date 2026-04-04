@@ -1,0 +1,39 @@
+{
+  "app": {
+    "title": "Lazy Prompt",
+    "tagline": "快速建立 AI 提示詞"
+  },
+  "nav": {
+    "home": "首頁",
+    "goBack": "返回"
+  },
+  "theme": {
+    "switchToLight": "切換到淺色主題",
+    "switchToDark": "切換到深色主題"
+  },
+  "language": {
+    "label": "語言",
+    "en": "English",
+    "zh-CN": "简体中文",
+    "zh-TW": "繁體中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "es": "Español"
+  },
+  "bubble": {
+    "whatYouWant": "你想做什麼？",
+    "clickToExplore": "點擊氣泡開始探索",
+    "layerN": "第 {{n}} 層"
+  },
+  "prompt": {
+    "copy": "複製",
+    "copied": "已複製！",
+    "sendTo": "傳送到...",
+    "editHint": "點擊彩色文字進行編輯",
+    "addItem": "點擊新增",
+    "result": "你的提示詞"
+  },
+  "footer": {
+    "builtWith": "用 ❤️ 打造"
+  }
+}

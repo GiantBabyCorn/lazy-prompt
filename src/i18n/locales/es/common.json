@@ -1,0 +1,39 @@
+{
+  "app": {
+    "title": "Lazy Prompt",
+    "tagline": "Crea prompts de AI rápidamente"
+  },
+  "nav": {
+    "home": "Inicio",
+    "goBack": "Volver"
+  },
+  "theme": {
+    "switchToLight": "Cambiar a tema claro",
+    "switchToDark": "Cambiar a tema oscuro"
+  },
+  "language": {
+    "label": "Idioma",
+    "en": "English",
+    "zh-CN": "简体中文",
+    "zh-TW": "繁體中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "es": "Español"
+  },
+  "bubble": {
+    "whatYouWant": "¿Qué quieres hacer?",
+    "clickToExplore": "Haz clic en una burbuja para explorar",
+    "layerN": "Capa {{n}}"
+  },
+  "prompt": {
+    "copy": "Copiar",
+    "copied": "¡Copiado!",
+    "sendTo": "Enviar a...",
+    "editHint": "Haz clic en el texto coloreado para editar",
+    "addItem": "Haz clic para añadir",
+    "result": "Tu Prompt"
+  },
+  "footer": {
+    "builtWith": "Hecho con ❤️"
+  }
+}
