@@ -1,4 +1,7 @@
 {
+  "bubble": {
+    "whatYouWant": "What do you want?"
+  },
   "categories": {
     "translation": "Translation",
     "read": "Read",
@@ -25,10 +28,10 @@
       "cliTool": "CLI Tool"
     },
     "translation": {
-      "enZh": "English ↔ Chinese",
-      "enJa": "English ↔ Japanese",
-      "enKo": "English ↔ Korean",
-      "enEs": "English ↔ Spanish",
+      "enZh": "English \u2194 Chinese",
+      "enJa": "English \u2194 Japanese",
+      "enKo": "English \u2194 Korean",
+      "enEs": "English \u2194 Spanish",
       "custom": "Custom Pair",
       "formal": "Formal",
       "casual": "Casual",
@@ -100,7 +103,7 @@
     "build": ["Website", "APP", "Presentations"],
     "read": ["Webpage", "Document", "Email"],
     "organize": ["Reports", "Accounts", "Product Lists"],
-    "translation": []
+    "translation": ["English \u2194 Chinese", "English \u2194 Japanese", "English \u2194 Korean"]
   },
   "templates": {
     "buildWebsite": {
@@ -152,6 +155,155 @@
       "line12": "Include deep linking support",
       "line13": "Add app store deployment configuration"
     },
+    "buildPresentations": {
+      "line1": "Create a presentation about {{topic}}",
+      "line2": "Target audience: {{audience}}",
+      "line3": "Include approximately {{count}} slides",
+      "line4": "Presentation duration: {{duration}}",
+      "line5": "It must contain following slides:",
+      "slides": {
+        "title": "Title Slide",
+        "agenda": "Agenda / Overview",
+        "problem": "Problem Statement",
+        "solution": "Proposed Solution",
+        "demo": "Demo / Visual",
+        "timeline": "Timeline / Roadmap",
+        "qa": "Q&A"
+      },
+      "line6": "Use clear and concise bullet points (max 5 per slide)",
+      "line7": "Include speaker notes for each slide",
+      "line8": "Add data visualizations where appropriate",
+      "line9": "Include a summary slide with key takeaways",
+      "line10": "Design with consistent branding and color scheme"
+    },
+    "buildApi": {
+      "line1": "Build me a {{name}} {{style}} API",
+      "line2": "Use {{lang}} as the backend framework",
+      "line3": "Database: {{db}}",
+      "line4": "Include JWT authentication and role-based authorization",
+      "line5": "It must contain following endpoints:",
+      "endpoints": {
+        "users": "Users CRUD (/api/users)",
+        "auth": "Authentication (/api/auth/login, /api/auth/register)",
+        "products": "Products CRUD (/api/products)",
+        "orders": "Orders CRUD (/api/orders)",
+        "health": "Health Check (/api/health)"
+      },
+      "line6": "Include input validation and sanitization",
+      "line7": "Add rate limiting and request throttling",
+      "line8": "Include comprehensive error handling with proper HTTP status codes",
+      "line9": "Add API documentation with Swagger/OpenAPI",
+      "line10": "Include database migrations and seed data",
+      "line11": "Add logging and monitoring middleware",
+      "line12": "Include unit and integration test setup"
+    },
+    "buildDatabase": {
+      "line1": "Design a {{name}} {{engine}} database schema",
+      "line2": "Domain: {{domain}}",
+      "line3": "It must contain following tables:",
+      "tables": {
+        "users": "Users (id, email, name, role, timestamps)",
+        "products": "Products (id, name, description, price, category)",
+        "orders": "Orders (id, user_id, status, total, timestamps)",
+        "payments": "Payments (id, order_id, method, amount, status)",
+        "categories": "Categories (id, name, parent_id, description)"
+      },
+      "line4": "Include proper foreign key relationships and constraints",
+      "line5": "Add indexes for frequently queried columns",
+      "line6": "Include created_at and updated_at timestamps on all tables",
+      "line7": "Add soft delete support where appropriate",
+      "line8": "Include migration scripts (up and down)",
+      "line9": "Add seed data for development and testing",
+      "line10": "Include an ER diagram description"
+    },
+    "buildScript": {
+      "line1": "Write an automation script to {{task}}",
+      "line2": "Use {{lang}} programming language",
+      "line3": "Input: {{input}}",
+      "line4": "Output: {{output}}",
+      "line5": "Include error handling and logging",
+      "line6": "Add command-line arguments support",
+      "line7": "Include a dry-run mode for testing",
+      "line8": "Add progress indicators for long-running tasks",
+      "line9": "Include proper file/resource cleanup on exit",
+      "line10": "Add configuration file support for reusable settings"
+    },
+    "buildBot": {
+      "line1": "Build me a {{name}} chat bot",
+      "line2": "Platform: {{platform}}",
+      "line3": "Use {{lang}} for the backend",
+      "line4": "It must include following features:",
+      "features": {
+        "greet": "Welcome / greeting messages",
+        "faq": "FAQ auto-responses",
+        "moderate": "Content moderation",
+        "notify": "Scheduled notifications",
+        "customCommands": "Custom slash commands"
+      },
+      "line5": "Include natural language understanding for flexible inputs",
+      "line6": "Add conversation context and memory",
+      "line7": "Include admin dashboard for configuration",
+      "line8": "Add analytics and usage tracking",
+      "line9": "Include rate limiting to prevent spam",
+      "line10": "Add graceful error messages for unrecognized inputs"
+    },
+    "buildExtension": {
+      "line1": "Build me a {{name}} browser extension",
+      "line2": "Target browser: {{browser}}",
+      "line3": "Purpose: {{purpose}}",
+      "line4": "It must include following features:",
+      "features": {
+        "popup": "Popup UI with quick actions",
+        "contentScript": "Content script for page interaction",
+        "background": "Background service worker",
+        "optionsPage": "Options/Settings page",
+        "storage": "Local storage for user preferences"
+      },
+      "line5": "Use Manifest V3 specification",
+      "line6": "Include proper permissions (minimal required)",
+      "line7": "Add keyboard shortcuts for main actions",
+      "line8": "Include context menu integration",
+      "line9": "Add badge/icon updates based on state",
+      "line10": "Include web store listing assets and description"
+    },
+    "buildGame": {
+      "line1": "Build me a {{name}} {{genre}} game",
+      "line2": "Use {{engine}} engine/framework",
+      "line3": "Target platform: {{platform}}",
+      "line4": "Core game mechanics:",
+      "mechanics": {
+        "movement": "Player movement and controls",
+        "combat": "Combat / interaction system",
+        "inventory": "Inventory management",
+        "scoring": "Score / progression system",
+        "levels": "Level design and progression"
+      },
+      "line5": "Include main menu, pause, and game-over screens",
+      "line6": "Add sound effects and background music",
+      "line7": "Include save/load game state",
+      "line8": "Add difficulty settings (easy, medium, hard)",
+      "line9": "Include a tutorial or onboarding level",
+      "line10": "Add particle effects and visual feedback"
+    },
+    "buildCliTool": {
+      "line1": "Build me a {{name}} CLI tool",
+      "line2": "Use {{lang}} programming language",
+      "line3": "Purpose: {{purpose}}",
+      "line4": "It must support following commands:",
+      "commands": {
+        "init": "init - Initialize a new project",
+        "create": "create - Create a new resource",
+        "list": "list - List all resources",
+        "config": "config - Manage configuration",
+        "help": "help - Show usage information"
+      },
+      "line5": "Include colored terminal output",
+      "line6": "Add interactive prompts for required inputs",
+      "line7": "Include a configuration file (~/.toolrc)",
+      "line8": "Add --verbose and --quiet flags",
+      "line9": "Include shell auto-completion scripts",
+      "line10": "Add man page or built-in help documentation"
+    },
     "translationGeneral": {
       "line1": "Translate the following text from {{sourceLang}} to {{targetLang}}",
       "line2": "Maintain the original tone and style: {{tone}}",
@@ -187,6 +339,76 @@
       "line8": "Format numbers with proper separators and units",
       "line9": "Add section headers and clear labels",
       "line10": "Include a brief executive summary at the top"
+    },
+    "summarize": {
+      "line1": "Summarize the following {{type}}",
+      "line2": "Target length: {{length}}",
+      "line3": "Start with a one-sentence TL;DR",
+      "line4": "Include the main points in bullet format",
+      "line5": "Preserve key statistics, dates, and figures",
+      "line6": "Note the author's main argument or conclusion",
+      "line7": "Highlight any action items or next steps",
+      "line8": "Include relevant quotes if they capture key ideas"
+    },
+    "debugCode": {
+      "line1": "Debug this {{area}} code issue",
+      "line2": "Language/Framework: {{lang}}",
+      "line3": "Error: {{error}}",
+      "line4": "Analyze the code and identify the root cause",
+      "line5": "Provide a step-by-step explanation of what's going wrong",
+      "line6": "Suggest the fix with corrected code",
+      "line7": "Explain why the fix works",
+      "line8": "List any potential side effects of the fix",
+      "line9": "Suggest preventive measures to avoid similar bugs",
+      "line10": "Recommend relevant tests to add"
+    },
+    "brainstormIdeas": {
+      "line1": "Brainstorm {{domain}} ideas",
+      "line2": "Topic: {{topic}}",
+      "line3": "Generate at least {{count}} unique ideas",
+      "line4": "For each idea include a brief description and potential impact",
+      "line5": "Categorize ideas by feasibility (quick win, medium effort, moonshot)",
+      "line6": "Include pros and cons for the top 3 ideas",
+      "line7": "Consider the target audience and market trends",
+      "line8": "Add competitive analysis for the most promising ideas",
+      "line9": "Suggest potential MVP features for the top idea",
+      "line10": "Include rough effort estimates where possible"
+    },
+    "learnTopic": {
+      "line1": "Teach me about {{subject}}",
+      "line2": "My current level: {{level}}",
+      "line3": "Start with a high-level overview",
+      "line4": "Break down complex concepts into simple explanations",
+      "line5": "Include practical examples and code snippets where relevant",
+      "line6": "Provide a learning roadmap with milestones",
+      "line7": "List recommended resources (books, courses, docs)",
+      "line8": "Include common pitfalls and misconceptions",
+      "line9": "Add practice exercises or challenges",
+      "line10": "Suggest related topics to explore next"
+    },
+    "writeContent": {
+      "line1": "Write a {{type}}",
+      "line2": "Topic: {{topic}}",
+      "line3": "Tone: {{tone}}",
+      "line4": "Target length: {{length}}",
+      "line5": "Target audience: {{audience}}",
+      "line6": "Include a compelling introduction that hooks the reader",
+      "line7": "Use clear headings and subheadings for structure",
+      "line8": "Include relevant examples, data, or anecdotes",
+      "line9": "End with a strong conclusion and call to action",
+      "line10": "Optimize for readability (short paragraphs, varied sentence length)"
+    },
+    "explainTopic": {
+      "line1": "Explain {{subject}}",
+      "line2": "Explanation style: {{level}}",
+      "line3": "Start with a simple analogy or metaphor",
+      "line4": "Break it down step by step",
+      "line5": "Use real-world examples to illustrate key points",
+      "line6": "Include diagrams or visual descriptions where helpful",
+      "line7": "Highlight the most important takeaways",
+      "line8": "Address common questions and misconceptions",
+      "line9": "Compare with related concepts to show differences",
+      "line10": "Provide a summary checklist of key points"
     }
   }
 }
