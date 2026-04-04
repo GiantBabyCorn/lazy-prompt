@@ -57,6 +57,14 @@ export function BubbleList({
             className={`bubble-list__item bubble-list__item--${child.type}`}
             style={{ animationDelay: `${index * 60}ms` }}
             onClick={() => handleItemClick(child)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleItemClick(child);
+              }
+            }}
           >
             <span className="bubble-list__item-label">{t(child.labelKey)}</span>
             {child.descriptionKeys && child.descriptionKeys.length > 0 && (
@@ -64,9 +72,7 @@ export function BubbleList({
                 {child.descriptionKeys.map((k) => t(k)).join(', ')}
               </span>
             )}
-            {child.children && child.children.length > 0 && (
-              <span className="bubble-list__item-arrow">›</span>
-            )}
+            <span className="bubble-list__item-arrow">›</span>
           </li>
         ))}
       </ul>

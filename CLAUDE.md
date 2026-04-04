@@ -123,22 +123,22 @@ npm run validate         # Validate bubble tree + template integrity
 
 | Code | Label | Status |
 |------|-------|--------|
-| `en` | English | Pending |
-| `zh-CN` | 简体中文 | Pending |
-| `zh-TW` | 繁體中文 | Pending |
-| `ja` | 日本語 | Pending |
-| `ko` | 한국어 | Pending |
-| `es` | Español | Pending |
+| `en` | English | Complete |
+| `zh-CN` | 简体中文 | Complete |
+| `zh-TW` | 繁體中文 | Complete |
+| `ja` | 日本語 | Complete |
+| `ko` | 한국어 | Complete |
+| `es` | Español | Complete |
 
 ## Progress
 
 - [x] Task 1: Project Scaffolding
-- [ ] Task 2: Theme System
-- [ ] Task 3: i18n Setup
-- [ ] Task 4: Data Model + CRUD Scripts
-- [ ] Task 5: Bubble Canvas with React Flow
-- [ ] Task 6: Prompt Result + Editable Text
-- [ ] Task 7: AI Provider Links
-- [ ] Task 8: App Layout + Routing + Header
-- [ ] Task 9: Responsive Layout (Mobile)
-- [ ] Task 10: Polish + Animations
+- [x] Task 2: Theme System
+- [x] Task 3: i18n Setup (6 languages: en, zh-CN, zh-TW, ja, ko, es)
+- [x] Task 4: Data Model + CRUD Scripts (19 templates, 76 nodes, 7 scripts)
+- [x] Task 5: Bubble Canvas with React Flow
+- [x] Task 6: Prompt Result + Editable Text
+- [x] Task 7: AI Provider Links (ChatGPT, Claude, Gemini, Perplexity, Copilot)
+- [x] Task 8: App Layout + Routing + Header
+- [x] Task 9: Responsive Layout (Mobile — BubbleList for <768px)
+- [x] Task 10: Polish + Animations (hover effects, entrance animations, focus-visible)
