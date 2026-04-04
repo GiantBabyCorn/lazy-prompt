@@ -6,12 +6,30 @@ import EditableText from './EditableText';
 import AddItemButton from './AddItemButton';
 import CopyButton from './CopyButton';
 
+function CheckIcon({ checked, size = 16, color }: { checked: boolean; size?: number; color: string }) {
+  if (checked) {
+    return (
+      <svg width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="14" height="14" rx="3" stroke={color} strokeWidth="1.5" fill={`${color}22`} />
+        <path d="M4.5 8L7 10.5L11.5 5.5" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    );
+  }
+  return (
+    <svg width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="14" height="14" rx="3" stroke="var(--color-text-secondary)" strokeWidth="1.5" opacity="0.4" />
+    </svg>
+  );
+}
+
 interface PromptResultProps {
   template: PromptTemplate;
   categoryLabel: string;
   onGoBack: () => void;
   onEditedValuesChange?: (values: Record<string, string>) => void;
   onAddedItemsChange?: (items: Record<string, string[]>) => void;
+  /** Called whenever the prompt text changes (edits, toggles, etc.) so parent can use it for send-to. */
+  onPromptTextChange?: (getText: () => string) => void;
 }
 
 export default function PromptResult({
@@ -20,6 +38,7 @@ export default function PromptResult({
   onGoBack,
   onEditedValuesChange,
   onAddedItemsChange,
+  onPromptTextChange,
 }: PromptResultProps) {
   const { t } = useTranslation('prompts');
   const { t: tCommon } = useTranslation('common');
@@ -69,6 +88,11 @@ export default function PromptResult({
     return buildPromptString(template, editedValues, addedItems, t, hiddenSections, hiddenItems);
   }, [template, editedValues, addedItems, t, hiddenSections, hiddenItems]);
 
+  // Expose getPromptText to parent so AIProviderLinks can use it
+  useEffect(() => {
+    onPromptTextChange?.(() => getPromptText());
+  }, [getPromptText, onPromptTextChange]);
+
   // Visible numbering skips hidden sections
   const sectionNumbers = useMemo(() => {
     let num = 0;
@@ -113,16 +137,15 @@ export default function PromptResult({
     );
   };
 
-  const toggleBtnStyle = (active: boolean, size: 'section' | 'item'): React.CSSProperties => ({
+  const toggleBtnStyle = (size: 'section' | 'item'): React.CSSProperties => ({
     background: 'transparent',
     border: 'none',
     cursor: 'pointer',
-    color: active ? (size === 'section' ? 'var(--color-cyan)' : 'var(--color-green)') : 'var(--color-text-secondary)',
-    fontSize: size === 'section' ? '0.7rem' : '0.6rem',
-    padding: size === 'section' ? '2px 4px' : '1px 3px',
+    padding: size === 'section' ? '2px 2px' : '1px 2px',
     lineHeight: '1.8',
     flexShrink: 0,
-    opacity: active ? 0.8 : 0.4,
+    display: 'inline-flex',
+    alignItems: 'center',
   });
 
   return (
@@ -197,24 +220,27 @@ export default function PromptResult({
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '2px' }}>
                 <button
                   onClick={() => toggleSection(section.id)}
-                  style={toggleBtnStyle(!isHidden, 'section')}
+                  style={toggleBtnStyle('section')}
                   title={isHidden ? 'Show this line' : 'Hide this line'}
                 >
-                  {isHidden ? '○' : '●'}
+                  <CheckIcon checked={!isHidden} size={16} color="var(--color-cyan)" />
                 </button>
 
-                {isHidden ? (
-                  <span style={{ color: 'var(--color-text-secondary)', opacity: 0.4, fontStyle: 'italic' }}>
-                    ( * {renderSectionText(section)} )
-                  </span>
-                ) : (
-                  <div style={{ flex: 1 }}>
+                <div style={{
+                  flex: 1,
+                  ...(isHidden ? {
+                    color: 'var(--color-text-secondary)',
+                    opacity: 0.35,
+                    textDecoration: 'line-through',
+                  } : {}),
+                }}>
+                  {!isHidden && (
                     <span style={{ color: 'var(--color-text-secondary)', marginRight: '8px' }}>
                       {num}.
                     </span>
-                    {renderSectionText(section)}
-                  </div>
-                )}
+                  )}
+                  {renderSectionText(section)}
+                </div>
               </div>
 
               {/* Extensible items — only when section is visible */}
@@ -227,10 +253,10 @@ export default function PromptResult({
                       <div key={item.id} style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
                         <button
                           onClick={() => toggleItem(itemKey)}
-                          style={toggleBtnStyle(!itemHidden, 'item')}
+                          style={toggleBtnStyle('item')}
                           title={itemHidden ? 'Show this item' : 'Hide this item'}
                         >
-                          {itemHidden ? '○' : '●'}
+                          <CheckIcon checked={!itemHidden} size={14} color="var(--color-green)" />
                         </button>
                         <span style={{
                           color: itemHidden ? 'var(--color-text-secondary)' : 'var(--color-text)',
@@ -251,10 +277,10 @@ export default function PromptResult({
                       <div key={`added-${i}`} style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
                         <button
                           onClick={() => toggleItem(itemKey)}
-                          style={toggleBtnStyle(!itemHidden, 'item')}
+                          style={toggleBtnStyle('item')}
                           title={itemHidden ? 'Show this item' : 'Hide this item'}
                         >
-                          {itemHidden ? '○' : '●'}
+                          <CheckIcon checked={!itemHidden} size={14} color="var(--color-green)" />
                         </button>
                         <span style={{
                           color: itemHidden ? 'var(--color-text-secondary)' : 'var(--color-text)',

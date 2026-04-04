@@ -24,7 +24,8 @@
     "whatYouWant": "你想做什麼？",
     "clickToExplore": "點擊氣泡開始探索",
     "layerN": "第 {{n}} 層",
-    "buildPrompt": "建立提示詞！"
+    "buildPrompt": "建立提示詞！",
+    "selectFromList": "選擇一個分類"
   },
   "prompt": {
     "copy": "複製",

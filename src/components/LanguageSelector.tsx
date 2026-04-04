@@ -33,31 +33,60 @@ export default function LanguageSelector() {
     setIsOpen(false)
   }
 
+  // Cycle to next language (for compact mobile button)
+  function handleCycle() {
+    const idx = supportedLanguages.indexOf(currentLang)
+    const next = supportedLanguages[(idx + 1) % supportedLanguages.length]
+    i18n.changeLanguage(next)
+  }
+
+  const btnStyle: React.CSSProperties = {
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: 6,
+    height: 36,
+    padding: '0 10px',
+    borderRadius: 8,
+    border: '1px solid var(--color-border)',
+    background: 'var(--color-surface)',
+    color: 'var(--color-text)',
+    cursor: 'pointer',
+    fontSize: 14,
+    transition: 'background-color 0.3s, border-color 0.3s, color 0.3s',
+  }
+
   return (
     <div ref={containerRef} style={{ position: 'relative', display: 'inline-block' }}>
+      {/* Desktop: dropdown with flag + label */}
       <button
+        className="lang-selector-full"
         onClick={() => setIsOpen(!isOpen)}
         aria-label={t('language.label')}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 6,
-          height: 36,
-          padding: '0 10px',
-          borderRadius: 8,
-          border: '1px solid var(--color-border)',
-          background: 'var(--color-surface)',
-          color: 'var(--color-text)',
-          cursor: 'pointer',
-          fontSize: 14,
-          transition: 'background-color 0.3s, border-color 0.3s, color 0.3s',
-        }}
+        style={btnStyle}
       >
         <span style={{ fontSize: 16 }}>{languageFlags[currentLang]}</span>
         <span>{languageLabels[currentLang]}</span>
         <span style={{ fontSize: 10, marginLeft: 2 }}>{isOpen ? '▲' : '▼'}</span>
+      </button>
+
+      {/* Mobile: compact square button, tap to cycle */}
+      <button
+        className="lang-selector-compact"
+        onClick={handleCycle}
+        aria-label={t('language.label')}
+        title={languageLabels[currentLang]}
+        style={{
+          ...btnStyle,
+          display: 'none', /* shown via CSS media query */
+          width: 36,
+          padding: 0,
+          justifyContent: 'center',
+          fontSize: 18,
+        }}
+      >
+        {languageFlags[currentLang]}
       </button>
 
       {isOpen && (

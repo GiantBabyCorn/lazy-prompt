@@ -24,7 +24,8 @@
     "whatYouWant": "What you want?",
     "clickToExplore": "Click a bubble to explore",
     "layerN": "Layer {{n}}",
-    "buildPrompt": "Build Prompt!"
+    "buildPrompt": "Build Prompt!",
+    "selectFromList": "Select a category"
   },
   "prompt": {
     "copy": "Copy",

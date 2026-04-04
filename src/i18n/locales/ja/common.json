@@ -24,7 +24,8 @@
     "whatYouWant": "何をしたいですか？",
     "clickToExplore": "バブルをクリックして探索",
     "layerN": "レイヤー {{n}}",
-    "buildPrompt": "プロンプトを作成！"
+    "buildPrompt": "プロンプトを作成！",
+    "selectFromList": "カテゴリを選択"
   },
   "prompt": {
     "copy": "コピー",

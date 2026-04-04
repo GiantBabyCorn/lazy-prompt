@@ -10,7 +10,7 @@ import { BubbleNodeSvg } from './BubbleNode';
 /*  Constants                                                          */
 /* ------------------------------------------------------------------ */
 
-const SIZES = { hub: 70, primary: 55, secondary: 42, preview: 28, goBack: 35 } as const;
+const SIZES = { hub: 100, primary: 60, secondary: 50, preview: 28, goBack: 35 } as const;
 const REPULSION_STRENGTH = 50;
 const POS_SPRING = { type: 'spring' as const, stiffness: 200, damping: 22 };
 const MORPH_SPRING = { type: 'spring' as const, stiffness: 150, damping: 20 };
@@ -54,12 +54,14 @@ function normalize(dx: number, dy: number): Vec2 {
   return len > 0 ? { x: dx / len, y: dy / len } : { x: 1, y: 0 };
 }
 
-/** Place children in a circle around (centerX, centerY). */
+/** Place children in an ellipse around (centerX, centerY).
+ *  radiusX and radiusY allow elliptical layout for portrait screens. */
 function computeRadialPositions(
   centerX: number,
   centerY: number,
   children: BubbleNodeType[],
-  radius: number,
+  radiusX: number,
+  radiusY: number,
   sizes: { primary: number; secondary: number },
 ): ChildPosition[] {
   return children.map((child, index) => {
@@ -67,8 +69,8 @@ function computeRadialPositions(
     const r = child.type === 'primary' ? sizes.primary : sizes.secondary;
     return {
       node: child,
-      cx: centerX + radius * Math.cos(angle),
-      cy: centerY + radius * Math.sin(angle),
+      cx: centerX + radiusX * Math.cos(angle),
+      cy: centerY + radiusY * Math.sin(angle),
       radius: r,
     };
   });
@@ -262,8 +264,11 @@ export function BubbleCanvas({
   /* --- Core geometry with responsive scaling --- */
   const cx = dims.w / 2;
   const cy = dims.h / 2;
-  // Scale bubbles up when canvas is large (base: 800x600, max: 1.4x)
-  const scaleFactor = Math.min(1.4, Math.max(0.8, Math.min(dims.w / 800, dims.h / 600)));
+  const isPortrait = dims.h > dims.w;
+  // Wide screens: constrain to height-based square so bubbles don't sprawl
+  // Portrait/mobile: scale based on width but allow vertical stretch (elliptical)
+  const scaleBasis = isPortrait ? dims.w : Math.min(dims.w, dims.h);
+  const scaleFactor = Math.min(1.3, Math.max(0.75, scaleBasis / 600));
   const S = {
     hub: Math.round(SIZES.hub * scaleFactor),
     primary: Math.round(SIZES.primary * scaleFactor),
@@ -272,7 +277,11 @@ export function BubbleCanvas({
     goBack: Math.round(SIZES.goBack * scaleFactor),
   };
   const maxChild = Math.max(S.primary, S.secondary);
-  const layoutRadius = Math.min(dims.w / 2, dims.h / 2) - maxChild - 20;
+  // Wide: circular (square-constrained). Portrait: elliptical (use full height)
+  const layoutRadiusX = (isPortrait ? dims.w : Math.min(dims.w, dims.h)) / 2 - maxChild - 20;
+  const layoutRadiusY = isPortrait
+    ? dims.h / 2 - maxChild - 20   // Portrait: stretch vertically
+    : layoutRadiusX;                // Landscape: circular
 
   const entryDirection =
     directionStack.length > 0
@@ -281,8 +290,8 @@ export function BubbleCanvas({
 
   /* --- Base radial positions --- */
   const basePositions = useMemo(
-    () => computeRadialPositions(cx, cy, currentChildren, layoutRadius, S),
-    [cx, cy, currentChildren, layoutRadius, S],
+    () => computeRadialPositions(cx, cy, currentChildren, layoutRadiusX, layoutRadiusY, S),
+    [cx, cy, currentChildren, layoutRadiusX, layoutRadiusY, S],
   );
 
   /* --- Go-back button position (no isAtRoot gate — needed during exit from root) --- */

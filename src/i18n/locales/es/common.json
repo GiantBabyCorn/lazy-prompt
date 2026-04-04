@@ -24,7 +24,8 @@
     "whatYouWant": "¿Qué quieres hacer?",
     "clickToExplore": "Haz clic en una burbuja para explorar",
     "layerN": "Capa {{n}}",
-    "buildPrompt": "¡Crear Prompt!"
+    "buildPrompt": "¡Crear Prompt!",
+    "selectFromList": "Selecciona una categoría"
   },
   "prompt": {
     "copy": "Copiar",

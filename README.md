@@ -133,6 +133,34 @@ yarn list-data        # List bubbles/templates with tree view
 yarn validate         # Validate bubble tree + template integrity
 ```
 
+### Tuning Bubble Size & Text
+
+All visual parameters are in two files:
+
+**Bubble radii** — `src/components/BubbleCanvas.tsx` line 13:
+```typescript
+const SIZES = { hub: 70, primary: 55, secondary: 42, preview: 28, goBack: 35 };
+```
+These are base sizes (px). They're multiplied by a responsive `scaleFactor` (0.75x–1.3x) at runtime:
+- `scaleBasis / 600` — where `scaleBasis` = screen width (portrait) or min(w,h) (landscape)
+- Change `600` to a smaller number → bigger bubbles; larger number → smaller bubbles
+- Change min/max (`0.75`/`1.3`) to widen or narrow the scaling range
+
+**Font sizes** — `src/components/BubbleNode.tsx` line 59–61:
+```typescript
+const fontSize = variant === 'preview' ? 8 : variant === 'secondary' ? 11 : variant === 'hub' ? 14 : 12;
+const descFontSize = variant === 'secondary' ? 9 : 10;
+```
+- `hub`: 14px, `primary`: 12px, `secondary`: 11px, `preview`: 8px
+- Description sub-text: 10px (9px for secondary)
+- Descriptions are hidden when bubble radius < 50px (mobile scaling)
+
+**Layout radius** — same file, line ~280:
+```typescript
+const layoutRadiusX = (isPortrait ? dims.w : Math.min(dims.w, dims.h)) / 2 - maxChild - 20;
+```
+- The `- 20` is edge padding. Increase for more margin, decrease to push bubbles closer to edges.
+
 ### Adding a New Prompt Category (Manual Steps)
 
 1. **Add bubble node** in `src/data/bubbleTree.ts` under the parent

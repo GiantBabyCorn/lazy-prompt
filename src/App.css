@@ -248,6 +248,19 @@ a:hover {
   min-height: calc(100vh - 61px);
 }
 
+.prompt-result-page__scroll {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.prompt-result-page__footer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 /* ============================================================
    BubbleList (mobile navigation)
    ============================================================ */
@@ -371,12 +384,24 @@ a:hover {
    Responsive — Mobile (< 768px)
    ============================================================ */
 
+/* Header responsive classes */
+.header-breadcrumb-desktop { display: flex; }
+.header-breadcrumb-mobile { display: none !important; }
+.lang-selector-full { display: inline-flex !important; }
+.lang-selector-compact { display: none !important; }
+.header-about-icon { display: none !important; }
+
 @media (max-width: 767px) {
-  /* Header: stack vertically */
+  .header-breadcrumb-desktop { display: none !important; }
+  .header-breadcrumb-mobile { display: flex !important; }
+  .lang-selector-full { display: none !important; }
+  .lang-selector-compact { display: inline-flex !important; }
+  .header-about-link { display: none !important; }
+  .header-about-icon { display: inline-flex !important; }
+
+  /* Header */
   header {
-    flex-wrap: wrap;
-    padding: 10px 14px !important;
-    gap: 8px;
+    padding: 8px 12px !important;
   }
 
   header h1 {
@@ -394,9 +419,29 @@ a:hover {
     padding: 12px 16px 0;
   }
 
-  /* Prompt result */
+  /* Prompt result — normal block flow + fixed footer bar */
   .prompt-result-page {
-    padding: 20px 12px;
+    display: block;
+    padding: 12px 12px 0;
+    min-height: auto;
+    padding-bottom: 160px; /* spacer for fixed footer (2 rows of buttons + padding) */
+  }
+
+  .prompt-result-page__scroll {
+    display: block;
+  }
+
+  .prompt-result-page__footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    padding: 10px 12px;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
   }
 }
 

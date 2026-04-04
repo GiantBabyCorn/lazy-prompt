@@ -57,10 +57,12 @@ export function BubbleNodeSvg({
 
   const borderWidth = variant === 'preview' ? 1.5 : variant === 'secondary' ? 2 : 3;
   const fontSize =
-    variant === 'preview' ? 8 : variant === 'secondary' ? 11 : variant === 'hub' ? 14 : 12;
+    variant === 'preview' ? 8 : variant === 'secondary' ? 12.5 : variant === 'hub' ? 20 : 12;
   const descFontSize = variant === 'secondary' ? 9 : 10;
   const label = t(labelKey);
-  const descriptions = variant !== 'preview' ? descriptionKeys?.map((k) => t(k)) : undefined;
+  // Hide descriptions when bubble is small (mobile scaling) — they overflow
+  const showDesc = variant !== 'preview' && radius >= 50;
+  const descriptions = showDesc ? descriptionKeys?.map((k) => t(k)) : undefined;
 
   const strokeColor =
     variant === 'preview' || isHovered ? 'var(--color-cyan)' : 'var(--color-green)';

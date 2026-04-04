@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useMemo } from 'react';
+import { useState, useCallback, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBubbleNavigation } from '../hooks/useBubbleNavigation';
 import { useDocumentHead } from '../hooks/useDocumentHead';
@@ -7,24 +7,7 @@ import { BubbleList } from '../components/BubbleList';
 import PromptResult from '../components/PromptResult';
 import { AIProviderLinks } from '../components/AIProviderLinks';
 import { promptTemplates } from '../data/promptTemplates';
-import { buildPromptString } from '../utils/promptBuilder';
 import type { BubbleNode } from '../data/types';
-
-function useIsMobile(breakpoint = 768) {
-  const [isMobile, setIsMobile] = useState(
-    () => typeof window !== 'undefined' && window.innerWidth < breakpoint,
-  );
-
-  useEffect(() => {
-    const mql = window.matchMedia(`(max-width: ${breakpoint - 1}px)`);
-    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    mql.addEventListener('change', handler);
-    setIsMobile(mql.matches);
-    return () => mql.removeEventListener('change', handler);
-  }, [breakpoint]);
-
-  return isMobile;
-}
 
 export default function HomePage() {
   const { t } = useTranslation('common');
@@ -49,8 +32,7 @@ export default function HomePage() {
   } = useBubbleNavigation();
 
   const isAtRoot = navigationPath.length === 0;
-  const isMobile = useIsMobile();
-  const [viewMode, setViewMode] = useState<'bubble' | 'list'>(() => isMobile ? 'list' : 'bubble');
+  const [viewMode, setViewMode] = useState<'bubble' | 'list'>('bubble');
 
   // Leaf detection: if currentNode has a promptTemplateId and no children,
   // show the prompt interface. URL is just /read/document/ — no /prompt/ suffix.
@@ -60,16 +42,6 @@ export default function HomePage() {
     return promptTemplates.find((tp) => tp.id === currentNode.promptTemplateId) ?? null;
   }, [currentNode]);
 
-  const [editedValues, setEditedValues] = useState<Record<string, string>>({});
-  const [addedItems, setAddedItems] = useState<Record<string, string[]>>({});
-
-  // Reset editable state when leaving a leaf (navigating back)
-  useEffect(() => {
-    if (!leafTemplate) {
-      setEditedValues({});
-      setAddedItems({});
-    }
-  }, [leafTemplate]);
 
   const handleLeafClick = useCallback(
     (node: BubbleNode) => {
@@ -84,24 +56,29 @@ export default function HomePage() {
     goBack();
   }, [goBack]);
 
-  const getPromptText = useCallback(() => {
-    if (!leafTemplate) return '';
-    return buildPromptString(leafTemplate, editedValues, addedItems, tPrompts);
-  }, [leafTemplate, editedValues, addedItems, tPrompts]);
+  // getPromptText is provided by PromptResult (respects hidden sections/items)
+  const promptTextGetterRef = useRef<() => string>(() => '');
+  const getPromptText = useCallback(() => promptTextGetterRef.current(), []);
+  const handlePromptTextChange = useCallback((getter: () => string) => {
+    promptTextGetterRef.current = getter;
+  }, []);
 
   // Show prompt result when at a leaf node
   if (leafTemplate) {
     const categoryLabel = tPrompts(currentNode.labelKey);
     return (
-      <div className="prompt-result-page animate-slide-up">
-        <PromptResult
-          template={leafTemplate}
-          categoryLabel={categoryLabel}
-          onGoBack={handleGoBackFromResult}
-          onEditedValuesChange={setEditedValues}
-          onAddedItemsChange={setAddedItems}
-        />
-        <AIProviderLinks getPromptText={getPromptText} />
+      <div className="prompt-result-page animate-fade-in">
+        <div className="prompt-result-page__scroll">
+          <PromptResult
+            template={leafTemplate}
+            categoryLabel={categoryLabel}
+            onGoBack={handleGoBackFromResult}
+            onPromptTextChange={handlePromptTextChange}
+          />
+        </div>
+        <div className="prompt-result-page__footer">
+          <AIProviderLinks getPromptText={getPromptText} />
+        </div>
       </div>
     );
   }
@@ -112,7 +89,7 @@ export default function HomePage() {
   return (
     <div className="bubble-view">
       <div className="bubble-view__subtitle" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, position: 'relative' }}>
-        <span>{t('bubble.clickToExplore')}</span>
+        <span>{showList ? t('bubble.selectFromList', 'Select a category') : t('bubble.clickToExplore')}</span>
         {/* View mode toggle */}
         <button
           onClick={() => setViewMode(showList ? 'bubble' : 'list')}

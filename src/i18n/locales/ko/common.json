@@ -24,7 +24,8 @@
     "whatYouWant": "무엇을 하고 싶으세요?",
     "clickToExplore": "버블을 클릭하여 탐색하세요",
     "layerN": "레이어 {{n}}",
-    "buildPrompt": "프롬프트 생성!"
+    "buildPrompt": "프롬프트 생성!",
+    "selectFromList": "카테고리 선택"
   },
   "prompt": {
     "copy": "복사",
