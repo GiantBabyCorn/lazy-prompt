@@ -3,27 +3,33 @@ import { ReactFlow } from '@xyflow/react';
 import type { Node, Edge } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 
-import { useBubbleNavigation } from '../hooks/useBubbleNavigation';
 import { bubbleNodeTypes } from './BubbleNode';
 import type { BubbleNodeData } from './BubbleNode';
 import { bubbleEdgeTypes } from './BubbleEdge';
 import { GoBackButton } from './GoBackButton';
+import type { BubbleNode as BubbleNodeType } from '../data/types';
 
 const CENTER_X = 400;
 const CENTER_Y = 300;
 const RADIUS = 250;
 
-export function BubbleCanvas() {
-  const {
-    currentNode,
-    currentChildren,
-    navigationPath,
-    navigateTo,
-    goBack,
-  } = useBubbleNavigation();
+interface BubbleCanvasProps {
+  currentNode: BubbleNodeType;
+  currentChildren: BubbleNodeType[];
+  isAtRoot: boolean;
+  onNavigate: (nodeId: string) => void;
+  onGoBack: () => void;
+  onLeafClick: (node: BubbleNodeType) => void;
+}
 
-  const isAtRoot = navigationPath.length === 0;
-
+export function BubbleCanvas({
+  currentNode,
+  currentChildren,
+  isAtRoot,
+  onNavigate,
+  onGoBack,
+  onLeafClick,
+}: BubbleCanvasProps) {
   const { nodes, edges } = useMemo(() => {
     const hubSize = 140;
     const hubNode: Node<BubbleNodeData, 'bubble'> = {
@@ -57,7 +63,9 @@ export function BubbleCanvas() {
             isHub: false,
             onClick: () => {
               if (child.children && child.children.length > 0) {
-                navigateTo(child.id);
+                onNavigate(child.id);
+              } else if (child.promptTemplateId) {
+                onLeafClick(child);
               }
             },
           },
@@ -76,11 +84,11 @@ export function BubbleCanvas() {
       nodes: [hubNode, ...childNodes],
       edges: childEdges,
     };
-  }, [currentNode, currentChildren, navigateTo]);
+  }, [currentNode, currentChildren, onNavigate, onLeafClick]);
 
   return (
     <div style={{ width: '100%', height: '100%', position: 'relative' }}>
-      <GoBackButton onClick={goBack} visible={!isAtRoot} />
+      <GoBackButton onClick={onGoBack} visible={!isAtRoot} />
       <ReactFlow
         nodes={nodes}
         edges={edges}

@@ -1,0 +1,19 @@
+import { useEffect } from 'react';
+
+export function useDocumentHead(title: string, description?: string) {
+  useEffect(() => {
+    document.title = title;
+
+    if (description) {
+      let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+      if (meta) {
+        meta.content = description;
+      } else {
+        meta = document.createElement('meta');
+        meta.name = 'description';
+        meta.content = description;
+        document.head.appendChild(meta);
+      }
+    }
+  }, [title, description]);
+}

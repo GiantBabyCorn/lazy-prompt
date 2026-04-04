@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { PromptTemplate, PromptSection } from '../data/types';
 import { buildPromptString } from '../utils/promptBuilder';
@@ -10,12 +10,29 @@ interface PromptResultProps {
   template: PromptTemplate;
   categoryLabel: string;
   onGoBack: () => void;
+  onEditedValuesChange?: (values: Record<string, string>) => void;
+  onAddedItemsChange?: (items: Record<string, string[]>) => void;
 }
 
-export default function PromptResult({ template, categoryLabel, onGoBack }: PromptResultProps) {
+export default function PromptResult({
+  template,
+  categoryLabel,
+  onGoBack,
+  onEditedValuesChange,
+  onAddedItemsChange,
+}: PromptResultProps) {
   const { t } = useTranslation('prompts');
+  const { t: tCommon } = useTranslation('common');
   const [editedValues, setEditedValues] = useState<Record<string, string>>({});
   const [addedItems, setAddedItems] = useState<Record<string, string[]>>({});
+
+  useEffect(() => {
+    onEditedValuesChange?.(editedValues);
+  }, [editedValues, onEditedValuesChange]);
+
+  useEffect(() => {
+    onAddedItemsChange?.(addedItems);
+  }, [addedItems, onAddedItemsChange]);
 
   const handleSpanChange = useCallback((spanId: string, value: string) => {
     setEditedValues((prev) => ({ ...prev, [spanId]: value }));
@@ -32,10 +49,6 @@ export default function PromptResult({ template, categoryLabel, onGoBack }: Prom
     return buildPromptString(template, editedValues, addedItems, t);
   }, [template, editedValues, addedItems, t]);
 
-  /**
-   * Renders a section's text with inline editable spans.
-   * The i18n text contains {{placeholder}} markers that correspond to editable spans.
-   */
   const renderSectionText = (section: PromptSection) => {
     const rawText = t(section.textKey);
 
@@ -43,11 +56,8 @@ export default function PromptResult({ template, categoryLabel, onGoBack }: Prom
       return <span>{rawText}</span>;
     }
 
-    // Find all {{key}} placeholders and split the text around them
     const placeholderRegex = /(\{\{\w+\}\})/g;
     const parts = rawText.split(placeholderRegex);
-
-    // Collect placeholder keys in order
     const keyRegex = /\{\{(\w+)\}\}/;
     let spanIndex = 0;
 
@@ -106,7 +116,7 @@ export default function PromptResult({ template, categoryLabel, onGoBack }: Prom
               fontSize: '1.2rem',
               padding: '4px 8px',
             }}
-            aria-label="Go back"
+            aria-label={tCommon('nav.goBack')}
           >
             ←
           </button>
@@ -119,7 +129,13 @@ export default function PromptResult({ template, categoryLabel, onGoBack }: Prom
               backgroundColor: 'var(--color-cyan)',
             }}
           />
-          <span style={{ color: 'var(--color-text)', fontWeight: 600, fontSize: '1.1rem' }}>
+          <span
+            style={{
+              color: 'var(--color-text)',
+              fontWeight: 600,
+              fontSize: '1.1rem',
+            }}
+          >
             {categoryLabel}
           </span>
         </div>
@@ -127,18 +143,24 @@ export default function PromptResult({ template, categoryLabel, onGoBack }: Prom
       </div>
 
       {/* Prompt sections */}
-      <div className="font-mono" style={{ fontSize: '0.9rem', lineHeight: '1.8' }}>
+      <div
+        className="font-mono"
+        style={{ fontSize: '0.9rem', lineHeight: '1.8' }}
+      >
         {template.sections.map((section, index) => (
           <div key={section.id} style={{ marginBottom: '4px' }}>
-            {/* Section line */}
             <div>
-              <span style={{ color: 'var(--color-text-secondary)', marginRight: '8px' }}>
+              <span
+                style={{
+                  color: 'var(--color-text-secondary)',
+                  marginRight: '8px',
+                }}
+              >
                 {index + 1}.
               </span>
               {renderSectionText(section)}
             </div>
 
-            {/* Default items for extensible sections */}
             {section.type === 'extensible' && section.defaultItems && (
               <div style={{ paddingLeft: '24px' }}>
                 {section.defaultItems.map((item) => (
@@ -146,22 +168,21 @@ export default function PromptResult({ template, categoryLabel, onGoBack }: Prom
                     - {t(item.textKey)}
                   </div>
                 ))}
-
-                {/* User-added items */}
                 {addedItems[section.id]?.map((text, i) => (
                   <div key={`added-${i}`} style={{ color: 'var(--color-text)' }}>
                     - {text}
                   </div>
                 ))}
-
-                <AddItemButton onAdd={(text) => handleAddItem(section.id, text)} />
+                <AddItemButton
+                  onAdd={(text) => handleAddItem(section.id, text)}
+                />
               </div>
             )}
           </div>
         ))}
       </div>
 
-      {/* Hint text */}
+      {/* Hint */}
       <div
         style={{
           marginTop: '16px',
@@ -171,7 +192,7 @@ export default function PromptResult({ template, categoryLabel, onGoBack }: Prom
           fontStyle: 'italic',
         }}
       >
-        Click colored text to edit
+        {tCommon('prompt.editHint')}
       </div>
     </div>
   );
