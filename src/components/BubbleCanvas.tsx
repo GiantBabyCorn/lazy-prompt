@@ -437,14 +437,14 @@ export function BubbleCanvas({
         width: '100%',
         height: '100%',
         position: 'relative',
-        overflow: 'hidden',
+        overflow: 'visible',
       }}
     >
       <svg
         width={dims.w}
         height={dims.h}
         viewBox={`0 0 ${dims.w} ${dims.h}`}
-        style={{ display: 'block' }}
+        style={{ display: 'block', overflow: 'visible' }}
       >
         {/* -------- Connector lines: hub → children -------- */}
         {childPositions.map((child, i) => (
