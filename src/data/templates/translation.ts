@@ -48,7 +48,77 @@ const templates: PromptTemplate[] = [
       {
         "id": "tf2",
         "textKey": "templates.translationFormal.line2",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "tr1-source",
+            "placeholder": "English",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          },
+          {
+            "id": "tr1-target",
+            "placeholder": "Chinese",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          },
+          {
+            "id": "tr1-target",
+            "placeholder": "Chinese",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          },
+          {
+            "id": "tr1-source",
+            "placeholder": "English",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          }
+        ]
       },
       {
         "id": "tf3",
@@ -139,7 +209,77 @@ const templates: PromptTemplate[] = [
       {
         "id": "tc2",
         "textKey": "templates.translationCasual.line2",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "tr1-source",
+            "placeholder": "English",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          },
+          {
+            "id": "tr1-target",
+            "placeholder": "Chinese",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          },
+          {
+            "id": "tr1-target",
+            "placeholder": "Chinese",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          },
+          {
+            "id": "tr1-source",
+            "placeholder": "English",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          }
+        ]
       },
       {
         "id": "tc3",
@@ -230,7 +370,77 @@ const templates: PromptTemplate[] = [
       {
         "id": "tt2",
         "textKey": "templates.translationTechnical.line2",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "tr1-source",
+            "placeholder": "English",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          },
+          {
+            "id": "tr1-target",
+            "placeholder": "Chinese",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          },
+          {
+            "id": "tr1-target",
+            "placeholder": "Chinese",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          },
+          {
+            "id": "tr1-source",
+            "placeholder": "English",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          }
+        ]
       },
       {
         "id": "tt3",
@@ -321,7 +531,77 @@ const templates: PromptTemplate[] = [
       {
         "id": "tl2",
         "textKey": "templates.translationLiterary.line2",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "tr1-source",
+            "placeholder": "English",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          },
+          {
+            "id": "tr1-target",
+            "placeholder": "Chinese",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          },
+          {
+            "id": "tr1-target",
+            "placeholder": "Chinese",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          },
+          {
+            "id": "tr1-source",
+            "placeholder": "English",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          }
+        ]
       },
       {
         "id": "tl3",
@@ -412,7 +692,77 @@ const templates: PromptTemplate[] = [
       {
         "id": "tlo2",
         "textKey": "templates.translationLocalized.line2",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "tr1-source",
+            "placeholder": "English",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          },
+          {
+            "id": "tr1-target",
+            "placeholder": "Chinese",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          },
+          {
+            "id": "tr1-target",
+            "placeholder": "Chinese",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          },
+          {
+            "id": "tr1-source",
+            "placeholder": "English",
+            "color": "cyan",
+            "suggestions": [
+              "English",
+              "Chinese",
+              "Japanese",
+              "Korean",
+              "Spanish",
+              "French",
+              "German",
+              "Portuguese",
+              "Russian",
+              "Arabic"
+            ]
+          }
+        ]
       },
       {
         "id": "tlo3",
