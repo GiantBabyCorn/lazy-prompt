@@ -22,7 +22,10 @@
       "bot": "Bot",
       "extension": "확장 프로그램",
       "game": "게임",
-      "cliTool": "CLI 도구"
+      "cliTool": "CLI 도구",
+      "dashboard": "대시보드",
+      "automation": "자동화",
+      "component": "컴포넌트"
     },
     "translation": {
       "enZh": "영어 ↔ 중국어",
@@ -148,5 +151,64 @@
       "회의",
       "영상 / 팟캐스트"
     ]
+  },
+  "templates": {
+    "buildDashboard": {
+      "line1": "{{name}} 관리 대시보드를 만들어 주세요",
+      "line2": "{{framework}}와 {{uiLibrary}} 컴포넌트 라이브러리 사용",
+      "line3": "데이터 소스: {{dataSource}}",
+      "line4": "다음 위젯을 포함해야 합니다:",
+      "widgets": {
+        "overview": "KPI 개요 카드 (사용자 수, 매출, 주문, 성장률)",
+        "charts": "인터랙티브 차트 (라인, 바, 파이) 날짜 범위 필터 포함",
+        "table": "정렬, 필터링, 페이지네이션이 있는 데이터 테이블",
+        "activity": "최근 활동 / 감사 로그",
+        "filters": "글로벌 필터 (날짜 범위, 상태, 카테고리)"
+      },
+      "line5": "역할 기반 접근 제어 포함 (관리자, 편집자, 뷰어)",
+      "line6": "접을 수 있는 사이드바 내비게이션 추가",
+      "line7": "데이터 내보내기 기능 포함 (CSV, PDF)",
+      "line8": "실시간 데이터 새로고침과 로딩 인디케이터 추가",
+      "line9": "다크/라이트 테마 지원 포함",
+      "line10": "모든 위젯에 에러 상태와 빈 상태 추가"
+    },
+    "buildAutomation": {
+      "line1": "{{name}} 자동화 워크플로를 만들어 주세요",
+      "line2": "플랫폼: {{platform}}",
+      "line3": "트리거: {{trigger}}",
+      "line4": "다음 단계를 포함해야 합니다:",
+      "steps": {
+        "lint": "린트 및 포맷 검사",
+        "test": "단위 테스트 및 통합 테스트 실행",
+        "build": "빌드 및 컴파일",
+        "deploy": "대상 환경에 배포",
+        "notify": "성공/실패 시 알림 전송"
+      },
+      "line5": "환경 변수 및 시크릿 관리 포함",
+      "line6": "종속성 캐싱으로 실행 속도 향상",
+      "line7": "가능한 경우 병렬 작업 실행",
+      "line8": "배포 실패 시 롤백 전략 추가",
+      "line9": "상태 배지 및 빌드 알림 포함",
+      "line10": "스테이징과 프로덕션 환경 분리"
+    },
+    "buildComponent": {
+      "line1": "{{name}} UI 컴포넌트를 만들어 주세요",
+      "line2": "{{framework}} 프레임워크 사용",
+      "line3": "스타일링: {{styling}}",
+      "line4": "다음 기능을 지원해야 합니다:",
+      "features": {
+        "props": "TypeScript 타입이 있는 설정 가능한 props",
+        "states": "다양한 시각적 상태 (기본, 호버, 활성, 비활성, 에러)",
+        "events": "이벤트 콜백 (onChange, onClick, onFocus, onBlur)",
+        "slots": "유연한 콘텐츠를 위한 슬롯/자식 요소",
+        "animations": "부드러운 전환 및 마이크로 애니메이션"
+      },
+      "line5": "포괄적인 prop 검증과 기본값 포함",
+      "line6": "완전한 키보드 내비게이션과 ARIA 접근성 추가",
+      "line7": "브레이크포인트에 따른 반응형 동작 포함",
+      "line8": "모든 변형에 대한 Storybook 스토리 추가",
+      "line9": "테스트 라이브러리 단위 테스트 포함",
+      "line10": "CSS 커스텀 속성 또는 디자인 토큰으로 테마 지원 추가"
+    }
   }
 }

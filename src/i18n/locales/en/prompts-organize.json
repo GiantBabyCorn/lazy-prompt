@@ -34,8 +34,8 @@
     },
     "organizeSchedule": {
       "line1": "Organize my schedule for {{range}}",
-      "line2": "List all events, tasks, and deadlines in chronological order",
-      "line3": "Assign priority levels: urgent, high, medium, low",
+      "line2": "List all events, tasks, and deadlines in {{sortOrder}} order",
+      "line3": "Assign priority levels: {{priorities}}",
       "line4": "Identify scheduling conflicts or overlapping commitments",
       "line5": "Suggest time blocks for deep work, meetings, and breaks",
       "line6": "Flag items with approaching deadlines that need immediate attention",
@@ -44,10 +44,10 @@
     },
     "organizeNotes": {
       "line1": "Organize the following {{source}}",
-      "line2": "Group notes by topic or theme with clear headers",
+      "line2": "Group notes by {{groupBy}} with clear headers",
       "line3": "Extract all action items and tag them with owner and deadline if mentioned",
       "line4": "Separate facts from opinions and decisions from discussions",
-      "line5": "Create a structured outline from the raw notes",
+      "line5": "Create a {{outputFormat}} from the raw notes",
       "line6": "Highlight key decisions that were made",
       "line7": "List open questions or items that need follow-up",
       "line8": "Add tags or labels for easy searching later"
