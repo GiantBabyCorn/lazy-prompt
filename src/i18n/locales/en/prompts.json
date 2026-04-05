@@ -45,9 +45,8 @@
       "email": "Email",
       "code": "Code",
       "researchPaper": "Research Paper",
-      "summaryMode": "Summary Mode",
-      "keyPoints": "Key Points",
-      "fullAnalysis": "Full Analysis",
+      "contract": "Contract",
+      "spreadsheet": "Spreadsheet",
       "compare": "Compare",
       "factCheck": "Fact-Check"
     },
@@ -68,42 +67,66 @@
       "backend": "Backend",
       "database": "Database",
       "api": "API",
-      "devops": "DevOps"
+      "devops": "DevOps",
+      "performance": "Performance",
+      "security": "Security",
+      "mobile": "Mobile"
     },
     "brainstorm": {
       "product": "Product",
       "marketing": "Marketing",
       "content": "Content",
       "design": "Design",
-      "strategy": "Strategy"
+      "strategy": "Strategy",
+      "naming": "Naming / Branding",
+      "event": "Event Planning",
+      "problemSolving": "Problem Solving",
+      "startup": "Startup Ideas",
+      "sideProject": "Side Project"
     },
     "learn": {
       "programming": "Programming",
       "language": "Language",
       "math": "Math",
       "science": "Science",
-      "business": "Business"
+      "business": "Business",
+      "history": "History",
+      "design": "Design",
+      "music": "Music",
+      "cooking": "Cooking",
+      "finance": "Personal Finance"
     },
     "write": {
       "email": "Email",
       "blog": "Blog",
       "documentation": "Documentation",
       "proposal": "Proposal",
-      "story": "Story"
+      "story": "Story",
+      "socialMedia": "Social Media",
+      "resume": "Resume / CV",
+      "report": "Report",
+      "copy": "Ad Copy",
+      "speech": "Speech / Script"
     },
     "explain": {
       "code": "Code",
       "concept": "Concept",
       "process": "Process",
       "error": "Error",
-      "architecture": "Architecture"
+      "architecture": "Architecture",
+      "data": "Data / Charts",
+      "math": "Math / Formulas",
+      "legal": "Legal / Policy"
     },
     "summarize": {
       "article": "Article",
       "meeting": "Meeting",
       "video": "Video / Podcast",
       "book": "Book / Chapter",
-      "research": "Research Paper"
+      "research": "Research Paper",
+      "podcast": "Podcast",
+      "legal": "Legal Document",
+      "conversation": "Conversation / Thread"
     }
   },
   "descriptions": {

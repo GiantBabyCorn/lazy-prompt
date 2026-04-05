@@ -76,19 +76,19 @@ src/
     AboutPage.tsx       # About page with social links (route: /about)
   data/
     types.ts            # TypeScript interfaces (BubbleNode, PromptTemplate, EditableSpan, etc.)
-    bubbleTree.ts       # Complete bubble tree data structure (101 nodes)
+    bubbleTree.ts       # Complete bubble tree data structure (124 nodes)
     templates/          # Prompt templates split by category (lazy-loaded)
       index.ts          # Registry: loadTemplate(), loadAllTemplates(), getCategory()
       build.ts          # 10 build templates
       translation.ts    # 5 translation templates
-      read.ts           # 10 read templates
-      write.ts          # 5 write templates
-      debug.ts          # 5 debug templates
-      explain.ts        # 5 explain templates
-      brainstorm.ts     # 5 brainstorm templates
-      learn.ts          # 5 learn templates
+      read.ts           # 9 read templates
+      write.ts          # 10 write templates
+      debug.ts          # 8 debug templates
+      explain.ts        # 8 explain templates
+      brainstorm.ts     # 10 brainstorm templates
+      learn.ts          # 10 learn templates
       organize.ts       # 10 organize templates
-      summarize.ts      # 5 summarize templates
+      summarize.ts      # 8 summarize templates
   utils/
     aiProviders.ts      # AI provider definitions with SVG icons
     promptBuilder.ts    # Assembles final prompt from selections (respects hidden sections/items)
@@ -276,7 +276,7 @@ Add a node WITH `children` array (no `promptTemplateId`):
 - [x] Task 1: Project Scaffolding
 - [x] Task 2: Theme System
 - [x] Task 3: i18n Setup (6 languages: en, zh-CN, zh-TW, ja, ko, es)
-- [x] Task 4: Data Model + CRUD Scripts (19 templates, 76 nodes, 7 scripts)
+- [x] Task 4: Data Model + CRUD Scripts (initial 19 templates, 76 nodes, 7 scripts)
 - [x] Task 5: Bubble Canvas (custom SVG + framer-motion)
 - [x] Task 6: Prompt Result + Editable Text
 - [x] Task 7: AI Provider Links (ChatGPT, Claude, Gemini, Perplexity, Copilot)
@@ -308,3 +308,18 @@ Add a node WITH `children` array (no `promptTemplateId`):
   - i18n split into nav-only + per-category template files (on-demand loading)
   - Main bundle reduced from 545KB to ~480KB
   - CLI scripts: read-data.ts and write-data.ts for efficient data operations
+- [x] Task 14: Content Expansion (2026-04-05)
+  - Expanded write (+5), brainstorm (+5), learn (+5), debug (+3), explain (+3), summarize (+3)
+  - Restructured read: replaced analysis-mode leaves with source-type leaves (contract, spreadsheet)
+  - 88 templates across 10 categories, 124 nodes total
+  - Full i18n for all new content across 6 locales
+  - Added .claude/content-audit-log.json for cross-session tracking
+
+## Content Audit Log
+
+Agents performing content audits should read and update `.claude/content-audit-log.json`.
+
+- **Purpose**: Track which bubble categories have been reviewed, expanded, or restructured across sessions.
+- **Fields per category**: `last_audited`, `audit_count`, `status` (good / needs-expansion / needs-restructure / well-structured), `notes`, `pending_improvements[]`.
+- **`change_log[]`**: Append an entry after every batch of content changes with `{ date, agent_session, changes[] }`.
+- **Priority guidance**: Categories with lower `audit_count` or `needs-expansion` status should be reviewed first. Categories marked `good` or `well-structured` can be deprioritized.

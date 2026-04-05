@@ -42,9 +42,8 @@
       "email": "電子郵件",
       "code": "程式碼",
       "researchPaper": "研究論文",
-      "summaryMode": "摘要模式",
-      "keyPoints": "重點摘錄",
-      "fullAnalysis": "完整分析",
+      "contract": "合約",
+      "spreadsheet": "試算表",
       "compare": "比較",
       "factCheck": "事實查核"
     },
@@ -65,42 +64,66 @@
       "backend": "後端",
       "database": "資料庫",
       "api": "API",
-      "devops": "DevOps"
+      "devops": "DevOps",
+      "performance": "效能",
+      "security": "安全",
+      "mobile": "行動裝置"
     },
     "brainstorm": {
       "product": "產品",
       "marketing": "行銷",
       "content": "內容",
       "design": "設計",
-      "strategy": "策略"
+      "strategy": "策略",
+      "naming": "命名 / 品牌",
+      "event": "活動企劃",
+      "problemSolving": "問題解決",
+      "startup": "創業點子",
+      "sideProject": "副業專案"
     },
     "learn": {
       "programming": "程式設計",
       "language": "語言",
       "math": "數學",
       "science": "科學",
-      "business": "商業"
+      "business": "商業",
+      "history": "歷史",
+      "design": "設計",
+      "music": "音樂",
+      "cooking": "烹飪",
+      "finance": "個人理財"
     },
     "write": {
       "email": "電子郵件",
       "blog": "部落格",
       "documentation": "技術文件",
       "proposal": "提案",
-      "story": "故事"
+      "story": "故事",
+      "socialMedia": "社群媒體",
+      "resume": "履歷 / CV",
+      "report": "報告",
+      "copy": "廣告文案",
+      "speech": "演講 / 腳本"
     },
     "explain": {
       "code": "程式碼",
       "concept": "概念",
       "process": "流程",
       "error": "錯誤",
-      "architecture": "架構"
+      "architecture": "架構",
+      "data": "數據 / 圖表",
+      "math": "數學 / 公式",
+      "legal": "法律 / 政策"
     },
     "summarize": {
       "article": "文章",
       "meeting": "會議",
       "video": "影片 / 播客",
       "book": "書籍 / 章節",
-      "research": "研究論文"
+      "research": "研究論文",
+      "podcast": "Podcast",
+      "legal": "法律文件",
+      "conversation": "對話 / 討論串"
     }
   },
   "descriptions": {

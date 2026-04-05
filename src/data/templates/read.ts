@@ -328,171 +328,81 @@ const templates: PromptTemplate[] = [
     ]
   },
   {
-    "id": "readSummary",
+    "id": "readContract",
     "sections": [
       {
-        "id": "rs1",
-        "textKey": "templates.readSummary.line1",
+        "id": "rct1",
+        "textKey": "templates.readContract.line1",
         "type": "fixed",
         "editableSpans": [
           {
-            "id": "rs1-length",
-            "placeholder": "3-5 bullet points",
-            "color": "cyan",
-            "suggestions": [
-              "1-2 sentences",
-              "3-5 bullet points",
-              "1 paragraph",
-              "half page"
-            ]
+            "id": "rct1-type",
+            "placeholder": "employment contract",
+            "color": "yellow",
+            "suggestions": ["employment contract", "NDA", "SaaS agreement", "lease", "freelance contract", "partnership agreement", "terms of service"]
           }
         ]
       },
       {
-        "id": "rs2",
-        "textKey": "templates.readSummary.line2",
-        "type": "fixed"
-      },
-      {
-        "id": "rs3",
-        "textKey": "templates.readSummary.line3",
-        "type": "fixed"
-      },
-      {
-        "id": "rs4",
-        "textKey": "templates.readSummary.line4",
-        "type": "fixed"
-      },
-      {
-        "id": "rs5",
-        "textKey": "templates.readSummary.line5",
-        "type": "fixed"
-      },
-      {
-        "id": "rs6",
-        "textKey": "templates.readSummary.line6",
-        "type": "fixed"
-      },
-      {
-        "id": "rs7",
-        "textKey": "templates.readSummary.line7",
-        "type": "fixed"
-      },
-      {
-        "id": "rs8",
-        "textKey": "templates.readSummary.line8",
-        "type": "fixed"
-      }
-    ]
-  },
-  {
-    "id": "readKeyPoints",
-    "sections": [
-      {
-        "id": "rk1",
-        "textKey": "templates.readKeyPoints.line1",
+        "id": "rct2",
+        "textKey": "templates.readContract.line2",
         "type": "fixed",
         "editableSpans": [
           {
-            "id": "rk1-count",
-            "placeholder": "10",
-            "color": "cyan",
-            "inputType": "number",
-            "min": 3,
-            "max": 30
+            "id": "rct2-role",
+            "placeholder": "the signing party",
+            "color": "green",
+            "suggestions": ["the signing party", "employer", "employee", "freelancer", "tenant", "vendor", "buyer"]
+          }
+        ]
+      },
+      { "id": "rct3", "textKey": "templates.readContract.line3", "type": "fixed" },
+      { "id": "rct4", "textKey": "templates.readContract.line4", "type": "fixed" },
+      { "id": "rct5", "textKey": "templates.readContract.line5", "type": "fixed" },
+      { "id": "rct6", "textKey": "templates.readContract.line6", "type": "fixed" },
+      { "id": "rct7", "textKey": "templates.readContract.line7", "type": "fixed" },
+      { "id": "rct8", "textKey": "templates.readContract.line8", "type": "fixed" },
+      { "id": "rct9", "textKey": "templates.readContract.line9", "type": "fixed" },
+      { "id": "rct10", "textKey": "templates.readContract.line10", "type": "fixed" }
+    ]
+  },
+  {
+    "id": "readSpreadsheet",
+    "sections": [
+      {
+        "id": "rss1",
+        "textKey": "templates.readSpreadsheet.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "rss1-type",
+            "placeholder": "sales data spreadsheet",
+            "color": "yellow",
+            "suggestions": ["sales data spreadsheet", "financial report", "survey results", "inventory list", "project tracker", "analytics export"]
           }
         ]
       },
       {
-        "id": "rk2",
-        "textKey": "templates.readKeyPoints.line2",
-        "type": "fixed"
+        "id": "rss2",
+        "textKey": "templates.readSpreadsheet.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "rss2-goal",
+            "placeholder": "identify trends and anomalies",
+            "color": "green",
+            "suggestions": ["identify trends and anomalies", "find errors or inconsistencies", "summarize key metrics", "prepare for a presentation", "create a report", "make a decision"]
+          }
+        ]
       },
-      {
-        "id": "rk3",
-        "textKey": "templates.readKeyPoints.line3",
-        "type": "fixed"
-      },
-      {
-        "id": "rk4",
-        "textKey": "templates.readKeyPoints.line4",
-        "type": "fixed"
-      },
-      {
-        "id": "rk5",
-        "textKey": "templates.readKeyPoints.line5",
-        "type": "fixed"
-      },
-      {
-        "id": "rk6",
-        "textKey": "templates.readKeyPoints.line6",
-        "type": "fixed"
-      },
-      {
-        "id": "rk7",
-        "textKey": "templates.readKeyPoints.line7",
-        "type": "fixed"
-      },
-      {
-        "id": "rk8",
-        "textKey": "templates.readKeyPoints.line8",
-        "type": "fixed"
-      }
-    ]
-  },
-  {
-    "id": "readFullAnalysis",
-    "sections": [
-      {
-        "id": "rf1",
-        "textKey": "templates.readFullAnalysis.line1",
-        "type": "fixed"
-      },
-      {
-        "id": "rf2",
-        "textKey": "templates.readFullAnalysis.line2",
-        "type": "fixed"
-      },
-      {
-        "id": "rf3",
-        "textKey": "templates.readFullAnalysis.line3",
-        "type": "fixed"
-      },
-      {
-        "id": "rf4",
-        "textKey": "templates.readFullAnalysis.line4",
-        "type": "fixed"
-      },
-      {
-        "id": "rf5",
-        "textKey": "templates.readFullAnalysis.line5",
-        "type": "fixed"
-      },
-      {
-        "id": "rf6",
-        "textKey": "templates.readFullAnalysis.line6",
-        "type": "fixed"
-      },
-      {
-        "id": "rf7",
-        "textKey": "templates.readFullAnalysis.line7",
-        "type": "fixed"
-      },
-      {
-        "id": "rf8",
-        "textKey": "templates.readFullAnalysis.line8",
-        "type": "fixed"
-      },
-      {
-        "id": "rf9",
-        "textKey": "templates.readFullAnalysis.line9",
-        "type": "fixed"
-      },
-      {
-        "id": "rf10",
-        "textKey": "templates.readFullAnalysis.line10",
-        "type": "fixed"
-      }
+      { "id": "rss3", "textKey": "templates.readSpreadsheet.line3", "type": "fixed" },
+      { "id": "rss4", "textKey": "templates.readSpreadsheet.line4", "type": "fixed" },
+      { "id": "rss5", "textKey": "templates.readSpreadsheet.line5", "type": "fixed" },
+      { "id": "rss6", "textKey": "templates.readSpreadsheet.line6", "type": "fixed" },
+      { "id": "rss7", "textKey": "templates.readSpreadsheet.line7", "type": "fixed" },
+      { "id": "rss8", "textKey": "templates.readSpreadsheet.line8", "type": "fixed" },
+      { "id": "rss9", "textKey": "templates.readSpreadsheet.line9", "type": "fixed" },
+      { "id": "rss10", "textKey": "templates.readSpreadsheet.line10", "type": "fixed" }
     ]
   },
   {

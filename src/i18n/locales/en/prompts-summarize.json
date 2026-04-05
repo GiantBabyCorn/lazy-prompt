@@ -63,6 +63,42 @@
       "line8": "Explain the practical implications: what does this mean for the field?",
       "line9": "List the most important citations for further reading",
       "line10": "Assess the paper's contribution: incremental, significant, or groundbreaking?"
+    },
+    "summarizePodcast": {
+      "line1": "Summarize this podcast episode: {{name}}",
+      "line2": "Summary length: {{length}}",
+      "line3": "Start with the main topic and thesis of the episode",
+      "line4": "List the key points discussed, in the order they appeared",
+      "line5": "Highlight the most interesting quotes or insights from the speakers",
+      "line6": "Note any actionable advice, recommendations, or resources mentioned",
+      "line7": "Capture points of disagreement or debate between speakers",
+      "line8": "Include timestamps for the most important segments (if available)",
+      "line9": "Summarize the conclusion and any calls to action",
+      "line10": "Rate the episode: who would benefit most from listening to it?"
+    },
+    "summarizeLegal": {
+      "line1": "Summarize this {{type}} for me",
+      "line2": "Focus on: {{focus}}",
+      "line3": "Provide a one-paragraph executive summary in plain language",
+      "line4": "List the key parties, their roles, and their obligations",
+      "line5": "Highlight important dates, deadlines, and milestones",
+      "line6": "Summarize financial terms: fees, penalties, payment schedules",
+      "line7": "List what I'm agreeing to and what I'm giving up",
+      "line8": "Flag any red flags, unusual terms, or areas of concern",
+      "line9": "Summarize termination conditions — how can either party exit?",
+      "line10": "Create a quick-reference table of the most critical clauses"
+    },
+    "summarizeConversation": {
+      "line1": "Summarize this {{type}}",
+      "line2": "Focus on: {{focus}}",
+      "line3": "Identify the main topic(s) and how the conversation evolved",
+      "line4": "List the key decisions made and who made them",
+      "line5": "Extract all action items with owners and deadlines",
+      "line6": "Highlight points of agreement and disagreement",
+      "line7": "Note any unresolved questions or open issues",
+      "line8": "Capture important context or background mentioned",
+      "line9": "List any links, resources, or references shared",
+      "line10": "Provide a brief status: what's done, what's pending, what's blocked"
     }
   }
 }

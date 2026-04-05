@@ -416,6 +416,239 @@ const templates: PromptTemplate[] = [
         "type": "fixed"
       }
     ]
+  },
+  {
+    "id": "brainstormNaming",
+    "sections": [
+      {
+        "id": "bn1",
+        "textKey": "templates.brainstormNaming.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "bn1-what",
+            "placeholder": "a productivity app",
+            "color": "yellow"
+          }
+        ]
+      },
+      {
+        "id": "bn2",
+        "textKey": "templates.brainstormNaming.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "bn2-count",
+            "placeholder": "20",
+            "color": "cyan",
+            "inputType": "number",
+            "min": 5,
+            "max": 100
+          }
+        ]
+      },
+      {
+        "id": "bn3",
+        "textKey": "templates.brainstormNaming.line3",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "bn3-vibe",
+            "placeholder": "modern and playful",
+            "color": "green",
+            "suggestions": ["modern and playful", "professional and trustworthy", "minimalist and clean", "bold and edgy", "friendly and approachable", "techy and futuristic"]
+          }
+        ]
+      },
+      { "id": "bn4", "textKey": "templates.brainstormNaming.line4", "type": "fixed" },
+      { "id": "bn5", "textKey": "templates.brainstormNaming.line5", "type": "fixed" },
+      { "id": "bn6", "textKey": "templates.brainstormNaming.line6", "type": "fixed" },
+      { "id": "bn7", "textKey": "templates.brainstormNaming.line7", "type": "fixed" },
+      { "id": "bn8", "textKey": "templates.brainstormNaming.line8", "type": "fixed" },
+      { "id": "bn9", "textKey": "templates.brainstormNaming.line9", "type": "fixed" },
+      { "id": "bn10", "textKey": "templates.brainstormNaming.line10", "type": "fixed" }
+    ]
+  },
+  {
+    "id": "brainstormEvent",
+    "sections": [
+      {
+        "id": "bev1",
+        "textKey": "templates.brainstormEvent.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "bev1-type",
+            "placeholder": "team building event",
+            "color": "yellow",
+            "suggestions": ["team building event", "product launch party", "conference", "workshop", "networking mixer", "hackathon", "company retreat"]
+          }
+        ]
+      },
+      {
+        "id": "bev2",
+        "textKey": "templates.brainstormEvent.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "bev2-size",
+            "placeholder": "30-50 people",
+            "color": "cyan",
+            "suggestions": ["10-20 people", "30-50 people", "50-100 people", "100-300 people", "300+ people"]
+          }
+        ]
+      },
+      {
+        "id": "bev3",
+        "textKey": "templates.brainstormEvent.line3",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "bev3-budget",
+            "placeholder": "moderate",
+            "color": "green",
+            "suggestions": ["minimal (under $500)", "low ($500-2K)", "moderate ($2K-10K)", "high ($10K-50K)", "premium ($50K+)"]
+          }
+        ]
+      },
+      { "id": "bev4", "textKey": "templates.brainstormEvent.line4", "type": "fixed" },
+      { "id": "bev5", "textKey": "templates.brainstormEvent.line5", "type": "fixed" },
+      { "id": "bev6", "textKey": "templates.brainstormEvent.line6", "type": "fixed" },
+      { "id": "bev7", "textKey": "templates.brainstormEvent.line7", "type": "fixed" },
+      { "id": "bev8", "textKey": "templates.brainstormEvent.line8", "type": "fixed" },
+      { "id": "bev9", "textKey": "templates.brainstormEvent.line9", "type": "fixed" },
+      { "id": "bev10", "textKey": "templates.brainstormEvent.line10", "type": "fixed" }
+    ]
+  },
+  {
+    "id": "brainstormProblemSolving",
+    "sections": [
+      {
+        "id": "bps1",
+        "textKey": "templates.brainstormProblemSolving.line1",
+        "type": "fixed",
+        "editableSpans": [
+          { "id": "bps1-problem", "placeholder": "user retention is dropping month over month", "color": "yellow" }
+        ]
+      },
+      {
+        "id": "bps2",
+        "textKey": "templates.brainstormProblemSolving.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "bps2-count",
+            "placeholder": "10",
+            "color": "cyan",
+            "inputType": "number",
+            "min": 3,
+            "max": 50
+          }
+        ]
+      },
+      { "id": "bps3", "textKey": "templates.brainstormProblemSolving.line3", "type": "fixed" },
+      { "id": "bps4", "textKey": "templates.brainstormProblemSolving.line4", "type": "fixed" },
+      { "id": "bps5", "textKey": "templates.brainstormProblemSolving.line5", "type": "fixed" },
+      { "id": "bps6", "textKey": "templates.brainstormProblemSolving.line6", "type": "fixed" },
+      { "id": "bps7", "textKey": "templates.brainstormProblemSolving.line7", "type": "fixed" },
+      { "id": "bps8", "textKey": "templates.brainstormProblemSolving.line8", "type": "fixed" },
+      { "id": "bps9", "textKey": "templates.brainstormProblemSolving.line9", "type": "fixed" },
+      { "id": "bps10", "textKey": "templates.brainstormProblemSolving.line10", "type": "fixed" }
+    ]
+  },
+  {
+    "id": "brainstormStartup",
+    "sections": [
+      {
+        "id": "bsu1",
+        "textKey": "templates.brainstormStartup.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "bsu1-domain",
+            "placeholder": "AI + education",
+            "color": "yellow",
+            "suggestions": ["AI + education", "health & wellness", "fintech", "sustainability", "remote work", "creator economy", "local services", "food & beverage"]
+          }
+        ]
+      },
+      {
+        "id": "bsu2",
+        "textKey": "templates.brainstormStartup.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "bsu2-count",
+            "placeholder": "10",
+            "color": "cyan",
+            "inputType": "number",
+            "min": 3,
+            "max": 50
+          }
+        ]
+      },
+      { "id": "bsu3", "textKey": "templates.brainstormStartup.line3", "type": "fixed" },
+      { "id": "bsu4", "textKey": "templates.brainstormStartup.line4", "type": "fixed" },
+      { "id": "bsu5", "textKey": "templates.brainstormStartup.line5", "type": "fixed" },
+      { "id": "bsu6", "textKey": "templates.brainstormStartup.line6", "type": "fixed" },
+      { "id": "bsu7", "textKey": "templates.brainstormStartup.line7", "type": "fixed" },
+      { "id": "bsu8", "textKey": "templates.brainstormStartup.line8", "type": "fixed" },
+      { "id": "bsu9", "textKey": "templates.brainstormStartup.line9", "type": "fixed" },
+      { "id": "bsu10", "textKey": "templates.brainstormStartup.line10", "type": "fixed" }
+    ]
+  },
+  {
+    "id": "brainstormSideProject",
+    "sections": [
+      {
+        "id": "bsp1",
+        "textKey": "templates.brainstormSideProject.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "bsp1-skill",
+            "placeholder": "web development",
+            "color": "yellow",
+            "suggestions": ["web development", "mobile development", "data science", "design", "writing", "hardware / IoT", "game development", "automation"]
+          }
+        ]
+      },
+      {
+        "id": "bsp2",
+        "textKey": "templates.brainstormSideProject.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "bsp2-time",
+            "placeholder": "a weekend",
+            "color": "green",
+            "suggestions": ["an evening", "a weekend", "one week", "one month", "ongoing hobby"]
+          }
+        ]
+      },
+      {
+        "id": "bsp3",
+        "textKey": "templates.brainstormSideProject.line3",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "bsp3-count",
+            "placeholder": "10",
+            "color": "cyan",
+            "inputType": "number",
+            "min": 3,
+            "max": 50
+          }
+        ]
+      },
+      { "id": "bsp4", "textKey": "templates.brainstormSideProject.line4", "type": "fixed" },
+      { "id": "bsp5", "textKey": "templates.brainstormSideProject.line5", "type": "fixed" },
+      { "id": "bsp6", "textKey": "templates.brainstormSideProject.line6", "type": "fixed" },
+      { "id": "bsp7", "textKey": "templates.brainstormSideProject.line7", "type": "fixed" },
+      { "id": "bsp8", "textKey": "templates.brainstormSideProject.line8", "type": "fixed" },
+      { "id": "bsp9", "textKey": "templates.brainstormSideProject.line9", "type": "fixed" },
+      { "id": "bsp10", "textKey": "templates.brainstormSideProject.line10", "type": "fixed" }
+    ]
   }
 ];
 

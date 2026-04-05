@@ -56,37 +56,29 @@
       "line9": "Enumera las citas clave y cuáles son las más importantes para leer a continuación",
       "line10": "Califica el rigor y la importancia del artículo (1-10) con justificación"
     },
-    "readSummary": {
-      "line1": "Resume el siguiente contenido en {{length}}",
-      "line2": "Comienza con un TL;DR de una línea que capture la esencia",
-      "line3": "Usa viñetas para las ideas principales — un punto por concepto clave",
-      "line4": "Conserva cualquier número, fecha o nombre propio crítico",
-      "line5": "Mantén la conclusión o llamada a la acción del autor original si la hay",
-      "line6": "Omite ejemplos, anécdotas y relleno — solo el mensaje central",
-      "line7": "Si hay múltiples puntos de vista, menciona cada uno brevemente",
-      "line8": "Termina con una oración sobre por qué este contenido es importante"
+    "readContract": {
+      "line1": "Lee y analiza este {{type}}",
+      "line2": "Mi rol: {{role}}",
+      "line3": "Identificar las partes clave y sus obligaciones",
+      "line4": "Resumir los términos principales: alcance, duración, compensación, terminación",
+      "line5": "Resaltar cláusulas inusuales, unilaterales o potencialmente problemáticas",
+      "line6": "Explicar cláusulas de no competencia, confidencialidad y cesión de PI en lenguaje sencillo",
+      "line7": "Señalar protecciones faltantes que debería solicitar (límites de responsabilidad, indemnización, etc.)",
+      "line8": "Listar fechas importantes, plazos y condiciones de renovación",
+      "line9": "Identificar lenguaje ambiguo que podría interpretarse en mi contra",
+      "line10": "Proporcionar un resumen en lenguaje sencillo y lista de preguntas antes de firmar"
     },
-    "readKeyPoints": {
-      "line1": "Extrae los {{count}} puntos clave principales del siguiente contenido",
-      "line2": "Formatea como una lista numerada — una oración clara y completa por punto",
-      "line3": "Ordena por importancia, lo más crítico primero",
-      "line4": "Cada punto debe ser independiente — alguien que lea solo la lista debería entender el contenido",
-      "line5": "Incluye datos específicos, citas o evidencia cuando fortalezcan un punto",
-      "line6": "Marca cualquier punto que requiera acción con el prefijo [ACCIÓN]",
-      "line7": "Marca cualquier punto que sea disputado o incierto con el prefijo [NOTA]",
-      "line8": "Termina con una conclusión general en una oración"
-    },
-    "readFullAnalysis": {
-      "line1": "Realiza un análisis exhaustivo, sección por sección, del siguiente contenido",
-      "line2": "Comienza con un resumen ejecutivo de 3 oraciones",
-      "line3": "Para cada sección: resume el contenido, evalúa los argumentos, señala fortalezas y debilidades",
-      "line4": "Identifica las suposiciones subyacentes del autor y si están justificadas",
-      "line5": "Contrasta las afirmaciones dentro del documento — ¿hay contradicciones internas?",
-      "line6": "Evalúa la evidencia proporcionada: ¿es suficiente, relevante y actual?",
-      "line7": "Evalúa la estructura lógica: ¿el argumento fluye de manera coherente?",
-      "line8": "Identifica lo que falta: ¿qué temas deberían haberse cubierto pero no se cubrieron?",
-      "line9": "Proporciona una evaluación equilibrada de la calidad y fiabilidad general",
-      "line10": "Enumera 5 preguntas críticas que quedan sin respuesta después de la lectura"
+    "readSpreadsheet": {
+      "line1": "Analiza esta {{type}}",
+      "line2": "Objetivo: {{goal}}",
+      "line3": "Comenzar con una visión general: cuántas filas/columnas, qué período, qué entidades",
+      "line4": "Identificar las métricas clave y qué miden",
+      "line5": "Encontrar tendencias: qué sube, qué baja y patrones estacionales",
+      "line6": "Detectar valores atípicos — datos inusualmente altos, bajos o faltantes",
+      "line7": "Calcular estadísticas resumidas: totales, promedios, mín/máx, tasas de crecimiento",
+      "line8": "Señalar problemas de calidad de datos: duplicados, vacíos, formatos inconsistentes",
+      "line9": "Sugerir las 3 mejores visualizaciones para presentar estos hallazgos",
+      "line10": "Proporcionar insights accionables: ¿qué nos dicen estos datos que debemos hacer?"
     },
     "readCompare": {
       "line1": "Compara los siguientes {{count}} documentos/fuentes lado a lado",

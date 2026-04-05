@@ -71,6 +71,66 @@
       "line8": "Identify potential strategic partnerships or acquisition targets",
       "line9": "Assess the top 3 risks and propose mitigation strategies for each",
       "line10": "Create a prioritized roadmap: what to do in month 1, quarter 1, and quarter 2"
+    },
+    "brainstormNaming": {
+      "line1": "Brainstorm names for {{what}}",
+      "line2": "Generate {{count}} name ideas",
+      "line3": "Brand vibe: {{vibe}}",
+      "line4": "Include a mix: real words, coined words, compound words, and acronyms",
+      "line5": "Check that each name is easy to spell, pronounce, and remember",
+      "line6": "Verify .com domain availability likelihood (avoid common dictionary words)",
+      "line7": "For each name, add a one-line tagline or slogan that pairs well",
+      "line8": "Flag any names that might have negative connotations in other languages",
+      "line9": "Group names by style: playful, professional, abstract, descriptive",
+      "line10": "Highlight your top 3 picks and explain why they stand out"
+    },
+    "brainstormEvent": {
+      "line1": "Help me plan a {{type}}",
+      "line2": "Expected size: {{size}}",
+      "line3": "Budget: {{budget}}",
+      "line4": "Suggest a theme that ties the whole event together",
+      "line5": "Create a timeline: pre-event prep, day-of schedule, and follow-up",
+      "line6": "List must-have logistics: venue, catering, A/V, signage, parking",
+      "line7": "Propose 3-5 engaging activities or interactive elements",
+      "line8": "Include a plan for promotion and attendee engagement before the event",
+      "line9": "Add contingency plans for common issues (weather, no-shows, tech failures)",
+      "line10": "Suggest metrics to measure event success and gather attendee feedback"
+    },
+    "brainstormProblemSolving": {
+      "line1": "Help me solve this problem: {{problem}}",
+      "line2": "Generate {{count}} potential solutions",
+      "line3": "Use first-principles thinking — break the problem down to its root causes",
+      "line4": "Consider solutions from adjacent industries or domains",
+      "line5": "For each solution, estimate: effort (low/med/high), impact (low/med/high), timeline",
+      "line6": "Include at least 2 unconventional or contrarian approaches",
+      "line7": "Identify what data or evidence would validate each solution",
+      "line8": "List the assumptions behind each approach and how to test them",
+      "line9": "Suggest a phased approach: quick wins first, then structural changes",
+      "line10": "Recommend which solution to prototype first and why"
+    },
+    "brainstormStartup": {
+      "line1": "Brainstorm startup ideas in the {{domain}} space",
+      "line2": "Generate {{count}} ideas",
+      "line3": "For each idea: one-line pitch, target customer, and revenue model",
+      "line4": "Focus on real pain points — what are people currently hacking together or overpaying for?",
+      "line5": "Include a mix: SaaS, marketplace, API/tool, content, and service-based models",
+      "line6": "Estimate market size (TAM) for the top ideas",
+      "line7": "Identify existing competitors and what a new entrant could do differently",
+      "line8": "Suggest an MVP scope that could be built in 2-4 weeks",
+      "line9": "Flag which ideas have network effects or natural moats",
+      "line10": "Rank ideas by: ease of starting solo, revenue potential, and personal passion fit"
+    },
+    "brainstormSideProject": {
+      "line1": "Suggest side project ideas using my skills in {{skill}}",
+      "line2": "Time commitment: {{time}}",
+      "line3": "Generate {{count}} project ideas",
+      "line4": "Include projects that could become portfolio pieces or resume highlights",
+      "line5": "Mix practical (solve a real problem) and fun (learn something new) projects",
+      "line6": "For each project: brief description, tech stack suggestion, and difficulty level",
+      "line7": "Include at least 2 projects that could potentially generate passive income",
+      "line8": "Suggest projects that are impressive to show in job interviews",
+      "line9": "Add a 'stretch goal' version for each project if I want to go deeper",
+      "line10": "Recommend which project to start with based on learning value and fun factor"
     }
   }
 }

@@ -71,6 +71,66 @@
       "line8": "Write natural dialogue that reveals character and advances the plot",
       "line9": "Create a satisfying ending that resolves the central conflict",
       "line10": "Vary sentence rhythm — mix short punchy sentences with longer descriptive ones"
+    },
+    "writeSocialMedia": {
+      "line1": "Write a {{platform}} post",
+      "line2": "Topic: {{topic}}",
+      "line3": "Tone: {{tone}}",
+      "line4": "Hook the reader in the first line — make them stop scrolling",
+      "line5": "Keep it platform-appropriate: respect character limits and format norms",
+      "line6": "Use line breaks and whitespace for readability on mobile",
+      "line7": "Include a clear call-to-action (like, share, comment, visit link)",
+      "line8": "Suggest 3-5 relevant hashtags at the end",
+      "line9": "Write 3 variations with different angles for A/B testing",
+      "line10": "Optimize for engagement: ask a question or share a contrarian take"
+    },
+    "writeResume": {
+      "line1": "Write a {{type}} for me",
+      "line2": "Target role: {{role}}",
+      "line3": "Experience level: {{experience}}",
+      "line4": "Start with a compelling professional summary (3-4 lines max)",
+      "line5": "Use strong action verbs: led, built, increased, reduced, launched",
+      "line6": "Quantify achievements with specific numbers, percentages, or dollar amounts",
+      "line7": "Tailor keywords to match the job description for ATS optimization",
+      "line8": "Keep it to one page (two pages max for 10+ years experience)",
+      "line9": "List skills as a concise keyword section — not long descriptions",
+      "line10": "Prioritize recent and relevant experience — cut anything older than 10 years"
+    },
+    "writeReport": {
+      "line1": "Write a {{type}}",
+      "line2": "Subject: {{topic}}",
+      "line3": "Audience: {{audience}}",
+      "line4": "Start with an executive summary — key findings and recommendations in one paragraph",
+      "line5": "Use clear section headers: Background, Methodology, Findings, Recommendations",
+      "line6": "Present data with tables and bullet points — avoid long prose for numbers",
+      "line7": "Include specific metrics, KPIs, and comparisons to benchmarks or past periods",
+      "line8": "Highlight risks and issues with clear severity levels and owners",
+      "line9": "End with actionable recommendations prioritized by impact",
+      "line10": "Add an appendix for detailed data, charts, or supporting evidence"
+    },
+    "writeCopy": {
+      "line1": "Write {{type}}",
+      "line2": "Product/Service: {{product}}",
+      "line3": "Target audience: {{audience}}",
+      "line4": "Lead with the biggest benefit — what problem does it solve for the reader?",
+      "line5": "Use the AIDA framework: Attention, Interest, Desire, Action",
+      "line6": "Write a headline that creates urgency or curiosity",
+      "line7": "Focus on benefits, not features — translate specs into outcomes",
+      "line8": "Include social proof: numbers, testimonials, or authority signals",
+      "line9": "End with a single, clear call-to-action — don't give multiple choices",
+      "line10": "Write 3 variations: short (tagline), medium (social ad), and long (landing page)"
+    },
+    "writeSpeech": {
+      "line1": "Write a {{type}}",
+      "line2": "Topic: {{topic}}",
+      "line3": "Target duration: {{duration}}",
+      "line4": "Open with a powerful hook: a surprising fact, a personal story, or a provocative question",
+      "line5": "Structure around 3 main points — audiences remember threes",
+      "line6": "Write for the ear, not the eye — use short sentences and conversational language",
+      "line7": "Include pauses, transitions, and emphasis markers for delivery",
+      "line8": "Add a memorable story or analogy for each key point",
+      "line9": "Build to a climax — save the most impactful message for the end",
+      "line10": "Close with a clear call to action or a memorable one-liner the audience will repeat"
     }
   }
 }

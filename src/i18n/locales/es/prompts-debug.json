@@ -59,6 +59,42 @@
       "line8": "Verifica los permisos: ¿la cuenta de servicio tiene los roles/políticas IAM correctos?",
       "line9": "Proporciona la solución con los cambios exactos de configuración/comandos necesarios",
       "line10": "Sugiere monitoreo y alertas para detectar este problema antes de que afecte a los usuarios"
+    },
+    "debugPerformance": {
+      "line1": "Ayúdame a depurar este problema de rendimiento: {{issue}}",
+      "line2": "Entorno: {{env}}",
+      "line3": "Describir los síntomas: qué está lento, cuándo empezó y qué cambió recientemente",
+      "line4": "Ayudar a identificar el cuello de botella — ¿es CPU, memoria, red o I/O?",
+      "line5": "Sugerir herramientas de perfilado y comandos para medir el impacto exacto",
+      "line6": "Guiar cómo leer la salida del perfilado y encontrar los puntos calientes",
+      "line7": "Proponer optimizaciones específicas ordenadas por esfuerzo vs. impacto",
+      "line8": "Incluir benchmarks antes/después que debo capturar para validar la corrección",
+      "line9": "Verificar anti-patrones comunes: consultas N+1, re-renderizados innecesarios, fugas de memoria",
+      "line10": "Sugerir monitoreo y alertas para detectar regresiones en el futuro"
+    },
+    "debugSecurity": {
+      "line1": "Ayúdame a investigar esta preocupación de seguridad: {{issue}}",
+      "line2": "Stack tecnológico: {{stack}}",
+      "line3": "Explicar el vector de ataque — ¿cómo podría explotarse esta vulnerabilidad?",
+      "line4": "Evaluar la severidad: ¿qué datos o acceso podría obtener un atacante?",
+      "line5": "Proporcionar un plan de remediación paso a paso con ejemplos de código",
+      "line6": "Verificar vulnerabilidades relacionadas que suelen acompañar este problema",
+      "line7": "Sugerir mejores prácticas de validación de entrada y sanitización",
+      "line8": "Recomendar headers de seguridad, configuración CORS y mejoras de autenticación",
+      "line9": "Listar herramientas de escaneo automatizado para añadir al pipeline CI/CD",
+      "line10": "Proporcionar una lista de verificación de seguridad para este tipo de aplicación"
+    },
+    "debugMobile": {
+      "line1": "Ayúdame a depurar este problema móvil: {{issue}}",
+      "line2": "Plataforma: {{platform}}",
+      "line3": "Describir los pasos exactos para reproducir y qué dispositivos/versiones de SO están afectados",
+      "line4": "Ayudar a revisar los logs del dispositivo — ¿qué salida de consola debo buscar?",
+      "line5": "Recorrer las causas comunes de este tipo de problema en esta plataforma",
+      "line6": "Sugerir herramientas de depuración específicas de la plataforma (Xcode Instruments, Android Profiler, etc.)",
+      "line7": "Verificar trampas específicas de la plataforma: permisos, ciclo de vida, hilos",
+      "line8": "Proporcionar una corrección con código y explicar por qué funciona",
+      "line9": "Sugerir cómo probar en múltiples dispositivos y versiones de SO",
+      "line10": "Recomendar herramientas de reporte de crashes y monitoreo para producción"
     }
   }
 }
