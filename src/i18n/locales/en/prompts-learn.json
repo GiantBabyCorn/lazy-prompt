@@ -71,6 +71,66 @@
       "line8": "Compare different schools of thought or approaches with pros/cons",
       "line9": "Suggest books, courses, and thought leaders to follow",
       "line10": "Give me a practice scenario to work through with your guidance"
+    },
+    "learnHistory": {
+      "line1": "Teach me about {{topic}}",
+      "line2": "My level: {{level}}",
+      "line3": "Start with the key context: when, where, and why it matters today",
+      "line4": "Explain the major causes and contributing factors",
+      "line5": "Describe the key figures and their roles — motivations, not just actions",
+      "line6": "Walk through the timeline of major events in chronological order",
+      "line7": "Explain the short-term and long-term consequences",
+      "line8": "Highlight common misconceptions and what the evidence actually shows",
+      "line9": "Draw connections to modern parallels or ongoing debates",
+      "line10": "Suggest 3 recommended books or documentaries for deeper learning"
+    },
+    "learnDesign": {
+      "line1": "Teach me about {{topic}}",
+      "line2": "My level: {{level}}",
+      "line3": "Start with the core principles — why this matters for good design",
+      "line4": "Explain the key terminology and concepts I need to know",
+      "line5": "Show real-world examples of good and bad execution",
+      "line6": "Walk through a step-by-step process for applying this in practice",
+      "line7": "List the essential tools and resources for getting started",
+      "line8": "Include common beginner mistakes and how to avoid them",
+      "line9": "Suggest a hands-on exercise I can do right now to practice",
+      "line10": "Recommend 3 designers, courses, or books to follow for inspiration"
+    },
+    "learnMusic": {
+      "line1": "Teach me about {{topic}}",
+      "line2": "My level: {{level}}",
+      "line3": "Start with the fundamental concepts I need to understand first",
+      "line4": "Explain the key terminology in simple, plain language",
+      "line5": "Break down the theory into practical, hands-on exercises",
+      "line6": "Include a structured practice routine I can follow daily",
+      "line7": "Suggest songs or pieces that demonstrate the concepts at my level",
+      "line8": "Explain common mistakes beginners make and how to fix them",
+      "line9": "List free tools, apps, or resources to support my learning",
+      "line10": "Give me a 30-day learning roadmap with weekly milestones"
+    },
+    "learnCooking": {
+      "line1": "Teach me about {{topic}}",
+      "line2": "My level: {{level}}",
+      "line3": "Start with the essential techniques and why they work (the science behind it)",
+      "line4": "List the must-have ingredients and pantry staples for this cuisine",
+      "line5": "Teach the 3-5 foundational recipes every learner should master first",
+      "line6": "Explain common mistakes that ruin dishes and how to avoid them",
+      "line7": "Include knife skills, prep techniques, or other fundamental skills needed",
+      "line8": "Suggest a meal plan for a week to practice these skills",
+      "line9": "List essential kitchen tools and equipment (budget-friendly options)",
+      "line10": "Recommend cookbooks, YouTube channels, or online courses for this cuisine"
+    },
+    "learnFinance": {
+      "line1": "Teach me about {{topic}}",
+      "line2": "My level: {{level}}",
+      "line3": "Start with the fundamentals — define key terms in plain language",
+      "line4": "Explain why this matters for my financial future with concrete examples",
+      "line5": "Walk through the common strategies and approaches, with pros and cons",
+      "line6": "Include specific actionable steps I can take this week to get started",
+      "line7": "Explain the common mistakes and psychological traps to watch out for",
+      "line8": "Use real-world scenarios to illustrate how the math works",
+      "line9": "List trusted free tools and resources for tracking and learning",
+      "line10": "Recommend 3 books or courses from beginner to intermediate level"
     }
   }
 }

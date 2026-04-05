@@ -42,9 +42,8 @@
       "email": "Correo electrónico",
       "code": "Código",
       "researchPaper": "Artículo de investigación",
-      "summaryMode": "Modo resumen",
-      "keyPoints": "Puntos clave",
-      "fullAnalysis": "Análisis completo",
+      "contract": "Contrato",
+      "spreadsheet": "Hoja de Cálculo",
       "compare": "Comparar",
       "factCheck": "Verificación de hechos"
     },
@@ -65,42 +64,66 @@
       "backend": "Backend",
       "database": "Base de datos",
       "api": "API",
-      "devops": "DevOps"
+      "devops": "DevOps",
+      "performance": "Rendimiento",
+      "security": "Seguridad",
+      "mobile": "Móvil"
     },
     "brainstorm": {
       "product": "Producto",
       "marketing": "Marketing",
       "content": "Contenido",
       "design": "Diseño",
-      "strategy": "Estrategia"
+      "strategy": "Estrategia",
+      "naming": "Naming / Marca",
+      "event": "Planificación de Eventos",
+      "problemSolving": "Resolución de Problemas",
+      "startup": "Ideas de Startup",
+      "sideProject": "Proyecto Personal"
     },
     "learn": {
       "programming": "Programación",
       "language": "Idioma",
       "math": "Matemáticas",
       "science": "Ciencia",
-      "business": "Negocios"
+      "business": "Negocios",
+      "history": "Historia",
+      "design": "Diseño",
+      "music": "Música",
+      "cooking": "Cocina",
+      "finance": "Finanzas Personales"
     },
     "write": {
       "email": "Correo electrónico",
       "blog": "Blog",
       "documentation": "Documentación",
       "proposal": "Propuesta",
-      "story": "Historia"
+      "story": "Historia",
+      "socialMedia": "Redes Sociales",
+      "resume": "Currículum / CV",
+      "report": "Informe",
+      "copy": "Texto Publicitario",
+      "speech": "Discurso / Guion"
     },
     "explain": {
       "code": "Código",
       "concept": "Concepto",
       "process": "Proceso",
       "error": "Error",
-      "architecture": "Arquitectura"
+      "architecture": "Arquitectura",
+      "data": "Datos / Gráficos",
+      "math": "Matemáticas / Fórmulas",
+      "legal": "Legal / Políticas"
     },
     "summarize": {
       "article": "Artículo",
       "meeting": "Reunión",
       "video": "Video / Podcast",
       "book": "Libro / Capítulo",
-      "research": "Artículo de investigación"
+      "research": "Artículo de investigación",
+      "podcast": "Podcast",
+      "legal": "Documento Legal",
+      "conversation": "Conversación / Hilo"
     }
   },
   "descriptions": {

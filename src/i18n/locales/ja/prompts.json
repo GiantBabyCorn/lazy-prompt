@@ -42,9 +42,8 @@
       "email": "メール",
       "code": "コード",
       "researchPaper": "研究論文",
-      "summaryMode": "要約モード",
-      "keyPoints": "重要ポイント",
-      "fullAnalysis": "完全分析",
+      "contract": "契約書",
+      "spreadsheet": "スプレッドシート",
       "compare": "比較",
       "factCheck": "ファクトチェック"
     },
@@ -65,42 +64,66 @@
       "backend": "バックエンド",
       "database": "データベース",
       "api": "API",
-      "devops": "DevOps"
+      "devops": "DevOps",
+      "performance": "パフォーマンス",
+      "security": "セキュリティ",
+      "mobile": "モバイル"
     },
     "brainstorm": {
       "product": "プロダクト",
       "marketing": "マーケティング",
       "content": "コンテンツ",
       "design": "デザイン",
-      "strategy": "戦略"
+      "strategy": "戦略",
+      "naming": "ネーミング / ブランド",
+      "event": "イベント企画",
+      "problemSolving": "問題解決",
+      "startup": "スタートアップ",
+      "sideProject": "サイドプロジェクト"
     },
     "learn": {
       "programming": "プログラミング",
       "language": "言語",
       "math": "数学",
       "science": "科学",
-      "business": "ビジネス"
+      "business": "ビジネス",
+      "history": "歴史",
+      "design": "デザイン",
+      "music": "音楽",
+      "cooking": "料理",
+      "finance": "マネー / 資産運用"
     },
     "write": {
       "email": "メール",
       "blog": "ブログ",
       "documentation": "ドキュメント",
       "proposal": "提案書",
-      "story": "物語"
+      "story": "物語",
+      "socialMedia": "SNS投稿",
+      "resume": "履歴書 / CV",
+      "report": "レポート",
+      "copy": "広告コピー",
+      "speech": "スピーチ / 台本"
     },
     "explain": {
       "code": "コード",
       "concept": "コンセプト",
       "process": "プロセス",
       "error": "エラー",
-      "architecture": "アーキテクチャ"
+      "architecture": "アーキテクチャ",
+      "data": "データ / グラフ",
+      "math": "数学 / 数式",
+      "legal": "法律 / ポリシー"
     },
     "summarize": {
       "article": "記事",
       "meeting": "会議",
       "video": "動画 / ポッドキャスト",
       "book": "書籍 / 章",
-      "research": "研究論文"
+      "research": "研究論文",
+      "podcast": "ポッドキャスト",
+      "legal": "法的文書",
+      "conversation": "会話 / スレッド"
     }
   },
   "descriptions": {

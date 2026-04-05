@@ -141,7 +141,7 @@ export default function PromptResult({
             const value = editedValues[span.id] || span.placeholder;
             return (
               <EditableText
-                key={span.id}
+                key={`${section.id}-${span.id}-${i}`}
                 span={span}
                 value={value}
                 onChange={handleSpanChange}

@@ -56,37 +56,29 @@
       "line9": "List the key citations and which ones are most important to read next",
       "line10": "Rate the paper's rigor and significance (1-10) with justification"
     },
-    "readSummary": {
-      "line1": "Summarize the following content in {{length}}",
-      "line2": "Start with a one-line TL;DR that captures the essence",
-      "line3": "Use bullet points for the main ideas — one point per key concept",
-      "line4": "Preserve any critical numbers, dates, or proper nouns",
-      "line5": "Keep the original author's conclusion or call-to-action if there is one",
-      "line6": "Omit examples, anecdotes, and filler — only the core message",
-      "line7": "If there are multiple viewpoints, note each briefly",
-      "line8": "End with one sentence on why this content matters"
+    "readContract": {
+      "line1": "Read and analyze this {{type}}",
+      "line2": "My role: {{role}}",
+      "line3": "Identify the key parties and their obligations",
+      "line4": "Summarize the main terms: scope, duration, compensation, termination",
+      "line5": "Highlight any clauses that are unusual, one-sided, or potentially problematic",
+      "line6": "Explain non-compete, confidentiality, and IP assignment clauses in plain language",
+      "line7": "Flag any missing protections I should request (liability limits, indemnification, etc.)",
+      "line8": "List important dates, deadlines, and renewal conditions",
+      "line9": "Identify ambiguous language that could be interpreted against my interests",
+      "line10": "Provide a plain-language summary and list of questions to ask before signing"
     },
-    "readKeyPoints": {
-      "line1": "Extract the top {{count}} key points from the following content",
-      "line2": "Format as a numbered list — one clear, complete sentence per point",
-      "line3": "Order by importance, most critical first",
-      "line4": "Each point should stand alone — someone reading just the list should understand the content",
-      "line5": "Include specific data, quotes, or evidence when they strengthen a point",
-      "line6": "Mark any points that require action with [ACTION] prefix",
-      "line7": "Mark any points that are disputed or uncertain with [NOTE] prefix",
-      "line8": "End with a one-sentence overall takeaway"
-    },
-    "readFullAnalysis": {
-      "line1": "Perform a comprehensive, section-by-section analysis of the following content",
-      "line2": "Start with a 3-sentence executive summary",
-      "line3": "For each section: summarize the content, assess the arguments, note strengths and weaknesses",
-      "line4": "Identify the author's underlying assumptions and whether they're justified",
-      "line5": "Cross-reference claims within the document — are there any internal contradictions?",
-      "line6": "Evaluate the evidence provided: is it sufficient, relevant, and current?",
-      "line7": "Assess the logical structure: does the argument flow coherently?",
-      "line8": "Identify what's missing: what topics should have been covered but weren't?",
-      "line9": "Provide a balanced assessment of the overall quality and reliability",
-      "line10": "List 5 critical questions that remain unanswered after reading"
+    "readSpreadsheet": {
+      "line1": "Analyze this {{type}}",
+      "line2": "Goal: {{goal}}",
+      "line3": "Start with an overview: how many rows/columns, what time period, what entities",
+      "line4": "Identify the key metrics and what they measure",
+      "line5": "Find trends: what's going up, what's going down, and any seasonal patterns",
+      "line6": "Spot outliers and anomalies — values that are unusually high, low, or missing",
+      "line7": "Calculate summary statistics: totals, averages, min/max, growth rates",
+      "line8": "Flag data quality issues: duplicates, blanks, inconsistent formats",
+      "line9": "Suggest the top 3 visualizations to present these findings",
+      "line10": "Provide actionable insights: what does this data tell us to do next?"
     },
     "readCompare": {
       "line1": "Compare the following {{count}} documents/sources side by side",

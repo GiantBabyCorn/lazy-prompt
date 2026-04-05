@@ -71,6 +71,42 @@
       "line8": "Verify permissions: does the service account have the right IAM roles/policies?",
       "line9": "Provide the fix with the exact config/command changes needed",
       "line10": "Suggest monitoring and alerting to catch this issue before it impacts users"
+    },
+    "debugPerformance": {
+      "line1": "Help me debug this performance issue: {{issue}}",
+      "line2": "Environment: {{env}}",
+      "line3": "Describe the symptoms: what's slow, when did it start, and what changed recently?",
+      "line4": "Help me identify the bottleneck — is it CPU, memory, network, or I/O?",
+      "line5": "Suggest profiling tools and commands to measure the exact impact",
+      "line6": "Walk through how to read the profiling output and find hot paths",
+      "line7": "Propose specific optimizations ranked by effort vs. impact",
+      "line8": "Include before/after benchmarks I should capture to validate the fix",
+      "line9": "Check for common anti-patterns: N+1 queries, unnecessary re-renders, memory leaks",
+      "line10": "Suggest monitoring/alerting to catch regressions in the future"
+    },
+    "debugSecurity": {
+      "line1": "Help me investigate this security concern: {{issue}}",
+      "line2": "Tech stack: {{stack}}",
+      "line3": "Explain the attack vector — how could this vulnerability be exploited?",
+      "line4": "Assess severity: what data or access could an attacker gain?",
+      "line5": "Provide a step-by-step remediation plan with code examples",
+      "line6": "Check for related vulnerabilities that often accompany this issue",
+      "line7": "Suggest input validation and sanitization best practices",
+      "line8": "Recommend security headers, CORS settings, and auth improvements",
+      "line9": "List automated scanning tools I should add to my CI/CD pipeline",
+      "line10": "Provide a security checklist for this type of application"
+    },
+    "debugMobile": {
+      "line1": "Help me debug this mobile issue: {{issue}}",
+      "line2": "Platform: {{platform}}",
+      "line3": "Describe the exact steps to reproduce and which devices/OS versions are affected",
+      "line4": "Help me check device logs — what console/logcat output should I look for?",
+      "line5": "Walk through common causes for this type of issue on this platform",
+      "line6": "Suggest debugging tools specific to this platform (Xcode instruments, Android Profiler, etc.)",
+      "line7": "Check for platform-specific gotchas: permissions, lifecycle, threading",
+      "line8": "Provide a fix with code and explain why it works",
+      "line9": "Suggest how to test across multiple devices and OS versions",
+      "line10": "Recommend crash reporting and monitoring tools for production"
     }
   }
 }

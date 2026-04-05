@@ -53,6 +53,42 @@
       "line8": "Explica las implicaciones prácticas: ¿qué significa esto para el campo?",
       "line9": "Lista las citas más importantes para lectura adicional",
       "line10": "Evalúa la contribución del artículo: incremental, significativa o revolucionaria"
+    },
+    "summarizePodcast": {
+      "line1": "Resume este episodio de podcast: {{name}}",
+      "line2": "Longitud del resumen: {{length}}",
+      "line3": "Comenzar con el tema principal y la tesis del episodio",
+      "line4": "Listar los puntos clave discutidos, en el orden en que aparecieron",
+      "line5": "Destacar las citas o ideas más interesantes de los ponentes",
+      "line6": "Anotar consejos prácticos, recomendaciones o recursos mencionados",
+      "line7": "Capturar puntos de desacuerdo o debate entre los ponentes",
+      "line8": "Incluir marcas de tiempo para los segmentos más importantes (si están disponibles)",
+      "line9": "Resumir la conclusión y cualquier llamada a la acción",
+      "line10": "Valorar el episodio: ¿quién se beneficiaría más de escucharlo?"
+    },
+    "summarizeLegal": {
+      "line1": "Resúmeme este {{type}}",
+      "line2": "Enfocarse en: {{focus}}",
+      "line3": "Proporcionar un resumen ejecutivo de un párrafo en lenguaje sencillo",
+      "line4": "Listar las partes clave, sus roles y sus obligaciones",
+      "line5": "Destacar fechas importantes, plazos e hitos",
+      "line6": "Resumir términos financieros: tarifas, penalizaciones, calendarios de pago",
+      "line7": "Listar a qué estoy accediendo y a qué estoy renunciando",
+      "line8": "Señalar señales de alarma, términos inusuales o áreas de preocupación",
+      "line9": "Resumir condiciones de terminación — ¿cómo puede salir cualquiera de las partes?",
+      "line10": "Crear una tabla de referencia rápida de las cláusulas más críticas"
+    },
+    "summarizeConversation": {
+      "line1": "Resume esta {{type}}",
+      "line2": "Enfocarse en: {{focus}}",
+      "line3": "Identificar los temas principales y cómo evolucionó la conversación",
+      "line4": "Listar las decisiones clave tomadas y quién las tomó",
+      "line5": "Extraer todos los elementos de acción con responsables y plazos",
+      "line6": "Destacar puntos de acuerdo y desacuerdo",
+      "line7": "Anotar preguntas sin resolver o temas abiertos",
+      "line8": "Capturar contexto o antecedentes importantes mencionados",
+      "line9": "Listar enlaces, recursos o referencias compartidos",
+      "line10": "Proporcionar un estado breve: qué está hecho, qué está pendiente, qué está bloqueado"
     }
   }
 }

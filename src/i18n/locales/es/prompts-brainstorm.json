@@ -59,6 +59,66 @@
       "line8": "Identifica posibles asociaciones estratégicas u objetivos de adquisición",
       "line9": "Evalúa los 3 principales riesgos y propón estrategias de mitigación para cada uno",
       "line10": "Crea una hoja de ruta priorizada: qué hacer en el mes 1, trimestre 1 y trimestre 2"
+    },
+    "brainstormNaming": {
+      "line1": "Haz una lluvia de ideas de nombres para {{what}}",
+      "line2": "Genera {{count}} ideas de nombres",
+      "line3": "Estilo de marca: {{vibe}}",
+      "line4": "Incluir una mezcla: palabras reales, neologismos, palabras compuestas y acrónimos",
+      "line5": "Verificar que cada nombre sea fácil de deletrear, pronunciar y recordar",
+      "line6": "Evaluar la disponibilidad del dominio .com (evitar palabras comunes del diccionario)",
+      "line7": "Para cada nombre, añadir un eslogan o lema corto que lo acompañe",
+      "line8": "Señalar nombres que puedan tener connotaciones negativas en otros idiomas",
+      "line9": "Agrupar nombres por estilo: divertido, profesional, abstracto, descriptivo",
+      "line10": "Destacar tus 3 favoritos y explicar por qué sobresalen"
+    },
+    "brainstormEvent": {
+      "line1": "Ayúdame a planificar un {{type}}",
+      "line2": "Tamaño esperado: {{size}}",
+      "line3": "Presupuesto: {{budget}}",
+      "line4": "Sugerir un tema que una todo el evento",
+      "line5": "Crear una línea de tiempo: preparación previa, agenda del día y seguimiento",
+      "line6": "Listar logística esencial: lugar, catering, audiovisual, señalización, estacionamiento",
+      "line7": "Proponer 3-5 actividades atractivas o elementos interactivos",
+      "line8": "Incluir un plan de promoción y engagement de asistentes antes del evento",
+      "line9": "Añadir planes de contingencia para problemas comunes (clima, ausencias, fallos técnicos)",
+      "line10": "Sugerir métricas para medir el éxito y recoger feedback de asistentes"
+    },
+    "brainstormProblemSolving": {
+      "line1": "Ayúdame a resolver este problema: {{problem}}",
+      "line2": "Genera {{count}} posibles soluciones",
+      "line3": "Usar pensamiento de primeros principios — descomponer el problema hasta sus causas raíz",
+      "line4": "Considerar soluciones de industrias o dominios adyacentes",
+      "line5": "Para cada solución, estimar: esfuerzo (bajo/medio/alto), impacto (bajo/medio/alto), plazo",
+      "line6": "Incluir al menos 2 enfoques no convencionales o contraintuitivos",
+      "line7": "Identificar qué datos o evidencia validarían cada solución",
+      "line8": "Listar las suposiciones detrás de cada enfoque y cómo probarlas",
+      "line9": "Sugerir un enfoque por fases: primero victorias rápidas, luego cambios estructurales",
+      "line10": "Recomendar qué solución prototipar primero y por qué"
+    },
+    "brainstormStartup": {
+      "line1": "Lluvia de ideas de startups en el espacio de {{domain}}",
+      "line2": "Genera {{count}} ideas",
+      "line3": "Para cada idea: pitch de una línea, cliente objetivo y modelo de ingresos",
+      "line4": "Enfocarse en dolores reales — ¿qué están improvisando o pagando de más las personas?",
+      "line5": "Incluir una mezcla: SaaS, marketplace, API/herramienta, contenido y modelos basados en servicios",
+      "line6": "Estimar el tamaño del mercado (TAM) para las mejores ideas",
+      "line7": "Identificar competidores existentes y qué podría hacer diferente un nuevo participante",
+      "line8": "Sugerir un alcance de MVP que se pueda construir en 2-4 semanas",
+      "line9": "Señalar qué ideas tienen efectos de red o barreras de entrada naturales",
+      "line10": "Clasificar ideas por: facilidad para empezar solo, potencial de ingresos y pasión personal"
+    },
+    "brainstormSideProject": {
+      "line1": "Sugiere ideas de proyectos personales usando mis habilidades en {{skill}}",
+      "line2": "Compromiso de tiempo: {{time}}",
+      "line3": "Genera {{count}} ideas de proyectos",
+      "line4": "Incluir proyectos que puedan ser piezas de portafolio o destacados en el currículum",
+      "line5": "Mezclar proyectos prácticos (resolver un problema real) y divertidos (aprender algo nuevo)",
+      "line6": "Para cada proyecto: descripción breve, stack tecnológico sugerido y nivel de dificultad",
+      "line7": "Incluir al menos 2 proyectos que podrían generar ingresos pasivos",
+      "line8": "Sugerir proyectos impresionantes para mostrar en entrevistas de trabajo",
+      "line9": "Añadir una versión 'meta ambiciosa' para cada proyecto si quiero profundizar más",
+      "line10": "Recomendar con qué proyecto empezar según valor de aprendizaje y factor de diversión"
     }
   }
 }

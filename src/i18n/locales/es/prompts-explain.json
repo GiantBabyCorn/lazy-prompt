@@ -59,6 +59,42 @@
       "line8": "Identifica los posibles cuellos de botella y puntos únicos de fallo",
       "line9": "Describe cómo escala el sistema: ¿horizontal, vertical o ambos?",
       "line10": "Proporciona un diagrama de arquitectura basado en texto que muestre las relaciones entre componentes"
+    },
+    "explainData": {
+      "line1": "Explícame {{data}}",
+      "line2": "Audiencia: {{audience}}",
+      "line3": "Empezar con el panorama general — ¿qué historia cuentan los datos?",
+      "line4": "Identificar las tendencias clave, patrones y valores atípicos",
+      "line5": "Explicar qué significa cada métrica en lenguaje sencillo",
+      "line6": "Destacar las correlaciones y qué está impulsando los cambios",
+      "line7": "Señalar lo que falta o lo que los datos no nos dicen",
+      "line8": "Sugerir los mejores tipos de gráficos para visualizar cada hallazgo",
+      "line9": "Proporcionar conclusiones accionables — ¿qué debemos hacer basándonos en estos datos?",
+      "line10": "Señalar problemas de calidad de datos o advertencias a tener en cuenta"
+    },
+    "explainMath": {
+      "line1": "Explícame {{topic}}",
+      "line2": "Estilo de explicación: {{level}}",
+      "line3": "Empezar con la intuición — en palabras simples, ¿qué está haciendo realmente esto?",
+      "line4": "Usar una analogía concreta del mundo real para construir comprensión",
+      "line5": "Recorrer la fórmula paso a paso, explicando cada símbolo y operación",
+      "line6": "Mostrar un ejemplo resuelto con números reales",
+      "line7": "Explicar cuándo y por qué se usa esto en la práctica",
+      "line8": "Visualizarlo — describir o sugerir un gráfico/diagrama que lo haga claro",
+      "line9": "Señalar errores comunes y casos límite a tener en cuenta",
+      "line10": "Conectar con conceptos relacionados — ¿qué debería aprender después?"
+    },
+    "explainLegal": {
+      "line1": "Explícame {{topic}}",
+      "line2": "Soy un: {{audience}}",
+      "line3": "Traducir la jerga legal a lenguaje cotidiano y sencillo",
+      "line4": "Resumir los derechos, obligaciones y restricciones clave",
+      "line5": "Resaltar las cláusulas a las que debo prestar especial atención y por qué",
+      "line6": "Explicar qué pasa si incumplo los términos o si la otra parte lo hace",
+      "line7": "Señalar términos inusuales, agresivos o unilateralmente favorables",
+      "line8": "Comparar con términos estándar/típicos — ¿esto es normal o inusual?",
+      "line9": "Listar preguntas específicas que debo hacer a un abogado antes de firmar",
+      "line10": "Proporcionar un resumen en lenguaje sencillo que pueda compartir con un colega"
     }
   }
 }

@@ -408,6 +408,123 @@ const templates: PromptTemplate[] = [
         "type": "fixed"
       }
     ]
+  },
+  {
+    "id": "debugPerformance",
+    "sections": [
+      {
+        "id": "dpf1",
+        "textKey": "templates.debugPerformance.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "dpf1-issue",
+            "placeholder": "slow page load times",
+            "color": "yellow",
+            "suggestions": ["slow page load times", "memory leak", "high CPU usage", "slow database queries", "API response time", "rendering bottleneck", "bundle size too large"]
+          }
+        ]
+      },
+      {
+        "id": "dpf2",
+        "textKey": "templates.debugPerformance.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "dpf2-env",
+            "placeholder": "React web app",
+            "color": "cyan",
+            "suggestions": ["React web app", "Node.js backend", "Python API", "mobile app", "database", "microservices", "serverless functions"]
+          }
+        ]
+      },
+      { "id": "dpf3", "textKey": "templates.debugPerformance.line3", "type": "fixed" },
+      { "id": "dpf4", "textKey": "templates.debugPerformance.line4", "type": "fixed" },
+      { "id": "dpf5", "textKey": "templates.debugPerformance.line5", "type": "fixed" },
+      { "id": "dpf6", "textKey": "templates.debugPerformance.line6", "type": "fixed" },
+      { "id": "dpf7", "textKey": "templates.debugPerformance.line7", "type": "fixed" },
+      { "id": "dpf8", "textKey": "templates.debugPerformance.line8", "type": "fixed" },
+      { "id": "dpf9", "textKey": "templates.debugPerformance.line9", "type": "fixed" },
+      { "id": "dpf10", "textKey": "templates.debugPerformance.line10", "type": "fixed" }
+    ]
+  },
+  {
+    "id": "debugSecurity",
+    "sections": [
+      {
+        "id": "dsc1",
+        "textKey": "templates.debugSecurity.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "dsc1-issue",
+            "placeholder": "potential XSS vulnerability",
+            "color": "yellow",
+            "suggestions": ["potential XSS vulnerability", "SQL injection risk", "authentication bypass", "CORS misconfiguration", "insecure API endpoint", "data leak", "CSRF vulnerability"]
+          }
+        ]
+      },
+      {
+        "id": "dsc2",
+        "textKey": "templates.debugSecurity.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "dsc2-stack",
+            "placeholder": "Node.js + Express",
+            "color": "cyan",
+            "suggestions": ["Node.js + Express", "React + Next.js", "Python + Django", "Java + Spring", "PHP + Laravel", "Go", "Ruby on Rails"]
+          }
+        ]
+      },
+      { "id": "dsc3", "textKey": "templates.debugSecurity.line3", "type": "fixed" },
+      { "id": "dsc4", "textKey": "templates.debugSecurity.line4", "type": "fixed" },
+      { "id": "dsc5", "textKey": "templates.debugSecurity.line5", "type": "fixed" },
+      { "id": "dsc6", "textKey": "templates.debugSecurity.line6", "type": "fixed" },
+      { "id": "dsc7", "textKey": "templates.debugSecurity.line7", "type": "fixed" },
+      { "id": "dsc8", "textKey": "templates.debugSecurity.line8", "type": "fixed" },
+      { "id": "dsc9", "textKey": "templates.debugSecurity.line9", "type": "fixed" },
+      { "id": "dsc10", "textKey": "templates.debugSecurity.line10", "type": "fixed" }
+    ]
+  },
+  {
+    "id": "debugMobile",
+    "sections": [
+      {
+        "id": "dmb1",
+        "textKey": "templates.debugMobile.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "dmb1-issue",
+            "placeholder": "app crashes on launch",
+            "color": "yellow",
+            "suggestions": ["app crashes on launch", "UI rendering glitch", "network request failing", "push notifications not working", "battery drain", "memory warning", "layout broken on specific device"]
+          }
+        ]
+      },
+      {
+        "id": "dmb2",
+        "textKey": "templates.debugMobile.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "dmb2-platform",
+            "placeholder": "iOS (Swift)",
+            "color": "cyan",
+            "suggestions": ["iOS (Swift)", "iOS (SwiftUI)", "Android (Kotlin)", "Android (Java)", "React Native", "Flutter", "Expo"]
+          }
+        ]
+      },
+      { "id": "dmb3", "textKey": "templates.debugMobile.line3", "type": "fixed" },
+      { "id": "dmb4", "textKey": "templates.debugMobile.line4", "type": "fixed" },
+      { "id": "dmb5", "textKey": "templates.debugMobile.line5", "type": "fixed" },
+      { "id": "dmb6", "textKey": "templates.debugMobile.line6", "type": "fixed" },
+      { "id": "dmb7", "textKey": "templates.debugMobile.line7", "type": "fixed" },
+      { "id": "dmb8", "textKey": "templates.debugMobile.line8", "type": "fixed" },
+      { "id": "dmb9", "textKey": "templates.debugMobile.line9", "type": "fixed" },
+      { "id": "dmb10", "textKey": "templates.debugMobile.line10", "type": "fixed" }
+    ]
   }
 ];
 

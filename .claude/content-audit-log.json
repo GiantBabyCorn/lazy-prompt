@@ -1,0 +1,118 @@
+{
+  "description": "Tracks which bubble categories have been audited/expanded by agents, so future sessions know what's been reviewed and what still needs attention.",
+  "format_version": 1,
+  "categories": {
+    "translation": {
+      "last_audited": "2026-04-05",
+      "audit_count": 1,
+      "status": "well-structured",
+      "notes": "5 language pairs x 5 tones = 25 leaves. Deep 3-level nesting. No changes needed now.",
+      "pending_improvements": []
+    },
+    "read": {
+      "last_audited": "2026-04-05",
+      "audit_count": 2,
+      "status": "good",
+      "notes": "Restructured: removed analysis modes (summary, keypoints, fullAnalysis) that overlapped with summarize. Now 9 children: 5 primary source types + 4 secondary (contract, spreadsheet, compare, factcheck).",
+      "pending_improvements": []
+    },
+    "build": {
+      "last_audited": "2026-04-05",
+      "audit_count": 1,
+      "status": "good",
+      "notes": "10 children, balanced primary/secondary. Good coverage.",
+      "pending_improvements": [
+        "Future: split build-website into landing/portfolio/ecommerce/blog/dashboard",
+        "Future: split build-app into mobile/desktop/web"
+      ]
+    },
+    "organize": {
+      "last_audited": "2026-04-05",
+      "audit_count": 1,
+      "status": "good",
+      "notes": "10 children, well-balanced. No changes needed now.",
+      "pending_improvements": []
+    },
+    "summarize": {
+      "last_audited": "2026-04-05",
+      "audit_count": 2,
+      "status": "good",
+      "notes": "Expanded from 5 to 8 children. Added podcast, legal, conversation.",
+      "pending_improvements": []
+    },
+    "debug": {
+      "last_audited": "2026-04-05",
+      "audit_count": 2,
+      "status": "good",
+      "notes": "Expanded from 5 to 8 children. Added performance, security, mobile as secondary.",
+      "pending_improvements": []
+    },
+    "brainstorm": {
+      "last_audited": "2026-04-05",
+      "audit_count": 2,
+      "status": "good",
+      "notes": "Expanded from 5 to 10 children. Added naming, event, problemSolving, startup, sideProject as secondary.",
+      "pending_improvements": []
+    },
+    "learn": {
+      "last_audited": "2026-04-05",
+      "audit_count": 2,
+      "status": "good",
+      "notes": "Expanded from 5 to 10 children. Added history, design, music, cooking, finance as secondary.",
+      "pending_improvements": []
+    },
+    "write": {
+      "last_audited": "2026-04-05",
+      "audit_count": 2,
+      "status": "good",
+      "notes": "Expanded from 5 to 10 children. Added socialMedia, resume, report, copy, speech as secondary.",
+      "pending_improvements": [
+        "Future: split write-email into business/cold-outreach/follow-up/complaint/thank-you"
+      ]
+    },
+    "explain": {
+      "last_audited": "2026-04-05",
+      "audit_count": 2,
+      "status": "good",
+      "notes": "Expanded from 5 to 8 children. Added data, math, legal as secondary.",
+      "pending_improvements": []
+    }
+  },
+  "structural_issues": [
+    {
+      "issue": "read category mixes source types and analysis modes",
+      "priority": "medium",
+      "status": "resolved",
+      "recommendation": "Remove read-summary, read-keypoints, read-full; add read-contract, read-spreadsheet",
+      "resolved_date": "2026-04-05"
+    },
+    {
+      "issue": "write-email is too broad for one of the most common AI use cases",
+      "priority": "low",
+      "status": "future",
+      "recommendation": "Split into business/cold-outreach/follow-up/complaint/thank-you sub-branch"
+    },
+    {
+      "issue": "build-website and build-app could benefit from sub-branches",
+      "priority": "low",
+      "status": "future",
+      "recommendation": "Split website into landing/portfolio/ecommerce; app into mobile/desktop/web"
+    }
+  ],
+  "change_log": [
+    {
+      "date": "2026-04-05",
+      "agent_session": "session_01F7VJyxu8RUVEPLxa2tmSKz",
+      "changes": [
+        "write: +5 leaves (socialMedia, resume, report, copy, speech)",
+        "brainstorm: +5 leaves (naming, event, problemSolving, startup, sideProject)",
+        "learn: +5 leaves (history, design, music, cooking, finance)",
+        "debug: +3 leaves (performance, security, mobile)",
+        "explain: +3 leaves (data, math, legal)",
+        "summarize: +3 leaves (podcast, legal, conversation)",
+        "read: restructured — removed 3 analysis-mode leaves (summary, keypoints, fullAnalysis), added 2 source-type leaves (contract, spreadsheet)",
+        "Total: 101 nodes -> 124 nodes, 65 templates -> 88 templates"
+      ]
+    }
+  ]
+}
