@@ -49,5 +49,19 @@
   },
   "footer": {
     "builtWith": "用 ❤️ 打造"
+  },
+  "viewMode": {
+    "dynamic": "動態",
+    "bubble": "泡泡",
+    "list": "列表"
+  },
+  "tutorial": {
+    "viewModeSwitch": "切換檢視模式：動態、泡泡或列表",
+    "gotIt": "了解",
+    "skip": "跳過",
+    "done": "完成"
+  },
+  "prompt": {
+    "contentPlaceholder": "在這裡貼上你的內容（程式碼、文字、資料）..."
   }
 }

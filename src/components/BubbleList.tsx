@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import type { BubbleNode } from '../data/types';
+import { getTopicIcon } from '../utils/topicIcons';
+import { TopicIconHtml } from '../utils/TopicIconHtml';
 
 interface BubbleListProps {
   currentNode: BubbleNode;
@@ -66,7 +68,12 @@ export function BubbleList({
               }
             }}
           >
-            <span className="bubble-list__item-label">{t(child.labelKey)}</span>
+            <span className="bubble-list__item-label">
+              {getTopicIcon(child.id) && (
+                <TopicIconHtml name={getTopicIcon(child.id)!} size={16} className="bubble-list__item-icon" />
+              )}
+              {' '}{t(child.labelKey)}
+            </span>
             {child.descriptionKeys && child.descriptionKeys.length > 0 && (
               <span className="bubble-list__item-desc">
                 {child.descriptionKeys.map((k) => t(k)).join(', ')}

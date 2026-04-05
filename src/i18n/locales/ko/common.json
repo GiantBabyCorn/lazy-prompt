@@ -49,5 +49,19 @@
   },
   "footer": {
     "builtWith": "❤️ 로 제작"
+  },
+  "viewMode": {
+    "dynamic": "다이나믹",
+    "bubble": "버블",
+    "list": "목록"
+  },
+  "tutorial": {
+    "viewModeSwitch": "보기 모드 전환: 다이나믹, 버블, 목록",
+    "gotIt": "확인",
+    "skip": "건너뛰기",
+    "done": "완료"
+  },
+  "prompt": {
+    "contentPlaceholder": "여기에 콘텐츠를 붙여넣으세요 (코드, 텍스트, 데이터)..."
   }
 }

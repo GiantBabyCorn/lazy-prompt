@@ -34,8 +34,8 @@
     },
     "organizeSchedule": {
       "line1": "Organiza mi agenda para {{range}}",
-      "line2": "Lista todos los eventos, tareas y plazos en orden cronológico",
-      "line3": "Asigna niveles de prioridad: urgente, alta, media, baja",
+      "line2": "Lista todos los eventos, tareas y plazos en orden {{sortOrder}}",
+      "line3": "Asigna niveles de prioridad: {{priorities}}",
       "line4": "Identifica conflictos de horario o compromisos superpuestos",
       "line5": "Sugiere bloques de tiempo para trabajo profundo, reuniones y descansos",
       "line6": "Señala elementos con plazos próximos que necesiten atención inmediata",
@@ -44,10 +44,10 @@
     },
     "organizeNotes": {
       "line1": "Organiza las siguientes {{source}}",
-      "line2": "Agrupa las notas por tema con encabezados claros",
+      "line2": "Agrupa las notas por {{groupBy}} con encabezados claros",
       "line3": "Extrae todos los elementos de acción y etiquétalos con responsable y fecha límite si se mencionan",
       "line4": "Separa hechos de opiniones y decisiones de discusiones",
-      "line5": "Crea un esquema estructurado a partir de las notas en bruto",
+      "line5": "Crea un {{outputFormat}} a partir de las notas en bruto",
       "line6": "Destaca las decisiones clave que se tomaron",
       "line7": "Lista preguntas abiertas o elementos que necesitan seguimiento",
       "line8": "Añade etiquetas o labels para facilitar la búsqueda posterior"

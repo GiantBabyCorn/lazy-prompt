@@ -374,6 +374,10 @@ a:hover {
   margin-top: 2px;
 }
 
+.bubble-list__item-icon {
+  margin-right: 6px;
+}
+
 .bubble-list__item-arrow {
   position: absolute;
   right: 14px;
@@ -407,31 +411,114 @@ a:hover {
   height: 100%;
 }
 
-/* Tooltip hidden by default, shown on hover via parent g:hover */
+/* Tooltip hidden by default, shown on hover (mouse-only devices) */
 .world-bubble-tooltip {
   opacity: 0;
   transition: opacity 0.15s;
 }
 
-g:hover > .world-bubble-tooltip {
-  opacity: 1;
+/* Hover effects only on devices with true hover capability (no touch sticky hover) */
+@media (hover: hover) {
+  g:hover > .world-bubble-tooltip {
+    opacity: 1;
+  }
+
+  /* Hover glow on interactive bubbles */
+  .bubble-border {
+    transition: filter 0.15s;
+  }
+
+  /* Normal bubbles: cyan border + blue glow */
+  g:hover > .bubble-border {
+    stroke: var(--color-cyan) !important;
+    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
+  }
+
+  /* Go-back bubble: keep orange border + orange glow */
+  g.bubble-goback:hover > .bubble-border {
+    stroke: var(--color-orange) !important;
+    filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.5));
+  }
 }
 
-/* Hover effect on interactive bubbles */
-.bubble-border {
-  transition: filter 0.15s;
+/* ============================================================
+   Tutorial Tooltip
+   ============================================================ */
+
+.tutorial-tooltip {
+  background: var(--color-surface);
+  border: 1px solid var(--color-cyan);
+  border-radius: 10px;
+  padding: 12px 16px;
+  max-width: 260px;
+  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.15);
+  animation: fade-in 0.25s ease-out;
 }
 
-/* Normal bubbles: cyan border + blue glow */
-g:hover > .bubble-border {
-  stroke: var(--color-cyan) !important;
-  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
+.tutorial-tooltip__arrow {
+  position: absolute;
+  top: -6px;
+  right: 20px;
+  width: 12px;
+  height: 12px;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-cyan);
+  border-left: 1px solid var(--color-cyan);
+  transform: rotate(45deg);
 }
 
-/* Go-back bubble: keep orange border + orange glow */
-g.bubble-goback:hover > .bubble-border {
-  stroke: var(--color-orange) !important;
-  filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.5));
+.tutorial-tooltip__message {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.tutorial-tooltip__footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+}
+
+.tutorial-tooltip__nav {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 2px 8px;
+  font-family: inherit;
+  font-size: 0.75rem;
+}
+
+.tutorial-tooltip__nav:hover {
+  border-color: var(--color-cyan);
+  color: var(--color-cyan);
+}
+
+.tutorial-tooltip__nav:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.tutorial-tooltip__counter {
+  color: var(--color-text-secondary);
+}
+
+.tutorial-tooltip__skip {
+  background: transparent;
+  border: none;
+  color: var(--color-cyan);
+  cursor: pointer;
+  padding: 2px 6px;
+  font-family: inherit;
+  font-size: 0.75rem;
+  margin-left: auto;
+}
+
+.tutorial-tooltip__skip:hover {
+  text-decoration: underline;
 }
 
 /* ============================================================

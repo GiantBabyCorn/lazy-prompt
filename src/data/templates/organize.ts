@@ -12,7 +12,15 @@ const templates: PromptTemplate[] = [
           {
             "id": "or1-type",
             "placeholder": "quarterly sales report",
-            "color": "yellow"
+            "color": "yellow",
+            "suggestions": [
+              "quarterly sales report",
+              "monthly revenue data",
+              "annual budget review",
+              "customer feedback survey",
+              "project status update",
+              "market research findings"
+            ]
           }
         ]
       },
@@ -151,7 +159,15 @@ const templates: PromptTemplate[] = [
           {
             "id": "op1-category",
             "placeholder": "electronics inventory",
-            "color": "yellow"
+            "color": "yellow",
+            "suggestions": [
+              "electronics inventory",
+              "clothing catalog",
+              "grocery stock",
+              "office supplies",
+              "software licenses",
+              "furniture collection"
+            ]
           }
         ]
       },
@@ -232,12 +248,39 @@ const templates: PromptTemplate[] = [
       {
         "id": "os2",
         "textKey": "templates.organizeSchedule.line2",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "os2-sortOrder",
+            "placeholder": "chronological",
+            "color": "green",
+            "suggestions": [
+              "chronological",
+              "priority",
+              "category",
+              "duration",
+              "deadline"
+            ]
+          }
+        ]
       },
       {
         "id": "os3",
         "textKey": "templates.organizeSchedule.line3",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "os3-priorities",
+            "placeholder": "urgent, high, medium, low",
+            "color": "cyan",
+            "suggestions": [
+              "urgent, high, medium, low",
+              "P0, P1, P2, P3",
+              "must-do, should-do, nice-to-do",
+              "critical, important, normal, optional"
+            ]
+          }
+        ]
       },
       {
         "id": "os4",
@@ -292,7 +335,22 @@ const templates: PromptTemplate[] = [
       {
         "id": "on2",
         "textKey": "templates.organizeNotes.line2",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "on2-groupBy",
+            "placeholder": "topic or theme",
+            "color": "green",
+            "suggestions": [
+              "topic or theme",
+              "date",
+              "person",
+              "project",
+              "priority",
+              "action type"
+            ]
+          }
+        ]
       },
       {
         "id": "on3",
@@ -307,7 +365,22 @@ const templates: PromptTemplate[] = [
       {
         "id": "on5",
         "textKey": "templates.organizeNotes.line5",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "on5-outputFormat",
+            "placeholder": "structured outline",
+            "color": "cyan",
+            "suggestions": [
+              "structured outline",
+              "mind map",
+              "bullet summary",
+              "table of contents",
+              "wiki page",
+              "action plan"
+            ]
+          }
+        ]
       },
       {
         "id": "on6",
@@ -529,7 +602,15 @@ const templates: PromptTemplate[] = [
           {
             "id": "ot1-range",
             "placeholder": "project history",
-            "color": "yellow"
+            "color": "yellow",
+            "suggestions": [
+              "project history",
+              "company milestones",
+              "product development",
+              "career progression",
+              "historical events",
+              "campaign timeline"
+            ]
           }
         ]
       },

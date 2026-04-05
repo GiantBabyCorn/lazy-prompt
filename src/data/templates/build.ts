@@ -1258,6 +1258,366 @@ const templates: PromptTemplate[] = [
         "type": "fixed"
       }
     ]
+  },
+  {
+    "id": "buildDashboard",
+    "sections": [
+      {
+        "id": "bdash1",
+        "textKey": "templates.buildDashboard.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "bdash1-name",
+            "placeholder": "OOO",
+            "color": "yellow"
+          }
+        ]
+      },
+      {
+        "id": "bdash2",
+        "textKey": "templates.buildDashboard.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "bdash2-fw",
+            "placeholder": "React",
+            "color": "cyan",
+            "suggestions": [
+              "React",
+              "Vue",
+              "Angular",
+              "Next.js",
+              "Svelte",
+              "Remix",
+              "Nuxt"
+            ]
+          },
+          {
+            "id": "bdash2-ui",
+            "placeholder": "Tailwind CSS",
+            "color": "cyan",
+            "suggestions": [
+              "Tailwind CSS",
+              "Material UI",
+              "Ant Design",
+              "Chakra UI",
+              "shadcn/ui",
+              "Bootstrap",
+              "Mantine"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bdash3",
+        "textKey": "templates.buildDashboard.line3",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "bdash3-data",
+            "placeholder": "REST API",
+            "color": "cyan",
+            "suggestions": [
+              "REST API",
+              "GraphQL",
+              "Firebase",
+              "Supabase",
+              "mock data"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bdash4",
+        "textKey": "templates.buildDashboard.line4",
+        "type": "extensible",
+        "defaultItems": [
+          {
+            "id": "bdash4-overview",
+            "textKey": "templates.buildDashboard.widgets.overview"
+          },
+          {
+            "id": "bdash4-charts",
+            "textKey": "templates.buildDashboard.widgets.charts"
+          },
+          {
+            "id": "bdash4-table",
+            "textKey": "templates.buildDashboard.widgets.table"
+          },
+          {
+            "id": "bdash4-activity",
+            "textKey": "templates.buildDashboard.widgets.activity"
+          },
+          {
+            "id": "bdash4-filters",
+            "textKey": "templates.buildDashboard.widgets.filters"
+          }
+        ]
+      },
+      {
+        "id": "bdash5",
+        "textKey": "templates.buildDashboard.line5",
+        "type": "fixed"
+      },
+      {
+        "id": "bdash6",
+        "textKey": "templates.buildDashboard.line6",
+        "type": "fixed"
+      },
+      {
+        "id": "bdash7",
+        "textKey": "templates.buildDashboard.line7",
+        "type": "fixed"
+      },
+      {
+        "id": "bdash8",
+        "textKey": "templates.buildDashboard.line8",
+        "type": "fixed"
+      },
+      {
+        "id": "bdash9",
+        "textKey": "templates.buildDashboard.line9",
+        "type": "fixed"
+      },
+      {
+        "id": "bdash10",
+        "textKey": "templates.buildDashboard.line10",
+        "type": "fixed"
+      }
+    ]
+  },
+  {
+    "id": "buildAutomation",
+    "sections": [
+      {
+        "id": "baut1",
+        "textKey": "templates.buildAutomation.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "baut1-name",
+            "placeholder": "OOO",
+            "color": "yellow"
+          }
+        ]
+      },
+      {
+        "id": "baut2",
+        "textKey": "templates.buildAutomation.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "baut2-platform",
+            "placeholder": "GitHub Actions",
+            "color": "cyan",
+            "suggestions": [
+              "GitHub Actions",
+              "GitLab CI",
+              "Jenkins",
+              "CircleCI",
+              "Terraform",
+              "Ansible",
+              "Docker Compose",
+              "Kubernetes"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "baut3",
+        "textKey": "templates.buildAutomation.line3",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "baut3-trigger",
+            "placeholder": "push to main branch",
+            "color": "green",
+            "suggestions": [
+              "push to main branch",
+              "pull request",
+              "scheduled (cron)",
+              "manual trigger",
+              "tag release",
+              "merge to production"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "baut4",
+        "textKey": "templates.buildAutomation.line4",
+        "type": "extensible",
+        "defaultItems": [
+          {
+            "id": "baut4-lint",
+            "textKey": "templates.buildAutomation.steps.lint"
+          },
+          {
+            "id": "baut4-test",
+            "textKey": "templates.buildAutomation.steps.test"
+          },
+          {
+            "id": "baut4-build",
+            "textKey": "templates.buildAutomation.steps.build"
+          },
+          {
+            "id": "baut4-deploy",
+            "textKey": "templates.buildAutomation.steps.deploy"
+          },
+          {
+            "id": "baut4-notify",
+            "textKey": "templates.buildAutomation.steps.notify"
+          }
+        ]
+      },
+      {
+        "id": "baut5",
+        "textKey": "templates.buildAutomation.line5",
+        "type": "fixed"
+      },
+      {
+        "id": "baut6",
+        "textKey": "templates.buildAutomation.line6",
+        "type": "fixed"
+      },
+      {
+        "id": "baut7",
+        "textKey": "templates.buildAutomation.line7",
+        "type": "fixed"
+      },
+      {
+        "id": "baut8",
+        "textKey": "templates.buildAutomation.line8",
+        "type": "fixed"
+      },
+      {
+        "id": "baut9",
+        "textKey": "templates.buildAutomation.line9",
+        "type": "fixed"
+      },
+      {
+        "id": "baut10",
+        "textKey": "templates.buildAutomation.line10",
+        "type": "fixed"
+      }
+    ]
+  },
+  {
+    "id": "buildComponent",
+    "sections": [
+      {
+        "id": "bcomp1",
+        "textKey": "templates.buildComponent.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "bcomp1-name",
+            "placeholder": "OOO",
+            "color": "yellow"
+          }
+        ]
+      },
+      {
+        "id": "bcomp2",
+        "textKey": "templates.buildComponent.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "bcomp2-fw",
+            "placeholder": "React",
+            "color": "cyan",
+            "suggestions": [
+              "React",
+              "Vue",
+              "Angular",
+              "Svelte",
+              "Web Components",
+              "SolidJS",
+              "Lit"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bcomp3",
+        "textKey": "templates.buildComponent.line3",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "bcomp3-style",
+            "placeholder": "CSS Modules",
+            "color": "cyan",
+            "suggestions": [
+              "CSS Modules",
+              "Tailwind CSS",
+              "styled-components",
+              "Emotion",
+              "Sass/SCSS",
+              "vanilla CSS",
+              "CSS-in-JS"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bcomp4",
+        "textKey": "templates.buildComponent.line4",
+        "type": "extensible",
+        "defaultItems": [
+          {
+            "id": "bcomp4-props",
+            "textKey": "templates.buildComponent.features.props"
+          },
+          {
+            "id": "bcomp4-states",
+            "textKey": "templates.buildComponent.features.states"
+          },
+          {
+            "id": "bcomp4-events",
+            "textKey": "templates.buildComponent.features.events"
+          },
+          {
+            "id": "bcomp4-slots",
+            "textKey": "templates.buildComponent.features.slots"
+          },
+          {
+            "id": "bcomp4-animations",
+            "textKey": "templates.buildComponent.features.animations"
+          }
+        ]
+      },
+      {
+        "id": "bcomp5",
+        "textKey": "templates.buildComponent.line5",
+        "type": "fixed"
+      },
+      {
+        "id": "bcomp6",
+        "textKey": "templates.buildComponent.line6",
+        "type": "fixed"
+      },
+      {
+        "id": "bcomp7",
+        "textKey": "templates.buildComponent.line7",
+        "type": "fixed"
+      },
+      {
+        "id": "bcomp8",
+        "textKey": "templates.buildComponent.line8",
+        "type": "fixed"
+      },
+      {
+        "id": "bcomp9",
+        "textKey": "templates.buildComponent.line9",
+        "type": "fixed"
+      },
+      {
+        "id": "bcomp10",
+        "textKey": "templates.buildComponent.line10",
+        "type": "fixed"
+      }
+    ]
   }
 ];
 

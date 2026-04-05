@@ -22,7 +22,10 @@
       "bot": "Bot",
       "extension": "Extensión",
       "game": "Juego",
-      "cliTool": "Herramienta CLI"
+      "cliTool": "Herramienta CLI",
+      "dashboard": "Panel",
+      "automation": "Automatización",
+      "component": "Componente"
     },
     "translation": {
       "enZh": "Inglés ↔ Chino",
@@ -148,5 +151,64 @@
       "Reunión",
       "Video / Podcast"
     ]
+  },
+  "templates": {
+    "buildDashboard": {
+      "line1": "Constrúyeme un panel de administración {{name}}",
+      "line2": "Usa {{framework}} con la librería de componentes {{uiLibrary}}",
+      "line3": "Fuente de datos: {{dataSource}}",
+      "line4": "Debe contener los siguientes widgets:",
+      "widgets": {
+        "overview": "Tarjetas de KPI (usuarios, ingresos, pedidos, crecimiento)",
+        "charts": "Gráficos interactivos (líneas, barras, pastel) con filtro de rango de fechas",
+        "table": "Tabla de datos con ordenación, filtrado y paginación",
+        "activity": "Actividad reciente / registro de auditoría",
+        "filters": "Filtros globales (rango de fechas, estado, categoría)"
+      },
+      "line5": "Incluir control de acceso basado en roles (admin, editor, visor)",
+      "line6": "Agregar navegación lateral responsiva con menú plegable",
+      "line7": "Incluir exportación de datos (CSV, PDF)",
+      "line8": "Agregar actualización de datos en tiempo real con indicadores de carga",
+      "line9": "Incluir soporte de tema oscuro/claro",
+      "line10": "Agregar estados de error y estados vacíos para todos los widgets"
+    },
+    "buildAutomation": {
+      "line1": "Constrúyeme un flujo de automatización {{name}}",
+      "line2": "Plataforma: {{platform}}",
+      "line3": "Disparador: {{trigger}}",
+      "line4": "Debe contener los siguientes pasos:",
+      "steps": {
+        "lint": "Verificación de código y formato",
+        "test": "Ejecutar pruebas unitarias y de integración",
+        "build": "Compilar y generar artefactos",
+        "deploy": "Desplegar al entorno destino",
+        "notify": "Enviar notificación de éxito/fallo"
+      },
+      "line5": "Incluir gestión de variables de entorno y secretos",
+      "line6": "Agregar caché de dependencias para acelerar ejecuciones",
+      "line7": "Incluir ejecución paralela de tareas cuando sea posible",
+      "line8": "Agregar estrategia de reversión en caso de fallo de despliegue",
+      "line9": "Incluir insignias de estado y notificaciones de build",
+      "line10": "Separar entornos de staging y producción"
+    },
+    "buildComponent": {
+      "line1": "Constrúyeme un componente UI {{name}}",
+      "line2": "Usar framework {{framework}}",
+      "line3": "Estilo: {{styling}}",
+      "line4": "Debe soportar las siguientes funcionalidades:",
+      "features": {
+        "props": "Props configurables con tipos TypeScript",
+        "states": "Múltiples estados visuales (predeterminado, hover, activo, deshabilitado, error)",
+        "events": "Callbacks de eventos (onChange, onClick, onFocus, onBlur)",
+        "slots": "Slots/hijos componibles para contenido flexible",
+        "animations": "Transiciones suaves y micro-animaciones"
+      },
+      "line5": "Incluir validación exhaustiva de props y valores por defecto",
+      "line6": "Agregar navegación completa por teclado y accesibilidad ARIA",
+      "line7": "Incluir comportamiento responsivo entre breakpoints",
+      "line8": "Agregar historias de Storybook para todas las variantes",
+      "line9": "Incluir pruebas unitarias con testing library",
+      "line10": "Agregar soporte de temas mediante propiedades CSS personalizadas o tokens de diseño"
+    }
   }
 }

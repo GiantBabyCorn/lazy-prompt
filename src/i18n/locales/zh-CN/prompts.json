@@ -25,7 +25,10 @@
       "bot": "Bot",
       "extension": "扩展程序",
       "game": "游戏",
-      "cliTool": "CLI 工具"
+      "cliTool": "CLI 工具",
+      "dashboard": "仪表盘",
+      "automation": "自动化",
+      "component": "组件"
     },
     "translation": {
       "enZh": "英语 ↔ 中文",
@@ -149,5 +152,64 @@
       "会议",
       "视频 / 播客"
     ]
+  },
+  "templates": {
+    "buildDashboard": {
+      "line1": "帮我搭建一个 {{name}} 管理仪表盘",
+      "line2": "使用 {{framework}} 搭配 {{uiLibrary}} 组件库",
+      "line3": "数据来源：{{dataSource}}",
+      "line4": "必须包含以下组件：",
+      "widgets": {
+        "overview": "KPI 概览卡片（用户数、收入、订单、增长率）",
+        "charts": "交互式图表（折线图、柱状图、饼图）支持日期范围筛选",
+        "table": "数据表格，支持排序、筛选和分页",
+        "activity": "最近活动 / 操作日志",
+        "filters": "全局筛选器（日期范围、状态、分类）"
+      },
+      "line5": "包含基于角色的访问控制（管理员、编辑者、查看者）",
+      "line6": "添加响应式侧边栏导航，支持折叠菜单",
+      "line7": "包含数据导出功能（CSV、PDF）",
+      "line8": "添加实时数据刷新和加载指示器",
+      "line9": "包含深色/浅色主题切换",
+      "line10": "为所有组件添加错误状态和空数据状态"
+    },
+    "buildAutomation": {
+      "line1": "帮我搭建一个 {{name}} 自动化工作流",
+      "line2": "平台：{{platform}}",
+      "line3": "触发条件：{{trigger}}",
+      "line4": "必须包含以下步骤：",
+      "steps": {
+        "lint": "代码检查和格式化",
+        "test": "运行单元测试和集成测试",
+        "build": "构建和编译产物",
+        "deploy": "部署到目标环境",
+        "notify": "成功/失败时发送通知"
+      },
+      "line5": "包含环境变量和密钥管理",
+      "line6": "添加依赖缓存以加速运行",
+      "line7": "尽可能使用并行任务执行",
+      "line8": "添加部署失败时的回滚策略",
+      "line9": "包含状态徽章和构建通知",
+      "line10": "区分预发布和生产环境"
+    },
+    "buildComponent": {
+      "line1": "帮我搭建一个 {{name}} UI 组件",
+      "line2": "使用 {{framework}} 框架",
+      "line3": "样式方案：{{styling}}",
+      "line4": "必须支持以下功能：",
+      "features": {
+        "props": "可配置的属性，附带 TypeScript 类型",
+        "states": "多种视觉状态（默认、悬停、激活、禁用、错误）",
+        "events": "事件回调（onChange、onClick、onFocus、onBlur）",
+        "slots": "可组合的插槽/子元素，支持灵活内容",
+        "animations": "流畅的过渡动画和微交互"
+      },
+      "line5": "包含完整的属性校验和默认值",
+      "line6": "添加完整的键盘导航和 ARIA 无障碍支持",
+      "line7": "包含跨断点的响应式行为",
+      "line8": "添加 Storybook 各变体的用例",
+      "line9": "包含测试库的单元测试",
+      "line10": "添加通过 CSS 自定义属性或设计令牌实现的主题支持"
+    }
   }
 }

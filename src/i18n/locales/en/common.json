@@ -49,5 +49,19 @@
   },
   "footer": {
     "builtWith": "Built with ❤️"
+  },
+  "viewMode": {
+    "dynamic": "Dynamic",
+    "bubble": "Bubble",
+    "list": "List"
+  },
+  "tutorial": {
+    "viewModeSwitch": "Switch between view modes: Dynamic, Bubble, or List",
+    "gotIt": "Got it",
+    "skip": "Skip",
+    "done": "Done"
+  },
+  "prompt": {
+    "contentPlaceholder": "Paste your content here (code, text, data)..."
   }
 }
