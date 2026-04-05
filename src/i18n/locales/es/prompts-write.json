@@ -1,0 +1,64 @@
+{
+  "templates": {
+    "writeEmail": {
+      "line1": "Escribe un correo electrónico para {{purpose}}",
+      "line2": "Destinatario: {{recipient}}",
+      "line3": "Tono: {{tone}}",
+      "line4": "Incluye un asunto claro y descriptivo",
+      "line5": "Comienza con un saludo apropiado según la relación",
+      "line6": "Ve al grano en el primer párrafo — indica el propósito con claridad",
+      "line7": "Si solicitas una acción, haz el pedido de forma específica e incluye una fecha límite",
+      "line8": "Sé conciso — apunta a un máximo de 5-8 oraciones en el cuerpo",
+      "line9": "Termina con un siguiente paso claro o llamada a la acción",
+      "line10": "Incluye una despedida apropiada que coincida con el tono"
+    },
+    "writeBlog": {
+      "line1": "Escribe un artículo de blog sobre {{topic}}",
+      "line2": "Extensión objetivo: {{length}}",
+      "line3": "Tono: {{tone}}",
+      "line4": "Escribe un título compatible con SEO que sea atractivo y de menos de 60 caracteres",
+      "line5": "Comienza con un gancho — un dato sorprendente, una pregunta o una afirmación audaz",
+      "line6": "Usa subtítulos H2/H3 cada 200-300 palabras para mejorar la legibilidad",
+      "line7": "Incluye ejemplos específicos, datos o casos de estudio para respaldar las afirmaciones",
+      "line8": "Agrega una conclusión práctica o un consejo accionable en cada sección principal",
+      "line9": "Termina con una conclusión convincente y una clara llamada a la acción",
+      "line10": "Optimiza la legibilidad: párrafos cortos (2-3 oraciones), longitud de oraciones variada, palabras de transición"
+    },
+    "writeDocumentation": {
+      "line1": "Escribe documentación para {{project}}",
+      "line2": "Tipo de documentación: {{type}}",
+      "line3": "Audiencia objetivo: {{audience}}",
+      "line4": "Comienza con una descripción general clara: qué hace, para quién es y los prerequisitos",
+      "line5": "Incluye una sección de inicio rápido que permita empezar en menos de 5 minutos",
+      "line6": "Proporciona ejemplos de código funcionales para cada función — que se puedan copiar y pegar, no pseudocódigo",
+      "line7": "Documenta parámetros, valores de retorno y casos de error para cada endpoint/función",
+      "line8": "Agrega una sección de solución de problemas con errores comunes y sus soluciones",
+      "line9": "Incluye un registro de cambios o notas de compatibilidad de versiones",
+      "line10": "Usa formato consistente: bloques de código para código, tablas para parámetros, avisos para advertencias"
+    },
+    "writeProposal": {
+      "line1": "Escribe una propuesta para {{project}}",
+      "line2": "Audiencia objetivo: {{audience}}",
+      "line3": "Comienza con un resumen ejecutivo convincente (una página máximo)",
+      "line4": "Define claramente el problema u oportunidad que se aborda",
+      "line5": "Presenta la solución propuesta con entregables y hitos específicos",
+      "line6": "Incluye un cronograma realista con fases y fechas clave",
+      "line7": "Proporciona un desglose detallado del presupuesto con justificación para cada partida",
+      "line8": "Cuantifica el ROI esperado o los beneficios con métricas concretas",
+      "line9": "Aborda los riesgos y estrategias de mitigación de forma proactiva",
+      "line10": "Termina con próximos pasos claros y una llamada a la acción específica"
+    },
+    "writeStory": {
+      "line1": "Escribe una historia de {{genre}}",
+      "line2": "Extensión objetivo: {{length}}",
+      "line3": "Punto de vista: {{pov}}",
+      "line4": "Crea un inicio atractivo que atrape al lector de inmediato",
+      "line5": "Desarrolla personajes distintos con motivaciones y defectos claros",
+      "line6": "Construye el mundo a través de detalles sensoriales — muestra, no cuentes",
+      "line7": "Incluye tensión creciente con al menos un conflicto importante o punto de inflexión",
+      "line8": "Escribe diálogos naturales que revelen el carácter y avancen la trama",
+      "line9": "Crea un final satisfactorio que resuelva el conflicto central",
+      "line10": "Varía el ritmo de las oraciones — mezcla oraciones cortas y contundentes con otras más largas y descriptivas"
+    }
+  }
+}

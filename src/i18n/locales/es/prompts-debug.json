@@ -1,0 +1,64 @@
+{
+  "templates": {
+    "debugFrontend": {
+      "line1": "Depura este problema de frontend en {{framework}}",
+      "line2": "Problema: {{error}}",
+      "line3": "Revisa la consola del navegador — ¿hay errores de JS, advertencias o solicitudes de red fallidas?",
+      "line4": "Inspecciona el DOM — ¿se renderiza el elemento esperado? Revisa sus estilos CSS computados",
+      "line5": "Verifica el state y props del componente — ¿son los esperados al momento del render?",
+      "line6": "Prueba en varios navegadores: ¿el problema se reproduce en Chrome, Firefox y Safari?",
+      "line7": "Verifica el comportamiento responsive — ¿el problema solo ocurre en tamaños de viewport específicos?",
+      "line8": "Identifica la causa raíz y proporciona una solución paso a paso con código",
+      "line9": "Explica por qué la solución funciona y cualquier efecto secundario a tener en cuenta",
+      "line10": "Sugiere cómo prevenir problemas similares (reglas de linting, tests, patrones)"
+    },
+    "debugBackend": {
+      "line1": "Depura este problema de backend en {{stack}}",
+      "line2": "Problema: {{error}}",
+      "line3": "Analiza el stack trace — ¿cuál función/línea es la fuente real del error?",
+      "line4": "Verifica el ciclo de vida de la solicitud: ¿el error está en el routing, middleware, controller o capa de base de datos?",
+      "line5": "Inspecciona los logs relevantes — ¿hay advertencias previas o patrones?",
+      "line6": "Busca problemas de concurrencia: race conditions, deadlocks o corrupción de estado compartido",
+      "line7": "Verifica el entorno: ¿las variables de entorno están configuradas correctamente? ¿Las dependencias están en las versiones esperadas?",
+      "line8": "Identifica la causa raíz y proporciona la solución con código",
+      "line9": "Verifica si podría ser un memory leak o problema de rendimiento bajo carga",
+      "line10": "Sugiere tests a agregar que detectarían esta regresión"
+    },
+    "debugDatabase": {
+      "line1": "Depura este problema de base de datos {{db}}",
+      "line2": "Problema: {{error}}",
+      "line3": "Muestra la query problemática y ejecuta EXPLAIN/ANALYZE para verificar el plan de ejecución",
+      "line4": "Busca índices faltantes — ¿hay escaneos secuenciales en tablas grandes?",
+      "line5": "Busca patrones de queries N+1 o JOINs innecesarios",
+      "line6": "Verifica la contención de bloqueos: ¿hay deadlocks o transacciones mantenidas por largo tiempo?",
+      "line7": "Verifica las restricciones del schema: foreign keys, índices únicos, violaciones de NOT NULL",
+      "line8": "Revisa el connection pool: ¿se están devolviendo las conexiones correctamente?",
+      "line9": "Proporciona la query optimizada o el cambio de schema con explicación",
+      "line10": "Sugiere queries de monitoreo para detectar este problema tempranamente en el futuro"
+    },
+    "debugApi": {
+      "line1": "Depura este problema de API: {{method}} {{endpoint}}",
+      "line2": "Error: {{status}}",
+      "line3": "Muestra la solicitud completa: URL, headers, body y parámetros de query",
+      "line4": "Muestra la respuesta completa: código de estado, headers y body",
+      "line5": "Verifica la autenticación: ¿el token es válido, no ha expirado y tiene los scopes correctos?",
+      "line6": "Si es error de CORS: verifica Access-Control-Allow-Origin, preflight OPTIONS y configuración de credentials",
+      "line7": "Verifica que la solicitud coincida con la especificación de la API: Content-Type correcto, campos requeridos, tipos de datos válidos",
+      "line8": "Revisa el rate limiting: ¿has excedido la cuota de solicitudes de la API?",
+      "line9": "Identifica la causa raíz y proporciona la solución",
+      "line10": "Sugiere estrategias de reintentos/fallback y mejoras en el manejo de errores"
+    },
+    "debugDevops": {
+      "line1": "Depura este problema de DevOps/infraestructura con {{tool}}",
+      "line2": "Problema: {{error}}",
+      "line3": "Muestra los archivos de configuración relevantes, Dockerfiles o definiciones de pipeline",
+      "line4": "Revisa los logs del servicio/contenedor/paso que falla — ¿cuál es el último punto exitoso?",
+      "line5": "Verifica que las variables de entorno y secrets estén correctamente configurados y accesibles",
+      "line6": "Revisa la red: ¿los servicios pueden comunicarse entre sí? Resolución DNS, puertos, firewalls",
+      "line7": "Verifica los límites de recursos: ¿el servicio se está quedando sin CPU, memoria o disco?",
+      "line8": "Verifica los permisos: ¿la cuenta de servicio tiene los roles/políticas IAM correctos?",
+      "line9": "Proporciona la solución con los cambios exactos de configuración/comandos necesarios",
+      "line10": "Sugiere monitoreo y alertas para detectar este problema antes de que afecte a los usuarios"
+    }
+  }
+}

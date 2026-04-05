@@ -5,14 +5,27 @@ import { fileURLToPath } from 'url';
 import type { PromptTemplate } from '../src/data/types.ts';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const TEMPLATES_PATH = resolve(__dirname, '../src/data/promptTemplates.ts');
+const CATEGORIES = ['build', 'translation', 'read', 'write', 'debug', 'explain', 'brainstorm', 'learn', 'organize', 'summarize'];
+
+function getCategoryForId(id: string): string {
+  const lower = id.toLowerCase();
+  for (const cat of CATEGORIES) {
+    if (lower.startsWith(cat)) return cat;
+  }
+  return 'build';
+}
+
+function getTemplatesPath(templateId: string): string {
+  return resolve(__dirname, `../src/data/templates/${getCategoryForId(templateId)}.ts`);
+}
 
 function ask(rl: readline.Interface, question: string): Promise<string> {
   return new Promise((resolve) => rl.question(question, resolve));
 }
 
 async function main() {
-  const { promptTemplates } = await import('../src/data/promptTemplates.ts');
+  const { loadAllTemplates } = await import('../src/data/templates/index.ts');
+  const promptTemplates = await loadAllTemplates();
   const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 
   try {
@@ -41,6 +54,7 @@ async function main() {
 
     const choice = await ask(rl, '\nChoice (1-4): ');
 
+    const TEMPLATES_PATH = getTemplatesPath(templateId);
     let source = readFileSync(TEMPLATES_PATH, 'utf-8');
 
     if (choice === '1') {

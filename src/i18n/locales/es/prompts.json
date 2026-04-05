@@ -94,99 +94,36 @@
       "process": "Proceso",
       "error": "Error",
       "architecture": "Arquitectura"
+    },
+    "summarize": {
+      "article": "Artículo",
+      "meeting": "Reunión",
+      "video": "Video / Podcast",
+      "book": "Libro / Capítulo",
+      "research": "Artículo de investigación"
     }
   },
   "descriptions": {
-    "build": ["Sitio web", "APP", "Presentaciones"],
-    "read": ["Página web", "Documento", "Correo electrónico"],
-    "organize": ["Informes", "Cuentas", "Listas de productos"],
-    "translation": []
-  },
-  "templates": {
-    "buildWebsite": {
-      "line1": "Constrúyeme un sitio web de {{name}}",
-      "line2": "Usar {{framework}} y {{router}}",
-      "line3": "Usar i18n para multiidioma con {{languages}}",
-      "line4": "Información SEO meta completa",
-      "line5": "Debe contener las siguientes páginas:",
-      "pages": {
-        "landing": "Página de inicio",
-        "about": "Acerca de",
-        "contact": "Contacto",
-        "blog": "Blog",
-        "faq": "Preguntas frecuentes",
-        "privacy": "Política de privacidad",
-        "terms": "Términos de servicio"
-      },
-      "line6": "Incluir diseño responsivo para móvil y tablet",
-      "line7": "Añadir alternancia de tema oscuro/claro",
-      "line8": "Incluir manejo adecuado de errores y página 404",
-      "line9": "Usar TypeScript para seguridad de tipos",
-      "line10": "Incluir estados de carga y pantallas esqueleto",
-      "line11": "Añadir validación de formularios adecuada",
-      "line12": "Incluir accesibilidad (cumplimiento WCAG 2.1 AA)",
-      "line13": "Configurar pipeline de CI/CD",
-      "line14": "Incluir configuración de pruebas unitarias con librería de testing",
-      "line15": "Añadir flujo de trabajo Git adecuado con .gitignore"
-    },
-    "buildApp": {
-      "line1": "Constrúyeme una aplicación móvil de {{name}}",
-      "line2": "Usar el framework {{framework}}",
-      "line3": "Soportar plataformas {{platforms}}",
-      "line4": "Incluir autenticación y autorización de usuarios",
-      "line5": "Debe contener las siguientes pantallas:",
-      "screens": {
-        "splash": "Pantalla de inicio",
-        "login": "Inicio de sesión / Registro",
-        "home": "Panel principal",
-        "profile": "Perfil de usuario",
-        "settings": "Configuración",
-        "notifications": "Notificaciones"
-      },
-      "line6": "Incluir soporte de notificaciones push",
-      "line7": "Añadir caché de datos sin conexión",
-      "line8": "Incluir navegación adecuada con navegadores de pila y pestañas",
-      "line9": "Añadir opción de autenticación biométrica",
-      "line10": "Incluir gestión del estado de la aplicación",
-      "line11": "Añadir límites de error adecuados e informes de fallos",
-      "line12": "Incluir soporte de enlaces profundos",
-      "line13": "Añadir configuración de despliegue en tienda de aplicaciones"
-    },
-    "translationGeneral": {
-      "line1": "Traduce el siguiente texto de {{sourceLang}} a {{targetLang}}",
-      "line2": "Mantener el tono y estilo original: {{tone}}",
-      "line3": "Preservar todos los términos técnicos y nombres propios",
-      "line4": "Mantener el formato y la estructura intactos",
-      "line5": "Proporcionar notas de contexto cultural cuando corresponda",
-      "line6": "Señalar modismos o expresiones que no se traducen directamente",
-      "line7": "Asegurar que la gramática y puntuación sean correctas en el idioma destino",
-      "line8": "Si hay múltiples traducciones válidas, proporcionar la más natural",
-      "line9": "Mantener los saltos de párrafo y el formato de listas",
-      "line10": "Añadir notas del traductor entre corchetes para secciones ambiguas"
-    },
-    "readDocument": {
-      "line1": "Lee y analiza el siguiente {{docType}}",
-      "line2": "Modo de análisis: {{analysisMode}}",
-      "line3": "Proporcionar un resumen estructurado con encabezados claros",
-      "line4": "Destacar hallazgos clave y puntos de datos importantes",
-      "line5": "Identificar inconsistencias o problemas potenciales",
-      "line6": "Extraer elementos accionables y recomendaciones",
-      "line7": "Anotar referencias o citas para lectura adicional",
-      "line8": "Resumir el argumento o tesis principal",
-      "line9": "Evaluar la credibilidad y completitud del documento",
-      "line10": "Sugerir preguntas de seguimiento basadas en el contenido"
-    },
-    "organizeReports": {
-      "line1": "Organiza los siguientes datos de {{dataType}}",
-      "line2": "Formato de salida: {{outputFormat}}",
-      "line3": "Ordenar por {{sortCriteria}} en orden {{sortOrder}}",
-      "line4": "Agrupar elementos relacionados por categoría",
-      "line5": "Añadir estadísticas de resumen (totales, promedios, conteos)",
-      "line6": "Destacar valores atípicos o anomalías",
-      "line7": "Incluir tabla de contenidos o índice",
-      "line8": "Formatear números con separadores y unidades adecuados",
-      "line9": "Añadir encabezados de sección y etiquetas claras",
-      "line10": "Incluir un breve resumen ejecutivo en la parte superior"
-    }
+    "build": [
+      "Sitio web",
+      "APP",
+      "Presentaciones"
+    ],
+    "read": [
+      "Página web",
+      "Documento",
+      "Correo electrónico"
+    ],
+    "organize": [
+      "Informes",
+      "Cuentas",
+      "Listas de productos"
+    ],
+    "translation": [],
+    "summarize": [
+      "Artículo",
+      "Reunión",
+      "Video / Podcast"
+    ]
   }
 }

@@ -1,0 +1,64 @@
+{
+  "templates": {
+    "explainCode": {
+      "line1": "Explica el siguiente código en {{lang}}",
+      "line2": "Comienza con un resumen de 2-3 oraciones de lo que hace el código y por qué",
+      "line3": "Recorre el código línea por línea o bloque por bloque",
+      "line4": "Explica el propósito de cada función, clase o módulo",
+      "line5": "Destaca los patrones de diseño utilizados (observer, factory, singleton, etc.)",
+      "line6": "Explica los algoritmos complejos y su complejidad de tiempo/espacio",
+      "line7": "Señala los casos límite que el código maneja (o debería manejar)",
+      "line8": "Explica las dependencias y cómo este código se conecta con el sistema más amplio",
+      "line9": "Nota cualquier truco no obvio, soluciones alternativas o números mágicos",
+      "line10": "Resume con un modelo mental: ¿cómo debería alguien pensar sobre este código?"
+    },
+    "explainConcept": {
+      "line1": "Explica {{concept}}",
+      "line2": "Nivel de explicación: {{level}}",
+      "line3": "Comienza con una analogía o metáfora simple de la vida cotidiana",
+      "line4": "Da una definición clara y concisa en una sola oración",
+      "line5": "Explica por qué este concepto importa — ¿qué problema resuelve?",
+      "line6": "Proporciona 2-3 ejemplos concretos del mundo real",
+      "line7": "Compáralo con conceptos relacionados o que suelen confundirse — ¿cuál es la diferencia?",
+      "line8": "Aborda los 3 principales conceptos erróneos sobre este tema",
+      "line9": "Explica cuándo y dónde aplicarlo (y cuándo no)",
+      "line10": "Proporciona un checklist resumen con los puntos clave a recordar"
+    },
+    "explainProcess": {
+      "line1": "Explica el proceso de {{process}}",
+      "line2": "Comienza con un resumen de un párrafo de todo el proceso de principio a fin",
+      "line3": "Lista los prerequisitos: ¿qué necesita estar preparado antes de comenzar?",
+      "line4": "Divídelo en pasos numerados — cada paso debe ser una instrucción clara y accionable",
+      "line5": "Para cada paso, indica la entrada y salida esperadas",
+      "line6": "Destaca los puntos de decisión: ¿dónde se ramifica el proceso? ¿Qué determina qué camino seguir?",
+      "line7": "Señala los puntos de fallo comunes y cómo manejarlos",
+      "line8": "Describe cómo verificar que cada paso se completó exitosamente",
+      "line9": "Incluye un diagrama de flujo basado en texto si ayuda a clarificar el proceso",
+      "line10": "Termina con lo que sucede después de que el proceso se completa — ¿cuál es el siguiente paso?"
+    },
+    "explainError": {
+      "line1": "Explica este error: {{error}}",
+      "line2": "Lenguaje/Framework: {{lang}}",
+      "line3": "Traduce el mensaje de error a lenguaje simple — ¿qué está diciendo realmente?",
+      "line4": "Explica la causa raíz: ¿qué condición o código provoca este error?",
+      "line5": "Lista los escenarios más comunes que producen este error (ordenados por probabilidad)",
+      "line6": "Proporciona una solución paso a paso para cada escenario con ejemplos de código",
+      "line7": "Explica por qué cada solución funciona — qué estaba mal y cómo la solución lo corrige",
+      "line8": "Verifica efectos secundarios: ¿la solución podría romper algo más?",
+      "line9": "Muestra cómo prevenir que este error ocurra de nuevo",
+      "line10": "Lista errores relacionados que suelen aparecer junto a este"
+    },
+    "explainArchitecture": {
+      "line1": "Explica la arquitectura de {{system}}",
+      "line2": "Nivel de detalle: {{level}}",
+      "line3": "Comienza con una vista panorámica: ¿cuáles son los componentes principales y cómo se conectan?",
+      "line4": "Describe el flujo de datos: ¿cómo viaja una solicitud a través del sistema de principio a fin?",
+      "line5": "Explica la responsabilidad de cada componente principal y la elección de tecnología",
+      "line6": "Identifica los patrones de comunicación: sync vs async, REST vs events, etc.",
+      "line7": "Discute las compensaciones: ¿por qué se eligió esta arquitectura? ¿Cuáles eran las alternativas?",
+      "line8": "Identifica los posibles cuellos de botella y puntos únicos de fallo",
+      "line9": "Describe cómo escala el sistema: ¿horizontal, vertical o ambos?",
+      "line10": "Proporciona un diagrama de arquitectura basado en texto que muestre las relaciones entre componentes"
+    }
+  }
+}

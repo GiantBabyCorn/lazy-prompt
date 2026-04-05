@@ -94,99 +94,36 @@
       "process": "流程",
       "error": "錯誤",
       "architecture": "架構"
+    },
+    "summarize": {
+      "article": "文章",
+      "meeting": "會議",
+      "video": "影片 / 播客",
+      "book": "書籍 / 章節",
+      "research": "研究論文"
     }
   },
   "descriptions": {
-    "build": ["網站", "APP", "簡報"],
-    "read": ["網頁", "文件", "電子郵件"],
-    "organize": ["報告", "帳目", "產品列表"],
-    "translation": []
-  },
-  "templates": {
-    "buildWebsite": {
-      "line1": "為我建構一個 {{name}} 網站",
-      "line2": "使用 {{framework}} 和 {{router}}",
-      "line3": "使用 i18n 實現多語言支援，語言包括 {{languages}}",
-      "line4": "完整的 SEO 中繼資訊",
-      "line5": "必須包含以下頁面：",
-      "pages": {
-        "landing": "首頁",
-        "about": "關於",
-        "contact": "聯絡我們",
-        "blog": "部落格",
-        "faq": "常見問題",
-        "privacy": "隱私政策",
-        "terms": "服務條款"
-      },
-      "line6": "包含手機和平板的響應式設計",
-      "line7": "新增深色/淺色主題切換",
-      "line8": "包含正確的錯誤處理和 404 頁面",
-      "line9": "使用 TypeScript 確保型別安全",
-      "line10": "包含載入狀態和骨架畫面",
-      "line11": "新增正確的表單驗證",
-      "line12": "包含無障礙功能（WCAG 2.1 AA 合規）",
-      "line13": "設定 CI/CD 管線配置",
-      "line14": "包含使用測試函式庫的單元測試設定",
-      "line15": "新增正確的 Git 工作流程和 .gitignore"
-    },
-    "buildApp": {
-      "line1": "為我建構一個 {{name}} 行動應用程式",
-      "line2": "使用 {{framework}} 框架",
-      "line3": "支援 {{platforms}} 平台",
-      "line4": "包含使用者驗證和授權",
-      "line5": "必須包含以下畫面：",
-      "screens": {
-        "splash": "啟動畫面",
-        "login": "登入 / 註冊",
-        "home": "首頁儀表板",
-        "profile": "使用者個人資料",
-        "settings": "設定",
-        "notifications": "通知"
-      },
-      "line6": "包含推播通知支援",
-      "line7": "新增離線資料快取",
-      "line8": "包含使用堆疊和分頁導覽器的正確導覽",
-      "line9": "新增生物辨識驗證選項",
-      "line10": "包含應用程式狀態管理",
-      "line11": "新增正確的錯誤邊界和當機報告",
-      "line12": "包含深層連結支援",
-      "line13": "新增應用程式商店部署配置"
-    },
-    "translationGeneral": {
-      "line1": "將以下文字從 {{sourceLang}} 翻譯為 {{targetLang}}",
-      "line2": "維持原有的語氣和風格：{{tone}}",
-      "line3": "保留所有技術術語和專有名詞",
-      "line4": "保持格式和結構不變",
-      "line5": "在適用的地方提供文化背景註解",
-      "line6": "標記任何無法直接翻譯的慣用語或表達方式",
-      "line7": "確保目標語言的文法和標點正確",
-      "line8": "如果有多種有效翻譯，提供最自然的一種",
-      "line9": "保持段落分隔和列表格式",
-      "line10": "在括號中為模糊部分新增譯者註解"
-    },
-    "readDocument": {
-      "line1": "閱讀並分析以下 {{docType}}",
-      "line2": "分析模式：{{analysisMode}}",
-      "line3": "提供帶有清晰標題的結構化摘要",
-      "line4": "突顯關鍵發現和重要資料點",
-      "line5": "辨識任何不一致或潛在問題",
-      "line6": "擷取可執行的項目和建議",
-      "line7": "標註任何供進一步閱讀的參考或引用",
-      "line8": "總結主要論點或論題",
-      "line9": "評估文件的可信度和完整性",
-      "line10": "根據內容提出後續問題"
-    },
-    "organizeReports": {
-      "line1": "整理以下 {{dataType}} 資料",
-      "line2": "輸出格式：{{outputFormat}}",
-      "line3": "按 {{sortCriteria}} 以 {{sortOrder}} 順序排序",
-      "line4": "按類別分組相關項目",
-      "line5": "新增彙總統計（總計、平均值、計數）",
-      "line6": "突顯異常值或異常狀況",
-      "line7": "包含目錄或索引",
-      "line8": "使用正確的分隔符號和單位格式化數字",
-      "line9": "新增章節標題和清晰的標籤",
-      "line10": "在頂部包含簡要的執行摘要"
-    }
+    "build": [
+      "網站",
+      "APP",
+      "簡報"
+    ],
+    "read": [
+      "網頁",
+      "文件",
+      "電子郵件"
+    ],
+    "organize": [
+      "報告",
+      "帳目",
+      "產品列表"
+    ],
+    "translation": [],
+    "summarize": [
+      "文章",
+      "會議",
+      "影片 / 播客"
+    ]
   }
 }

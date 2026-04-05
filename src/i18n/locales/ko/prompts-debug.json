@@ -1,0 +1,64 @@
+{
+  "templates": {
+    "debugFrontend": {
+      "line1": "이 {{framework}} frontend 문제를 디버그해 주세요",
+      "line2": "문제: {{error}}",
+      "line3": "브라우저 콘솔을 확인해 주세요 — JS 오류, 경고 또는 실패한 네트워크 요청이 있나요?",
+      "line4": "DOM을 검사해 주세요 — 예상 요소가 렌더링되었나요? CSS computed styles를 확인해 주세요",
+      "line5": "컴포넌트 state와 props를 확인해 주세요 — 렌더링 시 예상한 값인가요?",
+      "line6": "크로스 브라우저 테스트: Chrome, Firefox, Safari에서 문제가 재현되나요?",
+      "line7": "반응형 동작을 확인해 주세요 — 특정 뷰포트 크기에서만 발생하는 문제인가요?",
+      "line8": "근본 원인을 파악하고 코드와 함께 단계별 수정 방법을 제공해 주세요",
+      "line9": "수정이 작동하는 이유와 주의할 부작용을 설명해 주세요",
+      "line10": "유사한 문제를 예방하는 방법을 제안해 주세요 (linting 규칙, 테스트, 패턴)"
+    },
+    "debugBackend": {
+      "line1": "이 {{stack}} backend 문제를 디버그해 주세요",
+      "line2": "문제: {{error}}",
+      "line3": "stack trace를 분석해 주세요 — 실제 오류의 원인인 함수/라인은 어디인가요?",
+      "line4": "요청 lifecycle을 확인해 주세요: 오류가 routing, middleware, controller, database 중 어느 계층에서 발생하나요?",
+      "line5": "관련 로그를 검사해 주세요 — 선행하는 경고나 패턴이 있나요?",
+      "line6": "동시성 문제를 확인해 주세요: race condition, deadlock 또는 공유 상태 손상이 있나요?",
+      "line7": "환경을 검증해 주세요: 환경 변수가 올바르게 설정되어 있나요? dependency 버전이 맞나요?",
+      "line8": "근본 원인을 파악하고 코드와 함께 수정 방법을 제공해 주세요",
+      "line9": "메모리 누수 또는 부하 시 성능 문제가 될 수 있는지 확인해 주세요",
+      "line10": "이 회귀를 잡을 수 있는 테스트 추가를 제안해 주세요"
+    },
+    "debugDatabase": {
+      "line1": "이 {{db}} database 문제를 디버그해 주세요",
+      "line2": "문제: {{error}}",
+      "line3": "문제가 되는 쿼리를 보여주고 EXPLAIN/ANALYZE로 실행 계획을 확인해 주세요",
+      "line4": "누락된 index를 확인해 주세요 — 대형 테이블에서 sequential scan이 발생하고 있나요?",
+      "line5": "N+1 쿼리 패턴이나 불필요한 JOIN을 찾아 주세요",
+      "line6": "lock 경합을 확인해 주세요: deadlock이나 장시간 유지되는 트랜잭션이 있나요?",
+      "line7": "스키마 제약 조건을 검증해 주세요: foreign key, unique index, NOT NULL 위반",
+      "line8": "connection pool을 확인해 주세요: 연결이 올바르게 반환되고 있나요?",
+      "line9": "최적화된 쿼리 또는 스키마 변경과 함께 설명을 제공해 주세요",
+      "line10": "향후 이 문제를 조기에 감지할 수 있는 모니터링 쿼리를 제안해 주세요"
+    },
+    "debugApi": {
+      "line1": "이 API 문제를 디버그해 주세요: {{method}} {{endpoint}}",
+      "line2": "오류: {{status}}",
+      "line3": "전체 요청을 보여 주세요: URL, header, body, query parameter",
+      "line4": "전체 응답을 보여 주세요: status code, header, body",
+      "line5": "인증을 확인해 주세요: token이 유효하고, 만료되지 않았으며, 올바른 scope를 가지고 있나요?",
+      "line6": "CORS 오류인 경우: Access-Control-Allow-Origin, preflight OPTIONS, credentials 설정을 확인해 주세요",
+      "line7": "요청이 API 스펙과 일치하는지 확인해 주세요: 올바른 Content-Type, 필수 필드, 유효한 데이터 타입",
+      "line8": "rate limiting을 확인해 주세요: API의 요청 할당량을 초과했나요?",
+      "line9": "근본 원인을 파악하고 수정 방법을 제공해 주세요",
+      "line10": "retry/fallback 전략과 오류 처리 개선 사항을 제안해 주세요"
+    },
+    "debugDevops": {
+      "line1": "이 {{tool}} DevOps/인프라 문제를 디버그해 주세요",
+      "line2": "문제: {{error}}",
+      "line3": "관련 설정 파일, Dockerfile 또는 pipeline 정의를 보여 주세요",
+      "line4": "실패한 서비스/컨테이너/단계의 로그를 확인해 주세요 — 마지막으로 성공한 지점은 어디인가요?",
+      "line5": "환경 변수와 secret이 올바르게 설정되어 있고 접근 가능한지 확인해 주세요",
+      "line6": "네트워킹을 확인해 주세요: 서비스 간 통신이 가능한가요? DNS 해석, 포트, 방화벽?",
+      "line7": "리소스 제한을 확인해 주세요: 서비스가 CPU, 메모리 또는 디스크 부족인가요?",
+      "line8": "권한을 확인해 주세요: 서비스 계정이 올바른 IAM role/policy를 가지고 있나요?",
+      "line9": "정확한 설정/명령어 변경 사항과 함께 수정 방법을 제공해 주세요",
+      "line10": "사용자에게 영향을 미치기 전에 이 문제를 감지할 수 있는 모니터링 및 알림을 제안해 주세요"
+    }
+  }
+}

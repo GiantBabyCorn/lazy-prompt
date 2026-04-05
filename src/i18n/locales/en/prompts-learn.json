@@ -1,0 +1,76 @@
+{
+  "templates": {
+    "learnTopic": {
+      "line1": "Teach me about {{subject}}",
+      "line2": "My current level: {{level}}",
+      "line3": "Start with a high-level overview",
+      "line4": "Break down complex concepts into simple explanations",
+      "line5": "Include practical examples and code snippets where relevant",
+      "line6": "Provide a learning roadmap with milestones",
+      "line7": "List recommended resources (books, courses, docs)",
+      "line8": "Include common pitfalls and misconceptions",
+      "line9": "Add practice exercises or challenges",
+      "line10": "Suggest related topics to explore next"
+    },
+    "learnProgramming": {
+      "line1": "Teach me about {{topic}}",
+      "line2": "My level: {{level}}",
+      "line3": "Start with a 3-sentence overview: what it is, why it matters, and when to use it",
+      "line4": "Explain the core concepts with working code examples I can run immediately",
+      "line5": "Show a before/after example: bad code vs. good code using this concept",
+      "line6": "Walk through a real-world use case step by step",
+      "line7": "List the top 5 mistakes beginners make and how to avoid them",
+      "line8": "Provide 3 practice exercises: easy, medium, and hard",
+      "line9": "Suggest a small project I can build to solidify my understanding",
+      "line10": "List recommended resources: official docs, tutorials, and YouTube channels"
+    },
+    "learnLanguage": {
+      "line1": "Help me learn {{target}}",
+      "line2": "My native language: {{native}}",
+      "line3": "My current level: {{level}}",
+      "line4": "Teach me the 20 most useful phrases for daily conversation",
+      "line5": "Explain the key grammar rules I need at my level, with examples",
+      "line6": "Create a mini dialogue I can practice (with pronunciation guide if applicable)",
+      "line7": "Point out common mistakes speakers of my native language make",
+      "line8": "Suggest a daily study routine: what to practice and for how long",
+      "line9": "Recommend apps, podcasts, and media in the target language for immersion",
+      "line10": "Give me a vocabulary quiz with 10 questions to test what I've learned"
+    },
+    "learnMath": {
+      "line1": "Teach me about {{topic}}",
+      "line2": "My level: {{level}}",
+      "line3": "Start with an intuitive explanation — what is this about in plain language?",
+      "line4": "Introduce the key definitions and notation I need to know",
+      "line5": "Walk through a foundational example step by step, showing every calculation",
+      "line6": "Provide a visual or geometric interpretation when possible",
+      "line7": "Show 2-3 practice problems with increasing difficulty (and full solutions)",
+      "line8": "Explain the most common mistakes students make with this topic",
+      "line9": "Connect to real-world applications: where is this math actually used?",
+      "line10": "Suggest prerequisite topics to review and what to study next"
+    },
+    "learnScience": {
+      "line1": "Teach me about {{topic}}",
+      "line2": "My level: {{level}}",
+      "line3": "Start with the big picture: why does this matter and where does it fit in science?",
+      "line4": "Explain the core principles using simple analogies and everyday examples",
+      "line5": "Describe a key experiment that demonstrated these principles",
+      "line6": "Use diagrams or step-by-step visual descriptions to illustrate complex ideas",
+      "line7": "Explain the current state of research: what do we know and what's still unknown?",
+      "line8": "List practical applications: how does this affect technology or daily life?",
+      "line9": "Address common misconceptions people have about this topic",
+      "line10": "Suggest 3 fascinating follow-up topics to explore next"
+    },
+    "learnBusiness": {
+      "line1": "Teach me about {{topic}}",
+      "line2": "My level: {{level}}",
+      "line3": "Start with a concise overview: what is it and why do business professionals need it?",
+      "line4": "Explain the key frameworks and mental models used in this area",
+      "line5": "Walk through a real case study with analysis and lessons learned",
+      "line6": "Provide actionable tips I can apply immediately in my work",
+      "line7": "List the metrics and KPIs professionals track in this area",
+      "line8": "Compare different schools of thought or approaches with pros/cons",
+      "line9": "Suggest books, courses, and thought leaders to follow",
+      "line10": "Give me a practice scenario to work through with your guidance"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "templates": {
+    "summarizeArticle": {
+      "line1": "Resume el siguiente artículo sobre {{topic}}",
+      "line2": "Extensión objetivo: {{length}}",
+      "line3": "Comienza con un TL;DR de una oración que capture el punto principal",
+      "line4": "Lista los argumentos o afirmaciones clave hechos por el autor",
+      "line5": "Anota cualquier dato, estadística o evidencia citada",
+      "line6": "Identifica la perspectiva del autor o posible sesgo",
+      "line7": "Destaca cualquier conclusión práctica para el lector",
+      "line8": "Califica la profundidad y calidad del artículo (superficial, adecuada, exhaustiva)"
+    },
+    "summarizeMeeting": {
+      "line1": "Resume la siguiente reunión de {{type}}",
+      "line2": "Lista los asistentes y sus roles si se mencionan",
+      "line3": "Comienza con un resumen de 2 oraciones del propósito y resultado de la reunión",
+      "line4": "Lista todas las decisiones que se tomaron, enunciadas claramente",
+      "line5": "Extrae elementos de acción en formato: [Responsable] — tarea — fecha límite",
+      "line6": "Anota cualquier pregunta abierta o asunto que necesite seguimiento",
+      "line7": "Destaca riesgos o bloqueadores que se plantearon",
+      "line8": "Incluye la fecha de la próxima reunión o los próximos pasos acordados"
+    },
+    "summarizeVideo": {
+      "line1": "Resume el siguiente {{type}}",
+      "line2": "Estilo de resumen: {{length}}",
+      "line3": "Proporciona marcas de tiempo para cada tema o segmento principal",
+      "line4": "Lista los puntos clave expuestos en cada segmento",
+      "line5": "Incluye cualquier cita notable o momento memorable",
+      "line6": "Anota cualquier recurso, enlace o referencia mencionada",
+      "line7": "Identifica la conclusión principal o llamada a la acción",
+      "line8": "Califica la calidad del contenido y quién se beneficiaría más de verlo"
+    },
+    "summarizeBook": {
+      "line1": "Resume {{title}}",
+      "line2": "Profundidad del resumen: {{length}}",
+      "line3": "Comienza con la tesis o argumento central del libro en 2-3 oraciones",
+      "line4": "Proporciona un desglose capítulo por capítulo o sección por sección",
+      "line5": "Identifica los temas principales y cómo se desarrollan a lo largo del libro",
+      "line6": "Incluye las citas más impactantes con referencias de página/capítulo",
+      "line7": "Anota las credenciales del autor y la perspectiva que dio forma a la obra",
+      "line8": "Lista las ideas más prácticas o aplicables del libro",
+      "line9": "Compara con libros similares del género: ¿cómo se distingue?",
+      "line10": "Da una calificación final y quién debería leer este libro"
+    },
+    "summarizeResearch": {
+      "line1": "Resume el siguiente artículo de investigación en {{field}}",
+      "line2": "Formato del resumen: {{length}}",
+      "line3": "Enuncia la pregunta de investigación y la hipótesis claramente",
+      "line4": "Describe la metodología en 2-3 oraciones",
+      "line5": "Lista los hallazgos clave y si respaldan la hipótesis",
+      "line6": "Anota el tamaño de la muestra y la significancia estadística",
+      "line7": "Identifica las principales limitaciones reconocidas por los autores",
+      "line8": "Explica las implicaciones prácticas: ¿qué significa esto para el campo?",
+      "line9": "Lista las citas más importantes para lectura adicional",
+      "line10": "Evalúa la contribución del artículo: incremental, significativa o revolucionaria"
+    }
+  }
+}

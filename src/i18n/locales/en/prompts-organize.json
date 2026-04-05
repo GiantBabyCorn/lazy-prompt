@@ -1,0 +1,106 @@
+{
+  "templates": {
+    "organizeReports": {
+      "line1": "Organize and structure the following {{type}} data",
+      "line2": "Output format: {{format}}",
+      "line3": "Start with a one-paragraph executive summary of the key findings",
+      "line4": "Organize findings by category with clear section headers",
+      "line5": "Include charts or table recommendations for visual data",
+      "line6": "Highlight anomalies, trends, and notable patterns",
+      "line7": "End each section with specific recommendations based on the data",
+      "line8": "Add an appendix with raw data tables for reference",
+      "line9": "Add section headers and clear labels",
+      "line10": "Include a brief executive summary at the top"
+    },
+    "organizeAccounts": {
+      "line1": "Organize the following {{type}}",
+      "line2": "Time period: {{period}}",
+      "line3": "Categorize each transaction: income, expense, transfer, or adjustment",
+      "line4": "Group expenses by category (food, transport, utilities, subscriptions, etc.)",
+      "line5": "Calculate subtotals for each category and a running balance",
+      "line6": "Flag any duplicate entries or suspicious transactions",
+      "line7": "Provide a summary: total income, total expenses, net balance",
+      "line8": "Compare with the previous period if data is available and highlight changes"
+    },
+    "organizeProducts": {
+      "line1": "Organize the following {{category}} product data",
+      "line2": "Primary sort: {{sort}}",
+      "line3": "Create a clean table with: name, SKU/ID, price, stock quantity, category",
+      "line4": "Flag items that are low stock (under 10 units) or out of stock",
+      "line5": "Calculate price ranges (min, max, average) per category",
+      "line6": "Identify pricing outliers that may need review",
+      "line7": "Suggest logical groupings or bundles based on related items",
+      "line8": "Add a category summary with total items and total inventory value"
+    },
+    "organizeSchedule": {
+      "line1": "Organize my schedule for {{range}}",
+      "line2": "List all events, tasks, and deadlines in chronological order",
+      "line3": "Assign priority levels: urgent, high, medium, low",
+      "line4": "Identify scheduling conflicts or overlapping commitments",
+      "line5": "Suggest time blocks for deep work, meetings, and breaks",
+      "line6": "Flag items with approaching deadlines that need immediate attention",
+      "line7": "Group related tasks that could be batched together",
+      "line8": "Suggest which items to delegate, defer, or drop if overloaded"
+    },
+    "organizeNotes": {
+      "line1": "Organize the following {{source}}",
+      "line2": "Group notes by topic or theme with clear headers",
+      "line3": "Extract all action items and tag them with owner and deadline if mentioned",
+      "line4": "Separate facts from opinions and decisions from discussions",
+      "line5": "Create a structured outline from the raw notes",
+      "line6": "Highlight key decisions that were made",
+      "line7": "List open questions or items that need follow-up",
+      "line8": "Add tags or labels for easy searching later"
+    },
+    "organizeCsv": {
+      "line1": "Organize and clean the following {{format}} data",
+      "line2": "Identify column headers and data types for each column",
+      "line3": "Clean the data: fix inconsistent formats, handle missing values, remove duplicates",
+      "line4": "Standardize date formats, number formats, and text casing",
+      "line5": "Sort and filter by the most relevant columns",
+      "line6": "Create a pivot table or summary view of key metrics",
+      "line7": "Identify data quality issues and suggest fixes",
+      "line8": "Output the cleaned data in a properly formatted table"
+    },
+    "organizeDatabase": {
+      "line1": "Organize and structure this {{db}} data",
+      "line2": "Analyze the current schema and identify normalization opportunities",
+      "line3": "Suggest proper table relationships and foreign keys",
+      "line4": "Identify missing indexes for common query patterns",
+      "line5": "Suggest data type optimizations for storage efficiency",
+      "line6": "Create or improve naming conventions for tables and columns",
+      "line7": "Provide SQL migration scripts for the proposed changes",
+      "line8": "Generate an ER diagram description of the final schema"
+    },
+    "organizeSummaryTable": {
+      "line1": "Create a summary table grouped by {{group}}",
+      "line2": "Calculate these metrics: {{metrics}}",
+      "line3": "Add a total/grand total row at the bottom",
+      "line4": "Highlight the top 3 and bottom 3 performers",
+      "line5": "Calculate percentage of total for each group",
+      "line6": "Add trend indicators (up/down/flat) compared to previous period if available",
+      "line7": "Format numbers with proper separators, decimal places, and currency symbols",
+      "line8": "Add a brief interpretation note for each significant finding"
+    },
+    "organizeTimeline": {
+      "line1": "Create a timeline of {{range}}",
+      "line2": "Granularity: {{granularity}}",
+      "line3": "List events in chronological order with exact dates",
+      "line4": "Mark major milestones with emphasis",
+      "line5": "Identify phases or periods and label them clearly",
+      "line6": "Show dependencies: which events needed to happen before others?",
+      "line7": "Highlight any gaps or periods with no activity",
+      "line8": "Add a text-based visual timeline representation"
+    },
+    "organizeDashboard": {
+      "line1": "Design a {{type}} dashboard layout",
+      "line2": "Time range: {{range}}",
+      "line3": "Identify the top 5-7 KPIs that should be displayed prominently",
+      "line4": "Suggest the best chart type for each metric (line, bar, pie, gauge, etc.)",
+      "line5": "Organize metrics by priority: top row = most critical, lower rows = supporting data",
+      "line6": "Include comparison data: vs. previous period, vs. target, vs. industry benchmark",
+      "line7": "Add status indicators (red/yellow/green) for metrics with thresholds",
+      "line8": "Suggest drill-down views for each major metric"
+    }
+  }
+}

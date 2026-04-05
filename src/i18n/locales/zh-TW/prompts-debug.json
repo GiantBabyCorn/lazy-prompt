@@ -1,0 +1,64 @@
+{
+  "templates": {
+    "debugFrontend": {
+      "line1": "除錯這個 {{framework}} 前端問題",
+      "line2": "問題：{{error}}",
+      "line3": "檢查瀏覽器主控台——是否有任何 JS 錯誤、警告或失敗的網路請求？",
+      "line4": "檢查 DOM——預期的元素是否已渲染？檢查其 CSS 計算樣式",
+      "line5": "檢查元件的 state 和 props——在渲染時它們是否符合預期？",
+      "line6": "進行跨瀏覽器測試：該問題是否在 Chrome、Firefox 和 Safari 中都能重現？",
+      "line7": "檢查響應式行為——該問題是否只在特定的 viewport 尺寸出現？",
+      "line8": "找出根本原因並提供逐步修復方法及程式碼",
+      "line9": "說明為什麼此修復有效，以及需要注意的任何副作用",
+      "line10": "建議如何預防類似問題（linting 規則、測試、設計模式）"
+    },
+    "debugBackend": {
+      "line1": "除錯這個 {{stack}} 後端問題",
+      "line2": "問題：{{error}}",
+      "line3": "分析 stack trace——哪個函式/行是錯誤的實際來源？",
+      "line4": "檢查請求生命週期：錯誤發生在 routing、middleware、controller 還是資料庫層？",
+      "line5": "檢查相關日誌——是否有任何前置的警告或模式？",
+      "line6": "檢查並行問題：race condition、deadlock 或共享狀態損壞",
+      "line7": "驗證環境：環境變數是否正確設定？相依套件是否為預期版本？",
+      "line8": "找出根本原因並提供含程式碼的修復方案",
+      "line9": "檢查這是否可能是記憶體洩漏或高負載下的效能問題",
+      "line10": "建議新增測試以捕捉此類迴歸問題"
+    },
+    "debugDatabase": {
+      "line1": "除錯這個 {{db}} 資料庫問題",
+      "line2": "問題：{{error}}",
+      "line3": "顯示有問題的查詢並執行 EXPLAIN/ANALYZE 來檢查執行計畫",
+      "line4": "檢查是否缺少索引——是否有對大型資料表進行循序掃描？",
+      "line5": "尋找 N+1 查詢模式或不必要的 JOIN",
+      "line6": "檢查鎖定競爭：是否有 deadlock 或長時間持有的交易？",
+      "line7": "驗證 schema 約束：外鍵、唯一索引、NOT NULL 違規",
+      "line8": "檢查連線池：連線是否被正確歸還？",
+      "line9": "提供最佳化後的查詢或 schema 變更及說明",
+      "line10": "建議監控查詢以便未來及早偵測此問題"
+    },
+    "debugApi": {
+      "line1": "除錯這個 API 問題：{{method}} {{endpoint}}",
+      "line2": "錯誤：{{status}}",
+      "line3": "顯示完整的請求：URL、headers、body 和查詢參數",
+      "line4": "顯示完整的回應：狀態碼、headers 和 body",
+      "line5": "檢查認證：token 是否有效、未過期，且具有正確的 scope？",
+      "line6": "如果是 CORS 錯誤：檢查 Access-Control-Allow-Origin、preflight OPTIONS 和 credentials 設定",
+      "line7": "驗證請求是否符合 API 規格：正確的 Content-Type、必填欄位、有效的資料類型",
+      "line8": "檢查速率限制：是否已超過 API 的請求配額？",
+      "line9": "找出根本原因並提供修復方案",
+      "line10": "建議重試/備援策略和錯誤處理改進方案"
+    },
+    "debugDevops": {
+      "line1": "除錯這個 {{tool}} DevOps/基礎架構問題",
+      "line2": "問題：{{error}}",
+      "line3": "顯示相關的設定檔、Dockerfile 或 pipeline 定義",
+      "line4": "檢查失敗的服務/容器/步驟的日誌——最後成功的點是什麼？",
+      "line5": "驗證環境變數和密鑰是否正確設定且可存取",
+      "line6": "檢查網路：服務之間是否能互相通訊？DNS 解析、連接埠、防火牆？",
+      "line7": "檢查資源限制：服務是否耗盡了 CPU、記憶體或磁碟空間？",
+      "line8": "驗證權限：服務帳戶是否具有正確的 IAM 角色/政策？",
+      "line9": "提供修復方案，包含確切的設定/命令變更",
+      "line10": "建議監控和告警機制，以便在影響使用者之前偵測此問題"
+    }
+  }
+}
