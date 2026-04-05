@@ -119,6 +119,9 @@ export const bubbleTree: BubbleNode = {
         { id: 'build-extension', labelKey: 'subcategories.build.extension', type: 'secondary', promptTemplateId: 'buildExtension' },
         { id: 'build-game', labelKey: 'subcategories.build.game', type: 'secondary', promptTemplateId: 'buildGame' },
         { id: 'build-cli', labelKey: 'subcategories.build.cliTool', type: 'secondary', promptTemplateId: 'buildCliTool' },
+        { id: 'build-dashboard', labelKey: 'subcategories.build.dashboard', type: 'secondary', promptTemplateId: 'buildDashboard' },
+        { id: 'build-automation', labelKey: 'subcategories.build.automation', type: 'secondary', promptTemplateId: 'buildAutomation' },
+        { id: 'build-component', labelKey: 'subcategories.build.component', type: 'secondary', promptTemplateId: 'buildComponent' },
       ],
     },
     {

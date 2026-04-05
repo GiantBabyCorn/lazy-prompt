@@ -22,7 +22,10 @@
       "bot": "Bot",
       "extension": "擴充功能",
       "game": "遊戲",
-      "cliTool": "CLI 工具"
+      "cliTool": "CLI 工具",
+      "dashboard": "儀表板",
+      "automation": "自動化",
+      "component": "元件"
     },
     "translation": {
       "enZh": "英語 ↔ 中文",
@@ -148,5 +151,64 @@
       "會議",
       "影片 / 播客"
     ]
+  },
+  "templates": {
+    "buildDashboard": {
+      "line1": "幫我建立一個 {{name}} 管理儀表板",
+      "line2": "使用 {{framework}} 搭配 {{uiLibrary}} 元件庫",
+      "line3": "資料來源：{{dataSource}}",
+      "line4": "必須包含以下元件：",
+      "widgets": {
+        "overview": "KPI 總覽卡片（使用者數、營收、訂單、成長率）",
+        "charts": "互動式圖表（折線圖、長條圖、圓餅圖）支援日期範圍篩選",
+        "table": "資料表格，支援排序、篩選和分頁",
+        "activity": "最近活動 / 操作日誌",
+        "filters": "全域篩選器（日期範圍、狀態、分類）"
+      },
+      "line5": "包含基於角色的存取控制（管理員、編輯者、檢視者）",
+      "line6": "加入響應式側邊欄導航，支援摺疊選單",
+      "line7": "包含資料匯出功能（CSV、PDF）",
+      "line8": "加入即時資料重新整理和載入指示器",
+      "line9": "包含深色/淺色主題切換",
+      "line10": "為所有元件加入錯誤狀態和空資料狀態"
+    },
+    "buildAutomation": {
+      "line1": "幫我建立一個 {{name}} 自動化工作流程",
+      "line2": "平台：{{platform}}",
+      "line3": "觸發條件：{{trigger}}",
+      "line4": "必須包含以下步驟：",
+      "steps": {
+        "lint": "程式碼檢查和格式化",
+        "test": "執行單元測試和整合測試",
+        "build": "建置和編譯產物",
+        "deploy": "部署到目標環境",
+        "notify": "成功/失敗時傳送通知"
+      },
+      "line5": "包含環境變數和密鑰管理",
+      "line6": "加入相依性快取以加速執行",
+      "line7": "盡可能使用平行任務執行",
+      "line8": "加入部署失敗時的回退策略",
+      "line9": "包含狀態徽章和建置通知",
+      "line10": "區分預發布和正式環境"
+    },
+    "buildComponent": {
+      "line1": "幫我建立一個 {{name}} UI 元件",
+      "line2": "使用 {{framework}} 框架",
+      "line3": "樣式方案：{{styling}}",
+      "line4": "必須支援以下功能：",
+      "features": {
+        "props": "可設定的屬性，附帶 TypeScript 型別",
+        "states": "多種視覺狀態（預設、懸停、啟用、停用、錯誤）",
+        "events": "事件回呼（onChange、onClick、onFocus、onBlur）",
+        "slots": "可組合的插槽/子元素，支援彈性內容",
+        "animations": "流暢的過渡動畫和微互動"
+      },
+      "line5": "包含完整的屬性驗證和預設值",
+      "line6": "加入完整的鍵盤導航和 ARIA 無障礙支援",
+      "line7": "包含跨斷點的響應式行為",
+      "line8": "加入 Storybook 各變體的案例",
+      "line9": "包含測試庫的單元測試",
+      "line10": "加入透過 CSS 自訂屬性或設計令牌實現的主題支援"
+    }
   }
 }

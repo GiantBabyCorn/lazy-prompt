@@ -18,11 +18,11 @@
     },
     "build": {
       "last_audited": "2026-04-05",
-      "audit_count": 1,
+      "audit_count": 2,
       "status": "good",
-      "notes": "10 children, balanced primary/secondary. Good coverage.",
+      "notes": "13 children (5 primary, 8 secondary). Added dashboard, automation, component as secondary leaves.",
       "pending_improvements": [
-        "Future: split build-website into landing/portfolio/ecommerce/blog/dashboard",
+        "Future: split build-website into landing/portfolio/ecommerce/blog",
         "Future: split build-app into mobile/desktop/web"
       ]
     },
@@ -112,6 +112,14 @@
         "summarize: +3 leaves (podcast, legal, conversation)",
         "read: restructured — removed 3 analysis-mode leaves (summary, keypoints, fullAnalysis), added 2 source-type leaves (contract, spreadsheet)",
         "Total: 101 nodes -> 124 nodes, 65 templates -> 88 templates"
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "agent_session": "session_01AHpjq5aRmAf6wEv59R5ZAX",
+      "changes": [
+        "build: +3 leaves (dashboard, automation, component)",
+        "Total: 124 nodes -> 127 nodes, 88 templates -> 91 templates"
       ]
     }
   ]

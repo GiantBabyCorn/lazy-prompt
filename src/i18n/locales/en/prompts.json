@@ -25,7 +25,10 @@
       "bot": "Bot",
       "extension": "Extension",
       "game": "Game",
-      "cliTool": "CLI Tool"
+      "cliTool": "CLI Tool",
+      "dashboard": "Dashboard",
+      "automation": "Automation",
+      "component": "Component"
     },
     "translation": {
       "enZh": "English ↔ Chinese",
@@ -155,5 +158,64 @@
       "Meeting",
       "Video / Podcast"
     ]
+  },
+  "templates": {
+    "buildDashboard": {
+      "line1": "Build me a {{name}} admin dashboard",
+      "line2": "Use {{framework}} with {{uiLibrary}} component library",
+      "line3": "Data source: {{dataSource}}",
+      "line4": "It must contain following widgets:",
+      "widgets": {
+        "overview": "KPI overview cards (users, revenue, orders, growth)",
+        "charts": "Interactive charts (line, bar, pie) with date range filter",
+        "table": "Data table with sorting, filtering, and pagination",
+        "activity": "Recent activity / audit log feed",
+        "filters": "Global filters (date range, status, category)"
+      },
+      "line5": "Include role-based access control (admin, editor, viewer)",
+      "line6": "Add responsive sidebar navigation with collapsible menu",
+      "line7": "Include data export (CSV, PDF) for tables and charts",
+      "line8": "Add real-time data refresh with loading indicators",
+      "line9": "Include dark/light theme support",
+      "line10": "Add proper error states and empty states for all widgets"
+    },
+    "buildAutomation": {
+      "line1": "Build me a {{name}} automation workflow",
+      "line2": "Platform: {{platform}}",
+      "line3": "Trigger: {{trigger}}",
+      "line4": "It must contain following steps:",
+      "steps": {
+        "lint": "Lint and format check",
+        "test": "Run unit and integration tests",
+        "build": "Build and compile artifacts",
+        "deploy": "Deploy to target environment",
+        "notify": "Send notification on success/failure"
+      },
+      "line5": "Include environment variables and secrets management",
+      "line6": "Add caching for dependencies to speed up runs",
+      "line7": "Include parallel job execution where possible",
+      "line8": "Add rollback strategy on deployment failure",
+      "line9": "Include status badges and build notifications",
+      "line10": "Add staging and production environment separation"
+    },
+    "buildComponent": {
+      "line1": "Build me a {{name}} UI component",
+      "line2": "Use {{framework}} framework",
+      "line3": "Styling: {{styling}}",
+      "line4": "It must support following features:",
+      "features": {
+        "props": "Configurable props with TypeScript types",
+        "states": "Multiple visual states (default, hover, active, disabled, error)",
+        "events": "Event callbacks (onChange, onClick, onFocus, onBlur)",
+        "slots": "Composable slots / children for flexible content",
+        "animations": "Smooth transitions and micro-animations"
+      },
+      "line5": "Include comprehensive prop validation and default values",
+      "line6": "Add full keyboard navigation and ARIA accessibility",
+      "line7": "Include responsive behavior across breakpoints",
+      "line8": "Add Storybook stories for all variants",
+      "line9": "Include unit tests with testing library",
+      "line10": "Add theming support via CSS custom properties or design tokens"
+    }
   }
 }
