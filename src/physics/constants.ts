@@ -63,7 +63,7 @@ export const PHYSICS = {
   SPRING_STIFFNESS: 0.04,
 
   /** Extra gap (px) between parent border and child border at rest. */
-  SPRING_REST_GAP: 120,
+  SPRING_REST_GAP: 110,
 
   /** Multiplier for SPRING_REST_GAP on mobile (width < MOBILE_BREAKPOINT). */
   SPRING_REST_GAP_MOBILE_SCALE: 0.85,
@@ -100,6 +100,12 @@ export const PHYSICS = {
 
   /** Spring constant pulling focused bubble to canvas center. */
   PIN_STRENGTH: 0.15,
+
+  /**
+   * Vertical offset for the center pin target, as fraction of bubble's visual radius.
+   * -0.5 shifts the center bubble upward by 50% of its radius (better mobile UX).
+   */
+  PIN_CENTER_Y_OFFSET: -0.35,
 
   /** Spring constant pulling go-back bubble toward canvas edge. */
   GOBACK_PULL_STRENGTH: 0.1,
@@ -201,8 +207,8 @@ export const MOBILE_SCALE_FACTOR = 1.65;
 /** Initial radius as fraction of min(canvasW, canvasH) by depth. */
 export const RADIUS_SCALE: Record<number, number> = {
   0: 0.12,   // root
-  1: 0.075,  // category (Translation, Read, Build, ...)
-  2: 0.05,   // subcategory (EN↔ZH, Webpage, ...)
+  1: 0.065,  // category (Translation, Read, Build, ...)
+  2: 0.045,   // subcategory (EN↔ZH, Webpage, ...)
   3: 0.035,  // leaf (Formal, Casual, ...)
 };
 

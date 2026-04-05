@@ -101,9 +101,16 @@ export default function PromptResult({
     });
   }, []);
 
+  // User-provided content (appended as markdown code block)
+  const [userContent, setUserContent] = useState('');
+
   const getPromptText = useCallback(() => {
-    return buildPromptString(template, editedValues, addedItems, tTemplate, hiddenSections, hiddenItems);
-  }, [template, editedValues, addedItems, tTemplate, hiddenSections, hiddenItems]);
+    let text = buildPromptString(template, editedValues, addedItems, tTemplate, hiddenSections, hiddenItems);
+    if (userContent.trim()) {
+      text += '\n\n```\n' + userContent.trim() + '\n```';
+    }
+    return text;
+  }, [template, editedValues, addedItems, tTemplate, hiddenSections, hiddenItems, userContent]);
 
   // Expose getPromptText to parent so AIProviderLinks can use it
   useEffect(() => {
@@ -317,6 +324,35 @@ export default function PromptResult({
             </div>
           );
         })}
+      </div>
+
+      {/* User content textarea */}
+      <div style={{ marginTop: '16px' }}>
+        <textarea
+          className="font-mono"
+          value={userContent}
+          onChange={(e) => {
+            setUserContent(e.target.value);
+            // Auto-expand height
+            e.target.style.height = 'auto';
+            e.target.style.height = e.target.scrollHeight + 'px';
+          }}
+          placeholder={tCommon('prompt.contentPlaceholder', 'Paste your content here (code, text, data)...')}
+          rows={5}
+          style={{
+            width: '100%',
+            minHeight: '5lh',
+            padding: '12px',
+            fontSize: '0.85rem',
+            lineHeight: '1.6',
+            color: 'var(--color-text)',
+            backgroundColor: 'var(--color-surface)',
+            border: '1px solid var(--color-border)',
+            borderRadius: '8px',
+            resize: 'vertical',
+            fontFamily: 'inherit',
+          }}
+        />
       </div>
 
       {/* Hint */}

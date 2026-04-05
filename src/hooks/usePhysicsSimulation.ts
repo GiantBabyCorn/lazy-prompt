@@ -262,5 +262,6 @@ export function usePhysicsSimulation(
     renderedIds,
     registerRef,
     getBubble,
+    canvasHeight: engine.height,
   };
 }

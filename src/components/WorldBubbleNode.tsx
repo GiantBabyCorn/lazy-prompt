@@ -2,6 +2,15 @@ import { forwardRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { PhysicsBubble } from '../physics/types';
 import { TEXT_MIN_FONT_SIZE, TEXT_DESC_FONT_SIZE } from '../physics/constants';
+import { getTopicIcon } from '../utils/topicIcons';
+import { TopicIconSvg } from '../utils/TopicIconSvg';
+
+/* ------------------------------------------------------------------ */
+/*  Constants                                                          */
+/* ------------------------------------------------------------------ */
+
+/** Bubbles in the top fraction of the canvas get tooltip below instead of above. */
+const TOOLTIP_FLIP_THRESHOLD = 0.33;
 
 /* ------------------------------------------------------------------ */
 /*  Props                                                              */
@@ -9,6 +18,7 @@ import { TEXT_MIN_FONT_SIZE, TEXT_DESC_FONT_SIZE } from '../physics/constants';
 
 interface WorldBubbleNodeProps {
   bubble: PhysicsBubble;
+  canvasHeight: number;
   onClick: () => void;
   onHoverStart: () => void;
   onHoverEnd: () => void;
@@ -31,11 +41,72 @@ function getBorderWidth(role: string): number {
 }
 
 /* ------------------------------------------------------------------ */
+/*  Chat Bubble Tooltip (SVG)                                          */
+/* ------------------------------------------------------------------ */
+
+function BuildPromptTooltip({ above, label }: { above: boolean; label: string }) {
+  const w = 110;
+  const h = 32;
+  const arrowH = 7;
+  const r = 8;
+
+  if (above) {
+    // Tooltip above bubble, arrow pointing down
+    const y = -(h + arrowH);
+    return (
+      <g>
+        <path
+          d={`M${-w / 2 + r},${y} h${w - 2 * r} a${r},${r} 0 0 1 ${r},${r} v${h - 2 * r} a${r},${r} 0 0 1 ${-r},${r} h${-(w / 2 - 10)} l${-5},${arrowH} l${-5},${-arrowH} h${-(w / 2 - 10 - r)} a${r},${r} 0 0 1 ${-r},${-r} v${-(h - 2 * r)} a${r},${r} 0 0 1 ${r},${-r} z`}
+          fill="var(--color-cyan)"
+          opacity={0.92}
+        />
+        <text
+          x={0}
+          y={y + h / 2}
+          textAnchor="middle"
+          dominantBaseline="central"
+          fill="var(--color-bg)"
+          fontSize={13}
+          fontWeight={700}
+          fontFamily="'Inter', sans-serif"
+        >
+          {label}
+        </text>
+      </g>
+    );
+  }
+
+  // Tooltip below bubble, arrow pointing up
+  const y = arrowH;
+  return (
+    <g>
+      <path
+        d={`M${-5},0 l${5},${-arrowH} l${5},${arrowH} h${w / 2 - 10 - r} a${r},${r} 0 0 1 ${r},${r} v${h - 2 * r} a${r},${r} 0 0 1 ${-r},${r} h${-(w - 2 * r)} a${r},${r} 0 0 1 ${-r},${-r} v${-(h - 2 * r)} a${r},${r} 0 0 1 ${r},${-r} h${w / 2 - 10 - r} z`}
+        fill="var(--color-cyan)"
+        opacity={0.92}
+      />
+      <text
+        x={-5}
+        y={y + h / 3}
+        textAnchor="middle"
+        dominantBaseline="central"
+        fill="var(--color-bg)"
+        fontSize={13}
+        fontWeight={700}
+        fontFamily="'Inter', sans-serif"
+      >
+        {label}
+      </text>
+    </g>
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
 export const WorldBubbleNode = forwardRef<SVGGElement, WorldBubbleNodeProps>(
-  function WorldBubbleNode({ bubble, onClick, onHoverStart, onHoverEnd }, ref) {
+  function WorldBubbleNode({ bubble, canvasHeight, onClick, onHoverStart, onHoverEnd }, ref) {
     const { t } = useTranslation('prompts');
     const { t: tCommon } = useTranslation('common');
 
@@ -61,9 +132,12 @@ export const WorldBubbleNode = forwardRef<SVGGElement, WorldBubbleNodeProps>(
       [isInteractive, onClick],
     );
 
-    // Description keys for sub-text
     const descKeys = node.descriptionKeys;
     const hasDesc = descKeys && descKeys.length > 0 && role !== 'goBack';
+    const topicIcon = role !== 'goBack' ? getTopicIcon(node.id) : null;
+
+    // Determine tooltip position: above or below based on bubble Y position
+    const tooltipAbove = bubble.y > canvasHeight * TOOLTIP_FLIP_THRESHOLD;
 
     return (
       <g
@@ -74,8 +148,8 @@ export const WorldBubbleNode = forwardRef<SVGGElement, WorldBubbleNodeProps>(
           pointerEvents: isInteractive ? 'auto' : 'none',
         }}
         onClick={handleClick}
-        onMouseEnter={isInteractive ? onHoverStart : undefined}
-        onMouseLeave={isInteractive ? onHoverEnd : undefined}
+        onPointerEnter={isInteractive ? (e) => { if (e.pointerType === 'mouse') onHoverStart(); } : undefined}
+        onPointerLeave={isInteractive ? (e) => { if (e.pointerType === 'mouse') onHoverEnd(); } : undefined}
       >
         {/* Circle border */}
         <circle
@@ -90,11 +164,23 @@ export const WorldBubbleNode = forwardRef<SVGGElement, WorldBubbleNodeProps>(
 
         {/* Text block (overflow visible) */}
         <g>
+          {/* Topic icon (above label) */}
+          {topicIcon && (
+            <TopicIconSvg
+              name={topicIcon}
+              size={Math.round(TEXT_MIN_FONT_SIZE * (role === 'focused' ? 2.5 : 1.5))}
+              x={0}
+              y={hasDesc
+                ? -TEXT_MIN_FONT_SIZE - (role === 'focused' ? 32 : 16)
+                : -TEXT_MIN_FONT_SIZE - (role === 'focused' ? 16 : 2)}
+            />
+          )}
+
           {/* Main label */}
           <text
             className="bubble-label"
             x={0}
-            y={hasDesc ? -4 : 0}
+            y={topicIcon ? 6 : (hasDesc ? -4 : 0)}
             textAnchor="middle"
             dominantBaseline="central"
             fill={role === 'goBack' ? 'var(--color-orange)' : 'var(--color-text)'}
@@ -106,12 +192,12 @@ export const WorldBubbleNode = forwardRef<SVGGElement, WorldBubbleNodeProps>(
             {label}
           </text>
 
-          {/* Description sub-text (initially hidden, shown by rAF when bubble is large enough) */}
+          {/* Description sub-text */}
           {hasDesc && (
             <text
               className="bubble-desc"
               x={0}
-              y={TEXT_MIN_FONT_SIZE / 2 + 4}
+              y={TEXT_MIN_FONT_SIZE / 2 + (topicIcon ? 8 : 4)}
               textAnchor="middle"
               dominantBaseline="hanging"
               fill="var(--color-text-secondary)"
@@ -129,30 +215,17 @@ export const WorldBubbleNode = forwardRef<SVGGElement, WorldBubbleNodeProps>(
           )}
         </g>
 
-        {/* Leaf tooltip */}
+        {/* Build Prompt chat bubble tooltip */}
         {isLeaf && isInteractive && (
-          <g className="world-bubble-tooltip" style={{ pointerEvents: 'none' }}>
-            <rect
-              x={-42}
-              y={-(visualRadius + 20)}
-              width={84}
-              height={18}
-              rx={5}
-              fill="var(--color-cyan)"
-              opacity={0.9}
+          <g
+            className="world-bubble-tooltip"
+            style={{ pointerEvents: 'none' }}
+            transform={`translate(0, ${tooltipAbove ? -(visualRadius - 4) : (visualRadius - 4)})`}
+          >
+            <BuildPromptTooltip
+              above={tooltipAbove}
+              label={tCommon('bubble.buildPrompt')}
             />
-            <text
-              x={0}
-              y={-(visualRadius + 11)}
-              textAnchor="middle"
-              dominantBaseline="central"
-              fill="var(--color-bg)"
-              fontSize={9}
-              fontWeight={700}
-              fontFamily="'Inter', sans-serif"
-            >
-              {tCommon('bubble.buildPrompt')}
-            </text>
           </g>
         )}
       </g>

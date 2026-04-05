@@ -49,5 +49,19 @@
   },
   "footer": {
     "builtWith": "Hecho con ❤️"
+  },
+  "viewMode": {
+    "dynamic": "Dinámico",
+    "bubble": "Burbuja",
+    "list": "Lista"
+  },
+  "tutorial": {
+    "viewModeSwitch": "Cambiar entre modos de vista: Dinámico, Burbuja o Lista",
+    "gotIt": "Entendido",
+    "skip": "Omitir",
+    "done": "Listo"
+  },
+  "prompt": {
+    "contentPlaceholder": "Pega tu contenido aquí (código, texto, datos)..."
   }
 }

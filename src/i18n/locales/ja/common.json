@@ -49,5 +49,19 @@
   },
   "footer": {
     "builtWith": "❤️ で作成"
+  },
+  "viewMode": {
+    "dynamic": "ダイナミック",
+    "bubble": "バブル",
+    "list": "リスト"
+  },
+  "tutorial": {
+    "viewModeSwitch": "表示モードを切り替え：ダイナミック、バブル、リスト",
+    "gotIt": "了解",
+    "skip": "スキップ",
+    "done": "完了"
+  },
+  "prompt": {
+    "contentPlaceholder": "ここにコンテンツを貼り付けてください（コード、テキスト、データ）..."
   }
 }

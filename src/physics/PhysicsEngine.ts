@@ -128,7 +128,9 @@ export class PhysicsEngine {
     const n = siblings.length;
     for (let i = 0; i < n; i++) {
       const b = siblings[i];
-      const angle = (2 * Math.PI / n) * i - Math.PI / 2;
+      // When even count, rotate by half a step for left-right symmetry
+      const evenOffset = n % 2 === 0 ? (Math.PI / n) : 0;
+      const angle = (2 * Math.PI / n) * i - Math.PI / 2 + evenOffset;
       const childR = this.computeInitialRadius(b.depth, role === 'goBack');
       const dist = parentR + childR + 2; // start touching parent border
 
@@ -489,9 +491,10 @@ export class PhysicsEngine {
 
   private applyPinning(active: PhysicsBubble[]) {
     const cx = this.width / 2;
-    const cy = this.height / 2;
     for (const b of active) {
       if (!b.pinToCenter) continue;
+      // Shift center upward by a fraction of the bubble's radius
+      const cy = this.height / 2 + b.visualRadius * PHYSICS.PIN_CENTER_Y_OFFSET;
       b.vx += (cx - b.x) * PHYSICS.PIN_STRENGTH;
       b.vy += (cy - b.y) * PHYSICS.PIN_STRENGTH;
     }

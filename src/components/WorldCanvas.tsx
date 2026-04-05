@@ -68,7 +68,7 @@ export function WorldCanvas({
   );
 
   // Physics simulation
-  const { containerRef, renderedIds, registerRef, getBubble } =
+  const { containerRef, renderedIds, registerRef, getBubble, canvasHeight } =
     usePhysicsSimulation(activeIds, focusedId, goBackId, hoveredNodeIds, leafOverlayActive);
 
   // Keep ref in sync
@@ -182,22 +182,30 @@ export function WorldCanvas({
         {/* Connector lines */}
         <WorldConnectorLines bubbles={activeBubbles} getBubble={getBubble} />
 
-        {/* Bubble nodes */}
-        {renderedIds.map((id) => {
-          const bubble = getBubble(id);
-          if (!bubble) return null;
+        {/* Bubble nodes — hovered bubble renders last so its tooltip is on top */}
+        {renderedIds
+          .slice()
+          .sort((a, b) => {
+            if (a === hoveredNodeId) return 1;
+            if (b === hoveredNodeId) return -1;
+            return 0;
+          })
+          .map((id) => {
+            const bubble = getBubble(id);
+            if (!bubble) return null;
 
-          return (
-            <WorldBubbleNode
-              key={id}
-              ref={(el) => registerRef(id, el)}
-              bubble={bubble}
-              onClick={() => handleClick(id)}
-              onHoverStart={() => handleHoverStart(id)}
-              onHoverEnd={() => handleHoverEnd(id)}
-            />
-          );
-        })}
+            return (
+              <WorldBubbleNode
+                key={id}
+                ref={(el) => registerRef(id, el)}
+                bubble={bubble}
+                canvasHeight={canvasHeight}
+                onClick={() => handleClick(id)}
+                onHoverStart={() => handleHoverStart(id)}
+                onHoverEnd={() => handleHoverEnd(id)}
+              />
+            );
+          })}
       </svg>
     </div>
   );
