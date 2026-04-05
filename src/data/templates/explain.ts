@@ -370,6 +370,118 @@ const templates: PromptTemplate[] = [
         "type": "fixed"
       }
     ]
+  },
+  {
+    "id": "explainData",
+    "sections": [
+      {
+        "id": "exd1",
+        "textKey": "templates.explainData.line1",
+        "type": "fixed",
+        "editableSpans": [
+          { "id": "exd1-data", "placeholder": "this sales dashboard", "color": "yellow" }
+        ]
+      },
+      {
+        "id": "exd2",
+        "textKey": "templates.explainData.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "exd2-audience",
+            "placeholder": "non-technical stakeholders",
+            "color": "green",
+            "suggestions": ["non-technical stakeholders", "executive team", "data team", "clients", "general audience"]
+          }
+        ]
+      },
+      { "id": "exd3", "textKey": "templates.explainData.line3", "type": "fixed" },
+      { "id": "exd4", "textKey": "templates.explainData.line4", "type": "fixed" },
+      { "id": "exd5", "textKey": "templates.explainData.line5", "type": "fixed" },
+      { "id": "exd6", "textKey": "templates.explainData.line6", "type": "fixed" },
+      { "id": "exd7", "textKey": "templates.explainData.line7", "type": "fixed" },
+      { "id": "exd8", "textKey": "templates.explainData.line8", "type": "fixed" },
+      { "id": "exd9", "textKey": "templates.explainData.line9", "type": "fixed" },
+      { "id": "exd10", "textKey": "templates.explainData.line10", "type": "fixed" }
+    ]
+  },
+  {
+    "id": "explainMath",
+    "sections": [
+      {
+        "id": "exm1",
+        "textKey": "templates.explainMath.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "exm1-topic",
+            "placeholder": "Bayes' theorem",
+            "color": "yellow",
+            "suggestions": ["Bayes' theorem", "matrix multiplication", "derivatives", "Fourier transform", "standard deviation", "compound interest formula", "Big O notation", "Taylor series"]
+          }
+        ]
+      },
+      {
+        "id": "exm2",
+        "textKey": "templates.explainMath.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "exm2-level",
+            "placeholder": "intuitive, non-math-major",
+            "color": "green",
+            "suggestions": ["intuitive, non-math-major", "high school level", "undergraduate", "graduate", "visual / geometric"]
+          }
+        ]
+      },
+      { "id": "exm3", "textKey": "templates.explainMath.line3", "type": "fixed" },
+      { "id": "exm4", "textKey": "templates.explainMath.line4", "type": "fixed" },
+      { "id": "exm5", "textKey": "templates.explainMath.line5", "type": "fixed" },
+      { "id": "exm6", "textKey": "templates.explainMath.line6", "type": "fixed" },
+      { "id": "exm7", "textKey": "templates.explainMath.line7", "type": "fixed" },
+      { "id": "exm8", "textKey": "templates.explainMath.line8", "type": "fixed" },
+      { "id": "exm9", "textKey": "templates.explainMath.line9", "type": "fixed" },
+      { "id": "exm10", "textKey": "templates.explainMath.line10", "type": "fixed" }
+    ]
+  },
+  {
+    "id": "explainLegal",
+    "sections": [
+      {
+        "id": "exl1",
+        "textKey": "templates.explainLegal.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "exl1-topic",
+            "placeholder": "this terms of service agreement",
+            "color": "yellow",
+            "suggestions": ["this terms of service agreement", "this NDA", "GDPR requirements", "software licensing (MIT vs GPL)", "this contract clause", "intellectual property rights", "employment law basics"]
+          }
+        ]
+      },
+      {
+        "id": "exl2",
+        "textKey": "templates.explainLegal.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "exl2-audience",
+            "placeholder": "non-lawyer",
+            "color": "green",
+            "suggestions": ["non-lawyer", "startup founder", "freelancer", "small business owner", "developer", "general public"]
+          }
+        ]
+      },
+      { "id": "exl3", "textKey": "templates.explainLegal.line3", "type": "fixed" },
+      { "id": "exl4", "textKey": "templates.explainLegal.line4", "type": "fixed" },
+      { "id": "exl5", "textKey": "templates.explainLegal.line5", "type": "fixed" },
+      { "id": "exl6", "textKey": "templates.explainLegal.line6", "type": "fixed" },
+      { "id": "exl7", "textKey": "templates.explainLegal.line7", "type": "fixed" },
+      { "id": "exl8", "textKey": "templates.explainLegal.line8", "type": "fixed" },
+      { "id": "exl9", "textKey": "templates.explainLegal.line9", "type": "fixed" },
+      { "id": "exl10", "textKey": "templates.explainLegal.line10", "type": "fixed" }
+    ]
   }
 ];
 

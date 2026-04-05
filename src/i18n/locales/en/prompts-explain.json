@@ -71,6 +71,42 @@
       "line8": "Identify potential bottlenecks and single points of failure",
       "line9": "Describe how the system scales: horizontally, vertically, or both?",
       "line10": "Provide a text-based architecture diagram showing component relationships"
+    },
+    "explainData": {
+      "line1": "Explain {{data}} to me",
+      "line2": "Audience: {{audience}}",
+      "line3": "Start with the big picture — what story is the data telling?",
+      "line4": "Identify the key trends, patterns, and outliers",
+      "line5": "Explain what each metric means in plain language",
+      "line6": "Highlight correlations and what's driving the changes",
+      "line7": "Point out what's missing or what the data doesn't tell us",
+      "line8": "Suggest the best chart types to visualize each insight",
+      "line9": "Provide actionable takeaways — what should we do based on this data?",
+      "line10": "Flag any data quality issues or caveats to be aware of"
+    },
+    "explainMath": {
+      "line1": "Explain {{topic}} to me",
+      "line2": "Explanation style: {{level}}",
+      "line3": "Start with the intuition — what is this really doing, in plain English?",
+      "line4": "Use a concrete, real-world analogy to build understanding",
+      "line5": "Walk through the formula step by step, explaining each symbol and operation",
+      "line6": "Show a worked example with actual numbers",
+      "line7": "Explain when and why you'd use this in practice",
+      "line8": "Visualize it — describe or suggest a graph/diagram that makes it click",
+      "line9": "Point out common mistakes and edge cases to watch for",
+      "line10": "Connect it to related concepts — what should I learn next?"
+    },
+    "explainLegal": {
+      "line1": "Explain {{topic}} to me",
+      "line2": "I'm a: {{audience}}",
+      "line3": "Translate the legal jargon into plain, everyday language",
+      "line4": "Summarize the key rights, obligations, and restrictions",
+      "line5": "Highlight clauses I should pay special attention to and why",
+      "line6": "Explain what happens if I violate the terms or the other party does",
+      "line7": "Flag any unusual, aggressive, or one-sided terms",
+      "line8": "Compare to standard/typical terms — is this normal or unusual?",
+      "line9": "List specific questions I should ask a lawyer before signing",
+      "line10": "Provide a plain-language summary I could share with a colleague"
     }
   }
 }

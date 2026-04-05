@@ -59,6 +59,66 @@
       "line8": "Escribe diálogos naturales que revelen el carácter y avancen la trama",
       "line9": "Crea un final satisfactorio que resuelva el conflicto central",
       "line10": "Varía el ritmo de las oraciones — mezcla oraciones cortas y contundentes con otras más largas y descriptivas"
+    },
+    "writeSocialMedia": {
+      "line1": "Escribe una publicación para {{platform}}",
+      "line2": "Tema: {{topic}}",
+      "line3": "Tono: {{tone}}",
+      "line4": "Engancha al lector en la primera línea — haz que deje de hacer scroll",
+      "line5": "Adáptate a la plataforma: respeta los límites de caracteres y normas de formato",
+      "line6": "Usa saltos de línea y espacios en blanco para facilitar la lectura en móvil",
+      "line7": "Incluye una llamada a la acción clara (like, compartir, comentar, visitar enlace)",
+      "line8": "Sugiere 3-5 hashtags relevantes al final",
+      "line9": "Escribe 3 variaciones con diferentes enfoques para pruebas A/B",
+      "line10": "Optimiza para engagement: haz una pregunta o comparte una perspectiva contraintuitiva"
+    },
+    "writeResume": {
+      "line1": "Escribe un {{type}} para mí",
+      "line2": "Puesto objetivo: {{role}}",
+      "line3": "Nivel de experiencia: {{experience}}",
+      "line4": "Comienza con un resumen profesional convincente (máximo 3-4 líneas)",
+      "line5": "Usa verbos de acción fuertes: lideré, construí, aumenté, reduje, lancé",
+      "line6": "Cuantifica los logros con números específicos, porcentajes o importes",
+      "line7": "Adapta las palabras clave a la descripción del puesto para optimización ATS",
+      "line8": "Limítalo a una página (máximo dos para más de 10 años de experiencia)",
+      "line9": "Lista las habilidades como palabras clave concisas — sin descripciones largas",
+      "line10": "Prioriza la experiencia reciente y relevante — elimina lo anterior a 10 años"
+    },
+    "writeReport": {
+      "line1": "Redacta un {{type}}",
+      "line2": "Tema: {{topic}}",
+      "line3": "Audiencia: {{audience}}",
+      "line4": "Comienza con un resumen ejecutivo — hallazgos clave y recomendaciones en un párrafo",
+      "line5": "Usa encabezados claros: Contexto, Metodología, Hallazgos, Recomendaciones",
+      "line6": "Presenta los datos con tablas y viñetas — evita prosa larga para cifras",
+      "line7": "Incluye métricas específicas, KPIs y comparaciones con benchmarks o períodos anteriores",
+      "line8": "Destaca riesgos y problemas con niveles de severidad y responsables claros",
+      "line9": "Termina con recomendaciones accionables priorizadas por impacto",
+      "line10": "Añade un apéndice para datos detallados, gráficos o evidencia de respaldo"
+    },
+    "writeCopy": {
+      "line1": "Escribe {{type}}",
+      "line2": "Producto/Servicio: {{product}}",
+      "line3": "Público objetivo: {{audience}}",
+      "line4": "Lidera con el mayor beneficio — ¿qué problema le resuelve al lector?",
+      "line5": "Usa el marco AIDA: Atención, Interés, Deseo, Acción",
+      "line6": "Escribe un titular que genere urgencia o curiosidad",
+      "line7": "Enfócate en beneficios, no en características — traduce especificaciones en resultados",
+      "line8": "Incluye prueba social: cifras, testimonios o señales de autoridad",
+      "line9": "Termina con una sola llamada a la acción clara — no des múltiples opciones",
+      "line10": "Escribe 3 versiones: corta (eslogan), media (anuncio social), larga (landing page)"
+    },
+    "writeSpeech": {
+      "line1": "Escribe un {{type}}",
+      "line2": "Tema: {{topic}}",
+      "line3": "Duración objetivo: {{duration}}",
+      "line4": "Abre con un gancho poderoso: un dato sorprendente, una historia personal o una pregunta provocadora",
+      "line5": "Estructura en torno a 3 puntos principales — las audiencias recuerdan los tríos",
+      "line6": "Escribe para el oído, no para la vista — usa frases cortas y lenguaje conversacional",
+      "line7": "Incluye marcas de pausas, transiciones y énfasis para la presentación",
+      "line8": "Añade una historia memorable o analogía para cada punto clave",
+      "line9": "Construye hacia un clímax — guarda el mensaje más impactante para el final",
+      "line10": "Cierra con una llamada a la acción clara o una frase memorable que la audiencia repetirá"
     }
   }
 }

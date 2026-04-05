@@ -358,6 +358,118 @@ const templates: PromptTemplate[] = [
         "type": "fixed"
       }
     ]
+  },
+  {
+    "id": "summarizePodcast",
+    "sections": [
+      {
+        "id": "spc1",
+        "textKey": "templates.summarizePodcast.line1",
+        "type": "fixed",
+        "editableSpans": [
+          { "id": "spc1-name", "placeholder": "OOO", "color": "yellow" }
+        ]
+      },
+      {
+        "id": "spc2",
+        "textKey": "templates.summarizePodcast.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "spc2-length",
+            "placeholder": "concise (1 page)",
+            "color": "cyan",
+            "suggestions": ["bullet points", "concise (1 page)", "detailed (2-3 pages)", "tweet-length"]
+          }
+        ]
+      },
+      { "id": "spc3", "textKey": "templates.summarizePodcast.line3", "type": "fixed" },
+      { "id": "spc4", "textKey": "templates.summarizePodcast.line4", "type": "fixed" },
+      { "id": "spc5", "textKey": "templates.summarizePodcast.line5", "type": "fixed" },
+      { "id": "spc6", "textKey": "templates.summarizePodcast.line6", "type": "fixed" },
+      { "id": "spc7", "textKey": "templates.summarizePodcast.line7", "type": "fixed" },
+      { "id": "spc8", "textKey": "templates.summarizePodcast.line8", "type": "fixed" },
+      { "id": "spc9", "textKey": "templates.summarizePodcast.line9", "type": "fixed" },
+      { "id": "spc10", "textKey": "templates.summarizePodcast.line10", "type": "fixed" }
+    ]
+  },
+  {
+    "id": "summarizeLegal",
+    "sections": [
+      {
+        "id": "slg1",
+        "textKey": "templates.summarizeLegal.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "slg1-type",
+            "placeholder": "terms of service",
+            "color": "yellow",
+            "suggestions": ["terms of service", "privacy policy", "NDA", "employment contract", "lease agreement", "software license", "partnership agreement"]
+          }
+        ]
+      },
+      {
+        "id": "slg2",
+        "textKey": "templates.summarizeLegal.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "slg2-focus",
+            "placeholder": "risks and obligations",
+            "color": "green",
+            "suggestions": ["risks and obligations", "key terms and conditions", "what I can and can't do", "financial implications", "termination clauses", "liability and indemnification"]
+          }
+        ]
+      },
+      { "id": "slg3", "textKey": "templates.summarizeLegal.line3", "type": "fixed" },
+      { "id": "slg4", "textKey": "templates.summarizeLegal.line4", "type": "fixed" },
+      { "id": "slg5", "textKey": "templates.summarizeLegal.line5", "type": "fixed" },
+      { "id": "slg6", "textKey": "templates.summarizeLegal.line6", "type": "fixed" },
+      { "id": "slg7", "textKey": "templates.summarizeLegal.line7", "type": "fixed" },
+      { "id": "slg8", "textKey": "templates.summarizeLegal.line8", "type": "fixed" },
+      { "id": "slg9", "textKey": "templates.summarizeLegal.line9", "type": "fixed" },
+      { "id": "slg10", "textKey": "templates.summarizeLegal.line10", "type": "fixed" }
+    ]
+  },
+  {
+    "id": "summarizeConversation",
+    "sections": [
+      {
+        "id": "scv1",
+        "textKey": "templates.summarizeConversation.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "scv1-type",
+            "placeholder": "Slack thread",
+            "color": "yellow",
+            "suggestions": ["Slack thread", "email chain", "forum discussion", "chat log", "comment section", "support ticket thread"]
+          }
+        ]
+      },
+      {
+        "id": "scv2",
+        "textKey": "templates.summarizeConversation.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "scv2-focus",
+            "placeholder": "decisions and action items",
+            "color": "green",
+            "suggestions": ["decisions and action items", "key arguments for and against", "consensus points", "unresolved questions", "timeline of events"]
+          }
+        ]
+      },
+      { "id": "scv3", "textKey": "templates.summarizeConversation.line3", "type": "fixed" },
+      { "id": "scv4", "textKey": "templates.summarizeConversation.line4", "type": "fixed" },
+      { "id": "scv5", "textKey": "templates.summarizeConversation.line5", "type": "fixed" },
+      { "id": "scv6", "textKey": "templates.summarizeConversation.line6", "type": "fixed" },
+      { "id": "scv7", "textKey": "templates.summarizeConversation.line7", "type": "fixed" },
+      { "id": "scv8", "textKey": "templates.summarizeConversation.line8", "type": "fixed" },
+      { "id": "scv9", "textKey": "templates.summarizeConversation.line9", "type": "fixed" },
+      { "id": "scv10", "textKey": "templates.summarizeConversation.line10", "type": "fixed" }
+    ]
   }
 ];
 

@@ -45,9 +45,8 @@
       "email": "邮件",
       "code": "代码",
       "researchPaper": "研究论文",
-      "summaryMode": "摘要模式",
-      "keyPoints": "关键要点",
-      "fullAnalysis": "完整分析",
+      "contract": "合同",
+      "spreadsheet": "电子表格",
       "compare": "对比",
       "factCheck": "事实核查"
     },
@@ -68,28 +67,46 @@
       "backend": "后端",
       "database": "数据库",
       "api": "API",
-      "devops": "DevOps"
+      "devops": "DevOps",
+      "performance": "性能",
+      "security": "安全",
+      "mobile": "移动端"
     },
     "brainstorm": {
       "product": "产品",
       "marketing": "营销",
       "content": "内容",
       "design": "设计",
-      "strategy": "策略"
+      "strategy": "策略",
+      "naming": "命名 / 品牌",
+      "event": "活动策划",
+      "problemSolving": "问题解决",
+      "startup": "创业点子",
+      "sideProject": "副业项目"
     },
     "learn": {
       "programming": "编程",
       "language": "语言",
       "math": "数学",
       "science": "科学",
-      "business": "商业"
+      "business": "商业",
+      "history": "历史",
+      "design": "设计",
+      "music": "音乐",
+      "cooking": "烹饪",
+      "finance": "个人理财"
     },
     "write": {
       "email": "邮件",
       "blog": "博客",
       "documentation": "文档",
       "proposal": "提案",
-      "story": "故事"
+      "story": "故事",
+      "socialMedia": "社交媒体",
+      "resume": "简历 / CV",
+      "report": "报告",
+      "copy": "广告文案",
+      "speech": "演讲 / 脚本"
     },
     "explain": {
       "code": "代码",

@@ -42,9 +42,8 @@
       "email": "이메일",
       "code": "코드",
       "researchPaper": "연구 논문",
-      "summaryMode": "요약 모드",
-      "keyPoints": "핵심 포인트",
-      "fullAnalysis": "전체 분석",
+      "contract": "계약서",
+      "spreadsheet": "스프레드시트",
       "compare": "비교",
       "factCheck": "팩트체크"
     },
@@ -65,42 +64,66 @@
       "backend": "백엔드",
       "database": "데이터베이스",
       "api": "API",
-      "devops": "DevOps"
+      "devops": "DevOps",
+      "performance": "성능",
+      "security": "보안",
+      "mobile": "모바일"
     },
     "brainstorm": {
       "product": "제품",
       "marketing": "마케팅",
       "content": "콘텐츠",
       "design": "디자인",
-      "strategy": "전략"
+      "strategy": "전략",
+      "naming": "네이밍 / 브랜딩",
+      "event": "이벤트 기획",
+      "problemSolving": "문제 해결",
+      "startup": "창업 아이디어",
+      "sideProject": "사이드 프로젝트"
     },
     "learn": {
       "programming": "프로그래밍",
       "language": "언어",
       "math": "수학",
       "science": "과학",
-      "business": "비즈니스"
+      "business": "비즈니스",
+      "history": "역사",
+      "design": "디자인",
+      "music": "음악",
+      "cooking": "요리",
+      "finance": "개인 재테크"
     },
     "write": {
       "email": "이메일",
       "blog": "블로그",
       "documentation": "문서화",
       "proposal": "제안서",
-      "story": "이야기"
+      "story": "이야기",
+      "socialMedia": "소셜 미디어",
+      "resume": "이력서 / CV",
+      "report": "보고서",
+      "copy": "광고 카피",
+      "speech": "연설 / 대본"
     },
     "explain": {
       "code": "코드",
       "concept": "개념",
       "process": "프로세스",
       "error": "오류",
-      "architecture": "아키텍처"
+      "architecture": "아키텍처",
+      "data": "데이터 / 차트",
+      "math": "수학 / 수식",
+      "legal": "법률 / 정책"
     },
     "summarize": {
       "article": "기사",
       "meeting": "회의",
       "video": "영상 / 팟캐스트",
       "book": "도서 / 챕터",
-      "research": "연구 논문"
+      "research": "연구 논문",
+      "podcast": "팟캐스트",
+      "legal": "법률 문서",
+      "conversation": "대화 / 스레드"
     }
   },
   "descriptions": {

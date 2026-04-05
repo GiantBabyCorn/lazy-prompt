@@ -84,16 +84,15 @@ export const bubbleTree: BubbleNode = {
       ],
       type: 'primary',
       children: [
-        // Primary
+        // Primary (source types)
         { id: 'read-webpage', labelKey: 'subcategories.read.webpage', type: 'primary', promptTemplateId: 'readWebpage' },
         { id: 'read-document', labelKey: 'subcategories.read.document', type: 'primary', promptTemplateId: 'readDocument' },
         { id: 'read-email', labelKey: 'subcategories.read.email', type: 'primary', promptTemplateId: 'readEmail' },
         { id: 'read-code', labelKey: 'subcategories.read.code', type: 'primary', promptTemplateId: 'readCode' },
         { id: 'read-research', labelKey: 'subcategories.read.researchPaper', type: 'primary', promptTemplateId: 'readResearch' },
-        // Secondary
-        { id: 'read-summary', labelKey: 'subcategories.read.summaryMode', type: 'secondary', promptTemplateId: 'readSummary' },
-        { id: 'read-keypoints', labelKey: 'subcategories.read.keyPoints', type: 'secondary', promptTemplateId: 'readKeyPoints' },
-        { id: 'read-full', labelKey: 'subcategories.read.fullAnalysis', type: 'secondary', promptTemplateId: 'readFullAnalysis' },
+        // Secondary (source types + cross-cutting analysis)
+        { id: 'read-contract', labelKey: 'subcategories.read.contract', type: 'secondary', promptTemplateId: 'readContract' },
+        { id: 'read-spreadsheet', labelKey: 'subcategories.read.spreadsheet', type: 'secondary', promptTemplateId: 'readSpreadsheet' },
         { id: 'read-compare', labelKey: 'subcategories.read.compare', type: 'secondary', promptTemplateId: 'readCompare' },
         { id: 'read-factcheck', labelKey: 'subcategories.read.factCheck', type: 'secondary', promptTemplateId: 'readFactCheck' },
       ],
@@ -158,11 +157,16 @@ export const bubbleTree: BubbleNode = {
       ],
       type: 'secondary',
       children: [
+        // Primary
         { id: 'summarize-article', labelKey: 'subcategories.summarize.article', type: 'primary', promptTemplateId: 'summarizeArticle' },
         { id: 'summarize-meeting', labelKey: 'subcategories.summarize.meeting', type: 'primary', promptTemplateId: 'summarizeMeeting' },
         { id: 'summarize-video', labelKey: 'subcategories.summarize.video', type: 'primary', promptTemplateId: 'summarizeVideo' },
         { id: 'summarize-book', labelKey: 'subcategories.summarize.book', type: 'secondary', promptTemplateId: 'summarizeBook' },
         { id: 'summarize-research', labelKey: 'subcategories.summarize.research', type: 'secondary', promptTemplateId: 'summarizeResearch' },
+        // Secondary (new)
+        { id: 'summarize-podcast', labelKey: 'subcategories.summarize.podcast', type: 'secondary', promptTemplateId: 'summarizePodcast' },
+        { id: 'summarize-legal', labelKey: 'subcategories.summarize.legal', type: 'secondary', promptTemplateId: 'summarizeLegal' },
+        { id: 'summarize-conversation', labelKey: 'subcategories.summarize.conversation', type: 'secondary', promptTemplateId: 'summarizeConversation' },
       ],
     },
     {
@@ -175,11 +179,16 @@ export const bubbleTree: BubbleNode = {
       ],
       type: 'secondary',
       children: [
+        // Primary
         { id: 'debug-frontend', labelKey: 'subcategories.debug.frontend', type: 'primary', promptTemplateId: 'debugFrontend' },
         { id: 'debug-backend', labelKey: 'subcategories.debug.backend', type: 'primary', promptTemplateId: 'debugBackend' },
         { id: 'debug-database', labelKey: 'subcategories.debug.database', type: 'primary', promptTemplateId: 'debugDatabase' },
         { id: 'debug-api', labelKey: 'subcategories.debug.api', type: 'primary', promptTemplateId: 'debugApi' },
         { id: 'debug-devops', labelKey: 'subcategories.debug.devops', type: 'primary', promptTemplateId: 'debugDevops' },
+        // Secondary
+        { id: 'debug-performance', labelKey: 'subcategories.debug.performance', type: 'secondary', promptTemplateId: 'debugPerformance' },
+        { id: 'debug-security', labelKey: 'subcategories.debug.security', type: 'secondary', promptTemplateId: 'debugSecurity' },
+        { id: 'debug-mobile', labelKey: 'subcategories.debug.mobile', type: 'secondary', promptTemplateId: 'debugMobile' },
       ],
     },
     {
@@ -192,11 +201,18 @@ export const bubbleTree: BubbleNode = {
       ],
       type: 'secondary',
       children: [
+        // Primary
         { id: 'brainstorm-product', labelKey: 'subcategories.brainstorm.product', type: 'primary', promptTemplateId: 'brainstormProduct' },
         { id: 'brainstorm-marketing', labelKey: 'subcategories.brainstorm.marketing', type: 'primary', promptTemplateId: 'brainstormMarketing' },
         { id: 'brainstorm-content', labelKey: 'subcategories.brainstorm.content', type: 'primary', promptTemplateId: 'brainstormContent' },
         { id: 'brainstorm-design', labelKey: 'subcategories.brainstorm.design', type: 'primary', promptTemplateId: 'brainstormDesign' },
         { id: 'brainstorm-strategy', labelKey: 'subcategories.brainstorm.strategy', type: 'primary', promptTemplateId: 'brainstormStrategy' },
+        // Secondary
+        { id: 'brainstorm-naming', labelKey: 'subcategories.brainstorm.naming', type: 'secondary', promptTemplateId: 'brainstormNaming' },
+        { id: 'brainstorm-event', labelKey: 'subcategories.brainstorm.event', type: 'secondary', promptTemplateId: 'brainstormEvent' },
+        { id: 'brainstorm-problemSolving', labelKey: 'subcategories.brainstorm.problemSolving', type: 'secondary', promptTemplateId: 'brainstormProblemSolving' },
+        { id: 'brainstorm-startup', labelKey: 'subcategories.brainstorm.startup', type: 'secondary', promptTemplateId: 'brainstormStartup' },
+        { id: 'brainstorm-sideProject', labelKey: 'subcategories.brainstorm.sideProject', type: 'secondary', promptTemplateId: 'brainstormSideProject' },
       ],
     },
     {
@@ -209,11 +225,18 @@ export const bubbleTree: BubbleNode = {
       ],
       type: 'secondary',
       children: [
+        // Primary
         { id: 'learn-programming', labelKey: 'subcategories.learn.programming', type: 'primary', promptTemplateId: 'learnProgramming' },
         { id: 'learn-language', labelKey: 'subcategories.learn.language', type: 'primary', promptTemplateId: 'learnLanguage' },
         { id: 'learn-math', labelKey: 'subcategories.learn.math', type: 'primary', promptTemplateId: 'learnMath' },
         { id: 'learn-science', labelKey: 'subcategories.learn.science', type: 'primary', promptTemplateId: 'learnScience' },
         { id: 'learn-business', labelKey: 'subcategories.learn.business', type: 'primary', promptTemplateId: 'learnBusiness' },
+        // Secondary
+        { id: 'learn-history', labelKey: 'subcategories.learn.history', type: 'secondary', promptTemplateId: 'learnHistory' },
+        { id: 'learn-design', labelKey: 'subcategories.learn.design', type: 'secondary', promptTemplateId: 'learnDesign' },
+        { id: 'learn-music', labelKey: 'subcategories.learn.music', type: 'secondary', promptTemplateId: 'learnMusic' },
+        { id: 'learn-cooking', labelKey: 'subcategories.learn.cooking', type: 'secondary', promptTemplateId: 'learnCooking' },
+        { id: 'learn-finance', labelKey: 'subcategories.learn.finance', type: 'secondary', promptTemplateId: 'learnFinance' },
       ],
     },
     {
@@ -222,15 +245,22 @@ export const bubbleTree: BubbleNode = {
       descriptionKeys: [
         'subcategories.write.email',
         'subcategories.write.blog',
-        'subcategories.write.documentation',
+        'subcategories.write.socialMedia',
       ],
       type: 'secondary',
       children: [
+        // Primary
         { id: 'write-email', labelKey: 'subcategories.write.email', type: 'primary', promptTemplateId: 'writeEmail' },
         { id: 'write-blog', labelKey: 'subcategories.write.blog', type: 'primary', promptTemplateId: 'writeBlog' },
         { id: 'write-documentation', labelKey: 'subcategories.write.documentation', type: 'primary', promptTemplateId: 'writeDocumentation' },
         { id: 'write-proposal', labelKey: 'subcategories.write.proposal', type: 'primary', promptTemplateId: 'writeProposal' },
         { id: 'write-story', labelKey: 'subcategories.write.story', type: 'primary', promptTemplateId: 'writeStory' },
+        // Secondary
+        { id: 'write-socialMedia', labelKey: 'subcategories.write.socialMedia', type: 'secondary', promptTemplateId: 'writeSocialMedia' },
+        { id: 'write-resume', labelKey: 'subcategories.write.resume', type: 'secondary', promptTemplateId: 'writeResume' },
+        { id: 'write-report', labelKey: 'subcategories.write.report', type: 'secondary', promptTemplateId: 'writeReport' },
+        { id: 'write-copy', labelKey: 'subcategories.write.copy', type: 'secondary', promptTemplateId: 'writeCopy' },
+        { id: 'write-speech', labelKey: 'subcategories.write.speech', type: 'secondary', promptTemplateId: 'writeSpeech' },
       ],
     },
     {
@@ -243,11 +273,16 @@ export const bubbleTree: BubbleNode = {
       ],
       type: 'secondary',
       children: [
+        // Primary
         { id: 'explain-code', labelKey: 'subcategories.explain.code', type: 'primary', promptTemplateId: 'explainCode' },
         { id: 'explain-concept', labelKey: 'subcategories.explain.concept', type: 'primary', promptTemplateId: 'explainConcept' },
         { id: 'explain-process', labelKey: 'subcategories.explain.process', type: 'primary', promptTemplateId: 'explainProcess' },
         { id: 'explain-error', labelKey: 'subcategories.explain.error', type: 'primary', promptTemplateId: 'explainError' },
         { id: 'explain-architecture', labelKey: 'subcategories.explain.architecture', type: 'primary', promptTemplateId: 'explainArchitecture' },
+        // Secondary
+        { id: 'explain-data', labelKey: 'subcategories.explain.data', type: 'secondary', promptTemplateId: 'explainData' },
+        { id: 'explain-math', labelKey: 'subcategories.explain.math', type: 'secondary', promptTemplateId: 'explainMath' },
+        { id: 'explain-legal', labelKey: 'subcategories.explain.legal', type: 'secondary', promptTemplateId: 'explainLegal' },
       ],
     },
   ],

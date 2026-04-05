@@ -59,6 +59,66 @@
       "line8": "Compara diferentes escuelas de pensamiento o enfoques con pros/contras",
       "line9": "Sugiere libros, cursos y líderes de opinión a seguir",
       "line10": "Dame un escenario de práctica para trabajar con tu guía"
+    },
+    "learnHistory": {
+      "line1": "Enséñame sobre {{topic}}",
+      "line2": "Mi nivel: {{level}}",
+      "line3": "Comenzar con el contexto clave: cuándo, dónde y por qué sigue siendo importante hoy",
+      "line4": "Explicar las principales causas y factores contribuyentes",
+      "line5": "Describir las figuras clave y sus roles — motivaciones, no solo acciones",
+      "line6": "Recorrer la línea temporal de los eventos principales en orden cronológico",
+      "line7": "Explicar las consecuencias a corto y largo plazo",
+      "line8": "Señalar conceptos erróneos comunes y lo que la evidencia realmente muestra",
+      "line9": "Establecer conexiones con paralelos modernos o debates en curso",
+      "line10": "Sugerir 3 libros o documentales recomendados para profundizar"
+    },
+    "learnDesign": {
+      "line1": "Enséñame sobre {{topic}}",
+      "line2": "Mi nivel: {{level}}",
+      "line3": "Comenzar con los principios fundamentales — por qué esto importa para un buen diseño",
+      "line4": "Explicar la terminología y conceptos clave que necesito conocer",
+      "line5": "Mostrar ejemplos reales de buena y mala ejecución",
+      "line6": "Guiar paso a paso el proceso para aplicar esto en la práctica",
+      "line7": "Listar las herramientas y recursos esenciales para empezar",
+      "line8": "Incluir errores comunes de principiantes y cómo evitarlos",
+      "line9": "Sugerir un ejercicio práctico que pueda hacer ahora mismo",
+      "line10": "Recomendar 3 diseñadores, cursos o libros para inspiración"
+    },
+    "learnMusic": {
+      "line1": "Enséñame sobre {{topic}}",
+      "line2": "Mi nivel: {{level}}",
+      "line3": "Comenzar con los conceptos fundamentales que necesito entender primero",
+      "line4": "Explicar la terminología clave en lenguaje sencillo y claro",
+      "line5": "Desglosar la teoría en ejercicios prácticos",
+      "line6": "Incluir una rutina de práctica estructurada que pueda seguir diariamente",
+      "line7": "Sugerir canciones o piezas que demuestren los conceptos a mi nivel",
+      "line8": "Explicar errores comunes de principiantes y cómo corregirlos",
+      "line9": "Listar herramientas, apps o recursos gratuitos para apoyar mi aprendizaje",
+      "line10": "Darme una hoja de ruta de 30 días con hitos semanales"
+    },
+    "learnCooking": {
+      "line1": "Enséñame sobre {{topic}}",
+      "line2": "Mi nivel: {{level}}",
+      "line3": "Comenzar con las técnicas esenciales y por qué funcionan (la ciencia detrás)",
+      "line4": "Listar los ingredientes imprescindibles y básicos de despensa para esta cocina",
+      "line5": "Enseñar las 3-5 recetas fundamentales que todo aprendiz debe dominar primero",
+      "line6": "Explicar errores comunes que arruinan los platos y cómo evitarlos",
+      "line7": "Incluir habilidades con el cuchillo, técnicas de preparación u otras habilidades básicas",
+      "line8": "Sugerir un plan de comidas semanal para practicar estas habilidades",
+      "line9": "Listar utensilios de cocina esenciales (opciones económicas incluidas)",
+      "line10": "Recomendar libros de cocina, canales de YouTube o cursos online para esta cocina"
+    },
+    "learnFinance": {
+      "line1": "Enséñame sobre {{topic}}",
+      "line2": "Mi nivel: {{level}}",
+      "line3": "Comenzar con los fundamentos — definir términos clave en lenguaje sencillo",
+      "line4": "Explicar por qué esto importa para mi futuro financiero con ejemplos concretos",
+      "line5": "Presentar las estrategias y enfoques comunes, con pros y contras",
+      "line6": "Incluir pasos específicos que pueda tomar esta semana para empezar",
+      "line7": "Explicar los errores comunes y las trampas psicológicas a tener en cuenta",
+      "line8": "Usar escenarios reales para ilustrar cómo funcionan los cálculos",
+      "line9": "Listar herramientas gratuitas y confiables para seguimiento y aprendizaje",
+      "line10": "Recomendar 3 libros o cursos de nivel principiante a intermedio"
     }
   }
 }
