@@ -1,12 +1,11 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
-import { useBubbleNavigation } from '../hooks/useBubbleNavigation';
+import { useWorldNavigation } from '../hooks/useWorldNavigation';
 import { useDocumentHead } from '../hooks/useDocumentHead';
-import { BubbleCanvas } from '../components/BubbleCanvas';
+import { WorldCanvas } from '../components/WorldCanvas';
 import { BubbleList } from '../components/BubbleList';
-import PromptResult from '../components/PromptResult';
-import { AIProviderLinks } from '../components/AIProviderLinks';
+import { PromptOverlay } from '../components/PromptOverlay';
 import { loadTemplate, getCategory } from '../data/templates';
 import type { BubbleNode, PromptTemplate } from '../data/types';
 
@@ -20,28 +19,26 @@ export default function HomePage() {
   );
 
   const {
-    currentNode,
-    currentChildren,
     navigationPath,
+    currentNode,
+    leafOverlayActive,
     navigateTo,
     goBack,
     reset,
-    animationPhase,
-    clickedNodeId,
-    previousNode,
-    parentNode,
-  } = useBubbleNavigation();
+    openLeaf,
+  } = useWorldNavigation();
 
   const isAtRoot = navigationPath.length === 0;
   const [viewMode, setViewMode] = useState<'bubble' | 'list'>('bubble');
 
-  // Async template loading — fetches category chunk on demand
+  // Async template loading
   const [leafTemplate, setLeafTemplate] = useState<PromptTemplate | null>(null);
   const [isLoadingTemplate, setIsLoadingTemplate] = useState(false);
 
   useEffect(() => {
     const templateId = currentNode.promptTemplateId;
-    const isLeaf = templateId && (!currentNode.children || currentNode.children.length === 0);
+    const isLeaf =
+      templateId && (!currentNode.children || currentNode.children.length === 0);
 
     if (!isLeaf) {
       setLeafTemplate(null);
@@ -51,82 +48,58 @@ export default function HomePage() {
     let cancelled = false;
     setIsLoadingTemplate(true);
 
-    // Load both template data and i18n namespace in parallel
     const category = getCategory(templateId);
     const ns = `prompts-${category}`;
-    Promise.all([
-      loadTemplate(templateId),
-      i18next.loadNamespaces(ns),
-    ]).then(([t]) => {
-      if (!cancelled) {
-        setLeafTemplate(t);
-        setIsLoadingTemplate(false);
-      }
-    });
-    return () => { cancelled = true; };
+    Promise.all([loadTemplate(templateId), i18next.loadNamespaces(ns)]).then(
+      ([t]) => {
+        if (!cancelled) {
+          setLeafTemplate(t);
+          setIsLoadingTemplate(false);
+        }
+      },
+    );
+    return () => {
+      cancelled = true;
+    };
   }, [currentNode]);
-
 
   const handleLeafClick = useCallback(
     (node: BubbleNode) => {
-      // Leaf click uses the normal navigateTo — the URL becomes /category/leaf/
-      // and HomePage detects it's a leaf via currentNode.promptTemplateId.
-      navigateTo(node.id);
+      openLeaf(node);
     },
-    [navigateTo],
+    [openLeaf],
   );
 
   const handleGoBackFromResult = useCallback(() => {
     goBack();
   }, [goBack]);
 
-  // getPromptText is provided by PromptResult (respects hidden sections/items)
+  // Prompt text getter
   const promptTextGetterRef = useRef<() => string>(() => '');
   const getPromptText = useCallback(() => promptTextGetterRef.current(), []);
   const handlePromptTextChange = useCallback((getter: () => string) => {
     promptTextGetterRef.current = getter;
   }, []);
 
-  // Show loading spinner while template chunk is being fetched
-  if (isLoadingTemplate) {
-    return (
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '40vh' }}>
-        <svg width="28" height="28" viewBox="0 0 28 28" className="spin" style={{ opacity: 0.5 }}>
-          <circle cx="14" cy="14" r="11" stroke="var(--color-cyan)" strokeWidth="2.5" fill="none" strokeDasharray="34 34" strokeLinecap="round" />
-        </svg>
-      </div>
-    );
-  }
-
-  // Show prompt result when at a leaf node
-  if (leafTemplate) {
-    const categoryLabel = tPrompts(currentNode.labelKey);
-    return (
-      <div className="prompt-result-page animate-fade-in">
-        <div className="prompt-result-page__scroll">
-          <PromptResult
-            template={leafTemplate}
-            categoryLabel={categoryLabel}
-            templateOverrides={currentNode.templateOverrides}
-            onGoBack={handleGoBackFromResult}
-            onPromptTextChange={handlePromptTextChange}
-          />
-        </div>
-        <div className="prompt-result-page__footer">
-          <AIProviderLinks getPromptText={getPromptText} />
-        </div>
-      </div>
-    );
-  }
-
   const showList = viewMode === 'list';
 
-  // Show bubble canvas or list view for navigation
   return (
     <div className="bubble-view">
-      <div className="bubble-view__subtitle" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, position: 'relative' }}>
-        <span>{showList ? t('bubble.selectFromList', 'Select a category') : t('bubble.clickToExplore')}</span>
-        {/* View mode toggle */}
+      <div
+        className="bubble-view__subtitle"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 12,
+          position: 'relative',
+        }}
+      >
+        <span>
+          {showList
+            ? t('bubble.selectFromList', 'Select a category')
+            : t('bubble.clickToExplore')}
+        </span>
         <button
           onClick={() => setViewMode(showList ? 'bubble' : 'list')}
           style={{
@@ -142,7 +115,7 @@ export default function HomePage() {
           }}
           title={showList ? 'Bubble view' : 'List view'}
         >
-          {showList ? '◉' : '☰'}
+          {showList ? '\u25C9' : '\u2630'}
         </button>
       </div>
 
@@ -150,28 +123,34 @@ export default function HomePage() {
         {showList ? (
           <BubbleList
             currentNode={currentNode}
-            currentChildren={currentChildren}
+            currentChildren={currentNode.children ?? []}
             isAtRoot={isAtRoot}
             onNavigate={navigateTo}
             onGoBack={isAtRoot ? reset : goBack}
             onLeafClick={handleLeafClick}
           />
         ) : (
-          <BubbleCanvas
-            currentNode={currentNode}
-            currentChildren={currentChildren}
+          <WorldCanvas
             navigationPath={navigationPath}
-            isAtRoot={isAtRoot}
             onNavigate={navigateTo}
             onGoBack={isAtRoot ? reset : goBack}
             onLeafClick={handleLeafClick}
-            animationPhase={animationPhase}
-            clickedNodeId={clickedNodeId}
-            previousNode={previousNode}
-            parentNode={parentNode}
+            leafOverlayActive={leafOverlayActive}
           />
         )}
       </div>
+
+      {/* Prompt overlay for leaf nodes */}
+      <PromptOverlay
+        visible={leafOverlayActive}
+        template={leafTemplate}
+        currentNode={currentNode}
+        categoryLabel={tPrompts(currentNode.labelKey)}
+        onGoBack={handleGoBackFromResult}
+        onPromptTextChange={handlePromptTextChange}
+        getPromptText={getPromptText}
+        isLoading={isLoadingTemplate}
+      />
     </div>
   );
 }

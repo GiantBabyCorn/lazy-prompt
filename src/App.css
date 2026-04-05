@@ -391,6 +391,69 @@ a:hover {
 /* Already has inline hover via JS, no extra CSS needed */
 
 /* ============================================================
+   World Canvas (full-tree viewport navigation)
+   ============================================================ */
+
+.world-canvas {
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+  overflow: visible;
+  position: relative;
+}
+
+.world-canvas svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Tooltip hidden by default, shown on hover via parent g:hover */
+.world-bubble-tooltip {
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+g:hover > .world-bubble-tooltip {
+  opacity: 1;
+}
+
+/* Hover effect on interactive bubbles */
+.bubble-border {
+  transition: filter 0.15s;
+}
+
+/* Normal bubbles: cyan border + blue glow */
+g:hover > .bubble-border {
+  stroke: var(--color-cyan) !important;
+  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
+}
+
+/* Go-back bubble: keep orange border + orange glow */
+g.bubble-goback:hover > .bubble-border {
+  stroke: var(--color-orange) !important;
+  filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.5));
+}
+
+/* ============================================================
+   Prompt Overlay (leaf node modal)
+   ============================================================ */
+
+.prompt-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  background: var(--color-bg);
+  overflow-y: auto;
+}
+
+.prompt-overlay__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+}
+
+/* ============================================================
    Responsive — Mobile (< 768px)
    ============================================================ */
 
@@ -418,10 +481,9 @@ a:hover {
     font-size: 1rem !important;
   }
 
-  /* Bubble view */
+  /* Bubble view — keep fixed height for physics canvas to fill */
   .bubble-view {
-    height: auto;
-    min-height: calc(100vh - 61px);
+    height: calc(100vh - 61px);
   }
 
   .bubble-view__subtitle {
