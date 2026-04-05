@@ -25,6 +25,8 @@ function CheckIcon({ checked, size = 16, color }: { checked: boolean; size?: num
 interface PromptResultProps {
   template: PromptTemplate;
   categoryLabel: string;
+  /** Pre-fill editable span values based on the selected bubble path. */
+  templateOverrides?: Record<string, string>;
   onGoBack: () => void;
   onEditedValuesChange?: (values: Record<string, string>) => void;
   onAddedItemsChange?: (items: Record<string, string[]>) => void;
@@ -35,14 +37,29 @@ interface PromptResultProps {
 export default function PromptResult({
   template,
   categoryLabel,
+  templateOverrides,
   onGoBack,
   onEditedValuesChange,
   onAddedItemsChange,
   onPromptTextChange,
 }: PromptResultProps) {
-  const { t } = useTranslation('prompts');
+  // Template text may be in prompts-{category} namespace; use all loaded namespaces
+  const { t, i18n } = useTranslation();
   const { t: tCommon } = useTranslation('common');
-  const [editedValues, setEditedValues] = useState<Record<string, string>>({});
+
+  // Translation function that searches prompts-* namespaces
+  const tTemplate = useCallback((key: string) => {
+    // Try all loaded prompts-* namespaces
+    const namespaces = Object.keys(i18n.store.data[i18n.language] || {}).filter(ns => ns.startsWith('prompts'));
+    for (const ns of namespaces) {
+      const val = t(key, { ns });
+      if (val !== key) return val;
+    }
+    return t(key, { ns: 'prompts' });
+  }, [t, i18n]);
+  const [editedValues, setEditedValues] = useState<Record<string, string>>(
+    () => templateOverrides ?? {},
+  );
   const [addedItems, setAddedItems] = useState<Record<string, string[]>>({});
   const [hiddenSections, setHiddenSections] = useState<Set<string>>(new Set());
   const [hiddenItems, setHiddenItems] = useState<Set<string>>(new Set());
@@ -85,8 +102,8 @@ export default function PromptResult({
   }, []);
 
   const getPromptText = useCallback(() => {
-    return buildPromptString(template, editedValues, addedItems, t, hiddenSections, hiddenItems);
-  }, [template, editedValues, addedItems, t, hiddenSections, hiddenItems]);
+    return buildPromptString(template, editedValues, addedItems, tTemplate, hiddenSections, hiddenItems);
+  }, [template, editedValues, addedItems, tTemplate, hiddenSections, hiddenItems]);
 
   // Expose getPromptText to parent so AIProviderLinks can use it
   useEffect(() => {
@@ -103,7 +120,7 @@ export default function PromptResult({
   }, [template.sections, hiddenSections]);
 
   const renderSectionText = (section: PromptSection) => {
-    const rawText = t(section.textKey);
+    const rawText = tTemplate(section.textKey);
 
     if (!section.editableSpans || section.editableSpans.length === 0) {
       return <span>{rawText}</span>;
@@ -264,7 +281,7 @@ export default function PromptResult({
                           fontStyle: itemHidden ? 'italic' : 'normal',
                           textDecoration: itemHidden ? 'line-through' : 'none',
                         }}>
-                          - {t(item.textKey)}
+                          - {tTemplate(item.textKey)}
                         </span>
                       </div>
                     );

@@ -1,0 +1,76 @@
+{
+  "templates": {
+    "debugCode": {
+      "line1": "Debug this {{area}} code issue",
+      "line2": "Language/Framework: {{lang}}",
+      "line3": "Error: {{error}}",
+      "line4": "Analyze the code and identify the root cause",
+      "line5": "Provide a step-by-step explanation of what's going wrong",
+      "line6": "Suggest the fix with corrected code",
+      "line7": "Explain why the fix works",
+      "line8": "List any potential side effects of the fix",
+      "line9": "Suggest preventive measures to avoid similar bugs",
+      "line10": "Recommend relevant tests to add"
+    },
+    "debugFrontend": {
+      "line1": "Debug this {{framework}} frontend issue",
+      "line2": "Issue: {{error}}",
+      "line3": "Check the browser console — are there any JS errors, warnings, or failed network requests?",
+      "line4": "Inspect the DOM — is the expected element rendered? Check its CSS computed styles",
+      "line5": "Check component state and props — are they what you expect at render time?",
+      "line6": "Test cross-browser: does the issue reproduce in Chrome, Firefox, and Safari?",
+      "line7": "Check responsive behavior — does the issue only occur at specific viewport sizes?",
+      "line8": "Identify the root cause and provide a step-by-step fix with code",
+      "line9": "Explain why the fix works and any side effects to watch for",
+      "line10": "Suggest how to prevent similar issues (linting rules, tests, patterns)"
+    },
+    "debugBackend": {
+      "line1": "Debug this {{stack}} backend issue",
+      "line2": "Issue: {{error}}",
+      "line3": "Analyze the stack trace — which function/line is the actual source of the error?",
+      "line4": "Check the request lifecycle: is the error in routing, middleware, controller, or database layer?",
+      "line5": "Inspect relevant logs — are there any preceding warnings or patterns?",
+      "line6": "Check for concurrency issues: race conditions, deadlocks, or shared state corruption",
+      "line7": "Verify environment: are env vars set correctly? Are dependencies at expected versions?",
+      "line8": "Identify the root cause and provide the fix with code",
+      "line9": "Check if this could be a memory leak or performance issue under load",
+      "line10": "Suggest tests to add that would catch this regression"
+    },
+    "debugDatabase": {
+      "line1": "Debug this {{db}} database issue",
+      "line2": "Issue: {{error}}",
+      "line3": "Show the problematic query and run EXPLAIN/ANALYZE to check the execution plan",
+      "line4": "Check for missing indexes — are there sequential scans on large tables?",
+      "line5": "Look for N+1 query patterns or unnecessary JOINs",
+      "line6": "Check for lock contention: are there deadlocks or long-held transactions?",
+      "line7": "Verify schema constraints: foreign keys, unique indexes, NOT NULL violations",
+      "line8": "Check connection pool: are connections being properly returned?",
+      "line9": "Provide the optimized query or schema change with explanation",
+      "line10": "Suggest monitoring queries to detect this issue early in the future"
+    },
+    "debugApi": {
+      "line1": "Debug this API issue: {{method}} {{endpoint}}",
+      "line2": "Error: {{status}}",
+      "line3": "Show the full request: URL, headers, body, and query parameters",
+      "line4": "Show the full response: status code, headers, and body",
+      "line5": "Check authentication: is the token valid, not expired, and has the right scopes?",
+      "line6": "If CORS error: check Access-Control-Allow-Origin, preflight OPTIONS, and credentials settings",
+      "line7": "Verify the request matches the API spec: correct Content-Type, required fields, valid data types",
+      "line8": "Check rate limiting: have you exceeded the API's request quota?",
+      "line9": "Identify the root cause and provide the fix",
+      "line10": "Suggest retry/fallback strategies and error handling improvements"
+    },
+    "debugDevops": {
+      "line1": "Debug this {{tool}} DevOps/infra issue",
+      "line2": "Issue: {{error}}",
+      "line3": "Show the relevant config files, Dockerfiles, or pipeline definitions",
+      "line4": "Check logs from the failing service/container/step — what's the last successful point?",
+      "line5": "Verify environment variables and secrets are correctly set and accessible",
+      "line6": "Check networking: can services reach each other? DNS resolution, ports, firewalls?",
+      "line7": "Check resource limits: is the service running out of CPU, memory, or disk?",
+      "line8": "Verify permissions: does the service account have the right IAM roles/policies?",
+      "line9": "Provide the fix with the exact config/command changes needed",
+      "line10": "Suggest monitoring and alerting to catch this issue before it impacts users"
+    }
+  }
+}

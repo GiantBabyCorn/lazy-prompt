@@ -80,6 +80,7 @@ export default function AboutPage() {
 
       <p style={{ marginTop: 32, color: 'var(--color-text-secondary)', fontSize: '0.75rem' }}>
         MIT License &copy; 2026 GiantBabyCorn
+        <span style={{ marginLeft: 8, opacity: 0.5 }}>v{__APP_COMMIT_HASH__}</span>
       </p>
     </div>
   );

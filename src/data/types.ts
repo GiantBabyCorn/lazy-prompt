@@ -5,6 +5,7 @@ export interface BubbleNode {
   type: 'primary' | 'secondary';
   children?: BubbleNode[];
   promptTemplateId?: string;  // leaf nodes reference a template
+  templateOverrides?: Record<string, string>;  // pre-fill editable span values based on selected path
 }
 
 export interface PromptTemplate {

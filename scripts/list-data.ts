@@ -2,7 +2,8 @@ import type { BubbleNode } from '../src/data/types.ts';
 
 async function main() {
   const { bubbleTree } = await import('../src/data/bubbleTree.ts');
-  const { promptTemplates } = await import('../src/data/promptTemplates.ts');
+  const { loadAllTemplates } = await import('../src/data/templates/index.ts');
+  const promptTemplates = await loadAllTemplates();
 
   console.log('\n=== Bubble Tree ===\n');
 

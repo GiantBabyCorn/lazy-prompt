@@ -14,7 +14,9 @@
     "add-template": "npx tsx scripts/add-template.ts",
     "edit-template": "npx tsx scripts/edit-template.ts",
     "list-data": "npx tsx scripts/list-data.ts",
-    "validate": "npx tsx scripts/validate-data.ts"
+    "validate": "npx tsx scripts/validate-data.ts",
+    "read-data": "npx tsx scripts/read-data.ts",
+    "write-data": "npx tsx scripts/write-data.ts"
   },
   "dependencies": {
     "d3-hierarchy": "^3.1.2",

@@ -1,0 +1,202 @@
+{
+  "templates": {
+    "buildWebsite": {
+      "line1": "為我建構一個 {{name}} 網站",
+      "line2": "使用 {{framework}} 和 {{router}}",
+      "line3": "使用 i18n 實現多語言支援，語言包括 {{languages}}",
+      "line4": "完整的 SEO 中繼資訊",
+      "line5": "必須包含以下頁面：",
+      "pages": {
+        "landing": "首頁",
+        "about": "關於",
+        "contact": "聯絡我們",
+        "blog": "部落格",
+        "faq": "常見問題",
+        "privacy": "隱私政策",
+        "terms": "服務條款"
+      },
+      "line6": "包含手機和平板的響應式設計",
+      "line7": "新增深色/淺色主題切換",
+      "line8": "包含正確的錯誤處理和 404 頁面",
+      "line9": "使用 TypeScript 確保型別安全",
+      "line10": "包含載入狀態和骨架畫面",
+      "line11": "新增正確的表單驗證",
+      "line12": "包含無障礙功能（WCAG 2.1 AA 合規）",
+      "line13": "設定 CI/CD 管線配置",
+      "line14": "包含使用測試函式庫的單元測試設定",
+      "line15": "新增正確的 Git 工作流程和 .gitignore"
+    },
+    "buildApp": {
+      "line1": "為我建構一個 {{name}} 行動應用程式",
+      "line2": "使用 {{framework}} 框架",
+      "line3": "支援 {{platforms}} 平台",
+      "line4": "包含使用者驗證和授權",
+      "line5": "必須包含以下畫面：",
+      "screens": {
+        "splash": "啟動畫面",
+        "login": "登入 / 註冊",
+        "home": "首頁儀表板",
+        "profile": "使用者個人資料",
+        "settings": "設定",
+        "notifications": "通知"
+      },
+      "line6": "包含推播通知支援",
+      "line7": "新增離線資料快取",
+      "line8": "包含使用堆疊和分頁導覽器的正確導覽",
+      "line9": "新增生物辨識驗證選項",
+      "line10": "包含應用程式狀態管理",
+      "line11": "新增正確的錯誤邊界和當機報告",
+      "line12": "包含深層連結支援",
+      "line13": "新增應用程式商店部署配置"
+    },
+    "buildPresentations": {
+      "line1": "建立一份關於 {{topic}} 的簡報",
+      "line2": "目標受眾：{{audience}}",
+      "line3": "包含約 {{count}} 張投影片",
+      "line4": "簡報時長：{{duration}}",
+      "line5": "必須包含以下投影片：",
+      "slides": {
+        "title": "標題頁",
+        "agenda": "議程 / 概覽",
+        "problem": "問題陳述",
+        "solution": "提出的解決方案",
+        "demo": "展示 / 視覺化",
+        "timeline": "時間軸 / 路線圖",
+        "qa": "問答"
+      },
+      "line6": "使用清晰簡潔的要點（每頁最多 5 點）",
+      "line7": "為每張投影片加上講者備注",
+      "line8": "在適當處加入數據視覺化",
+      "line9": "包含帶有關鍵重點的總結頁",
+      "line10": "設計時保持一致的品牌風格和配色"
+    },
+    "buildApi": {
+      "line1": "為我建構一個 {{name}} {{style}} API",
+      "line2": "使用 {{lang}} 作為後端框架",
+      "line3": "資料庫：{{db}}",
+      "line4": "包含 JWT 驗證和角色授權",
+      "line5": "必須包含以下端點：",
+      "endpoints": {
+        "users": "使用者 CRUD (/api/users)",
+        "auth": "驗證 (/api/auth/login, /api/auth/register)",
+        "products": "產品 CRUD (/api/products)",
+        "orders": "訂單 CRUD (/api/orders)",
+        "health": "健康檢查 (/api/health)"
+      },
+      "line6": "包含輸入驗證和清理",
+      "line7": "新增速率限制和請求節流",
+      "line8": "包含完整的錯誤處理與正確的 HTTP 狀態碼",
+      "line9": "新增 Swagger/OpenAPI API 文件",
+      "line10": "包含資料庫遷移和種子資料",
+      "line11": "新增日誌記錄和監控中介層",
+      "line12": "包含單元測試和整合測試設定"
+    },
+    "buildDatabase": {
+      "line1": "設計一個 {{name}} {{engine}} 資料庫架構",
+      "line2": "領域：{{domain}}",
+      "line3": "必須包含以下資料表：",
+      "tables": {
+        "users": "使用者 (id, email, name, role, timestamps)",
+        "products": "產品 (id, name, description, price, category)",
+        "orders": "訂單 (id, user_id, status, total, timestamps)",
+        "payments": "付款 (id, order_id, method, amount, status)",
+        "categories": "分類 (id, name, parent_id, description)"
+      },
+      "line4": "包含正確的外鍵關係和約束",
+      "line5": "為常用查詢欄位新增索引",
+      "line6": "所有資料表包含 created_at 和 updated_at 時間戳",
+      "line7": "在適當處新增軟刪除支援",
+      "line8": "包含遷移腳本（up 和 down）",
+      "line9": "新增開發和測試用的種子資料",
+      "line10": "包含 ER 圖描述"
+    },
+    "buildScript": {
+      "line1": "撰寫一個自動化腳本來 {{task}}",
+      "line2": "使用 {{lang}} 程式語言",
+      "line3": "輸入：{{input}}",
+      "line4": "輸出：{{output}}",
+      "line5": "包含錯誤處理和日誌記錄",
+      "line6": "新增命令列參數支援",
+      "line7": "包含測試用的模擬執行模式",
+      "line8": "為長時間執行的任務新增進度指示器",
+      "line9": "包含正確的檔案/資源清理",
+      "line10": "新增可重複使用設定的組態檔支援"
+    },
+    "buildBot": {
+      "line1": "為我建構一個 {{name}} 聊天機器人",
+      "line2": "平台：{{platform}}",
+      "line3": "使用 {{lang}} 作為後端",
+      "line4": "必須包含以下功能：",
+      "features": {
+        "greet": "歡迎 / 問候訊息",
+        "faq": "常見問題自動回覆",
+        "moderate": "內容審核",
+        "notify": "排程通知",
+        "customCommands": "自訂斜線命令"
+      },
+      "line5": "包含自然語言理解以支援靈活輸入",
+      "line6": "新增對話上下文和記憶",
+      "line7": "包含管理儀表板以進行設定",
+      "line8": "新增分析和使用追蹤",
+      "line9": "包含速率限制以防止垃圾訊息",
+      "line10": "為無法識別的輸入新增友善的錯誤訊息"
+    },
+    "buildExtension": {
+      "line1": "為我建構一個 {{name}} 瀏覽器擴充功能",
+      "line2": "目標瀏覽器：{{browser}}",
+      "line3": "用途：{{purpose}}",
+      "line4": "必須包含以下功能：",
+      "features": {
+        "popup": "彈出視窗 UI 與快速操作",
+        "contentScript": "頁面互動的內容腳本",
+        "background": "背景 Service Worker",
+        "optionsPage": "選項/設定頁面",
+        "storage": "使用者偏好的本機儲存"
+      },
+      "line5": "使用 Manifest V3 規範",
+      "line6": "包含適當的權限（最小必要）",
+      "line7": "為主要操作新增鍵盤快捷鍵",
+      "line8": "包含右鍵選單整合",
+      "line9": "根據狀態更新徽章/圖示",
+      "line10": "包含商店上架素材和描述"
+    },
+    "buildGame": {
+      "line1": "為我建構一個 {{name}} {{genre}} 遊戲",
+      "line2": "使用 {{engine}} 引擎/框架",
+      "line3": "目標平台：{{platform}}",
+      "line4": "核心遊戲機制：",
+      "mechanics": {
+        "movement": "玩家移動和控制",
+        "combat": "戰鬥 / 互動系統",
+        "inventory": "物品管理",
+        "scoring": "計分 / 進度系統",
+        "levels": "關卡設計和進度"
+      },
+      "line5": "包含主選單、暫停和遊戲結束畫面",
+      "line6": "新增音效和背景音樂",
+      "line7": "包含儲存/載入遊戲狀態",
+      "line8": "新增難度設定（簡單、中等、困難）",
+      "line9": "包含教學或新手引導關卡",
+      "line10": "新增粒子效果和視覺回饋"
+    },
+    "buildCliTool": {
+      "line1": "為我建構一個 {{name}} CLI 工具",
+      "line2": "使用 {{lang}} 程式語言",
+      "line3": "用途：{{purpose}}",
+      "line4": "必須支援以下命令：",
+      "commands": {
+        "init": "init - 初始化新專案",
+        "create": "create - 建立新資源",
+        "list": "list - 列出所有資源",
+        "config": "config - 管理組態",
+        "help": "help - 顯示使用說明"
+      },
+      "line5": "包含彩色終端輸出",
+      "line6": "為必要輸入新增互動式提示",
+      "line7": "包含組態檔（~/.toolrc）",
+      "line8": "新增 --verbose 和 --quiet 旗標",
+      "line9": "包含 Shell 自動補全腳本",
+      "line10": "新增手冊頁或內建說明文件"
+    }
+  }
+}

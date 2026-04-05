@@ -1,0 +1,202 @@
+{
+  "templates": {
+    "buildWebsite": {
+      "line1": "为我构建一个 {{name}} 网站",
+      "line2": "使用 {{framework}} 和 {{router}}",
+      "line3": "使用 i18n 实现多语言支持，语言包括 {{languages}}",
+      "line4": "完整的 SEO 元信息",
+      "line5": "必须包含以下页面：",
+      "pages": {
+        "landing": "落地页",
+        "about": "关于",
+        "contact": "联系我们",
+        "blog": "博客",
+        "faq": "常见问题",
+        "privacy": "隐私政策",
+        "terms": "服务条款"
+      },
+      "line6": "包含手机和平板的响应式设计",
+      "line7": "添加深色/浅色主题切换",
+      "line8": "包含正确的错误处理和 404 页面",
+      "line9": "使用 TypeScript 确保类型安全",
+      "line10": "包含加载状态和骨架屏",
+      "line11": "添加正确的表单验证",
+      "line12": "包含无障碍功能（WCAG 2.1 AA 合规）",
+      "line13": "设置 CI/CD 流水线配置",
+      "line14": "包含使用测试库的单元测试设置",
+      "line15": "添加正确的 Git 工作流和 .gitignore"
+    },
+    "buildApp": {
+      "line1": "为我构建一个 {{name}} 移动应用",
+      "line2": "使用 {{framework}} 框架",
+      "line3": "支持 {{platforms}} 平台",
+      "line4": "包含用户认证和授权",
+      "line5": "必须包含以下页面：",
+      "screens": {
+        "splash": "启动页",
+        "login": "登录 / 注册",
+        "home": "首页仪表盘",
+        "profile": "用户资料",
+        "settings": "设置",
+        "notifications": "通知"
+      },
+      "line6": "包含推送通知支持",
+      "line7": "添加离线数据缓存",
+      "line8": "包含使用堆栈和标签导航器的正确导航",
+      "line9": "添加生物识别认证选项",
+      "line10": "包含应用状态管理",
+      "line11": "添加正确的错误边界和崩溃报告",
+      "line12": "包含深层链接支持",
+      "line13": "添加应用商店部署配置"
+    },
+    "buildPresentations": {
+      "line1": "创建关于 {{topic}} 的演示文稿",
+      "line2": "目标受众：{{audience}}",
+      "line3": "包含约 {{count}} 张幻灯片",
+      "line4": "演示时长：{{duration}}",
+      "line5": "必须包含以下幻灯片：",
+      "slides": {
+        "title": "标题页",
+        "agenda": "议程 / 概览",
+        "problem": "问题陈述",
+        "solution": "解决方案",
+        "demo": "演示 / 可视化",
+        "timeline": "时间线 / 路线图",
+        "qa": "问答环节"
+      },
+      "line6": "使用清晰简洁的要点（每页最多5个）",
+      "line7": "为每张幻灯片添加演讲备注",
+      "line8": "在适当位置添加数据可视化",
+      "line9": "包含带有关键要点的总结页",
+      "line10": "使用一致的品牌和配色方案设计"
+    },
+    "buildApi": {
+      "line1": "为我构建一个 {{name}} {{style}} API",
+      "line2": "使用 {{lang}} 作为后端框架",
+      "line3": "数据库：{{db}}",
+      "line4": "包含 JWT 认证和基于角色的授权",
+      "line5": "必须包含以下接口：",
+      "endpoints": {
+        "users": "用户 CRUD (/api/users)",
+        "auth": "认证 (/api/auth/login, /api/auth/register)",
+        "products": "产品 CRUD (/api/products)",
+        "orders": "订单 CRUD (/api/orders)",
+        "health": "健康检查 (/api/health)"
+      },
+      "line6": "包含输入验证和清理",
+      "line7": "添加速率限制和请求节流",
+      "line8": "包含全面的错误处理和正确的 HTTP 状态码",
+      "line9": "添加 Swagger/OpenAPI API 文档",
+      "line10": "包含数据库迁移和种子数据",
+      "line11": "添加日志和监控中间件",
+      "line12": "包含单元测试和集成测试设置"
+    },
+    "buildDatabase": {
+      "line1": "设计一个 {{name}} {{engine}} 数据库架构",
+      "line2": "领域：{{domain}}",
+      "line3": "必须包含以下数据表：",
+      "tables": {
+        "users": "用户表 (id, email, name, role, timestamps)",
+        "products": "产品表 (id, name, description, price, category)",
+        "orders": "订单表 (id, user_id, status, total, timestamps)",
+        "payments": "支付表 (id, order_id, method, amount, status)",
+        "categories": "分类表 (id, name, parent_id, description)"
+      },
+      "line4": "包含正确的外键关系和约束",
+      "line5": "为经常查询的列添加索引",
+      "line6": "所有表包含 created_at 和 updated_at 时间戳",
+      "line7": "在适当位置添加软删除支持",
+      "line8": "包含迁移脚本（up 和 down）",
+      "line9": "添加开发和测试用的种子数据",
+      "line10": "包含 ER 图描述"
+    },
+    "buildScript": {
+      "line1": "编写一个自动化脚本来 {{task}}",
+      "line2": "使用 {{lang}} 编程语言",
+      "line3": "输入：{{input}}",
+      "line4": "输出：{{output}}",
+      "line5": "包含错误处理和日志记录",
+      "line6": "添加命令行参数支持",
+      "line7": "包含用于测试的试运行模式",
+      "line8": "为长时间运行的任务添加进度指示器",
+      "line9": "包含退出时的文件/资源清理",
+      "line10": "添加配置文件支持以复用设置"
+    },
+    "buildBot": {
+      "line1": "为我构建一个 {{name}} 聊天机器人",
+      "line2": "平台：{{platform}}",
+      "line3": "使用 {{lang}} 作为后端",
+      "line4": "必须包含以下功能：",
+      "features": {
+        "greet": "欢迎 / 问候消息",
+        "faq": "FAQ 自动回复",
+        "moderate": "内容审核",
+        "notify": "定时通知",
+        "customCommands": "自定义斜杠命令"
+      },
+      "line5": "包含自然语言理解以支持灵活输入",
+      "line6": "添加对话上下文和记忆",
+      "line7": "包含管理后台用于配置",
+      "line8": "添加分析和使用追踪",
+      "line9": "包含速率限制以防止垃圾信息",
+      "line10": "为无法识别的输入添加友好的错误提示"
+    },
+    "buildExtension": {
+      "line1": "为我构建一个 {{name}} 浏览器扩展",
+      "line2": "目标浏览器：{{browser}}",
+      "line3": "用途：{{purpose}}",
+      "line4": "必须包含以下功能：",
+      "features": {
+        "popup": "弹出窗口 UI 和快捷操作",
+        "contentScript": "内容脚本用于页面交互",
+        "background": "后台 Service Worker",
+        "optionsPage": "选项/设置页面",
+        "storage": "本地存储用于用户偏好"
+      },
+      "line5": "使用 Manifest V3 规范",
+      "line6": "包含正确的权限（最小必需）",
+      "line7": "为主要操作添加键盘快捷键",
+      "line8": "包含右键菜单集成",
+      "line9": "根据状态更新图标/徽章",
+      "line10": "包含应用商店上架资源和描述"
+    },
+    "buildGame": {
+      "line1": "为我构建一个 {{name}} {{genre}} 游戏",
+      "line2": "使用 {{engine}} 引擎/框架",
+      "line3": "目标平台：{{platform}}",
+      "line4": "核心游戏机制：",
+      "mechanics": {
+        "movement": "玩家移动和控制",
+        "combat": "战斗 / 交互系统",
+        "inventory": "物品管理",
+        "scoring": "评分 / 进度系统",
+        "levels": "关卡设计和进度"
+      },
+      "line5": "包含主菜单、暂停和游戏结束画面",
+      "line6": "添加音效和背景音乐",
+      "line7": "包含保存/加载游戏状态",
+      "line8": "添加难度设置（简单、中等、困难）",
+      "line9": "包含教程或新手引导关卡",
+      "line10": "添加粒子效果和视觉反馈"
+    },
+    "buildCliTool": {
+      "line1": "为我构建一个 {{name}} CLI 工具",
+      "line2": "使用 {{lang}} 编程语言",
+      "line3": "用途：{{purpose}}",
+      "line4": "必须支持以下命令：",
+      "commands": {
+        "init": "init - 初始化新项目",
+        "create": "create - 创建新资源",
+        "list": "list - 列出所有资源",
+        "config": "config - 管理配置",
+        "help": "help - 显示使用说明"
+      },
+      "line5": "包含彩色终端输出",
+      "line6": "为必需输入添加交互式提示",
+      "line7": "包含配置文件（~/.toolrc）",
+      "line8": "添加 --verbose 和 --quiet 标志",
+      "line9": "包含 Shell 自动补全脚本",
+      "line10": "添加手册页或内置帮助文档"
+    }
+  }
+}

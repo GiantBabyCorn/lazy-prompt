@@ -1,0 +1,64 @@
+{
+  "templates": {
+    "learnProgramming": {
+      "line1": "Enséñame sobre {{topic}}",
+      "line2": "Mi nivel: {{level}}",
+      "line3": "Comienza con un resumen de 3 oraciones: qué es, por qué importa y cuándo usarlo",
+      "line4": "Explica los conceptos principales con ejemplos de código funcional que pueda ejecutar de inmediato",
+      "line5": "Muestra un ejemplo de antes/después: código malo vs. código bueno usando este concepto",
+      "line6": "Guíame paso a paso a través de un caso de uso del mundo real",
+      "line7": "Lista los 5 errores principales que cometen los principiantes y cómo evitarlos",
+      "line8": "Proporciona 3 ejercicios de práctica: fácil, medio y difícil",
+      "line9": "Sugiere un pequeño proyecto que pueda construir para consolidar mi comprensión",
+      "line10": "Lista recursos recomendados: documentación oficial, tutoriales y canales de YouTube"
+    },
+    "learnLanguage": {
+      "line1": "Ayúdame a aprender {{target}}",
+      "line2": "Mi idioma nativo: {{native}}",
+      "line3": "Mi nivel actual: {{level}}",
+      "line4": "Enséñame las 20 frases más útiles para la conversación diaria",
+      "line5": "Explica las reglas gramaticales clave que necesito en mi nivel, con ejemplos",
+      "line6": "Crea un mini diálogo que pueda practicar (con guía de pronunciación si aplica)",
+      "line7": "Señala los errores comunes que cometen los hablantes de mi idioma nativo",
+      "line8": "Sugiere una rutina de estudio diaria: qué practicar y durante cuánto tiempo",
+      "line9": "Recomienda apps, podcasts y medios en el idioma objetivo para inmersión",
+      "line10": "Dame un quiz de vocabulario con 10 preguntas para evaluar lo que he aprendido"
+    },
+    "learnMath": {
+      "line1": "Enséñame sobre {{topic}}",
+      "line2": "Mi nivel: {{level}}",
+      "line3": "Comienza con una explicación intuitiva — ¿de qué se trata en lenguaje sencillo?",
+      "line4": "Introduce las definiciones clave y la notación que necesito conocer",
+      "line5": "Guíame paso a paso a través de un ejemplo fundamental, mostrando cada cálculo",
+      "line6": "Proporciona una interpretación visual o geométrica cuando sea posible",
+      "line7": "Muestra 2-3 problemas de práctica con dificultad creciente (y soluciones completas)",
+      "line8": "Explica los errores más comunes que cometen los estudiantes con este tema",
+      "line9": "Conecta con aplicaciones del mundo real: ¿dónde se usa realmente esta matemática?",
+      "line10": "Sugiere temas previos para repasar y qué estudiar a continuación"
+    },
+    "learnScience": {
+      "line1": "Enséñame sobre {{topic}}",
+      "line2": "Mi nivel: {{level}}",
+      "line3": "Comienza con el panorama general: ¿por qué esto importa y dónde encaja en la ciencia?",
+      "line4": "Explica los principios fundamentales usando analogías simples y ejemplos cotidianos",
+      "line5": "Describe un experimento clave que demostró estos principios",
+      "line6": "Usa diagramas o descripciones visuales paso a paso para ilustrar ideas complejas",
+      "line7": "Explica el estado actual de la investigación: ¿qué sabemos y qué sigue siendo desconocido?",
+      "line8": "Lista aplicaciones prácticas: ¿cómo afecta esto a la tecnología o la vida diaria?",
+      "line9": "Aborda conceptos erróneos comunes que la gente tiene sobre este tema",
+      "line10": "Sugiere 3 temas de seguimiento fascinantes para explorar a continuación"
+    },
+    "learnBusiness": {
+      "line1": "Enséñame sobre {{topic}}",
+      "line2": "Mi nivel: {{level}}",
+      "line3": "Comienza con un resumen conciso: ¿qué es y por qué los profesionales de negocios lo necesitan?",
+      "line4": "Explica los frameworks clave y modelos mentales utilizados en esta área",
+      "line5": "Guíame a través de un caso de estudio real con análisis y lecciones aprendidas",
+      "line6": "Proporciona consejos prácticos que pueda aplicar de inmediato en mi trabajo",
+      "line7": "Lista las métricas y KPIs que los profesionales rastrean en esta área",
+      "line8": "Compara diferentes escuelas de pensamiento o enfoques con pros/contras",
+      "line9": "Sugiere libros, cursos y líderes de opinión a seguir",
+      "line10": "Dame un escenario de práctica para trabajar con tu guía"
+    }
+  }
+}

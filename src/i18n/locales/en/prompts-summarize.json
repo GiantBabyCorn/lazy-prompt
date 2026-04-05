@@ -1,0 +1,68 @@
+{
+  "templates": {
+    "summarize": {
+      "line1": "Summarize the following {{type}}",
+      "line2": "Target length: {{length}}",
+      "line3": "Start with a one-sentence TL;DR",
+      "line4": "Include the main points in bullet format",
+      "line5": "Preserve key statistics, dates, and figures",
+      "line6": "Note the author's main argument or conclusion",
+      "line7": "Highlight any action items or next steps",
+      "line8": "Include relevant quotes if they capture key ideas"
+    },
+    "summarizeArticle": {
+      "line1": "Summarize the following article about {{topic}}",
+      "line2": "Target length: {{length}}",
+      "line3": "Start with a one-sentence TL;DR that captures the main point",
+      "line4": "List the key arguments or claims made by the author",
+      "line5": "Note any data, statistics, or evidence cited",
+      "line6": "Identify the author's perspective or potential bias",
+      "line7": "Highlight any actionable takeaways for the reader",
+      "line8": "Rate the article's depth and quality (superficial, adequate, thorough)"
+    },
+    "summarizeMeeting": {
+      "line1": "Summarize the following {{type}} meeting",
+      "line2": "List attendees and their roles if mentioned",
+      "line3": "Start with a 2-sentence overview of the meeting's purpose and outcome",
+      "line4": "List all decisions that were made, clearly stated",
+      "line5": "Extract action items in format: [Owner] — task — deadline",
+      "line6": "Note any open questions or issues that need follow-up",
+      "line7": "Highlight risks or blockers that were raised",
+      "line8": "Include the next meeting date or next steps agreed upon"
+    },
+    "summarizeVideo": {
+      "line1": "Summarize the following {{type}}",
+      "line2": "Summary style: {{length}}",
+      "line3": "Provide timestamps for each major topic or segment",
+      "line4": "List the key points made in each segment",
+      "line5": "Include any notable quotes or memorable moments",
+      "line6": "Note any resources, links, or references mentioned",
+      "line7": "Identify the main takeaway or call to action",
+      "line8": "Rate the content quality and who would benefit most from watching"
+    },
+    "summarizeBook": {
+      "line1": "Summarize {{title}}",
+      "line2": "Summary depth: {{length}}",
+      "line3": "Start with the book's central thesis or argument in 2-3 sentences",
+      "line4": "Provide a chapter-by-chapter or section-by-section breakdown",
+      "line5": "Identify the major themes and how they develop throughout the book",
+      "line6": "Include the most impactful quotes with page/chapter references",
+      "line7": "Note the author's credentials and perspective that shaped the work",
+      "line8": "List the most practical or actionable ideas from the book",
+      "line9": "Compare with similar books in the genre: how does it stand out?",
+      "line10": "Give a final rating and who should read this book"
+    },
+    "summarizeResearch": {
+      "line1": "Summarize the following research paper in {{field}}",
+      "line2": "Summary format: {{length}}",
+      "line3": "State the research question and hypothesis clearly",
+      "line4": "Describe the methodology in 2-3 sentences",
+      "line5": "List the key findings and whether they support the hypothesis",
+      "line6": "Note the sample size and statistical significance",
+      "line7": "Identify the main limitations acknowledged by the authors",
+      "line8": "Explain the practical implications: what does this mean for the field?",
+      "line9": "List the most important citations for further reading",
+      "line10": "Assess the paper's contribution: incremental, significant, or groundbreaking?"
+    }
+  }
+}

@@ -26,6 +26,7 @@ i18next
     fallbackLng: 'en',
     ns: ['common', 'prompts'],
     defaultNS: 'common',
+    partialBundledLanguages: true,
     interpolation: {
       escapeValue: false,
     },

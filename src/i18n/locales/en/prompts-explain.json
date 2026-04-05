@@ -1,0 +1,76 @@
+{
+  "templates": {
+    "explainTopic": {
+      "line1": "Explain {{subject}}",
+      "line2": "Explanation style: {{level}}",
+      "line3": "Start with a simple analogy or metaphor",
+      "line4": "Break it down step by step",
+      "line5": "Use real-world examples to illustrate key points",
+      "line6": "Include diagrams or visual descriptions where helpful",
+      "line7": "Highlight the most important takeaways",
+      "line8": "Address common questions and misconceptions",
+      "line9": "Compare with related concepts to show differences",
+      "line10": "Provide a summary checklist of key points"
+    },
+    "explainCode": {
+      "line1": "Explain the following {{lang}} code",
+      "line2": "Start with a 2-3 sentence overview of what the code does and why",
+      "line3": "Walk through the code line by line or block by block",
+      "line4": "Explain the purpose of each function, class, or module",
+      "line5": "Highlight any design patterns used (observer, factory, singleton, etc.)",
+      "line6": "Explain any complex algorithms and their time/space complexity",
+      "line7": "Point out edge cases the code handles (or should handle)",
+      "line8": "Explain dependencies and how this code connects to the larger system",
+      "line9": "Note any non-obvious tricks, workarounds, or magic numbers",
+      "line10": "Summarize with a mental model: how should someone think about this code?"
+    },
+    "explainConcept": {
+      "line1": "Explain {{concept}}",
+      "line2": "Explanation level: {{level}}",
+      "line3": "Start with a simple analogy or metaphor from everyday life",
+      "line4": "Give a clear, concise definition in one sentence",
+      "line5": "Explain why this concept matters — what problem does it solve?",
+      "line6": "Provide 2-3 concrete real-world examples",
+      "line7": "Compare it with related or often-confused concepts — what's the difference?",
+      "line8": "Address the top 3 common misconceptions about this concept",
+      "line9": "Explain when and where to apply it (and when not to)",
+      "line10": "Provide a summary checklist of the key points to remember"
+    },
+    "explainProcess": {
+      "line1": "Explain the process of {{process}}",
+      "line2": "Start with a one-paragraph overview of the entire process end to end",
+      "line3": "List the prerequisites: what needs to be in place before starting?",
+      "line4": "Break it down into numbered steps — each step should be a clear, actionable instruction",
+      "line5": "For each step, note the expected input and output",
+      "line6": "Highlight decision points: where does the process branch? What determines which path?",
+      "line7": "Call out common failure points and how to handle them",
+      "line8": "Describe how to verify each step was completed successfully",
+      "line9": "Include a text-based flowchart or diagram if it helps clarify the flow",
+      "line10": "End with what happens after the process completes — what's the next step?"
+    },
+    "explainError": {
+      "line1": "Explain this error: {{error}}",
+      "line2": "Language/Framework: {{lang}}",
+      "line3": "Translate the error message into plain language — what is it actually saying?",
+      "line4": "Explain the root cause: what condition or code triggers this error?",
+      "line5": "List the most common scenarios that produce this error (ranked by likelihood)",
+      "line6": "Provide step-by-step fix for each scenario with code examples",
+      "line7": "Explain why each fix works — what was wrong and how the fix addresses it",
+      "line8": "Check for side effects: could the fix break anything else?",
+      "line9": "Show how to prevent this error from occurring again",
+      "line10": "List related errors that often appear alongside this one"
+    },
+    "explainArchitecture": {
+      "line1": "Explain the architecture of {{system}}",
+      "line2": "Detail level: {{level}}",
+      "line3": "Start with a bird's-eye view: what are the main components and how do they connect?",
+      "line4": "Describe the data flow: how does a request travel through the system from start to finish?",
+      "line5": "Explain each major component's responsibility and technology choice",
+      "line6": "Identify the communication patterns: sync vs async, REST vs events, etc.",
+      "line7": "Discuss trade-offs: why was this architecture chosen? What were the alternatives?",
+      "line8": "Identify potential bottlenecks and single points of failure",
+      "line9": "Describe how the system scales: horizontally, vertically, or both?",
+      "line10": "Provide a text-based architecture diagram showing component relationships"
+    }
+  }
+}

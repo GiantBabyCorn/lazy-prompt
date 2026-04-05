@@ -1,0 +1,106 @@
+{
+  "templates": {
+    "organizeReports": {
+      "line1": "Organiza y estructura los siguientes datos de {{type}}",
+      "line2": "Formato de salida: {{format}}",
+      "line3": "Comienza con un resumen ejecutivo de un párrafo de los hallazgos clave",
+      "line4": "Organiza los hallazgos por categoría con encabezados de sección claros",
+      "line5": "Incluye recomendaciones de gráficos o tablas para datos visuales",
+      "line6": "Destaca anomalías, tendencias y patrones notables",
+      "line7": "Termina cada sección con recomendaciones específicas basadas en los datos",
+      "line8": "Añade un apéndice con tablas de datos sin procesar como referencia",
+      "line9": "Añade encabezados de sección y etiquetas claras",
+      "line10": "Incluye un breve resumen ejecutivo en la parte superior"
+    },
+    "organizeAccounts": {
+      "line1": "Organiza las siguientes {{type}}",
+      "line2": "Período de tiempo: {{period}}",
+      "line3": "Categoriza cada transacción: ingreso, gasto, transferencia o ajuste",
+      "line4": "Agrupa los gastos por categoría (comida, transporte, servicios, suscripciones, etc.)",
+      "line5": "Calcula subtotales para cada categoría y un saldo acumulado",
+      "line6": "Señala cualquier entrada duplicada o transacción sospechosa",
+      "line7": "Proporciona un resumen: ingresos totales, gastos totales, saldo neto",
+      "line8": "Compara con el período anterior si hay datos disponibles y destaca los cambios"
+    },
+    "organizeProducts": {
+      "line1": "Organiza los siguientes datos de productos de {{category}}",
+      "line2": "Orden principal: {{sort}}",
+      "line3": "Crea una tabla limpia con: nombre, SKU/ID, precio, cantidad en stock, categoría",
+      "line4": "Señala artículos con stock bajo (menos de 10 unidades) o agotados",
+      "line5": "Calcula rangos de precios (mínimo, máximo, promedio) por categoría",
+      "line6": "Identifica valores atípicos de precios que puedan necesitar revisión",
+      "line7": "Sugiere agrupaciones lógicas o paquetes basados en artículos relacionados",
+      "line8": "Añade un resumen por categoría con el total de artículos y valor total del inventario"
+    },
+    "organizeSchedule": {
+      "line1": "Organiza mi agenda para {{range}}",
+      "line2": "Lista todos los eventos, tareas y plazos en orden cronológico",
+      "line3": "Asigna niveles de prioridad: urgente, alta, media, baja",
+      "line4": "Identifica conflictos de horario o compromisos superpuestos",
+      "line5": "Sugiere bloques de tiempo para trabajo profundo, reuniones y descansos",
+      "line6": "Señala elementos con plazos próximos que necesiten atención inmediata",
+      "line7": "Agrupa tareas relacionadas que puedan realizarse juntas",
+      "line8": "Sugiere qué elementos delegar, aplazar o eliminar si hay sobrecarga"
+    },
+    "organizeNotes": {
+      "line1": "Organiza las siguientes {{source}}",
+      "line2": "Agrupa las notas por tema con encabezados claros",
+      "line3": "Extrae todos los elementos de acción y etiquétalos con responsable y fecha límite si se mencionan",
+      "line4": "Separa hechos de opiniones y decisiones de discusiones",
+      "line5": "Crea un esquema estructurado a partir de las notas en bruto",
+      "line6": "Destaca las decisiones clave que se tomaron",
+      "line7": "Lista preguntas abiertas o elementos que necesitan seguimiento",
+      "line8": "Añade etiquetas o labels para facilitar la búsqueda posterior"
+    },
+    "organizeCsv": {
+      "line1": "Organiza y limpia los siguientes datos en formato {{format}}",
+      "line2": "Identifica los encabezados de columna y los tipos de datos de cada columna",
+      "line3": "Limpia los datos: corrige formatos inconsistentes, maneja valores faltantes, elimina duplicados",
+      "line4": "Estandariza formatos de fecha, formatos numéricos y uso de mayúsculas/minúsculas",
+      "line5": "Ordena y filtra por las columnas más relevantes",
+      "line6": "Crea una tabla dinámica o vista resumen de las métricas clave",
+      "line7": "Identifica problemas de calidad de datos y sugiere correcciones",
+      "line8": "Muestra los datos limpios en una tabla con formato adecuado"
+    },
+    "organizeDatabase": {
+      "line1": "Organiza y estructura estos datos de {{db}}",
+      "line2": "Analiza el esquema actual e identifica oportunidades de normalización",
+      "line3": "Sugiere relaciones de tablas adecuadas y foreign keys",
+      "line4": "Identifica índices faltantes para patrones de consulta comunes",
+      "line5": "Sugiere optimizaciones de tipos de datos para eficiencia de almacenamiento",
+      "line6": "Crea o mejora las convenciones de nombres para tablas y columnas",
+      "line7": "Proporciona scripts SQL de migración para los cambios propuestos",
+      "line8": "Genera una descripción del diagrama ER del esquema final"
+    },
+    "organizeSummaryTable": {
+      "line1": "Crea una tabla resumen agrupada por {{group}}",
+      "line2": "Calcula estas métricas: {{metrics}}",
+      "line3": "Añade una fila de total/gran total en la parte inferior",
+      "line4": "Destaca los 3 mejores y los 3 peores en rendimiento",
+      "line5": "Calcula el porcentaje del total para cada grupo",
+      "line6": "Añade indicadores de tendencia (subida/bajada/estable) comparados con el período anterior si está disponible",
+      "line7": "Formatea los números con separadores adecuados, decimales y símbolos de moneda",
+      "line8": "Añade una nota de interpretación breve para cada hallazgo significativo"
+    },
+    "organizeTimeline": {
+      "line1": "Crea una línea de tiempo de {{range}}",
+      "line2": "Granularidad: {{granularity}}",
+      "line3": "Lista los eventos en orden cronológico con fechas exactas",
+      "line4": "Marca los hitos principales con énfasis",
+      "line5": "Identifica fases o períodos y etiquétalos claramente",
+      "line6": "Muestra dependencias: ¿qué eventos necesitaban ocurrir antes que otros?",
+      "line7": "Destaca cualquier vacío o período sin actividad",
+      "line8": "Añade una representación visual de la línea de tiempo en formato texto"
+    },
+    "organizeDashboard": {
+      "line1": "Diseña un layout de dashboard de {{type}}",
+      "line2": "Rango de tiempo: {{range}}",
+      "line3": "Identifica los 5-7 KPIs principales que deberían mostrarse de forma destacada",
+      "line4": "Sugiere el mejor tipo de gráfico para cada métrica (línea, barra, circular, indicador, etc.)",
+      "line5": "Organiza las métricas por prioridad: fila superior = más críticas, filas inferiores = datos de apoyo",
+      "line6": "Incluye datos comparativos: vs. período anterior, vs. objetivo, vs. benchmark de la industria",
+      "line7": "Añade indicadores de estado (rojo/amarillo/verde) para métricas con umbrales",
+      "line8": "Sugiere vistas de detalle para cada métrica principal"
+    }
+  }
+}
