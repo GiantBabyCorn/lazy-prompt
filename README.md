@@ -6,7 +6,7 @@ An interactive bubble-based web app that helps users build detailed, well-struct
 
 ## Features
 
-- **Visual bubble navigation** — explore prompt categories through an interactive radial bubble canvas with morph animations
+- **Visual bubble navigation** — explore prompt categories through a full-tree world canvas with zoom/pan viewport navigation and hover-reveal for deeper layers
 - **Editable prompt templates** — customize colored text fields with autocomplete suggestions, number steppers, and label-style multi-value inputs
 - **Toggle sections on/off** — hide/show individual prompt lines and list items; numbering adjusts automatically
 - **Send to AI providers** — one-click send to ChatGPT, Claude, Gemini, Perplexity, and Copilot (copy+open fallback for unsupported providers)
@@ -20,7 +20,8 @@ An interactive bubble-based web app that helps users build detailed, well-struct
 - **React 19** + **React Router 7** — SPA with client-side routing
 - **Vite 6** — build tool with HMR
 - **TypeScript** — type safety throughout
-- **framer-motion** — spring-based morph animations for bubble transitions
+- **framer-motion** — spring-based viewport animations and bubble visibility transitions
+- **Playwright** — E2E testing for route validation
 - **i18next** — internationalization (6 languages, lazy-loaded)
 - **CSS custom properties** — dark/light theming (no CSS framework)
 
@@ -48,37 +49,39 @@ yarn lint
 ```
 src/
   components/
-    BubbleCanvas.tsx    # SVG canvas with radial bubble layout + morph animations
-    BubbleNode.tsx      # Individual bubble (SVG circle + label + tooltip)
-    BubbleList.tsx      # List-based navigation (alternative to canvas)
+    WorldCanvas.tsx     # SVG canvas with full-tree layout + animated viewBox
+    WorldBubbleNode.tsx # Individual bubble in world-space (fixed position)
+    WorldConnectorLines.tsx # Parent-child connector lines
+    PromptOverlay.tsx   # Full-screen overlay for leaf node prompts
+    BubbleList.tsx      # List-based navigation (mobile fallback)
     PromptResult.tsx    # Prompt display with toggle, editable fields
     EditableText.tsx    # Inline editable spans (text/number/date/time/labels)
     AIProviderLinks.tsx # Send-to buttons for AI providers
     Header.tsx          # Logo, breadcrumb, language/theme controls
   pages/
-    HomePage.tsx        # Bubble navigation + prompt result
+    HomePage.tsx        # World canvas + prompt overlay orchestration
     AboutPage.tsx       # About page with social links
   hooks/
-    useBubbleNavigation.ts  # Navigation state + URL sync
+    useWorldNavigation.ts   # Navigation state, URL sync, leaf overlay
+    useTreeLayout.ts    # Memoized full-tree layout computation
+    useViewport.ts      # Animated SVG viewBox (zoom/pan)
+    useNodeVisibility.ts # Per-node visibility based on nav state + hover
   data/
     types.ts            # TypeScript interfaces
-    bubbleTree.ts       # Bubble tree data structure (101 nodes)
+    bubbleTree.ts       # Bubble tree data structure (124 nodes)
     templates/          # Prompt templates split by category (lazy-loaded)
-      index.ts          # Registry with loadTemplate() and loadAllTemplates()
-      build.ts          # 10 build templates
-      translation.ts    # 5 translation templates
-      read.ts           # 10 read templates
-      write.ts, debug.ts, explain.ts, brainstorm.ts, learn.ts
-      organize.ts       # 10 organize templates
-      summarize.ts      # 5 summarize templates
   utils/
+    treeLayout.ts       # Recursive radial layout algorithm
     bubbleRouting.ts    # URL ↔ navigation path conversion
     promptBuilder.ts    # Assembles final prompt string
     aiProviders.ts      # AI provider definitions + icons
   assets/icons/         # SVG icons (ChatGPT, Claude, Gemini, etc.)
-  i18n/locales/         # 6 language directories, each with:
-                        #   common.json, prompts.json (nav labels),
-                        #   prompts-{category}.json (template text, lazy-loaded)
+  i18n/locales/         # 6 language directories (lazy-loaded per category)
+e2e/
+  route-validation.spec.ts  # Playwright E2E tests
+playwright.config.ts        # Playwright configuration
+.github/workflows/
+  pr-test.yml               # CI: validate + build + E2E on PRs
 ```
 
 ## Data Model
@@ -145,33 +148,24 @@ yarn read-data        # Query templates, tree, or i18n data
 yarn write-data       # Modify templates, tree, or i18n data
 ```
 
-### Tuning Bubble Size & Text
+### Tuning Bubble Size & Layout
 
-All visual parameters are in two files:
-
-**Bubble radii** — `src/components/BubbleCanvas.tsx` line 13:
+**Bubble radii by depth** — `src/utils/treeLayout.ts`:
 ```typescript
-const SIZES = { hub: 70, primary: 55, secondary: 42, preview: 28, goBack: 35 };
+const RADIUS_BY_DEPTH = [100, 60, 42, 28];   // root, layer 1, layer 2, layer 3
+const RING_DISTANCE = [0, 400, 200, 110];     // distance from parent per depth
 ```
-These are base sizes (px). They're multiplied by a responsive `scaleFactor` (0.75x–1.3x) at runtime:
-- `scaleBasis / 600` — where `scaleBasis` = screen width (portrait) or min(w,h) (landscape)
-- Change `600` to a smaller number → bigger bubbles; larger number → smaller bubbles
-- Change min/max (`0.75`/`1.3`) to widen or narrow the scaling range
 
-**Font sizes** — `src/components/BubbleNode.tsx` line 59–61:
+**Viewport zoom levels** — `src/hooks/useViewport.ts`:
 ```typescript
-const fontSize = variant === 'preview' ? 8 : variant === 'secondary' ? 11 : variant === 'hub' ? 14 : 12;
-const descFontSize = variant === 'secondary' ? 9 : 10;
+const ZOOM_WIDTH_BY_DEPTH = [1400, 700, 400, 300]; // viewBox width per focus depth
 ```
-- `hub`: 14px, `primary`: 12px, `secondary`: 11px, `preview`: 8px
-- Description sub-text: 10px (9px for secondary)
-- Descriptions are hidden when bubble radius < 50px (mobile scaling)
 
-**Layout radius** — same file, line ~280:
-```typescript
-const layoutRadiusX = (isPortrait ? dims.w : Math.min(dims.w, dims.h)) / 2 - maxChild - 20;
-```
-- The `- 20` is edge padding. Increase for more margin, decrease to push bubbles closer to edges.
+**Font sizes** — `src/components/WorldBubbleNode.tsx`:
+- Depth 0 (root): 20px (focused), 16px
+- Depth 1: 12px
+- Depth 2: 10px
+- Depth 3: 8px
 
 ### Adding a New Prompt Category (Manual Steps)
 
@@ -181,6 +175,18 @@ const layoutRadiusX = (isPortrait ? dims.w : Math.min(dims.w, dims.h)) / 2 - max
    - Navigation labels → `src/i18n/locales/*/prompts.json`
    - Template text → `src/i18n/locales/*/prompts-{category}.json`
 4. **Validate**: `yarn validate`
+
+## Testing
+
+```bash
+# Run E2E tests (auto-starts dev server)
+npm run test:e2e
+
+# Validate data integrity (bubble tree + templates + i18n)
+npm run validate
+```
+
+E2E tests use Playwright (Chromium) to validate all route depths render without errors. CI runs automatically on PRs to `main` and `development` branches.
 
 ## License
 

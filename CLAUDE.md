@@ -57,13 +57,17 @@ src/
   hooks/
     useDocumentHead.ts  # Dynamic <title>/<meta> for SEO
     useClipboard.ts     # Copy to clipboard utility
-    useBubbleNavigation.ts  # Navigate bubble tree layers, track path, URL sync
+    useWorldNavigation.ts   # Navigation state: path, leaf overlay, URL sync
+    useTreeLayout.ts    # Memoized full-tree world-space layout computation
+    useViewport.ts      # Animated SVG viewBox (zoom/pan) via framer-motion
+    useNodeVisibility.ts # Per-node opacity/interactivity based on nav state + hover
   components/
     Header.tsx          # Logo, breadcrumb navigation, language/theme controls
-    BubbleCanvas.tsx    # SVG canvas with radial bubble layout + morph animations
-    BubbleNode.tsx      # Individual bubble (SVG circle + label + leaf tooltip)
-    BubbleList.tsx      # List-based navigation (alternative view mode)
-    GoBackButton.tsx    # (unused; go-back is inline in BubbleCanvas)
+    WorldCanvas.tsx     # SVG canvas with full-tree layout + animated viewBox zoom/pan
+    WorldBubbleNode.tsx # Individual bubble in world-space (fixed position, animated visibility)
+    WorldConnectorLines.tsx # Parent-child connector lines with animated opacity
+    PromptOverlay.tsx   # Full-screen overlay for leaf node prompt display
+    BubbleList.tsx      # List-based navigation (mobile fallback)
     PromptResult.tsx    # Prompt display with toggle hide/show, editable fields
     EditableText.tsx    # Inline-editable spans (text/number/date/time/labels + autocomplete)
     CopyButton.tsx      # Copy prompt to clipboard
@@ -93,8 +97,15 @@ src/
     aiProviders.ts      # AI provider definitions with SVG icons
     promptBuilder.ts    # Assembles final prompt from selections (respects hidden sections/items)
     bubbleRouting.ts    # URL ↔ navigationPath conversion for breadcrumb routing
+    treeLayout.ts       # Recursive radial layout algorithm for full bubble tree
   assets/
     icons/              # SVG icons: chatgpt, claude, gemini, perplexity, copilot, x, telegram, github
+e2e/
+  route-validation.spec.ts  # Playwright E2E: validates all routes render without errors
+playwright.config.ts        # Playwright config (chromium, dev server on port 5173)
+.github/
+  workflows/
+    pr-test.yml             # CI: validate + build + Playwright on PRs to main/development
 ```
 
 ## CLI Scripts
@@ -104,6 +115,7 @@ npm run dev              # Start dev server
 npm run build            # Production build
 npm run preview          # Preview production build
 npm run lint             # ESLint
+npm run test:e2e         # Run Playwright E2E tests (starts dev server automatically)
 npm run add-bubble       # Add a new bubble node to the tree
 npm run edit-bubble      # Edit an existing bubble node
 npm run delete-bubble    # Remove a bubble node
@@ -297,6 +309,14 @@ Add a node WITH `children` array (no `promptTemplateId`):
   - OG preview image for social sharing
   - About page, MIT License
   - "Build Prompt!" tooltip on leaf node hover
+- [x] Task 14: World Canvas Navigation Refactor
+  - Full-tree radial layout with all 124 nodes rendered simultaneously
+  - Animated SVG viewBox zoom/pan (framer-motion springs) for navigation
+  - Hover-reveal: hovering a child reveals its grandchildren for skip navigation
+  - Parent node becomes orange "Go Back" button when navigated deeper
+  - Prompt overlay for leaf nodes (replaces page-swap pattern)
+  - Playwright E2E tests (23 tests across all route depths)
+  - GitHub Actions CI workflow for PR testing
 - [x] Task 13: Data Optimization
   - 65 independent templates (was 19 shared), each tailored per sub-category
   - Translation restructured to 2-layer: language pair → tone (bidirectional conversation mode)
