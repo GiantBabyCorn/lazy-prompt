@@ -28,10 +28,14 @@
     },
     "organize": {
       "last_audited": "2026-04-05",
-      "audit_count": 1,
+      "audit_count": 2,
+      "span_audit_count": 1,
+      "last_span_audit": "2026-04-05",
       "status": "good",
-      "notes": "10 children, well-balanced. No changes needed now.",
-      "pending_improvements": []
+      "notes": "10 children, well-balanced. Span quality improved: added suggestions to 3 templates (reports, products, timeline), added 2 new spans each to schedule and notes templates.",
+      "pending_improvements": [
+        "organizeCsv and organizeDatabase still have only 1 span each — candidates for next span audit"
+      ]
     },
     "summarize": {
       "last_audited": "2026-04-05",
@@ -120,6 +124,16 @@
       "changes": [
         "build: +3 leaves (dashboard, automation, component)",
         "Total: 124 nodes -> 127 nodes, 88 templates -> 91 templates"
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "agent_session": "session_01NybkEvu7XbsbYqpMq2Sqta",
+      "changes": [
+        "organize: added suggestions to organizeReports (or1-type), organizeProducts (op1-category), organizeTimeline (ot1-range)",
+        "organize: added 2 new editable spans to organizeSchedule (sortOrder on line2, priorities on line3)",
+        "organize: added 2 new editable spans to organizeNotes (groupBy on line2, outputFormat on line5)",
+        "organize: updated i18n for new spans across all 6 locales"
       ]
     }
   ]
