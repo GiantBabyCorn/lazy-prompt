@@ -1,0 +1,114 @@
+{
+  "templates": {
+    "readDocument": {
+      "line1": "Read and analyze the following {{docType}}",
+      "line2": "Provide a structured summary with clear headings for each major section",
+      "line3": "Highlight key findings, conclusions, and important data points",
+      "line4": "Identify any inconsistencies, gaps, or potential issues in the content",
+      "line5": "Extract all actionable items, recommendations, and next steps",
+      "line6": "Note any references or citations worth following up",
+      "line7": "Summarize the main argument or thesis in 2-3 sentences",
+      "line8": "Assess the source's reliability and note any bias or limitations",
+      "line9": "Create a glossary of key terms if the document uses specialized vocabulary",
+      "line10": "Suggest 3-5 follow-up questions based on the content"
+    },
+    "readWebpage": {
+      "line1": "Read and analyze the following webpage: {{url}}",
+      "line2": "Extract only the main article content — ignore navigation, ads, sidebars, and footers",
+      "line3": "Provide a structured summary with the page title, author (if found), and publication date",
+      "line4": "List the key claims or arguments made on the page",
+      "line5": "Assess the source's credibility: check for author credentials, citations, and potential bias",
+      "line6": "Extract any data, statistics, or quotes worth noting",
+      "line7": "Identify any outbound links or references that seem important for further reading",
+      "line8": "Rate the overall quality and usefulness of the content (1-10) with a brief justification"
+    },
+    "readEmail": {
+      "line1": "Read and analyze the following email",
+      "line2": "Identify the sender's intent: what do they want from me?",
+      "line3": "Extract all action items and deadlines mentioned",
+      "line4": "Analyze the tone — is it urgent, casual, formal, passive-aggressive, or friendly?",
+      "line5": "Draft a suggested reply in a {{tone}} tone",
+      "line6": "Flag any important dates, amounts, or commitments mentioned",
+      "line7": "If there are multiple topics, list them separately with a one-line summary each",
+      "line8": "Suggest a priority level: respond immediately, within 24h, this week, or low priority"
+    },
+    "readCode": {
+      "line1": "Review the following {{lang}} code",
+      "line2": "Explain what this code does in plain language (2-3 sentences overview)",
+      "line3": "Identify any bugs, logic errors, or edge cases that aren't handled",
+      "line4": "Check for security vulnerabilities (injection, XSS, auth issues, data exposure)",
+      "line5": "Assess performance: any N+1 queries, unnecessary loops, or memory leaks?",
+      "line6": "Review code style: naming conventions, readability, DRY principle compliance",
+      "line7": "Suggest specific improvements with code examples",
+      "line8": "Check error handling: are failures caught and handled gracefully?",
+      "line9": "Identify any missing tests or test cases that should be added",
+      "line10": "Rate overall code quality (1-10) with top 3 priority fixes"
+    },
+    "readResearch": {
+      "line1": "Analyze the following research paper in {{field}}",
+      "line2": "Summarize the research question and hypothesis",
+      "line3": "Evaluate the methodology: is it sound? What are the limitations?",
+      "line4": "List the key findings and whether they support the hypothesis",
+      "line5": "Assess the sample size, statistical methods, and significance levels",
+      "line6": "Identify potential biases or confounding variables",
+      "line7": "How do the findings compare to existing literature in the field?",
+      "line8": "What are the practical implications of this research?",
+      "line9": "List the key citations and which ones are most important to read next",
+      "line10": "Rate the paper's rigor and significance (1-10) with justification"
+    },
+    "readSummary": {
+      "line1": "Summarize the following content in {{length}}",
+      "line2": "Start with a one-line TL;DR that captures the essence",
+      "line3": "Use bullet points for the main ideas — one point per key concept",
+      "line4": "Preserve any critical numbers, dates, or proper nouns",
+      "line5": "Keep the original author's conclusion or call-to-action if there is one",
+      "line6": "Omit examples, anecdotes, and filler — only the core message",
+      "line7": "If there are multiple viewpoints, note each briefly",
+      "line8": "End with one sentence on why this content matters"
+    },
+    "readKeyPoints": {
+      "line1": "Extract the top {{count}} key points from the following content",
+      "line2": "Format as a numbered list — one clear, complete sentence per point",
+      "line3": "Order by importance, most critical first",
+      "line4": "Each point should stand alone — someone reading just the list should understand the content",
+      "line5": "Include specific data, quotes, or evidence when they strengthen a point",
+      "line6": "Mark any points that require action with [ACTION] prefix",
+      "line7": "Mark any points that are disputed or uncertain with [NOTE] prefix",
+      "line8": "End with a one-sentence overall takeaway"
+    },
+    "readFullAnalysis": {
+      "line1": "Perform a comprehensive, section-by-section analysis of the following content",
+      "line2": "Start with a 3-sentence executive summary",
+      "line3": "For each section: summarize the content, assess the arguments, note strengths and weaknesses",
+      "line4": "Identify the author's underlying assumptions and whether they're justified",
+      "line5": "Cross-reference claims within the document — are there any internal contradictions?",
+      "line6": "Evaluate the evidence provided: is it sufficient, relevant, and current?",
+      "line7": "Assess the logical structure: does the argument flow coherently?",
+      "line8": "Identify what's missing: what topics should have been covered but weren't?",
+      "line9": "Provide a balanced assessment of the overall quality and reliability",
+      "line10": "List 5 critical questions that remain unanswered after reading"
+    },
+    "readCompare": {
+      "line1": "Compare the following {{count}} documents/sources side by side",
+      "line2": "Create a comparison table with the key dimensions of each source",
+      "line3": "Identify where the sources agree and what they have in common",
+      "line4": "Highlight where they contradict each other, with specific quotes if possible",
+      "line5": "Assess which source is more credible on each point of disagreement",
+      "line6": "Note any information that appears in only one source — is it unique insight or an error?",
+      "line7": "Synthesize the sources into a unified understanding where possible",
+      "line8": "Conclude with which source is most reliable overall and why"
+    },
+    "readFactCheck": {
+      "line1": "Fact-check the following content claim by claim",
+      "line2": "List each factual claim made in the content",
+      "line3": "For each claim, rate it: Verified / Mostly True / Misleading / False / Unverifiable",
+      "line4": "Provide evidence or reasoning for each rating",
+      "line5": "Identify any statistics that are used out of context or cherry-picked",
+      "line6": "Check for logical fallacies: straw man, false dichotomy, appeal to authority, etc.",
+      "line7": "Note any important context that the content omits",
+      "line8": "Identify the overall framing or narrative bias",
+      "line9": "Suggest more reliable sources for the same topic",
+      "line10": "Give an overall accuracy score (1-10) with summary"
+    }
+  }
+}

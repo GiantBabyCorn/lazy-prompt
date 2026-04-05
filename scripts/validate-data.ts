@@ -1,16 +1,34 @@
-import { readFileSync } from 'fs';
+import { readFileSync, readdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+function deepMerge(target: any, source: any): any {
+  const result = { ...target };
+  for (const [k, v] of Object.entries(source)) {
+    if (typeof v === 'object' && v !== null && !Array.isArray(v) && typeof result[k] === 'object') {
+      result[k] = deepMerge(result[k], v);
+    } else {
+      result[k] = v;
+    }
+  }
+  return result;
+}
+
 async function main() {
   const { bubbleTree } = await import('../src/data/bubbleTree.ts');
-  const { promptTemplates } = await import('../src/data/promptTemplates.ts');
+  const { loadAllTemplates } = await import('../src/data/templates/index.ts');
+  const promptTemplates = await loadAllTemplates();
 
-  const prompts = JSON.parse(
-    readFileSync(resolve(__dirname, '../src/i18n/locales/en/prompts.json'), 'utf-8')
-  );
+  // Load all prompts*.json files and merge them
+  const localeDir = resolve(__dirname, '../src/i18n/locales/en');
+  const promptFiles = readdirSync(localeDir).filter(f => f.startsWith('prompts') && f.endsWith('.json'));
+  let prompts: any = {};
+  for (const file of promptFiles) {
+    const data = JSON.parse(readFileSync(resolve(localeDir, file), 'utf-8'));
+    prompts = deepMerge(prompts, data);
+  }
 
   const errors: string[] = [];
   const warnings: string[] = [];

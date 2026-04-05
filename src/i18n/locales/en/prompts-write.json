@@ -1,0 +1,76 @@
+{
+  "templates": {
+    "writeContent": {
+      "line1": "Write a {{type}}",
+      "line2": "Topic: {{topic}}",
+      "line3": "Tone: {{tone}}",
+      "line4": "Target length: {{length}}",
+      "line5": "Target audience: {{audience}}",
+      "line6": "Include a compelling introduction that hooks the reader",
+      "line7": "Use clear headings and subheadings for structure",
+      "line8": "Include relevant examples, data, or anecdotes",
+      "line9": "End with a strong conclusion and call to action",
+      "line10": "Optimize for readability (short paragraphs, varied sentence length)"
+    },
+    "writeEmail": {
+      "line1": "Write an email to {{purpose}}",
+      "line2": "Recipient: {{recipient}}",
+      "line3": "Tone: {{tone}}",
+      "line4": "Include a clear, descriptive subject line",
+      "line5": "Open with an appropriate greeting for the relationship",
+      "line6": "Get to the point in the first paragraph — state the purpose clearly",
+      "line7": "If requesting action, make the ask specific and include a deadline",
+      "line8": "Keep it concise — aim for 5-8 sentences maximum for the body",
+      "line9": "End with a clear next step or call to action",
+      "line10": "Include an appropriate sign-off matching the tone"
+    },
+    "writeBlog": {
+      "line1": "Write a blog post about {{topic}}",
+      "line2": "Target length: {{length}}",
+      "line3": "Tone: {{tone}}",
+      "line4": "Write an SEO-friendly title that's compelling and under 60 characters",
+      "line5": "Start with a hook — a surprising fact, question, or bold statement",
+      "line6": "Use H2/H3 subheadings every 200-300 words to improve scannability",
+      "line7": "Include specific examples, data points, or case studies to support claims",
+      "line8": "Add a practical takeaway or actionable tip in each major section",
+      "line9": "End with a compelling conclusion and a clear call to action",
+      "line10": "Optimize for readability: short paragraphs (2-3 sentences), varied sentence length, transition words"
+    },
+    "writeDocumentation": {
+      "line1": "Write documentation for {{project}}",
+      "line2": "Documentation type: {{type}}",
+      "line3": "Target audience: {{audience}}",
+      "line4": "Start with a clear overview: what it does, who it's for, and prerequisites",
+      "line5": "Include a quick start section that gets users running in under 5 minutes",
+      "line6": "Provide working code examples for every feature — copy-pasteable, not pseudocode",
+      "line7": "Document parameters, return values, and error cases for each endpoint/function",
+      "line8": "Add a troubleshooting section with common errors and their solutions",
+      "line9": "Include a changelog or version compatibility notes",
+      "line10": "Use consistent formatting: code blocks for code, tables for parameters, admonitions for warnings"
+    },
+    "writeProposal": {
+      "line1": "Write a proposal for {{project}}",
+      "line2": "Target audience: {{audience}}",
+      "line3": "Start with a compelling executive summary (one page max)",
+      "line4": "Clearly define the problem or opportunity being addressed",
+      "line5": "Present the proposed solution with specific deliverables and milestones",
+      "line6": "Include a realistic timeline with phases and key dates",
+      "line7": "Provide a detailed budget breakdown with justification for each line item",
+      "line8": "Quantify the expected ROI or benefits with concrete metrics",
+      "line9": "Address risks and mitigation strategies proactively",
+      "line10": "End with clear next steps and a specific call to action"
+    },
+    "writeStory": {
+      "line1": "Write a {{genre}} story",
+      "line2": "Target length: {{length}}",
+      "line3": "Point of view: {{pov}}",
+      "line4": "Create a compelling opening that immediately draws the reader in",
+      "line5": "Develop distinct characters with clear motivations and flaws",
+      "line6": "Build the world through sensory details — show, don't tell",
+      "line7": "Include rising tension with at least one major conflict or turning point",
+      "line8": "Write natural dialogue that reveals character and advances the plot",
+      "line9": "Create a satisfying ending that resolves the central conflict",
+      "line10": "Vary sentence rhythm — mix short punchy sentences with longer descriptive ones"
+    }
+  }
+}

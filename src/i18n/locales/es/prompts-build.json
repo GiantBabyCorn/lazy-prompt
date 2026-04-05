@@ -1,0 +1,202 @@
+{
+  "templates": {
+    "buildWebsite": {
+      "line1": "Constrúyeme un sitio web de {{name}}",
+      "line2": "Usar {{framework}} y {{router}}",
+      "line3": "Usar i18n para multiidioma con {{languages}}",
+      "line4": "Información SEO meta completa",
+      "line5": "Debe contener las siguientes páginas:",
+      "pages": {
+        "landing": "Página de inicio",
+        "about": "Acerca de",
+        "contact": "Contacto",
+        "blog": "Blog",
+        "faq": "Preguntas frecuentes",
+        "privacy": "Política de privacidad",
+        "terms": "Términos de servicio"
+      },
+      "line6": "Incluir diseño responsivo para móvil y tablet",
+      "line7": "Añadir alternancia de tema oscuro/claro",
+      "line8": "Incluir manejo adecuado de errores y página 404",
+      "line9": "Usar TypeScript para seguridad de tipos",
+      "line10": "Incluir estados de carga y pantallas esqueleto",
+      "line11": "Añadir validación de formularios adecuada",
+      "line12": "Incluir accesibilidad (cumplimiento WCAG 2.1 AA)",
+      "line13": "Configurar pipeline de CI/CD",
+      "line14": "Incluir configuración de pruebas unitarias con librería de testing",
+      "line15": "Añadir flujo de trabajo Git adecuado con .gitignore"
+    },
+    "buildApp": {
+      "line1": "Constrúyeme una aplicación móvil de {{name}}",
+      "line2": "Usar el framework {{framework}}",
+      "line3": "Soportar plataformas {{platforms}}",
+      "line4": "Incluir autenticación y autorización de usuarios",
+      "line5": "Debe contener las siguientes pantallas:",
+      "screens": {
+        "splash": "Pantalla de inicio",
+        "login": "Inicio de sesión / Registro",
+        "home": "Panel principal",
+        "profile": "Perfil de usuario",
+        "settings": "Configuración",
+        "notifications": "Notificaciones"
+      },
+      "line6": "Incluir soporte de notificaciones push",
+      "line7": "Añadir caché de datos sin conexión",
+      "line8": "Incluir navegación adecuada con navegadores de pila y pestañas",
+      "line9": "Añadir opción de autenticación biométrica",
+      "line10": "Incluir gestión del estado de la aplicación",
+      "line11": "Añadir límites de error adecuados e informes de fallos",
+      "line12": "Incluir soporte de enlaces profundos",
+      "line13": "Añadir configuración de despliegue en tienda de aplicaciones"
+    },
+    "buildPresentations": {
+      "line1": "Crear una presentación sobre {{topic}}",
+      "line2": "Audiencia objetivo: {{audience}}",
+      "line3": "Incluir aproximadamente {{count}} diapositivas",
+      "line4": "Duración de la presentación: {{duration}}",
+      "line5": "Debe contener las siguientes diapositivas:",
+      "slides": {
+        "title": "Diapositiva de título",
+        "agenda": "Agenda / Panorama",
+        "problem": "Planteamiento del problema",
+        "solution": "Solución propuesta",
+        "demo": "Demo / Visual",
+        "timeline": "Línea de tiempo / Hoja de ruta",
+        "qa": "Preguntas y respuestas"
+      },
+      "line6": "Usar viñetas claras y concisas (máximo 5 por diapositiva)",
+      "line7": "Incluir notas del orador para cada diapositiva",
+      "line8": "Agregar visualizaciones de datos donde sea apropiado",
+      "line9": "Incluir una diapositiva de resumen con los puntos clave",
+      "line10": "Diseñar con una identidad visual y esquema de colores consistente"
+    },
+    "buildApi": {
+      "line1": "Constrúyeme una API {{style}} de {{name}}",
+      "line2": "Usar {{lang}} como framework de backend",
+      "line3": "Base de datos: {{db}}",
+      "line4": "Incluir autenticación JWT y autorización basada en roles",
+      "line5": "Debe contener los siguientes endpoints:",
+      "endpoints": {
+        "users": "CRUD de usuarios (/api/users)",
+        "auth": "Autenticación (/api/auth/login, /api/auth/register)",
+        "products": "CRUD de productos (/api/products)",
+        "orders": "CRUD de pedidos (/api/orders)",
+        "health": "Verificación de estado (/api/health)"
+      },
+      "line6": "Incluir validación y saneamiento de entradas",
+      "line7": "Agregar limitación de velocidad y control de peticiones",
+      "line8": "Incluir manejo integral de errores con códigos de estado HTTP apropiados",
+      "line9": "Agregar documentación de la API con Swagger/OpenAPI",
+      "line10": "Incluir migraciones de base de datos y datos semilla",
+      "line11": "Agregar middleware de registro y monitoreo",
+      "line12": "Incluir configuración de pruebas unitarias y de integración"
+    },
+    "buildDatabase": {
+      "line1": "Diseña un esquema de base de datos {{engine}} para {{name}}",
+      "line2": "Dominio: {{domain}}",
+      "line3": "Debe contener las siguientes tablas:",
+      "tables": {
+        "users": "Users (id, email, name, role, timestamps)",
+        "products": "Products (id, name, description, price, category)",
+        "orders": "Orders (id, user_id, status, total, timestamps)",
+        "payments": "Payments (id, order_id, method, amount, status)",
+        "categories": "Categories (id, name, parent_id, description)"
+      },
+      "line4": "Incluir relaciones de clave foránea y restricciones adecuadas",
+      "line5": "Agregar índices para las columnas consultadas con frecuencia",
+      "line6": "Incluir marcas de tiempo created_at y updated_at en todas las tablas",
+      "line7": "Agregar soporte de eliminación lógica donde sea apropiado",
+      "line8": "Incluir scripts de migración (up y down)",
+      "line9": "Agregar datos semilla para desarrollo y pruebas",
+      "line10": "Incluir una descripción del diagrama ER"
+    },
+    "buildScript": {
+      "line1": "Escribe un script de automatización para {{task}}",
+      "line2": "Usar el lenguaje de programación {{lang}}",
+      "line3": "Entrada: {{input}}",
+      "line4": "Salida: {{output}}",
+      "line5": "Incluir manejo de errores y registro",
+      "line6": "Agregar soporte para argumentos de línea de comandos",
+      "line7": "Incluir un modo de ejecución en seco para pruebas",
+      "line8": "Agregar indicadores de progreso para tareas de larga duración",
+      "line9": "Incluir limpieza adecuada de archivos/recursos al salir",
+      "line10": "Agregar soporte de archivo de configuración para ajustes reutilizables"
+    },
+    "buildBot": {
+      "line1": "Constrúyeme un chatbot {{name}}",
+      "line2": "Plataforma: {{platform}}",
+      "line3": "Usar {{lang}} para el backend",
+      "line4": "Debe incluir las siguientes funcionalidades:",
+      "features": {
+        "greet": "Mensajes de bienvenida / saludo",
+        "faq": "Respuestas automáticas de preguntas frecuentes",
+        "moderate": "Moderación de contenido",
+        "notify": "Notificaciones programadas",
+        "customCommands": "Comandos personalizados"
+      },
+      "line5": "Incluir comprensión de lenguaje natural para entradas flexibles",
+      "line6": "Agregar contexto de conversación y memoria",
+      "line7": "Incluir panel de administración para configuración",
+      "line8": "Agregar analíticas y seguimiento de uso",
+      "line9": "Incluir limitación de velocidad para prevenir spam",
+      "line10": "Agregar mensajes de error amigables para entradas no reconocidas"
+    },
+    "buildExtension": {
+      "line1": "Constrúyeme una extensión de navegador {{name}}",
+      "line2": "Navegador objetivo: {{browser}}",
+      "line3": "Propósito: {{purpose}}",
+      "line4": "Debe incluir las siguientes funcionalidades:",
+      "features": {
+        "popup": "Interfaz emergente con acciones rápidas",
+        "contentScript": "Script de contenido para interacción con la página",
+        "background": "Service worker en segundo plano",
+        "optionsPage": "Página de opciones/configuración",
+        "storage": "Almacenamiento local para preferencias del usuario"
+      },
+      "line5": "Usar la especificación Manifest V3",
+      "line6": "Incluir permisos adecuados (mínimos requeridos)",
+      "line7": "Agregar atajos de teclado para las acciones principales",
+      "line8": "Incluir integración con el menú contextual",
+      "line9": "Agregar actualizaciones de insignia/ícono según el estado",
+      "line10": "Incluir recursos y descripción para la publicación en la tienda"
+    },
+    "buildGame": {
+      "line1": "Constrúyeme un juego {{genre}} {{name}}",
+      "line2": "Usar el motor/framework {{engine}}",
+      "line3": "Plataforma objetivo: {{platform}}",
+      "line4": "Mecánicas principales del juego:",
+      "mechanics": {
+        "movement": "Movimiento y controles del jugador",
+        "combat": "Sistema de combate / interacción",
+        "inventory": "Gestión de inventario",
+        "scoring": "Sistema de puntuación / progresión",
+        "levels": "Diseño y progresión de niveles"
+      },
+      "line5": "Incluir pantallas de menú principal, pausa y fin de partida",
+      "line6": "Agregar efectos de sonido y música de fondo",
+      "line7": "Incluir guardado/carga del estado del juego",
+      "line8": "Agregar configuración de dificultad (fácil, medio, difícil)",
+      "line9": "Incluir un tutorial o nivel de introducción",
+      "line10": "Agregar efectos de partículas y retroalimentación visual"
+    },
+    "buildCliTool": {
+      "line1": "Constrúyeme una herramienta CLI {{name}}",
+      "line2": "Usar el lenguaje de programación {{lang}}",
+      "line3": "Propósito: {{purpose}}",
+      "line4": "Debe soportar los siguientes comandos:",
+      "commands": {
+        "init": "init - Inicializar un nuevo proyecto",
+        "create": "create - Crear un nuevo recurso",
+        "list": "list - Listar todos los recursos",
+        "config": "config - Gestionar la configuración",
+        "help": "help - Mostrar información de uso"
+      },
+      "line5": "Incluir salida de terminal con colores",
+      "line6": "Agregar indicaciones interactivas para entradas requeridas",
+      "line7": "Incluir un archivo de configuración (~/.toolrc)",
+      "line8": "Agregar opciones --verbose y --quiet",
+      "line9": "Incluir scripts de autocompletado para la shell",
+      "line10": "Agregar página man o documentación de ayuda integrada"
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "templates": {
+    "readWebpage": {
+      "line1": "Lee y analiza la siguiente página web: {{url}}",
+      "line2": "Extrae solo el contenido principal del artículo — ignora la navegación, anuncios, barras laterales y pies de página",
+      "line3": "Proporciona un resumen estructurado con el título de la página, autor (si se encuentra) y fecha de publicación",
+      "line4": "Enumera las afirmaciones o argumentos clave presentados en la página",
+      "line5": "Evalúa la credibilidad de la fuente: verifica las credenciales del autor, citas y posible sesgo",
+      "line6": "Extrae cualquier dato, estadística o cita que valga la pena destacar",
+      "line7": "Identifica cualquier enlace externo o referencia que parezca importante para lectura adicional",
+      "line8": "Califica la calidad general y utilidad del contenido (1-10) con una breve justificación"
+    },
+    "readDocument": {
+      "line1": "Lee y analiza el siguiente {{docType}}",
+      "line2": "Proporciona un resumen estructurado con encabezados claros para cada sección principal",
+      "line3": "Destaca los hallazgos clave, conclusiones y puntos de datos importantes",
+      "line4": "Identifica cualquier inconsistencia, vacío o problema potencial en el contenido",
+      "line5": "Extrae todos los elementos accionables, recomendaciones y próximos pasos",
+      "line6": "Anota cualquier referencia o cita que valga la pena investigar",
+      "line7": "Resume el argumento o tesis principal en 2-3 oraciones",
+      "line8": "Evalúa la fiabilidad de la fuente y señala cualquier sesgo o limitación",
+      "line9": "Crea un glosario de términos clave si el documento utiliza vocabulario especializado",
+      "line10": "Sugiere 3-5 preguntas de seguimiento basadas en el contenido"
+    },
+    "readEmail": {
+      "line1": "Lee y analiza el siguiente correo electrónico",
+      "line2": "Identifica la intención del remitente: ¿qué quiere de mí?",
+      "line3": "Extrae todos los elementos de acción y plazos mencionados",
+      "line4": "Analiza el tono — ¿es urgente, casual, formal, pasivo-agresivo o amigable?",
+      "line5": "Redacta una respuesta sugerida en un tono {{tone}}",
+      "line6": "Señala cualquier fecha, monto o compromiso importante mencionado",
+      "line7": "Si hay múltiples temas, enuméralos por separado con un resumen de una línea cada uno",
+      "line8": "Sugiere un nivel de prioridad: responder inmediatamente, dentro de 24h, esta semana, o baja prioridad"
+    },
+    "readCode": {
+      "line1": "Revisa el siguiente código {{lang}}",
+      "line2": "Explica qué hace este código en lenguaje sencillo (resumen de 2-3 oraciones)",
+      "line3": "Identifica cualquier bug, error lógico o caso límite no manejado",
+      "line4": "Verifica vulnerabilidades de seguridad (inyección, XSS, problemas de autenticación, exposición de datos)",
+      "line5": "Evalúa el rendimiento: ¿hay consultas N+1, bucles innecesarios o fugas de memoria?",
+      "line6": "Revisa el estilo del código: convenciones de nomenclatura, legibilidad, cumplimiento del principio DRY",
+      "line7": "Sugiere mejoras específicas con ejemplos de código",
+      "line8": "Verifica el manejo de errores: ¿se capturan y manejan los fallos correctamente?",
+      "line9": "Identifica cualquier prueba faltante o caso de prueba que debería agregarse",
+      "line10": "Califica la calidad general del código (1-10) con las 3 correcciones prioritarias"
+    },
+    "readResearch": {
+      "line1": "Analiza el siguiente artículo de investigación en {{field}}",
+      "line2": "Resume la pregunta de investigación y la hipótesis",
+      "line3": "Evalúa la metodología: ¿es sólida? ¿Cuáles son las limitaciones?",
+      "line4": "Enumera los hallazgos clave y si apoyan la hipótesis",
+      "line5": "Evalúa el tamaño de la muestra, los métodos estadísticos y los niveles de significancia",
+      "line6": "Identifica posibles sesgos o variables de confusión",
+      "line7": "¿Cómo se comparan los hallazgos con la literatura existente en el campo?",
+      "line8": "¿Cuáles son las implicaciones prácticas de esta investigación?",
+      "line9": "Enumera las citas clave y cuáles son las más importantes para leer a continuación",
+      "line10": "Califica el rigor y la importancia del artículo (1-10) con justificación"
+    },
+    "readSummary": {
+      "line1": "Resume el siguiente contenido en {{length}}",
+      "line2": "Comienza con un TL;DR de una línea que capture la esencia",
+      "line3": "Usa viñetas para las ideas principales — un punto por concepto clave",
+      "line4": "Conserva cualquier número, fecha o nombre propio crítico",
+      "line5": "Mantén la conclusión o llamada a la acción del autor original si la hay",
+      "line6": "Omite ejemplos, anécdotas y relleno — solo el mensaje central",
+      "line7": "Si hay múltiples puntos de vista, menciona cada uno brevemente",
+      "line8": "Termina con una oración sobre por qué este contenido es importante"
+    },
+    "readKeyPoints": {
+      "line1": "Extrae los {{count}} puntos clave principales del siguiente contenido",
+      "line2": "Formatea como una lista numerada — una oración clara y completa por punto",
+      "line3": "Ordena por importancia, lo más crítico primero",
+      "line4": "Cada punto debe ser independiente — alguien que lea solo la lista debería entender el contenido",
+      "line5": "Incluye datos específicos, citas o evidencia cuando fortalezcan un punto",
+      "line6": "Marca cualquier punto que requiera acción con el prefijo [ACCIÓN]",
+      "line7": "Marca cualquier punto que sea disputado o incierto con el prefijo [NOTA]",
+      "line8": "Termina con una conclusión general en una oración"
+    },
+    "readFullAnalysis": {
+      "line1": "Realiza un análisis exhaustivo, sección por sección, del siguiente contenido",
+      "line2": "Comienza con un resumen ejecutivo de 3 oraciones",
+      "line3": "Para cada sección: resume el contenido, evalúa los argumentos, señala fortalezas y debilidades",
+      "line4": "Identifica las suposiciones subyacentes del autor y si están justificadas",
+      "line5": "Contrasta las afirmaciones dentro del documento — ¿hay contradicciones internas?",
+      "line6": "Evalúa la evidencia proporcionada: ¿es suficiente, relevante y actual?",
+      "line7": "Evalúa la estructura lógica: ¿el argumento fluye de manera coherente?",
+      "line8": "Identifica lo que falta: ¿qué temas deberían haberse cubierto pero no se cubrieron?",
+      "line9": "Proporciona una evaluación equilibrada de la calidad y fiabilidad general",
+      "line10": "Enumera 5 preguntas críticas que quedan sin respuesta después de la lectura"
+    },
+    "readCompare": {
+      "line1": "Compara los siguientes {{count}} documentos/fuentes lado a lado",
+      "line2": "Crea una tabla comparativa con las dimensiones clave de cada fuente",
+      "line3": "Identifica dónde coinciden las fuentes y qué tienen en común",
+      "line4": "Destaca dónde se contradicen entre sí, con citas específicas si es posible",
+      "line5": "Evalúa qué fuente es más creíble en cada punto de desacuerdo",
+      "line6": "Señala cualquier información que aparezca en solo una fuente — ¿es una perspectiva única o un error?",
+      "line7": "Sintetiza las fuentes en una comprensión unificada cuando sea posible",
+      "line8": "Concluye indicando qué fuente es la más fiable en general y por qué"
+    },
+    "readFactCheck": {
+      "line1": "Verifica los hechos del siguiente contenido afirmación por afirmación",
+      "line2": "Enumera cada afirmación factual hecha en el contenido",
+      "line3": "Para cada afirmación, califícala: Verificado / Mayormente Verdadero / Engañoso / Falso / No Verificable",
+      "line4": "Proporciona evidencia o razonamiento para cada calificación",
+      "line5": "Identifica cualquier estadística utilizada fuera de contexto o seleccionada a conveniencia",
+      "line6": "Verifica falacias lógicas: hombre de paja, falsa dicotomía, apelación a la autoridad, etc.",
+      "line7": "Señala cualquier contexto importante que el contenido omite",
+      "line8": "Identifica el encuadre general o sesgo narrativo",
+      "line9": "Sugiere fuentes más fiables para el mismo tema",
+      "line10": "Da una puntuación de precisión general (1-10) con resumen"
+    }
+  }
+}

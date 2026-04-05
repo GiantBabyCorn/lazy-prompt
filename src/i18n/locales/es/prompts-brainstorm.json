@@ -1,0 +1,64 @@
+{
+  "templates": {
+    "brainstormProduct": {
+      "line1": "Genera ideas de funcionalidades de producto para {{product}}",
+      "line2": "Genera al menos {{count}} ideas únicas",
+      "line3": "Comienza identificando los 5 principales puntos de dolor del usuario que este producto debería resolver",
+      "line4": "Para cada idea: nómbrala, descríbela en 1-2 oraciones y califica su impacto (alto/medio/bajo)",
+      "line5": "Categoriza las ideas: imprescindibles para el MVP, deseables, hoja de ruta futura",
+      "line6": "Incluye al menos 2 ideas innovadoras/no convencionales que los competidores no ofrecen",
+      "line7": "Para las 3 mejores ideas, sugiere cómo monetizarlas",
+      "line8": "Evalúa el panorama competitivo: ¿quién ya hace algo similar?",
+      "line9": "Sugiere un alcance mínimo de MVP que pueda lanzarse en 4-6 semanas",
+      "line10": "Clasifica todas las ideas por esfuerzo vs. impacto y destaca las victorias rápidas"
+    },
+    "brainstormMarketing": {
+      "line1": "Genera ideas de campañas de marketing para {{product}}",
+      "line2": "Nivel de presupuesto: {{budget}}",
+      "line3": "Genera al menos {{count}} ideas de campaña",
+      "line4": "Para cada campaña: nombre, canal, público objetivo, mensaje central y resultado esperado",
+      "line5": "Incluye una mezcla de canales: orgánico, de pago, asociaciones y comunidad",
+      "line6": "Sugiere 3 ideas de marketing viral/guerrilla que puedan superar el presupuesto",
+      "line7": "Define KPIs para cada campaña: ¿qué métrica define el éxito?",
+      "line8": "Crea un plan de lanzamiento de 30-60-90 días con las campañas de mayor prioridad primero",
+      "line9": "Incluye frameworks de mensajería: titular, subtítulo y puntos clave de venta",
+      "line10": "Identifica posibles asociaciones o influencers que puedan amplificar el alcance"
+    },
+    "brainstormContent": {
+      "line1": "Genera ideas de contenido para {{niche}}",
+      "line2": "Plataforma principal: {{platform}}",
+      "line3": "Genera al menos {{count}} ideas de contenido",
+      "line4": "Para cada idea: título, formato (artículo/video/hilo/etc.) y segmento de público objetivo",
+      "line5": "Incluye una mezcla de: contenido educativo, entretenido, inspirador y promocional",
+      "line6": "Sugiere 5 temas evergreen que seguirán siendo relevantes durante años",
+      "line7": "Sugiere 5 temas de tendencia/oportunos para aprovechar ahora mismo",
+      "line8": "Para cada pieza, sugiere un gancho o titular que haga a alguien dejar de hacer scroll",
+      "line9": "Organiza en un calendario de contenido: cuál publicar primero y con qué frecuencia",
+      "line10": "Sugiere estrategias de reutilización: cómo convertir 1 pieza en 5 en distintas plataformas"
+    },
+    "brainstormDesign": {
+      "line1": "Genera ideas de diseño UI/UX para {{project}}",
+      "line2": "Usuarios objetivo: {{users}}",
+      "line3": "Mapea los 3 flujos de usuario más críticos de principio a fin",
+      "line4": "Sugiere una paleta de colores y un sistema tipográfico que coincida con la personalidad de la marca",
+      "line5": "Propón ideas de diseño para las pantallas clave (describe o haz wireframe en texto)",
+      "line6": "Sugiere micro-interacciones y animaciones que mejoren la experiencia del usuario",
+      "line7": "Identifica requisitos de accesibilidad y cómo cumplir con WCAG 2.1 AA",
+      "line8": "Sugiere 3 patrones de diseño de apps exitosas en un espacio similar",
+      "line9": "Propón una estrategia responsive: ¿cómo debería adaptarse el diseño de móvil a escritorio?",
+      "line10": "Lista 5 errores de usabilidad a evitar para este tipo de producto"
+    },
+    "brainstormStrategy": {
+      "line1": "Genera ideas estratégicas de crecimiento para {{business}}",
+      "line2": "Industria: {{industry}}",
+      "line3": "Horizonte de planificación: {{timeframe}}",
+      "line4": "Realiza un análisis DAFO: fortalezas, debilidades, oportunidades, amenazas",
+      "line5": "Identifica las 3 principales palancas de crecimiento disponibles ahora mismo",
+      "line6": "Propón 3 iniciativas estratégicas con objetivos claros y resultados clave (OKRs)",
+      "line7": "Mapea el panorama competitivo: ¿dónde están las brechas que podemos explotar?",
+      "line8": "Identifica posibles asociaciones estratégicas u objetivos de adquisición",
+      "line9": "Evalúa los 3 principales riesgos y propón estrategias de mitigación para cada uno",
+      "line10": "Crea una hoja de ruta priorizada: qué hacer en el mes 1, trimestre 1 y trimestre 2"
+    }
+  }
+}

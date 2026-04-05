@@ -1,0 +1,76 @@
+{
+  "templates": {
+    "brainstormIdeas": {
+      "line1": "Brainstorm {{domain}} ideas",
+      "line2": "Topic: {{topic}}",
+      "line3": "Generate at least {{count}} unique ideas",
+      "line4": "For each idea include a brief description and potential impact",
+      "line5": "Categorize ideas by feasibility (quick win, medium effort, moonshot)",
+      "line6": "Include pros and cons for the top 3 ideas",
+      "line7": "Consider the target audience and market trends",
+      "line8": "Add competitive analysis for the most promising ideas",
+      "line9": "Suggest potential MVP features for the top idea",
+      "line10": "Include rough effort estimates where possible"
+    },
+    "brainstormProduct": {
+      "line1": "Brainstorm product feature ideas for {{product}}",
+      "line2": "Generate at least {{count}} unique ideas",
+      "line3": "Start by identifying the top 5 user pain points this product should solve",
+      "line4": "For each idea: name it, describe it in 1-2 sentences, and rate its impact (high/medium/low)",
+      "line5": "Categorize ideas: must-have for MVP, nice-to-have, future roadmap",
+      "line6": "Include at least 2 innovative/unconventional ideas that competitors don't offer",
+      "line7": "For the top 3 ideas, suggest how to monetize them",
+      "line8": "Assess competitive landscape: who already does something similar?",
+      "line9": "Suggest a minimal MVP scope that could launch in 4-6 weeks",
+      "line10": "Rank all ideas by effort vs. impact and highlight the quick wins"
+    },
+    "brainstormMarketing": {
+      "line1": "Brainstorm marketing campaign ideas for {{product}}",
+      "line2": "Budget level: {{budget}}",
+      "line3": "Generate at least {{count}} campaign ideas",
+      "line4": "For each campaign: name, channel, target audience, core message, and expected outcome",
+      "line5": "Include a mix of channels: organic, paid, partnerships, and community",
+      "line6": "Suggest 3 viral/guerrilla marketing ideas that could punch above the budget",
+      "line7": "Define KPIs for each campaign: what metric defines success?",
+      "line8": "Create a 30-60-90 day launch plan with the highest-priority campaigns first",
+      "line9": "Include messaging frameworks: headline, subheadline, and key selling points",
+      "line10": "Identify potential partnerships or influencers that could amplify reach"
+    },
+    "brainstormContent": {
+      "line1": "Brainstorm content ideas for {{niche}}",
+      "line2": "Primary platform: {{platform}}",
+      "line3": "Generate at least {{count}} content ideas",
+      "line4": "For each idea: title, format (article/video/thread/etc.), and target audience segment",
+      "line5": "Include a mix of: educational, entertaining, inspirational, and promotional content",
+      "line6": "Suggest 5 evergreen topics that will remain relevant for years",
+      "line7": "Suggest 5 trending/timely topics to capitalize on right now",
+      "line8": "For each piece, suggest a hook or headline that would stop someone scrolling",
+      "line9": "Organize into a content calendar: which to publish first and at what frequency",
+      "line10": "Suggest repurposing strategies: how to turn 1 piece into 5 across platforms"
+    },
+    "brainstormDesign": {
+      "line1": "Brainstorm UI/UX design ideas for {{project}}",
+      "line2": "Target users: {{users}}",
+      "line3": "Map out the 3 most critical user flows end to end",
+      "line4": "Suggest a color palette and typography system that matches the brand personality",
+      "line5": "Propose layout ideas for the key screens (describe or wireframe in text)",
+      "line6": "Suggest micro-interactions and animations that improve the user experience",
+      "line7": "Identify accessibility requirements and how to meet WCAG 2.1 AA",
+      "line8": "Suggest 3 design patterns from successful apps in a similar space",
+      "line9": "Propose a responsive strategy: how should the design adapt from mobile to desktop?",
+      "line10": "List 5 usability pitfalls to avoid for this type of product"
+    },
+    "brainstormStrategy": {
+      "line1": "Brainstorm strategic growth ideas for {{business}}",
+      "line2": "Industry: {{industry}}",
+      "line3": "Planning horizon: {{timeframe}}",
+      "line4": "Conduct a SWOT analysis: strengths, weaknesses, opportunities, threats",
+      "line5": "Identify the top 3 growth levers available right now",
+      "line6": "Propose 3 strategic initiatives with clear objectives and key results (OKRs)",
+      "line7": "Map the competitive landscape: where are the gaps we can exploit?",
+      "line8": "Identify potential strategic partnerships or acquisition targets",
+      "line9": "Assess the top 3 risks and propose mitigation strategies for each",
+      "line10": "Create a prioritized roadmap: what to do in month 1, quarter 1, and quarter 2"
+    }
+  }
+}

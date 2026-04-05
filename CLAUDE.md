@@ -39,6 +39,8 @@ scripts/
   edit-template.ts      # CLI: edit an existing prompt template
   list-data.ts          # CLI: list bubbles/templates with tree view
   validate-data.ts      # CLI: validate bubble tree + template integrity
+  read-data.ts          # CLI: query data files without reading entire files
+  write-data.ts         # CLI: modify data files via targeted operations
   generate-og-image.ts  # Generate OG preview image from SVG template
 src/
   main.tsx              # React entry point, BrowserRouter + i18n setup
@@ -46,7 +48,10 @@ src/
   App.css               # Global styles, CSS custom properties, theme vars
   i18n/
     config.ts           # i18next setup (lazy-loaded locales)
-    locales/            # 6 language directories, each with common.json + prompts.json
+    locales/            # 6 language directories, each with:
+                        #   common.json — UI labels
+                        #   prompts.json — navigation labels (categories, subcategories)
+                        #   prompts-{category}.json — template text per category (lazy-loaded)
   contexts/
     ThemeContext.tsx     # Dark/light theme with localStorage persistence
   hooks/
@@ -71,8 +76,19 @@ src/
     AboutPage.tsx       # About page with social links (route: /about)
   data/
     types.ts            # TypeScript interfaces (BubbleNode, PromptTemplate, EditableSpan, etc.)
-    bubbleTree.ts       # Complete bubble tree data structure
-    promptTemplates.ts  # Prompt template definitions per leaf path
+    bubbleTree.ts       # Complete bubble tree data structure (101 nodes)
+    templates/          # Prompt templates split by category (lazy-loaded)
+      index.ts          # Registry: loadTemplate(), loadAllTemplates(), getCategory()
+      build.ts          # 10 build templates
+      translation.ts    # 5 translation templates
+      read.ts           # 10 read templates
+      write.ts          # 5 write templates
+      debug.ts          # 5 debug templates
+      explain.ts        # 5 explain templates
+      brainstorm.ts     # 5 brainstorm templates
+      learn.ts          # 5 learn templates
+      organize.ts       # 10 organize templates
+      summarize.ts      # 5 summarize templates
   utils/
     aiProviders.ts      # AI provider definitions with SVG icons
     promptBuilder.ts    # Assembles final prompt from selections (respects hidden sections/items)
@@ -91,10 +107,36 @@ npm run lint             # ESLint
 npm run add-bubble       # Add a new bubble node to the tree
 npm run edit-bubble      # Edit an existing bubble node
 npm run delete-bubble    # Remove a bubble node
-npm run add-template     # Add a new prompt template
+npm run add-template     # Add a new prompt template (auto-detects category file)
 npm run edit-template    # Edit an existing prompt template
 npm run list-data        # List bubbles/templates with tree view
 npm run validate         # Validate bubble tree + template integrity
+npm run read-data        # Query data files (templates, tree, i18n) — see below
+npm run write-data       # Modify data files via targeted operations — see below
+```
+
+### read-data & write-data CLI (for agents and bulk operations)
+
+These scripts allow querying and modifying data without reading entire files:
+
+```bash
+# --- READ ---
+npx tsx scripts/read-data.ts templates length          # → 65
+npx tsx scripts/read-data.ts templates ids             # → ["buildWebsite", ...]
+npx tsx scripts/read-data.ts templates sections buildWebsite  # → compact section list
+npx tsx scripts/read-data.ts templates spans buildWebsite     # → editable span details
+npx tsx scripts/read-data.ts tree leaves               # → all leaf nodes with template IDs
+npx tsx scripts/read-data.ts tree search "read"        # → nodes matching regex
+npx tsx scripts/read-data.ts i18n en get templates.buildWebsite  # → i18n content
+npx tsx scripts/read-data.ts i18n zh-TW missing en     # → keys missing vs English
+
+# --- WRITE ---
+npx tsx scripts/write-data.ts templates push '{"id":"newTemplate","sections":[]}'
+npx tsx scripts/write-data.ts templates remove templateId
+npx tsx scripts/write-data.ts templates set templateId sections.0.id newId
+npx tsx scripts/write-data.ts i18n en set-json 'templates.newTemplate' '{"line1":"..."}'
+npx tsx scripts/write-data.ts i18n zh-TW merge /tmp/translations.json
+npx tsx scripts/write-data.ts tree set-json 'children.0' '{"id":"..."}'
 ```
 
 ## Data Model
@@ -108,6 +150,7 @@ npm run validate         # Validate bubble tree + template integrity
   type: 'primary' | 'secondary';    // primary = larger/prominent, secondary = smaller
   children?: BubbleNode[];           // Next layer (undefined = leaf node)
   promptTemplateId?: string;         // For leaf nodes: which template to use
+  templateOverrides?: Record<string, string>;  // Pre-fill editable spans by ID
 }
 ```
 
@@ -153,24 +196,24 @@ npm run validate         # Validate bubble tree + template integrity
    { id: 'build-game', labelKey: 'subcategories.build.game', type: 'secondary', promptTemplateId: 'buildGame' },
    ```
 
-2. **Add the prompt template** in `src/data/promptTemplates.ts`:
+2. **Add the prompt template** in the correct category file `src/data/templates/{category}.ts`:
    ```typescript
+   // In src/data/templates/build.ts — add to the templates array:
    {
      id: 'buildGame',
      sections: [
        { id: 'bg1', textKey: 'templates.buildGame.line1', type: 'fixed',
          editableSpans: [{ id: 'bg1-name', placeholder: 'OOO', color: 'yellow' }] },
-       { id: 'bg2', textKey: 'templates.buildGame.line2', type: 'fixed',
-         editableSpans: [{ id: 'bg2-engine', placeholder: 'Unity', color: 'cyan',
-           suggestions: ['Unity', 'Unreal', 'Godot', 'Phaser'] }] },
        // ... more sections
      ],
    },
    ```
 
 3. **Add i18n translations** in ALL 6 locale files:
-   - `src/i18n/locales/en/prompts.json` — add `subcategories.build.game` and `templates.buildGame.*`
+   - `src/i18n/locales/en/prompts.json` — add `subcategories.build.game` (navigation label)
+   - `src/i18n/locales/en/prompts-build.json` — add `templates.buildGame.*` (template text)
    - Repeat for `zh-CN`, `zh-TW`, `ja`, `ko`, `es`
+   - **Tip**: Use `npx tsx scripts/write-data.ts i18n <locale> set-json 'templates.buildGame' '<json>'` for bulk i18n writes
 
 4. **Validate**: `npm run validate`
 
@@ -254,3 +297,14 @@ Add a node WITH `children` array (no `promptTemplateId`):
   - OG preview image for social sharing
   - About page, MIT License
   - "Build Prompt!" tooltip on leaf node hover
+- [x] Task 13: Data Optimization
+  - 65 independent templates (was 19 shared), each tailored per sub-category
+  - Translation restructured to 2-layer: language pair → tone (bidirectional conversation mode)
+  - Summarize converted from leaf to branch with 5 sub-categories
+  - templateOverrides for context-aware pre-filling from navigation path
+  - Suggestions added to 37+ editable spans
+  - Full i18n: all 65 templates translated across 6 locales
+  - Templates split into 10 per-category files with lazy loading (dynamic import)
+  - i18n split into nav-only + per-category template files (on-demand loading)
+  - Main bundle reduced from 545KB to ~480KB
+  - CLI scripts: read-data.ts and write-data.ts for efficient data operations

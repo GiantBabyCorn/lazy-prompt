@@ -28,10 +28,10 @@
       "cliTool": "CLI 工具"
     },
     "translation": {
-      "enZh": "英语 \u2194 中文",
-      "enJa": "英语 \u2194 日语",
-      "enKo": "英语 \u2194 韩语",
-      "enEs": "英语 \u2194 西班牙语",
+      "enZh": "英语 ↔ 中文",
+      "enJa": "英语 ↔ 日语",
+      "enKo": "英语 ↔ 韩语",
+      "enEs": "英语 ↔ 西班牙语",
       "custom": "自定义语言对",
       "formal": "正式",
       "casual": "日常",
@@ -97,318 +97,40 @@
       "process": "流程",
       "error": "错误",
       "architecture": "架构"
+    },
+    "summarize": {
+      "article": "文章",
+      "meeting": "会议",
+      "video": "视频 / 播客",
+      "book": "书籍 / 章节",
+      "research": "研究论文"
     }
   },
   "descriptions": {
-    "build": ["网站", "APP", "演示文稿"],
-    "read": ["网页", "文档", "邮件"],
-    "organize": ["报告", "账目", "产品列表"],
-    "translation": ["英语 \u2194 中文", "英语 \u2194 日语", "英语 \u2194 韩语"]
-  },
-  "templates": {
-    "buildWebsite": {
-      "line1": "为我构建一个 {{name}} 网站",
-      "line2": "使用 {{framework}} 和 {{router}}",
-      "line3": "使用 i18n 实现多语言支持，语言包括 {{languages}}",
-      "line4": "完整的 SEO 元信息",
-      "line5": "必须包含以下页面：",
-      "pages": {
-        "landing": "落地页",
-        "about": "关于",
-        "contact": "联系我们",
-        "blog": "博客",
-        "faq": "常见问题",
-        "privacy": "隐私政策",
-        "terms": "服务条款"
-      },
-      "line6": "包含手机和平板的响应式设计",
-      "line7": "添加深色/浅色主题切换",
-      "line8": "包含正确的错误处理和 404 页面",
-      "line9": "使用 TypeScript 确保类型安全",
-      "line10": "包含加载状态和骨架屏",
-      "line11": "添加正确的表单验证",
-      "line12": "包含无障碍功能（WCAG 2.1 AA 合规）",
-      "line13": "设置 CI/CD 流水线配置",
-      "line14": "包含使用测试库的单元测试设置",
-      "line15": "添加正确的 Git 工作流和 .gitignore"
-    },
-    "buildApp": {
-      "line1": "为我构建一个 {{name}} 移动应用",
-      "line2": "使用 {{framework}} 框架",
-      "line3": "支持 {{platforms}} 平台",
-      "line4": "包含用户认证和授权",
-      "line5": "必须包含以下页面：",
-      "screens": {
-        "splash": "启动页",
-        "login": "登录 / 注册",
-        "home": "首页仪表盘",
-        "profile": "用户资料",
-        "settings": "设置",
-        "notifications": "通知"
-      },
-      "line6": "包含推送通知支持",
-      "line7": "添加离线数据缓存",
-      "line8": "包含使用堆栈和标签导航器的正确导航",
-      "line9": "添加生物识别认证选项",
-      "line10": "包含应用状态管理",
-      "line11": "添加正确的错误边界和崩溃报告",
-      "line12": "包含深层链接支持",
-      "line13": "添加应用商店部署配置"
-    },
-    "buildPresentations": {
-      "line1": "创建关于 {{topic}} 的演示文稿",
-      "line2": "目标受众：{{audience}}",
-      "line3": "包含约 {{count}} 张幻灯片",
-      "line4": "演示时长：{{duration}}",
-      "line5": "必须包含以下幻灯片：",
-      "slides": {
-        "title": "标题页",
-        "agenda": "议程 / 概览",
-        "problem": "问题陈述",
-        "solution": "解决方案",
-        "demo": "演示 / 可视化",
-        "timeline": "时间线 / 路线图",
-        "qa": "问答环节"
-      },
-      "line6": "使用清晰简洁的要点（每页最多5个）",
-      "line7": "为每张幻灯片添加演讲备注",
-      "line8": "在适当位置添加数据可视化",
-      "line9": "包含带有关键要点的总结页",
-      "line10": "使用一致的品牌和配色方案设计"
-    },
-    "buildApi": {
-      "line1": "为我构建一个 {{name}} {{style}} API",
-      "line2": "使用 {{lang}} 作为后端框架",
-      "line3": "数据库：{{db}}",
-      "line4": "包含 JWT 认证和基于角色的授权",
-      "line5": "必须包含以下接口：",
-      "endpoints": {
-        "users": "用户 CRUD (/api/users)",
-        "auth": "认证 (/api/auth/login, /api/auth/register)",
-        "products": "产品 CRUD (/api/products)",
-        "orders": "订单 CRUD (/api/orders)",
-        "health": "健康检查 (/api/health)"
-      },
-      "line6": "包含输入验证和清理",
-      "line7": "添加速率限制和请求节流",
-      "line8": "包含全面的错误处理和正确的 HTTP 状态码",
-      "line9": "添加 Swagger/OpenAPI API 文档",
-      "line10": "包含数据库迁移和种子数据",
-      "line11": "添加日志和监控中间件",
-      "line12": "包含单元测试和集成测试设置"
-    },
-    "buildDatabase": {
-      "line1": "设计一个 {{name}} {{engine}} 数据库架构",
-      "line2": "领域：{{domain}}",
-      "line3": "必须包含以下数据表：",
-      "tables": {
-        "users": "用户表 (id, email, name, role, timestamps)",
-        "products": "产品表 (id, name, description, price, category)",
-        "orders": "订单表 (id, user_id, status, total, timestamps)",
-        "payments": "支付表 (id, order_id, method, amount, status)",
-        "categories": "分类表 (id, name, parent_id, description)"
-      },
-      "line4": "包含正确的外键关系和约束",
-      "line5": "为经常查询的列添加索引",
-      "line6": "所有表包含 created_at 和 updated_at 时间戳",
-      "line7": "在适当位置添加软删除支持",
-      "line8": "包含迁移脚本（up 和 down）",
-      "line9": "添加开发和测试用的种子数据",
-      "line10": "包含 ER 图描述"
-    },
-    "buildScript": {
-      "line1": "编写一个自动化脚本来 {{task}}",
-      "line2": "使用 {{lang}} 编程语言",
-      "line3": "输入：{{input}}",
-      "line4": "输出：{{output}}",
-      "line5": "包含错误处理和日志记录",
-      "line6": "添加命令行参数支持",
-      "line7": "包含用于测试的试运行模式",
-      "line8": "为长时间运行的任务添加进度指示器",
-      "line9": "包含退出时的文件/资源清理",
-      "line10": "添加配置文件支持以复用设置"
-    },
-    "buildBot": {
-      "line1": "为我构建一个 {{name}} 聊天机器人",
-      "line2": "平台：{{platform}}",
-      "line3": "使用 {{lang}} 作为后端",
-      "line4": "必须包含以下功能：",
-      "features": {
-        "greet": "欢迎 / 问候消息",
-        "faq": "FAQ 自动回复",
-        "moderate": "内容审核",
-        "notify": "定时通知",
-        "customCommands": "自定义斜杠命令"
-      },
-      "line5": "包含自然语言理解以支持灵活输入",
-      "line6": "添加对话上下文和记忆",
-      "line7": "包含管理后台用于配置",
-      "line8": "添加分析和使用追踪",
-      "line9": "包含速率限制以防止垃圾信息",
-      "line10": "为无法识别的输入添加友好的错误提示"
-    },
-    "buildExtension": {
-      "line1": "为我构建一个 {{name}} 浏览器扩展",
-      "line2": "目标浏览器：{{browser}}",
-      "line3": "用途：{{purpose}}",
-      "line4": "必须包含以下功能：",
-      "features": {
-        "popup": "弹出窗口 UI 和快捷操作",
-        "contentScript": "内容脚本用于页面交互",
-        "background": "后台 Service Worker",
-        "optionsPage": "选项/设置页面",
-        "storage": "本地存储用于用户偏好"
-      },
-      "line5": "使用 Manifest V3 规范",
-      "line6": "包含正确的权限（最小必需）",
-      "line7": "为主要操作添加键盘快捷键",
-      "line8": "包含右键菜单集成",
-      "line9": "根据状态更新图标/徽章",
-      "line10": "包含应用商店上架资源和描述"
-    },
-    "buildGame": {
-      "line1": "为我构建一个 {{name}} {{genre}} 游戏",
-      "line2": "使用 {{engine}} 引擎/框架",
-      "line3": "目标平台：{{platform}}",
-      "line4": "核心游戏机制：",
-      "mechanics": {
-        "movement": "玩家移动和控制",
-        "combat": "战斗 / 交互系统",
-        "inventory": "物品管理",
-        "scoring": "评分 / 进度系统",
-        "levels": "关卡设计和进度"
-      },
-      "line5": "包含主菜单、暂停和游戏结束画面",
-      "line6": "添加音效和背景音乐",
-      "line7": "包含保存/加载游戏状态",
-      "line8": "添加难度设置（简单、中等、困难）",
-      "line9": "包含教程或新手引导关卡",
-      "line10": "添加粒子效果和视觉反馈"
-    },
-    "buildCliTool": {
-      "line1": "为我构建一个 {{name}} CLI 工具",
-      "line2": "使用 {{lang}} 编程语言",
-      "line3": "用途：{{purpose}}",
-      "line4": "必须支持以下命令：",
-      "commands": {
-        "init": "init - 初始化新项目",
-        "create": "create - 创建新资源",
-        "list": "list - 列出所有资源",
-        "config": "config - 管理配置",
-        "help": "help - 显示使用说明"
-      },
-      "line5": "包含彩色终端输出",
-      "line6": "为必需输入添加交互式提示",
-      "line7": "包含配置文件（~/.toolrc）",
-      "line8": "添加 --verbose 和 --quiet 标志",
-      "line9": "包含 Shell 自动补全脚本",
-      "line10": "添加手册页或内置帮助文档"
-    },
-    "translationGeneral": {
-      "line1": "将以下文本从 {{sourceLang}} 翻译为 {{targetLang}}",
-      "line2": "保持原有的语气和风格：{{tone}}",
-      "line3": "保留所有技术术语和专有名词",
-      "line4": "保持格式和结构不变",
-      "line5": "在适用的地方提供文化背景注释",
-      "line6": "标记任何无法直接翻译的习语或表达",
-      "line7": "确保目标语言的语法和标点正确",
-      "line8": "如果有多种有效翻译，提供最自然的一种",
-      "line9": "保持段落分隔和列表格式",
-      "line10": "在括号中为模糊部分添加译者注释"
-    },
-    "readDocument": {
-      "line1": "阅读并分析以下 {{docType}}",
-      "line2": "分析模式：{{analysisMode}}",
-      "line3": "提供带有清晰标题的结构化摘要",
-      "line4": "突出关键发现和重要数据点",
-      "line5": "识别任何不一致或潜在问题",
-      "line6": "提取可操作的项目和建议",
-      "line7": "标注任何供进一步阅读的参考或引用",
-      "line8": "总结主要论点或论题",
-      "line9": "评估文档的可信度和完整性",
-      "line10": "根据内容提出后续问题"
-    },
-    "organizeReports": {
-      "line1": "整理以下 {{dataType}} 数据",
-      "line2": "输出格式：{{outputFormat}}",
-      "line3": "按 {{sortCriteria}} 以 {{sortOrder}} 顺序排序",
-      "line4": "按类别分组相关项目",
-      "line5": "添加汇总统计（总计、平均值、计数）",
-      "line6": "突出异常值或异常情况",
-      "line7": "包含目录或索引",
-      "line8": "使用正确的分隔符和单位格式化数字",
-      "line9": "添加章节标题和清晰的标签",
-      "line10": "在顶部包含简要的执行摘要"
-    },
-    "summarize": {
-      "line1": "总结以下 {{type}}",
-      "line2": "目标长度：{{length}}",
-      "line3": "以一句话 TL;DR 开头",
-      "line4": "以要点形式列出主要观点",
-      "line5": "保留关键统计数据、日期和数字",
-      "line6": "标注作者的主要论点或结论",
-      "line7": "突出任何行动项或后续步骤",
-      "line8": "包含能捕捉关键思想的相关引用"
-    },
-    "debugCode": {
-      "line1": "调试这个 {{area}} 代码问题",
-      "line2": "语言/框架：{{lang}}",
-      "line3": "错误：{{error}}",
-      "line4": "分析代码并找出根本原因",
-      "line5": "逐步解释哪里出了问题",
-      "line6": "提供修复方案和修正后的代码",
-      "line7": "解释为什么这个修复有效",
-      "line8": "列出修复可能带来的副作用",
-      "line9": "建议预防类似 Bug 的措施",
-      "line10": "推荐需要添加的相关测试"
-    },
-    "brainstormIdeas": {
-      "line1": "头脑风暴 {{domain}} 创意",
-      "line2": "主题：{{topic}}",
-      "line3": "生成至少 {{count}} 个独特创意",
-      "line4": "为每个创意提供简要描述和潜在影响",
-      "line5": "按可行性分类（快速实现、中等投入、远大目标）",
-      "line6": "包含前 3 个创意的优缺点",
-      "line7": "考虑目标受众和市场趋势",
-      "line8": "为最有前景的创意添加竞争分析",
-      "line9": "为最佳创意建议潜在的 MVP 功能",
-      "line10": "尽可能包含粗略的工作量估算"
-    },
-    "learnTopic": {
-      "line1": "教我关于 {{subject}} 的知识",
-      "line2": "我目前的水平：{{level}}",
-      "line3": "从高层概览开始",
-      "line4": "将复杂概念分解为简单的解释",
-      "line5": "在相关处包含实际示例和代码片段",
-      "line6": "提供带有里程碑的学习路线图",
-      "line7": "列出推荐资源（书籍、课程、文档）",
-      "line8": "包含常见陷阱和误解",
-      "line9": "添加练习题或挑战",
-      "line10": "建议接下来探索的相关主题"
-    },
-    "writeContent": {
-      "line1": "写一篇 {{type}}",
-      "line2": "主题：{{topic}}",
-      "line3": "语气：{{tone}}",
-      "line4": "目标长度：{{length}}",
-      "line5": "目标受众：{{audience}}",
-      "line6": "包含能吸引读者的精彩开头",
-      "line7": "使用清晰的标题和副标题构建结构",
-      "line8": "包含相关示例、数据或轶事",
-      "line9": "以有力的结论和行动号召结尾",
-      "line10": "优化可读性（短段落、变化的句子长度）"
-    },
-    "explainTopic": {
-      "line1": "解释 {{subject}}",
-      "line2": "解释风格：{{level}}",
-      "line3": "从简单的类比或比喻开始",
-      "line4": "逐步分解",
-      "line5": "使用现实世界的例子来说明关键点",
-      "line6": "在有帮助的地方包含图表或可视化描述",
-      "line7": "突出最重要的要点",
-      "line8": "回答常见问题和误解",
-      "line9": "与相关概念进行比较以展示差异",
-      "line10": "提供关键点的总结清单"
-    }
+    "build": [
+      "网站",
+      "APP",
+      "演示文稿"
+    ],
+    "read": [
+      "网页",
+      "文档",
+      "邮件"
+    ],
+    "organize": [
+      "报告",
+      "账目",
+      "产品列表"
+    ],
+    "translation": [
+      "英语 ↔ 中文",
+      "英语 ↔ 日语",
+      "英语 ↔ 韩语"
+    ],
+    "summarize": [
+      "文章",
+      "会议",
+      "视频 / 播客"
+    ]
   }
 }

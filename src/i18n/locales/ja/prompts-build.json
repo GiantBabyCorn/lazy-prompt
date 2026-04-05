@@ -1,0 +1,202 @@
+{
+  "templates": {
+    "buildWebsite": {
+      "line1": "{{name}} ウェブサイトを構築してください",
+      "line2": "{{framework}} と {{router}} を使用",
+      "line3": "i18n で {{languages}} の多言語対応",
+      "line4": "完全な SEO メタ情報",
+      "line5": "以下のページを含めること：",
+      "pages": {
+        "landing": "ランディングページ",
+        "about": "概要",
+        "contact": "お問い合わせ",
+        "blog": "ブログ",
+        "faq": "よくある質問",
+        "privacy": "プライバシーポリシー",
+        "terms": "利用規約"
+      },
+      "line6": "モバイルとタブレットのレスポンシブデザインを含む",
+      "line7": "ダーク/ライトテーマ切り替えを追加",
+      "line8": "適切なエラーハンドリングと 404 ページを含む",
+      "line9": "TypeScript で型安全性を確保",
+      "line10": "ローディング状態とスケルトンスクリーンを含む",
+      "line11": "適切なフォームバリデーションを追加",
+      "line12": "アクセシビリティ対応（WCAG 2.1 AA 準拠）を含む",
+      "line13": "CI/CD パイプライン設定をセットアップ",
+      "line14": "テストライブラリによるユニットテストのセットアップを含む",
+      "line15": "適切な Git ワークフローと .gitignore を追加"
+    },
+    "buildApp": {
+      "line1": "{{name}} モバイルアプリケーションを構築してください",
+      "line2": "{{framework}} フレームワークを使用",
+      "line3": "{{platforms}} プラットフォームに対応",
+      "line4": "ユーザー認証と認可を含む",
+      "line5": "以下の画面を含めること：",
+      "screens": {
+        "splash": "スプラッシュ画面",
+        "login": "ログイン / 登録",
+        "home": "ホームダッシュボード",
+        "profile": "ユーザープロフィール",
+        "settings": "設定",
+        "notifications": "通知"
+      },
+      "line6": "プッシュ通知サポートを含む",
+      "line7": "オフラインデータキャッシュを追加",
+      "line8": "スタックおよびタブナビゲーターによる適切なナビゲーションを含む",
+      "line9": "生体認証オプションを追加",
+      "line10": "アプリの状態管理を含む",
+      "line11": "適切なエラーバウンダリとクラッシュレポートを追加",
+      "line12": "ディープリンクサポートを含む",
+      "line13": "アプリストアデプロイ設定を追加"
+    },
+    "buildPresentations": {
+      "line1": "{{topic}} についてのプレゼンテーションを作成",
+      "line2": "対象者：{{audience}}",
+      "line3": "約 {{count}} 枚のスライドを含む",
+      "line4": "プレゼン時間：{{duration}}",
+      "line5": "以下のスライドを含めること：",
+      "slides": {
+        "title": "タイトルスライド",
+        "agenda": "議題 / 概要",
+        "problem": "問題提起",
+        "solution": "解決策",
+        "demo": "デモ / ビジュアル",
+        "timeline": "タイムライン / ロードマップ",
+        "qa": "質疑応答"
+      },
+      "line6": "明確で簡潔な箇条書きを使用（1スライド最大5点）",
+      "line7": "各スライドに発表者ノートを含む",
+      "line8": "適切な箇所にデータの視覚化を追加",
+      "line9": "主要ポイントのまとめスライドを含む",
+      "line10": "一貫したブランディングと配色でデザイン"
+    },
+    "buildApi": {
+      "line1": "{{name}} {{style}} API を構築してください",
+      "line2": "{{lang}} をバックエンドフレームワークとして使用",
+      "line3": "データベース：{{db}}",
+      "line4": "JWT 認証とロールベースの認可を含む",
+      "line5": "以下のエンドポイントを含めること：",
+      "endpoints": {
+        "users": "Users CRUD (/api/users)",
+        "auth": "Authentication (/api/auth/login, /api/auth/register)",
+        "products": "Products CRUD (/api/products)",
+        "orders": "Orders CRUD (/api/orders)",
+        "health": "Health Check (/api/health)"
+      },
+      "line6": "入力バリデーションとサニタイズを含む",
+      "line7": "レート制限とリクエストスロットリングを追加",
+      "line8": "適切な HTTP ステータスコードによる包括的なエラーハンドリングを含む",
+      "line9": "Swagger/OpenAPI による API ドキュメントを追加",
+      "line10": "データベースマイグレーションとシードデータを含む",
+      "line11": "ロギングとモニタリングミドルウェアを追加",
+      "line12": "ユニットテストと統合テストのセットアップを含む"
+    },
+    "buildDatabase": {
+      "line1": "{{name}} {{engine}} データベーススキーマを設計してください",
+      "line2": "ドメイン：{{domain}}",
+      "line3": "以下のテーブルを含めること：",
+      "tables": {
+        "users": "Users (id, email, name, role, timestamps)",
+        "products": "Products (id, name, description, price, category)",
+        "orders": "Orders (id, user_id, status, total, timestamps)",
+        "payments": "Payments (id, order_id, method, amount, status)",
+        "categories": "Categories (id, name, parent_id, description)"
+      },
+      "line4": "適切な外部キー関係と制約を含む",
+      "line5": "頻繁にクエリされるカラムにインデックスを追加",
+      "line6": "すべてのテーブルに created_at と updated_at タイムスタンプを含む",
+      "line7": "適切な箇所に論理削除（ソフトデリート）サポートを追加",
+      "line8": "マイグレーションスクリプト（up と down）を含む",
+      "line9": "開発およびテスト用のシードデータを追加",
+      "line10": "ER 図の説明を含む"
+    },
+    "buildScript": {
+      "line1": "{{task}} の自動化スクリプトを書いてください",
+      "line2": "{{lang}} プログラミング言語を使用",
+      "line3": "入力：{{input}}",
+      "line4": "出力：{{output}}",
+      "line5": "エラーハンドリングとロギングを含む",
+      "line6": "コマンドライン引数のサポートを追加",
+      "line7": "テスト用のドライランモードを含む",
+      "line8": "長時間タスクの進捗インジケーターを追加",
+      "line9": "終了時の適切なファイル/リソースクリーンアップを含む",
+      "line10": "再利用可能な設定のための設定ファイルサポートを追加"
+    },
+    "buildBot": {
+      "line1": "{{name}} チャットボットを構築してください",
+      "line2": "プラットフォーム：{{platform}}",
+      "line3": "バックエンドに {{lang}} を使用",
+      "line4": "以下の機能を含めること：",
+      "features": {
+        "greet": "ウェルカム / 挨拶メッセージ",
+        "faq": "FAQ 自動応答",
+        "moderate": "コンテンツモデレーション",
+        "notify": "スケジュール通知",
+        "customCommands": "カスタムスラッシュコマンド"
+      },
+      "line5": "柔軟な入力に対応する自然言語理解を含む",
+      "line6": "会話コンテキストとメモリを追加",
+      "line7": "設定用の管理ダッシュボードを含む",
+      "line8": "分析と使用状況トラッキングを追加",
+      "line9": "スパム防止のためのレート制限を含む",
+      "line10": "認識できない入力に対する丁寧なエラーメッセージを追加"
+    },
+    "buildExtension": {
+      "line1": "{{name}} ブラウザ拡張機能を構築してください",
+      "line2": "対象ブラウザ：{{browser}}",
+      "line3": "目的：{{purpose}}",
+      "line4": "以下の機能を含めること：",
+      "features": {
+        "popup": "クイックアクション付きポップアップ UI",
+        "contentScript": "ページ操作用コンテンツスクリプト",
+        "background": "バックグラウンドサービスワーカー",
+        "optionsPage": "オプション/設定ページ",
+        "storage": "ユーザー設定用ローカルストレージ"
+      },
+      "line5": "Manifest V3 仕様を使用",
+      "line6": "適切なパーミッション（必要最小限）を含む",
+      "line7": "主要アクションのキーボードショートカットを追加",
+      "line8": "コンテキストメニュー統合を含む",
+      "line9": "状態に応じたバッジ/アイコンの更新を追加",
+      "line10": "ウェブストア掲載用アセットと説明文を含む"
+    },
+    "buildGame": {
+      "line1": "{{name}} {{genre}} ゲームを構築してください",
+      "line2": "{{engine}} エンジン/フレームワークを使用",
+      "line3": "対象プラットフォーム：{{platform}}",
+      "line4": "コアゲームメカニクス：",
+      "mechanics": {
+        "movement": "プレイヤーの移動と操作",
+        "combat": "戦闘 / インタラクションシステム",
+        "inventory": "インベントリ管理",
+        "scoring": "スコア / 進行システム",
+        "levels": "レベルデザインと進行"
+      },
+      "line5": "メインメニュー、ポーズ、ゲームオーバー画面を含む",
+      "line6": "効果音とBGMを追加",
+      "line7": "ゲーム状態のセーブ/ロードを含む",
+      "line8": "難易度設定（イージー、ノーマル、ハード）を追加",
+      "line9": "チュートリアルまたはオンボーディングレベルを含む",
+      "line10": "パーティクルエフェクトとビジュアルフィードバックを追加"
+    },
+    "buildCliTool": {
+      "line1": "{{name}} CLI ツールを構築してください",
+      "line2": "{{lang}} プログラミング言語を使用",
+      "line3": "目的：{{purpose}}",
+      "line4": "以下のコマンドをサポートすること：",
+      "commands": {
+        "init": "init - 新しいプロジェクトを初期化",
+        "create": "create - 新しいリソースを作成",
+        "list": "list - すべてのリソースを一覧表示",
+        "config": "config - 設定を管理",
+        "help": "help - 使用方法を表示"
+      },
+      "line5": "カラー付きターミナル出力を含む",
+      "line6": "必須入力のインタラクティブプロンプトを追加",
+      "line7": "設定ファイル（~/.toolrc）を含む",
+      "line8": "--verbose と --quiet フラグを追加",
+      "line9": "シェル自動補完スクリプトを含む",
+      "line10": "man ページまたは組み込みヘルプドキュメントを追加"
+    }
+  }
+}
