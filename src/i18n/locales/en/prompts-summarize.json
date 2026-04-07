@@ -23,7 +23,7 @@
     "summarizeMeeting": {
       "line1": "Summarize the following {{type}} meeting",
       "line2": "List attendees and their roles if mentioned",
-      "line3": "Start with a 2-sentence overview of the meeting's purpose and outcome",
+      "line3": "Start with a {{length}} overview of the meeting's purpose and outcome",
       "line4": "List all decisions that were made, clearly stated",
       "line5": "Extract action items in format: [Owner] — task — deadline",
       "line6": "Note any open questions or issues that need follow-up",
@@ -99,6 +99,28 @@
       "line8": "Capture important context or background mentioned",
       "line9": "List any links, resources, or references shared",
       "line10": "Provide a brief status: what's done, what's pending, what's blocked"
+    },
+    "summarizeEmail": {
+      "line1": "Summarize this {{type}} for me",
+      "line2": "Output format: {{format}}",
+      "line3": "Identify the sender(s), recipient(s), and date range",
+      "line4": "Extract the main topic or purpose of the correspondence",
+      "line5": "List all action items, requests, or asks with who is responsible",
+      "line6": "Note any deadlines, dates, or time-sensitive information",
+      "line7": "Highlight decisions made or agreements reached",
+      "line8": "Flag anything that requires my response or follow-up"
+    },
+    "summarizeReport": {
+      "line1": "Summarize this {{type}} report",
+      "line2": "Target audience: {{audience}}",
+      "line3": "Provide a 2-3 sentence executive summary of the key findings",
+      "line4": "List the most important metrics, KPIs, or data points",
+      "line5": "Highlight trends — what's improving, declining, or unchanged",
+      "line6": "Summarize any recommendations or proposed actions",
+      "line7": "Note risks, concerns, or red flags raised in the report",
+      "line8": "Identify who is responsible for each action or follow-up",
+      "line9": "Compare with previous period if data is available",
+      "line10": "Create a quick-reference table of the most critical numbers"
     }
   }
 }
