@@ -4,6 +4,17 @@ import type { BubbleNode } from '../data/types';
 import type { BubbleRole } from '../physics/types';
 
 /* ------------------------------------------------------------------ */
+/*  Module-level lookup map (built once, O(1) lookups)                 */
+/* ------------------------------------------------------------------ */
+
+const nodeMap = new Map<string, BubbleNode>();
+function buildNodeMap(node: BubbleNode) {
+  nodeMap.set(node.id, node);
+  node.children?.forEach(buildNodeMap);
+}
+buildNodeMap(bubbleTree);
+
+/* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
 
@@ -100,15 +111,5 @@ function addHoverRevealed(
 }
 
 function findNodeById(id: string): BubbleNode | undefined {
-  function search(node: BubbleNode): BubbleNode | undefined {
-    if (node.id === id) return node;
-    if (node.children) {
-      for (const child of node.children) {
-        const found = search(child);
-        if (found) return found;
-      }
-    }
-    return undefined;
-  }
-  return search(bubbleTree);
+  return nodeMap.get(id);
 }

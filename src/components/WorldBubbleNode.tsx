@@ -4,6 +4,7 @@ import type { PhysicsBubble } from '../physics/types';
 import { TEXT_MIN_FONT_SIZE, TEXT_DESC_FONT_SIZE } from '../physics/constants';
 import { getTopicIcon } from '../utils/topicIcons';
 import { TopicIconSvg } from '../utils/TopicIconSvg';
+import { useCyclingText } from '../hooks/useCyclingText';
 
 /* ------------------------------------------------------------------ */
 /*  Constants                                                          */
@@ -119,10 +120,17 @@ export const WorldBubbleNode = forwardRef<SVGGElement, WorldBubbleNodeProps>(
     const strokeColor = getStrokeColor(role);
     const borderWidth = getBorderWidth(role);
 
+    // Cycling questions for root focused bubble
+    const isRootFocused = node.id === 'root' && role === 'focused';
+    const questions = tCommon('bubble.questions', { returnObjects: true }) as string[];
+    const cycling = useCyclingText(isRootFocused ? questions : []);
+
     const label =
       role === 'goBack'
         ? `\u2190 ${tCommon('bubble.goBack', 'Go Back')}`
-        : t(node.labelKey);
+        : isRootFocused
+          ? cycling.text
+          : t(node.labelKey);
 
     const handleClick = useCallback(
       (e: React.MouseEvent) => {
@@ -133,7 +141,9 @@ export const WorldBubbleNode = forwardRef<SVGGElement, WorldBubbleNodeProps>(
     );
 
     const descKeys = node.descriptionKeys;
-    const hasDesc = descKeys && descKeys.length > 0 && role !== 'goBack';
+    // hoverRevealed bubbles are too small to show descriptions, so treat as no-desc
+    // to avoid icon shifting upward for invisible text
+    const hasDesc = descKeys && descKeys.length > 0 && role !== 'goBack' && role !== 'hoverRevealed';
     const topicIcon = role !== 'goBack' ? getTopicIcon(node.id) : null;
 
     // Determine tooltip position: above or below based on bubble Y position
@@ -187,7 +197,14 @@ export const WorldBubbleNode = forwardRef<SVGGElement, WorldBubbleNodeProps>(
             fontSize={TEXT_MIN_FONT_SIZE}
             fontWeight={600}
             fontFamily="'Inter', sans-serif"
-            style={{ pointerEvents: 'none', userSelect: 'none' }}
+            style={{
+              pointerEvents: 'none',
+              userSelect: 'none',
+              ...(isRootFocused && {
+                opacity: cycling.opacity,
+                transition: 'opacity 0.5s ease',
+              }),
+            }}
           >
             {label}
           </text>

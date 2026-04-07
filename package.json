@@ -17,7 +17,8 @@
     "validate": "npx tsx scripts/validate-data.ts",
     "read-data": "npx tsx scripts/read-data.ts",
     "write-data": "npx tsx scripts/write-data.ts",
-    "test:e2e": "npx playwright test"
+    "test:e2e": "npx playwright test",
+    "compare-i18n": "npx tsx scripts/compare-i18n.ts"
   },
   "dependencies": {
     "d3-hierarchy": "^3.1.2",

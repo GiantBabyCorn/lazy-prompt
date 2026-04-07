@@ -16,6 +16,7 @@ export class PhysicsEngine {
   settled = false;
 
   private onActiveSetChange: (() => void) | null = null;
+  private _cachedActive: PhysicsBubble[] | null = null;
 
   constructor(root: BubbleNode) {
     this.initBubbles(root, null, 0);
@@ -161,6 +162,7 @@ export class PhysicsEngine {
         b.settledFrames = 0;
       }
       this.settled = false;
+      this.invalidateActiveCache();
       this.onActiveSetChange?.();
     }
   }
@@ -230,8 +232,13 @@ export class PhysicsEngine {
     const active = this.getActiveBubbles();
 
     this.updateActivationTransitions(active, dt);
-    this.updateGrowth(active, dt);
-    this.resolveCollisions(active, dt);
+
+    // Single O(n²) pass: resolve collisions + compute per-bubble min gap
+    const minGaps = this.resolveCollisionsAndComputeGaps(active, dt);
+
+    // Growth uses pre-computed gaps (O(n) instead of O(n²))
+    this.updateGrowth(active, dt, minGaps);
+
     this.applySpringLinks(active);
     this.applyPinning(active);
     this.applyGoBackPull(active);
@@ -265,34 +272,25 @@ export class PhysicsEngine {
     }
   }
 
-  private updateGrowth(active: PhysicsBubble[], dt: number) {
+  private updateGrowth(active: PhysicsBubble[], dt: number, minGaps: number[]) {
     const maxR = this.maxVisualRadius;
 
-    for (const b of active) {
+    for (let idx = 0; idx < active.length; idx++) {
+      const b = active[idx];
       if (b.activation !== 'active' || b.frozen) continue;
 
       const depthFactor = 1 / (1 + b.depth * 0.3);
       const growthDelta = PHYSICS.BASE_GROWTH_RATE * depthFactor * dt;
 
-      // Check if growth would overshoot — find min gap to any neighbor
+      // Check if growth would overshoot
       const currentR = b.visualRadius;
       const nextR = b.initialRadius * (b.growthMultiplier + growthDelta) * b.activationProgress;
       const growth = nextR - currentR;
 
       if (growth <= 0) continue;
 
-      // Find minimum available space for growth
-      let minGap = Infinity;
-      for (const other of active) {
-        if (other.id === b.id || other.activation === 'deactivating') continue;
-        const dx = other.x - b.x;
-        const dy = other.y - b.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        const gap = dist - currentR - other.visualRadius;
-        if (gap < minGap) minGap = gap;
-      }
-
-      // Also consider boundary
+      // Use pre-computed neighbor gap, also consider boundary
+      let minGap = minGaps[idx];
       const boundaryGap = Math.min(b.x, this.width - b.x, b.y, this.height - b.y) - currentR;
       if (boundaryGap < minGap) minGap = boundaryGap;
 
@@ -327,23 +325,36 @@ export class PhysicsEngine {
     }
   }
 
-  private resolveCollisions(active: PhysicsBubble[], dt: number) {
-    for (let i = 0; i < active.length; i++) {
-      for (let j = i + 1; j < active.length; j++) {
+  /** Single O(n²) pass: resolves collisions AND computes per-bubble min gap for growth. */
+  private resolveCollisionsAndComputeGaps(active: PhysicsBubble[], dt: number): number[] {
+    const n = active.length;
+    const minGaps = new Array<number>(n).fill(Infinity);
+
+    for (let i = 0; i < n; i++) {
+      for (let j = i + 1; j < n; j++) {
         const a = active[i];
         const b = active[j];
-        if (a.frozen && b.frozen) continue;
 
         const dx = b.x - a.x;
         const dy = b.y - a.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        const sumR = a.visualRadius + b.visualRadius;
 
-        if (dist < sumR + PHYSICS.BUFFER) {
-          this.handleCollision(a, b, dx, dy, dist, sumR, dt);
+        // Track min gap for growth (exclude deactivating neighbors)
+        const gap = dist - a.visualRadius - b.visualRadius;
+        if (b.activation !== 'deactivating' && gap < minGaps[i]) minGaps[i] = gap;
+        if (a.activation !== 'deactivating' && gap < minGaps[j]) minGaps[j] = gap;
+
+        // Collision resolution
+        if (!(a.frozen && b.frozen)) {
+          const sumR = a.visualRadius + b.visualRadius;
+          if (dist < sumR + PHYSICS.BUFFER) {
+            this.handleCollision(a, b, dx, dy, dist, sumR, dt);
+          }
         }
       }
     }
+
+    return minGaps;
   }
 
   private handleCollision(
@@ -546,12 +557,12 @@ export class PhysicsEngine {
       // If touching wall AND overlapping a neighbor, shrink to relieve pressure
       if (touchingWall && !b.frozen) {
         for (const other of active) {
-          if (other.id === b.id) continue;
+          if (other.id === b.id || other.activation === 'deactivating' || other.frozen) continue;
           const dx = other.x - b.x;
           const dy = other.y - b.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          const overlap = b.visualRadius + other.visualRadius - dist;
-          if (overlap > PHYSICS.BUFFER) {
+          const distSq = dx * dx + dy * dy;
+          const sumR = b.visualRadius + other.visualRadius;
+          if (sumR - Math.sqrt(distSq) > PHYSICS.BUFFER) {
             // Squeezed between wall and neighbor — shrink
             const shrink = PHYSICS.SQUEEZE_SHRINK_RATE * dt;
             if (shrink >= PHYSICS.SHRINK_THRESHOLD) {
@@ -630,18 +641,27 @@ export class PhysicsEngine {
         changed = true;
       }
     }
-    if (changed) this.onActiveSetChange?.();
+    if (changed) {
+      this.invalidateActiveCache();
+      this.onActiveSetChange?.();
+    }
+  }
+
+  private invalidateActiveCache() {
+    this._cachedActive = null;
   }
 
   /* ---- Queries ---- */
 
   getActiveBubbles(): PhysicsBubble[] {
-    const result: PhysicsBubble[] = [];
-    for (const id of this.activeBubbleIds) {
-      const b = this.bubbles.get(id);
-      if (b) result.push(b);
+    if (this._cachedActive === null) {
+      this._cachedActive = [];
+      for (const id of this.activeBubbleIds) {
+        const b = this.bubbles.get(id);
+        if (b) this._cachedActive.push(b);
+      }
     }
-    return result;
+    return this._cachedActive;
   }
 
   getBubble(id: string): PhysicsBubble | undefined {

@@ -25,7 +25,33 @@
     "clickToExplore": "Haz clic en una burbuja para explorar",
     "layerN": "Capa {{n}}",
     "buildPrompt": "¡Crear Prompt!",
-    "selectFromList": "Selecciona una categoría"
+    "selectFromList": "Selecciona una categoría",
+    "questions": [
+      "¿En qué estás trabajando?",
+      "¿Qué puedo ayudarte a crear?",
+      "¿Qué te gustaría crear?",
+      "¿Qué problema estás resolviendo?",
+      "¿Qué tarea te trae aquí?",
+      "¿Qué estás intentando hacer?",
+      "¿En qué deberíamos trabajar?",
+      "¿Cuál es tu próximo paso?",
+      "Elige una burbuja para empezar",
+      "Explora y construye tu prompt",
+      "Construyamos algo juntos",
+      "Toca un tema para comenzar",
+      "Encuentra el prompt perfecto para ti",
+      "Navega a tu tarea",
+      "Comienza con una categoría",
+      "¿Listo para promptear mejor?",
+      "¿Qué crearás hoy?",
+      "Deja que la IA haga lo difícil",
+      "Crea prompts, no estrés",
+      "¿Cuál es el desafío de hoy?",
+      "¿Por dónde empezamos?",
+      "Hagamos algo genial",
+      "¿Necesitas un prompt? Empieza aquí",
+      "A un clic del prompt perfecto"
+    ]
   },
   "prompt": {
     "copy": "Copiar",
@@ -35,7 +61,8 @@
     "addItem": "Haz clic para añadir",
     "result": "Tu Prompt",
     "copiedAndOpening": "¡Prompt copiado! Abriendo {{name}}...",
-    "copyAndOpen": "Copiar prompt y abrir sitio"
+    "copyAndOpen": "Copiar prompt y abrir sitio",
+    "contentPlaceholder": "Pega tu contenido aquí (código, texto, datos)..."
   },
   "about": {
     "description": "Lazy Prompt es una aplicación web interactiva basada en burbujas que te ayuda a crear prompts de IA detallados y bien estructurados en segundos. Navega por categorías visuales, personaliza campos editables y envía directamente a tu proveedor de IA favorito.",
@@ -60,8 +87,5 @@
     "gotIt": "Entendido",
     "skip": "Omitir",
     "done": "Listo"
-  },
-  "prompt": {
-    "contentPlaceholder": "Pega tu contenido aquí (código, texto, datos)..."
   }
 }

@@ -34,14 +34,14 @@ export function WorldConnectorLines({ bubbles, getBubble }: WorldConnectorLinesP
             <line
               key={`line-${b.id}`}
               data-child-id={b.id}
-              x1={parent.x}
-              y1={parent.y}
-              x2={b.x}
-              y2={b.y}
+              x1={0}
+              y1={0}
+              x2={0}
+              y2={0}
               stroke={color}
               strokeWidth={1.5}
               strokeDasharray="6 4"
-              strokeOpacity={0.5}
+              strokeOpacity={0}
             />
           );
         })}

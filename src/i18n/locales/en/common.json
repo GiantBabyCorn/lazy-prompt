@@ -25,7 +25,33 @@
     "clickToExplore": "Click a bubble to explore",
     "layerN": "Layer {{n}}",
     "buildPrompt": "Build Prompt!",
-    "selectFromList": "Select a category"
+    "selectFromList": "Select a category",
+    "questions": [
+      "What are you working on?",
+      "What can I help you build?",
+      "What would you like to create?",
+      "What problem are you solving?",
+      "What task brings you here?",
+      "What are you trying to do?",
+      "What should we work on?",
+      "What's your next move?",
+      "Pick a bubble to start",
+      "Explore and build your prompt",
+      "Let's build something together",
+      "Tap a topic to begin",
+      "Find the right prompt for you",
+      "Navigate to your task",
+      "Begin with a category",
+      "Ready to prompt smarter?",
+      "What will you create today?",
+      "Let AI handle the hard part",
+      "Build prompts, not stress",
+      "What's today's challenge?",
+      "Where do we begin?",
+      "Let's make something great",
+      "Need a prompt? Start here",
+      "One click from the perfect prompt"
+    ]
   },
   "prompt": {
     "copy": "Copy",
@@ -35,7 +61,8 @@
     "addItem": "Click to add",
     "result": "Your Prompt",
     "copiedAndOpening": "Prompt copied! Opening {{name}}...",
-    "copyAndOpen": "Copy prompt & open site"
+    "copyAndOpen": "Copy prompt & open site",
+    "contentPlaceholder": "Paste your content here (code, text, data)..."
   },
   "about": {
     "description": "Lazy Prompt is an interactive bubble-based web app that helps you build detailed, well-structured AI prompts in seconds. Navigate through visual categories, customize your prompt with editable fields, and send it directly to your favorite AI provider.",
@@ -60,8 +87,5 @@
     "gotIt": "Got it",
     "skip": "Skip",
     "done": "Done"
-  },
-  "prompt": {
-    "contentPlaceholder": "Paste your content here (code, text, data)..."
   }
 }

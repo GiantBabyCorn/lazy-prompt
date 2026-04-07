@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import type { BubbleNode } from '../data/types';
 import { getTopicIcon } from '../utils/topicIcons';
 import { TopicIconHtml } from '../utils/TopicIconHtml';
+import { useCyclingText } from '../hooks/useCyclingText';
 
 interface BubbleListProps {
   currentNode: BubbleNode;
@@ -23,6 +24,11 @@ export function BubbleList({
   const { t } = useTranslation('prompts');
   const { t: tCommon } = useTranslation('common');
 
+  // Cycling questions for root title
+  const isRoot = currentNode.id === 'root';
+  const questions = tCommon('bubble.questions', { returnObjects: true }) as string[];
+  const cycling = useCyclingText(isRoot ? questions : []);
+
   const handleItemClick = (child: BubbleNode) => {
     if (child.children && child.children.length > 0) {
       onNavigate(child.id);
@@ -43,7 +49,12 @@ export function BubbleList({
             ← {tCommon('goBack', 'Go Back')}
           </button>
         )}
-        <h2 className="bubble-list__title">{t(currentNode.labelKey)}</h2>
+        <h2
+          className="bubble-list__title"
+          style={isRoot ? { opacity: cycling.opacity, transition: 'opacity 0.5s ease' } : undefined}
+        >
+          {isRoot ? cycling.text : t(currentNode.labelKey)}
+        </h2>
         {currentNode.descriptionKeys && currentNode.descriptionKeys.length > 0 && (
           <p className="bubble-list__desc">
             {currentNode.descriptionKeys.map((k) => t(k)).join(', ')}

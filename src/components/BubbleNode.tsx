@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { getTopicIcon } from '../utils/topicIcons';
 import { TopicIconSvg } from '../utils/TopicIconSvg';
+import { useCyclingText } from '../hooks/useCyclingText';
 import {
   FONT_SIZE,
   DESC_FONT_SIZE,
@@ -75,7 +76,13 @@ export function BubbleNodeSvg({
   const borderWidth = BORDER_WIDTH[variant] ?? BORDER_WIDTH.primary;
   const fontSize = FONT_SIZE[variant] ?? FONT_SIZE.primary;
   const descFontSize = DESC_FONT_SIZE[variant] ?? DESC_FONT_SIZE.primary;
-  const label = t(labelKey);
+
+  // Cycling questions for root hub bubble
+  const isRootHub = nodeId === 'root' && variant === 'hub';
+  const questions = tCommon('bubble.questions', { returnObjects: true }) as string[];
+  const cycling = useCyclingText(isRootHub ? questions : []);
+  const label = isRootHub ? cycling.text : t(labelKey);
+
   const showDesc = variant !== 'preview' && radius >= DESC_MIN_RADIUS;
   const descriptions = showDesc ? descriptionKeys?.map((k) => t(k)) : undefined;
   const topicIcon = nodeId && variant !== 'preview' ? getTopicIcon(nodeId) : null;
@@ -207,7 +214,14 @@ export function BubbleNodeSvg({
         fontSize={fontSize}
         fontWeight={600}
         fontFamily="'Inter', sans-serif"
-        style={{ pointerEvents: 'none', userSelect: 'none' }}
+        style={{
+          pointerEvents: 'none',
+          userSelect: 'none',
+          ...(isRootHub && {
+            opacity: cycling.opacity,
+            transition: 'opacity 0.5s ease',
+          }),
+        }}
       >
         {wrapText(label, radius * 1.4, fontSize)}
       </text>

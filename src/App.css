@@ -230,6 +230,7 @@ a:hover {
    ============================================================ */
 
 .bubble-view {
+  position: relative;
   height: calc(100vh - 61px);
   display: flex;
   flex-direction: column;

@@ -26,6 +26,10 @@ export function usePhysicsSimulation(
   const svgRefsMap = useRef<Map<string, SVGGElement>>(new Map());
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Cached line element refs (rebuilt when rendered set changes)
+  const lineCacheRef = useRef<Map<string, SVGLineElement>>(new Map());
+  const lineCacheDirtyRef = useRef(true);
+
   // Track canvas readiness (has been resized at least once)
   const [canvasReady, setCanvasReady] = useState(false);
 
@@ -42,6 +46,7 @@ export function usePhysicsSimulation(
   useEffect(() => {
     engine.setOnActiveSetChange(() => {
       setRenderedIds(Array.from(engine.activeBubbleIds));
+      lineCacheDirtyRef.current = true;
     });
   }, [engine]);
 
@@ -159,76 +164,77 @@ export function usePhysicsSimulation(
       const dt = (time - lastTimeRef.current) / 1000;
       lastTimeRef.current = time;
 
-      engine.tick(dt);
+      // Skip all work when simulation is settled (no movement)
+      if (!engine.settled) {
+        engine.tick(dt);
 
-      // Direct DOM updates (bypass React)
-      const activeBubbles = engine.getActiveBubbles();
-      for (const b of activeBubbles) {
-        const g = svgRefsMap.current.get(b.id);
-        if (!g) continue;
+        // Direct DOM updates (bypass React)
+        const activeBubbles = engine.getActiveBubbles();
+        for (const b of activeBubbles) {
+          const g = svgRefsMap.current.get(b.id);
+          if (!g) continue;
 
-        g.setAttribute(
-          'transform',
-          `translate(${b.x.toFixed(1)}, ${b.y.toFixed(1)})`,
-        );
-        g.style.opacity = String(Math.max(0, b.activationProgress).toFixed(2));
+          g.setAttribute('transform', `translate(${b.x}, ${b.y})`);
+          g.style.opacity = String(Math.max(0, b.activationProgress));
 
-        const r = Math.max(0, b.visualRadius);
-        const rStr = r.toFixed(1);
+          const r = Math.max(0, b.visualRadius);
 
-        // Update visible border circle
-        const border = g.querySelector('.bubble-border');
-        if (border) border.setAttribute('r', rStr);
+          // Update visible border circle
+          const border = g.querySelector('.bubble-border');
+          if (border) border.setAttribute('r', String(r));
 
-        // Dynamic text sizing
-        const label = g.querySelector('.bubble-label') as SVGTextElement | null;
-        const desc = g.querySelector('.bubble-desc') as SVGTextElement | null;
+          // Dynamic text sizing
+          const label = g.querySelector('.bubble-label') as SVGTextElement | null;
+          const desc = g.querySelector('.bubble-desc') as SVGTextElement | null;
 
-        if (label) {
-          // Scale font when bubble is large enough
-          let fontSize = TEXT_MIN_FONT_SIZE;
-          if (r > TEXT_SCALE_UP_RADIUS) {
-            const scale = Math.min(r / TEXT_SCALE_UP_RADIUS, TEXT_MAX_FONT_SIZE / TEXT_MIN_FONT_SIZE);
-            fontSize = Math.round(TEXT_MIN_FONT_SIZE * scale);
-          }
-          label.setAttribute('font-size', String(fontSize));
+          if (label) {
+            // Scale font when bubble is large enough
+            let fontSize = TEXT_MIN_FONT_SIZE;
+            if (r > TEXT_SCALE_UP_RADIUS) {
+              const scale = Math.min(r / TEXT_SCALE_UP_RADIUS, TEXT_MAX_FONT_SIZE / TEXT_MIN_FONT_SIZE);
+              fontSize = Math.round(TEXT_MIN_FONT_SIZE * scale);
+            }
+            label.setAttribute('font-size', String(fontSize));
 
-          // Shift label up when descriptions are visible
-          if (desc) {
-            const showDesc = r > TEXT_SHOW_DESC_RADIUS;
-            desc.style.display = showDesc ? '' : 'none';
-            label.setAttribute('y', showDesc ? String(-fontSize * 0.4) : '0');
-            if (showDesc) {
-              desc.setAttribute('y', String(fontSize * 0.5 + 2));
+            // Shift label up when descriptions are visible
+            if (desc) {
+              const showDesc = r > TEXT_SHOW_DESC_RADIUS;
+              desc.style.display = showDesc ? '' : 'none';
+              label.setAttribute('y', showDesc ? String(-fontSize * 0.4) : '0');
+              if (showDesc) {
+                desc.setAttribute('y', String(fontSize * 0.5 + 2));
+              }
             }
           }
         }
-      }
 
-      // Also update connector lines by re-rendering line positions
-      // (lines are rendered via React, but we update them directly for smoothness)
-      const linesGroup = containerRef.current?.querySelector(
-        '.world-connector-lines',
-      );
-      if (linesGroup) {
-        const lines = linesGroup.querySelectorAll('line');
-        lines.forEach((line) => {
-          const childId = line.getAttribute('data-child-id');
-          if (!childId) return;
-          const child = engine.getBubble(childId);
-          const parent = child?.parentId
-            ? engine.getBubble(child.parentId)
-            : null;
-          if (child && parent) {
-            line.setAttribute('x1', String(parent.x.toFixed(1)));
-            line.setAttribute('y1', String(parent.y.toFixed(1)));
-            line.setAttribute('x2', String(child.x.toFixed(1)));
-            line.setAttribute('y2', String(child.y.toFixed(1)));
-            // Update opacity based on current activation progress
-            const lineOpacity = Math.min(child.activationProgress, parent.activationProgress) * 0.5;
-            line.setAttribute('stroke-opacity', String(lineOpacity.toFixed(2)));
+        // Update connector lines via cached refs (avoids querySelectorAll per frame)
+        if (lineCacheDirtyRef.current) {
+          lineCacheRef.current.clear();
+          const linesGroup = containerRef.current?.querySelector('.world-connector-lines');
+          if (linesGroup) {
+            const lines = linesGroup.querySelectorAll('line');
+            lines.forEach((line) => {
+              const childId = line.getAttribute('data-child-id');
+              if (childId) lineCacheRef.current.set(childId, line);
+            });
           }
-        });
+          lineCacheDirtyRef.current = false;
+        }
+
+        for (const b of activeBubbles) {
+          const line = lineCacheRef.current.get(b.id);
+          if (!line) continue;
+          const parent = b.parentId ? engine.getBubble(b.parentId) : null;
+          if (parent) {
+            line.setAttribute('x1', String(parent.x));
+            line.setAttribute('y1', String(parent.y));
+            line.setAttribute('x2', String(b.x));
+            line.setAttribute('y2', String(b.y));
+            const lineOpacity = Math.min(b.activationProgress, parent.activationProgress) * 0.5;
+            line.setAttribute('stroke-opacity', String(lineOpacity));
+          }
+        }
       }
 
       rafRef.current = requestAnimationFrame(tick);
