@@ -333,11 +333,11 @@ Add a node WITH `children` array (no `promptTemplateId`):
   - Restructured read: replaced analysis-mode leaves with source-type leaves (contract, spreadsheet)
   - 88 templates across 10 categories, 124 nodes total
   - Full i18n for all new content across 6 locales
-  - Added .claude/content-audit-log.json for cross-session tracking
+  - Added .progress/content-audit-log.json for cross-session tracking
 
 ## Content Audit Log
 
-Agents performing content audits should read and update `.claude/content-audit-log.json`.
+Agents performing content audits should read and update `.progress/content-audit-log.json`.
 
 - **Purpose**: Track which bubble categories have been reviewed, expanded, or restructured across sessions.
 - **Fields per category**: `last_audited`, `audit_count`, `status` (good / needs-expansion / needs-restructure / well-structured), `notes`, `pending_improvements[]`.
