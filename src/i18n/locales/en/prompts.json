@@ -51,7 +51,9 @@
       "contract": "Contract",
       "spreadsheet": "Spreadsheet",
       "compare": "Compare",
-      "factCheck": "Fact-Check"
+      "factCheck": "Fact-Check",
+      "resume": "Resume / CV",
+      "transcript": "Transcript"
     },
     "organize": {
       "reports": "Reports",
@@ -73,7 +75,9 @@
       "devops": "DevOps",
       "performance": "Performance",
       "security": "Security",
-      "mobile": "Mobile"
+      "mobile": "Mobile",
+      "testing": "Testing",
+      "data": "Data Pipeline"
     },
     "brainstorm": {
       "product": "Product",
@@ -129,7 +133,9 @@
       "research": "Research Paper",
       "podcast": "Podcast",
       "legal": "Legal Document",
-      "conversation": "Conversation / Thread"
+      "conversation": "Conversation / Thread",
+      "email": "Email / Newsletter",
+      "report": "Report"
     }
   },
   "descriptions": {
@@ -216,6 +222,30 @@
       "line8": "Add Storybook stories for all variants",
       "line9": "Include unit tests with testing library",
       "line10": "Add theming support via CSS custom properties or design tokens"
+    },
+    "debugTesting": {
+      "line1": "Help me debug this failing {{type}} test",
+      "line2": "Testing framework: {{framework}}",
+      "line3": "Describe the failure: what does the test expect vs. what actually happens?",
+      "line4": "Is this test deterministic? Does it pass sometimes and fail other times (flaky)?",
+      "line5": "Check test isolation — does the test depend on global state, external services, or execution order?",
+      "line6": "Review the test setup/teardown — are fixtures, mocks, and test data properly initialized?",
+      "line7": "Check for timing issues: async operations, race conditions, or insufficient timeouts",
+      "line8": "Identify the root cause and provide the fix with corrected test code",
+      "line9": "Suggest ways to make this test more reliable and maintainable",
+      "line10": "Recommend CI-level strategies: retries, parallelization, test ordering"
+    },
+    "debugData": {
+      "line1": "Help me debug this {{pipeline}} data pipeline issue",
+      "line2": "Data source: {{source}}",
+      "line3": "Describe the issue: is data missing, duplicated, corrupted, or delayed?",
+      "line4": "Trace the data flow — at which stage does the data first become incorrect?",
+      "line5": "Check schema compatibility — have any upstream schemas changed recently?",
+      "line6": "Look for null/empty handling issues — are edge cases properly accounted for?",
+      "line7": "Check for idempotency — does rerunning the pipeline produce the same results?",
+      "line8": "Verify data volume — is the issue triggered by scale (too many or too few records)?",
+      "line9": "Provide the fix and explain how to validate the corrected output",
+      "line10": "Suggest data quality checks and monitoring to catch issues early"
     }
   }
 }

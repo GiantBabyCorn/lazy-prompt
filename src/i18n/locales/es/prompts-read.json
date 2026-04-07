@@ -4,7 +4,7 @@
       "line1": "Lee y analiza la siguiente página web: {{url}}",
       "line2": "Extrae solo el contenido principal del artículo — ignora la navegación, anuncios, barras laterales y pies de página",
       "line3": "Proporciona un resumen estructurado con el título de la página, autor (si se encuentra) y fecha de publicación",
-      "line4": "Enumera las afirmaciones o argumentos clave presentados en la página",
+      "line4": "Enumera los {{focus}} clave presentados en la página",
       "line5": "Evalúa la credibilidad de la fuente: verifica las credenciales del autor, citas y posible sesgo",
       "line6": "Extrae cualquier dato, estadística o cita que valga la pena destacar",
       "line7": "Identifica cualquier enlace externo o referencia que parezca importante para lectura adicional",
@@ -17,13 +17,13 @@
       "line4": "Identifica cualquier inconsistencia, vacío o problema potencial en el contenido",
       "line5": "Extrae todos los elementos accionables, recomendaciones y próximos pasos",
       "line6": "Anota cualquier referencia o cita que valga la pena investigar",
-      "line7": "Resume el argumento o tesis principal en 2-3 oraciones",
+      "line7": "Resume el argumento o tesis principal en {{count}} oraciones",
       "line8": "Evalúa la fiabilidad de la fuente y señala cualquier sesgo o limitación",
       "line9": "Crea un glosario de términos clave si el documento utiliza vocabulario especializado",
       "line10": "Sugiere 3-5 preguntas de seguimiento basadas en el contenido"
     },
     "readEmail": {
-      "line1": "Lee y analiza el siguiente correo electrónico",
+      "line1": "Lee y analiza el siguiente correo electrónico de {{context}}",
       "line2": "Identifica la intención del remitente: ¿qué quiere de mí?",
       "line3": "Extrae todos los elementos de acción y plazos mencionados",
       "line4": "Analiza el tono — ¿es urgente, casual, formal, pasivo-agresivo o amigable?",
@@ -82,7 +82,7 @@
     },
     "readCompare": {
       "line1": "Compara los siguientes {{count}} documentos/fuentes lado a lado",
-      "line2": "Crea una tabla comparativa con las dimensiones clave de cada fuente",
+      "line2": "Crea una tabla comparativa con los {{focus}} de cada fuente",
       "line3": "Identifica dónde coinciden las fuentes y qué tienen en común",
       "line4": "Destaca dónde se contradicen entre sí, con citas específicas si es posible",
       "line5": "Evalúa qué fuente es más creíble en cada punto de desacuerdo",
@@ -90,8 +90,32 @@
       "line7": "Sintetiza las fuentes en una comprensión unificada cuando sea posible",
       "line8": "Concluye indicando qué fuente es la más fiable en general y por qué"
     },
+    "readResume": {
+      "line1": "Analiza el siguiente currículum para un puesto de {{role}}",
+      "line2": "Evalúa según las expectativas de nivel {{level}}",
+      "line3": "Resume la trayectoria del candidato en 2-3 oraciones",
+      "line4": "Enumera las habilidades y tecnologías clave con años de experiencia cuando se mencionen",
+      "line5": "Evalúa la relevancia de la formación académica y certificaciones para el puesto",
+      "line6": "Evalúa la experiencia laboral: progresión profesional, logros e impacto medible",
+      "line7": "Señala vacíos, inconsistencias o señales de alerta en la línea temporal",
+      "line8": "Califica la presentación del currículum: claridad, formato y concisión",
+      "line9": "Sugiere 5 preguntas de entrevista adaptadas a este candidato",
+      "line10": "Evaluación general: fortalezas, debilidades y recomendación de contratación"
+    },
+    "readTranscript": {
+      "line1": "Analiza esta transcripción de {{type}}",
+      "line2": "Identifica a todos los participantes y sus roles en la conversación",
+      "line3": "Enumera los principales temas discutidos con marcas de tiempo si están disponibles",
+      "line4": "Extrae todas las decisiones tomadas y quién las tomó",
+      "line5": "Enumera todos los puntos de acción con responsables asignados y plazos",
+      "line6": "Resume los {{count}} puntos más importantes",
+      "line7": "Señala cualquier desacuerdo, tensión o problema sin resolver",
+      "line8": "Identifica cualquier compromiso, promesa o seguimiento necesario",
+      "line9": "Destaca citas o declaraciones importantes que valga la pena resaltar",
+      "line10": "Proporciona un resumen ejecutivo conciso (3-5 oraciones)"
+    },
     "readFactCheck": {
-      "line1": "Verifica los hechos del siguiente contenido afirmación por afirmación",
+      "line1": "Verifica los hechos del siguiente {{topic}} afirmación por afirmación",
       "line2": "Enumera cada afirmación factual hecha en el contenido",
       "line3": "Para cada afirmación, califícala: Verificado / Mayormente Verdadero / Engañoso / Falso / No Verificable",
       "line4": "Proporciona evidencia o razonamiento para cada calificación",
@@ -99,7 +123,7 @@
       "line6": "Verifica falacias lógicas: hombre de paja, falsa dicotomía, apelación a la autoridad, etc.",
       "line7": "Señala cualquier contexto importante que el contenido omite",
       "line8": "Identifica el encuadre general o sesgo narrativo",
-      "line9": "Sugiere fuentes más fiables para el mismo tema",
+      "line9": "Sugiere {{count}} fuentes más fiables para el mismo tema",
       "line10": "Da una puntuación de precisión general (1-10) con resumen"
     }
   }

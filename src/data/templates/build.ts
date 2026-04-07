@@ -11,8 +11,16 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "bw1-name",
-            "placeholder": "OOO",
-            "color": "yellow"
+            "placeholder": "my portfolio site",
+            "color": "yellow",
+            "suggestions": [
+              "my portfolio site",
+              "a company landing page",
+              "an e-commerce store",
+              "a blog",
+              "a SaaS product page",
+              "a documentation site"
+            ]
           }
         ]
       },
@@ -184,8 +192,16 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "ba1-name",
-            "placeholder": "OOO",
-            "color": "yellow"
+            "placeholder": "my task manager app",
+            "color": "yellow",
+            "suggestions": [
+              "my task manager app",
+              "a fitness tracker",
+              "a recipe organizer",
+              "a budget planner",
+              "a habit tracker",
+              "a note-taking app"
+            ]
           }
         ]
       },
@@ -454,8 +470,16 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "bapi1-name",
-            "placeholder": "OOO",
-            "color": "yellow"
+            "placeholder": "my REST API",
+            "color": "yellow",
+            "suggestions": [
+              "my REST API",
+              "a user authentication service",
+              "a payment processing API",
+              "a content management API",
+              "an e-commerce backend",
+              "a notification service"
+            ]
           },
           {
             "id": "bapi1-style",
@@ -713,8 +737,16 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "bs1-task",
-            "placeholder": "OOO",
-            "color": "yellow"
+            "placeholder": "automate data processing",
+            "color": "yellow",
+            "suggestions": [
+              "automate data processing",
+              "batch rename files",
+              "scrape a website",
+              "generate reports from logs",
+              "sync two directories",
+              "convert file formats"
+            ]
           }
         ]
       },
@@ -748,7 +780,15 @@ const templates: PromptTemplate[] = [
           {
             "id": "bs3-input",
             "placeholder": "CSV files in a directory",
-            "color": "green"
+            "color": "green",
+            "suggestions": [
+              "CSV files in a directory",
+              "JSON API responses",
+              "log files",
+              "database query results",
+              "command-line arguments",
+              "environment variables"
+            ]
           }
         ]
       },
@@ -760,7 +800,15 @@ const templates: PromptTemplate[] = [
           {
             "id": "bs4-output",
             "placeholder": "consolidated report",
-            "color": "green"
+            "color": "green",
+            "suggestions": [
+              "consolidated report",
+              "formatted CSV file",
+              "JSON summary",
+              "HTML dashboard",
+              "email notification",
+              "database entries"
+            ]
           }
         ]
       },
@@ -806,8 +854,16 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "bb1-name",
-            "placeholder": "OOO",
-            "color": "yellow"
+            "placeholder": "a customer support bot",
+            "color": "yellow",
+            "suggestions": [
+              "a customer support bot",
+              "a moderation bot",
+              "a trivia game bot",
+              "a scheduling assistant",
+              "a notification bot",
+              "an onboarding bot"
+            ]
           }
         ]
       },

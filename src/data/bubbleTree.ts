@@ -95,6 +95,8 @@ export const bubbleTree: BubbleNode = {
         { id: 'read-spreadsheet', labelKey: 'subcategories.read.spreadsheet', type: 'secondary', promptTemplateId: 'readSpreadsheet' },
         { id: 'read-compare', labelKey: 'subcategories.read.compare', type: 'secondary', promptTemplateId: 'readCompare' },
         { id: 'read-factcheck', labelKey: 'subcategories.read.factCheck', type: 'secondary', promptTemplateId: 'readFactCheck' },
+        { id: 'read-resume', labelKey: 'subcategories.read.resume', type: 'secondary', promptTemplateId: 'readResume' },
+        { id: 'read-transcript', labelKey: 'subcategories.read.transcript', type: 'secondary', promptTemplateId: 'readTranscript' },
       ],
     },
     {
@@ -170,6 +172,8 @@ export const bubbleTree: BubbleNode = {
         { id: 'summarize-podcast', labelKey: 'subcategories.summarize.podcast', type: 'secondary', promptTemplateId: 'summarizePodcast' },
         { id: 'summarize-legal', labelKey: 'subcategories.summarize.legal', type: 'secondary', promptTemplateId: 'summarizeLegal' },
         { id: 'summarize-conversation', labelKey: 'subcategories.summarize.conversation', type: 'secondary', promptTemplateId: 'summarizeConversation' },
+        { id: 'summarize-email', labelKey: 'subcategories.summarize.email', type: 'secondary', promptTemplateId: 'summarizeEmail' },
+        { id: 'summarize-report', labelKey: 'subcategories.summarize.report', type: 'secondary', promptTemplateId: 'summarizeReport' },
       ],
     },
     {
@@ -192,6 +196,8 @@ export const bubbleTree: BubbleNode = {
         { id: 'debug-performance', labelKey: 'subcategories.debug.performance', type: 'secondary', promptTemplateId: 'debugPerformance' },
         { id: 'debug-security', labelKey: 'subcategories.debug.security', type: 'secondary', promptTemplateId: 'debugSecurity' },
         { id: 'debug-mobile', labelKey: 'subcategories.debug.mobile', type: 'secondary', promptTemplateId: 'debugMobile' },
+        { id: 'debug-testing', labelKey: 'subcategories.debug.testing', type: 'secondary', promptTemplateId: 'debugTesting' },
+        { id: 'debug-data', labelKey: 'subcategories.debug.data', type: 'secondary', promptTemplateId: 'debugData' },
       ],
     },
     {

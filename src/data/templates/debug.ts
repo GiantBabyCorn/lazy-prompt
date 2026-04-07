@@ -32,8 +32,17 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "df2-error",
-            "placeholder": "describe the error or unexpected behavior",
-            "color": "green"
+            "placeholder": "component not rendering",
+            "color": "green",
+            "suggestions": [
+              "component not rendering",
+              "state not updating",
+              "CSS layout broken",
+              "infinite re-render loop",
+              "event handler not firing",
+              "blank white screen",
+              "hydration mismatch"
+            ]
           }
         ]
       },
@@ -111,8 +120,17 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "db2-error",
-            "placeholder": "describe the error or unexpected behavior",
-            "color": "green"
+            "placeholder": "request returns 500 error",
+            "color": "green",
+            "suggestions": [
+              "request returns 500 error",
+              "authentication failing",
+              "database connection timeout",
+              "memory leak under load",
+              "unexpected null response",
+              "middleware not executing",
+              "race condition in async handler"
+            ]
           }
         ]
       },
@@ -190,8 +208,17 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "dd2-error",
-            "placeholder": "describe the issue",
-            "color": "green"
+            "placeholder": "slow query performance",
+            "color": "green",
+            "suggestions": [
+              "slow query performance",
+              "deadlock detected",
+              "connection pool exhausted",
+              "data inconsistency",
+              "migration failed",
+              "replication lag",
+              "constraint violation"
+            ]
           }
         ]
       },
@@ -260,7 +287,15 @@ const templates: PromptTemplate[] = [
           {
             "id": "da1-endpoint",
             "placeholder": "/api/users",
-            "color": "yellow"
+            "color": "yellow",
+            "suggestions": [
+              "/api/users",
+              "/api/auth/login",
+              "/api/products",
+              "/api/orders",
+              "/api/payments",
+              "/api/upload"
+            ]
           }
         ]
       },
@@ -362,8 +397,17 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "dv2-error",
-            "placeholder": "describe the issue",
-            "color": "green"
+            "placeholder": "container fails to start",
+            "color": "green",
+            "suggestions": [
+              "container fails to start",
+              "build pipeline failing",
+              "deployment stuck in pending",
+              "SSL certificate expired",
+              "out of memory/disk space",
+              "DNS resolution failing",
+              "permission denied errors"
+            ]
           }
         ]
       },
@@ -524,6 +568,84 @@ const templates: PromptTemplate[] = [
       { "id": "dmb8", "textKey": "templates.debugMobile.line8", "type": "fixed" },
       { "id": "dmb9", "textKey": "templates.debugMobile.line9", "type": "fixed" },
       { "id": "dmb10", "textKey": "templates.debugMobile.line10", "type": "fixed" }
+    ]
+  },
+  {
+    "id": "debugTesting",
+    "sections": [
+      {
+        "id": "dt1",
+        "textKey": "templates.debugTesting.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "dt1-type",
+            "placeholder": "unit",
+            "color": "cyan",
+            "suggestions": ["unit", "integration", "end-to-end", "snapshot", "regression", "API"]
+          }
+        ]
+      },
+      {
+        "id": "dt2",
+        "textKey": "templates.debugTesting.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "dt2-framework",
+            "placeholder": "Jest",
+            "color": "yellow",
+            "suggestions": ["Jest", "Vitest", "Mocha", "Pytest", "JUnit", "Playwright", "Cypress", "Go test"]
+          }
+        ]
+      },
+      { "id": "dt3", "textKey": "templates.debugTesting.line3", "type": "fixed" },
+      { "id": "dt4", "textKey": "templates.debugTesting.line4", "type": "fixed" },
+      { "id": "dt5", "textKey": "templates.debugTesting.line5", "type": "fixed" },
+      { "id": "dt6", "textKey": "templates.debugTesting.line6", "type": "fixed" },
+      { "id": "dt7", "textKey": "templates.debugTesting.line7", "type": "fixed" },
+      { "id": "dt8", "textKey": "templates.debugTesting.line8", "type": "fixed" },
+      { "id": "dt9", "textKey": "templates.debugTesting.line9", "type": "fixed" },
+      { "id": "dt10", "textKey": "templates.debugTesting.line10", "type": "fixed" }
+    ]
+  },
+  {
+    "id": "debugData",
+    "sections": [
+      {
+        "id": "dda1",
+        "textKey": "templates.debugData.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "dda1-pipeline",
+            "placeholder": "ETL",
+            "color": "cyan",
+            "suggestions": ["ETL", "streaming", "batch processing", "data sync", "data migration", "CDC"]
+          }
+        ]
+      },
+      {
+        "id": "dda2",
+        "textKey": "templates.debugData.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "dda2-source",
+            "placeholder": "PostgreSQL",
+            "color": "yellow",
+            "suggestions": ["PostgreSQL", "MySQL", "S3", "Kafka", "BigQuery", "Snowflake", "API endpoint", "CSV files"]
+          }
+        ]
+      },
+      { "id": "dda3", "textKey": "templates.debugData.line3", "type": "fixed" },
+      { "id": "dda4", "textKey": "templates.debugData.line4", "type": "fixed" },
+      { "id": "dda5", "textKey": "templates.debugData.line5", "type": "fixed" },
+      { "id": "dda6", "textKey": "templates.debugData.line6", "type": "fixed" },
+      { "id": "dda7", "textKey": "templates.debugData.line7", "type": "fixed" },
+      { "id": "dda8", "textKey": "templates.debugData.line8", "type": "fixed" },
+      { "id": "dda9", "textKey": "templates.debugData.line9", "type": "fixed" },
+      { "id": "dda10", "textKey": "templates.debugData.line10", "type": "fixed" }
     ]
   }
 ];
