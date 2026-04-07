@@ -12,7 +12,8 @@ const templates: PromptTemplate[] = [
           {
             "id": "bp1-product",
             "placeholder": "a mobile fitness app for seniors",
-            "color": "yellow"
+            "color": "yellow",
+            "suggestions": ["a mobile fitness app for seniors", "an e-commerce platform", "a project management tool", "a social media app", "a learning platform", "a food delivery service"]
           }
         ]
       },
@@ -84,7 +85,8 @@ const templates: PromptTemplate[] = [
           {
             "id": "bm1-product",
             "placeholder": "our new SaaS product",
-            "color": "yellow"
+            "color": "yellow",
+            "suggestions": ["our new SaaS product", "our mobile app", "our e-commerce store", "our online course", "our consulting services", "our new restaurant"]
           }
         ]
       },
@@ -169,7 +171,8 @@ const templates: PromptTemplate[] = [
           {
             "id": "bc1-niche",
             "placeholder": "web development tutorials",
-            "color": "yellow"
+            "color": "yellow",
+            "suggestions": ["web development tutorials", "personal finance tips", "cooking recipes", "fitness & health", "tech reviews", "travel guides", "productivity hacks"]
           }
         ]
       },
@@ -258,7 +261,8 @@ const templates: PromptTemplate[] = [
           {
             "id": "bd1-project",
             "placeholder": "a task management app",
-            "color": "yellow"
+            "color": "yellow",
+            "suggestions": ["a task management app", "an e-commerce website", "a social media platform", "a banking app", "a learning management system", "a portfolio website"]
           }
         ]
       },
@@ -335,7 +339,8 @@ const templates: PromptTemplate[] = [
           {
             "id": "bst1-business",
             "placeholder": "our startup",
-            "color": "yellow"
+            "color": "yellow",
+            "suggestions": ["our startup", "our small business", "our agency", "our non-profit", "our freelance practice", "our SaaS company"]
           }
         ]
       },

@@ -1,0 +1,210 @@
+{
+  "description": "Tracks which bubble categories have been audited/expanded by agents, so future sessions know what's been reviewed and what still needs attention.",
+  "format_version": 1,
+  "categories": {
+    "translation": {
+      "last_audited": "2026-04-06",
+      "audit_count": 2,
+      "span_audit_count": 1,
+      "last_span_audit": "2026-04-06",
+      "status": "well-structured",
+      "notes": "5 language pairs x 5 tones = 25 leaves. Deep 3-level nesting. All spans have suggestions, no OOO placeholders, adequate span counts. No changes needed.",
+      "pending_improvements": []
+    },
+    "read": {
+      "last_audited": "2026-04-07",
+      "audit_count": 3,
+      "span_audit_count": 1,
+      "last_span_audit": "2026-04-07",
+      "status": "good",
+      "notes": "11 children (5 primary, 6 secondary). Phase A: added resume and transcript leaves. Phase B: added editable spans to 5 templates (readFactCheck, readEmail, readWebpage, readCompare, readDocument). 7 new spans total.",
+      "pending_improvements": [
+        "readCode and readResearch still have only 1 span each — candidates for next span audit",
+        "readWebpage rw1-url is free-form (no suggestions needed per policy)"
+      ]
+    },
+    "build": {
+      "last_audited": "2026-04-07",
+      "audit_count": 3,
+      "span_audit_count": 1,
+      "last_span_audit": "2026-04-07",
+      "status": "good",
+      "notes": "13 children (5 primary, 8 secondary). Phase A skipped (10+ children). Phase B: replaced OOO placeholders and added suggestions to 5 templates (buildWebsite, buildApp, buildApi, buildBot, buildScript). 7 spans fixed total.",
+      "pending_improvements": [
+        "8 remaining templates still have OOO placeholders: buildPresentations, buildDatabase, buildGame, buildCliTool, buildDashboard, buildAutomation, buildComponent, buildExtension",
+        "buildExtension be3-purpose and buildCliTool bcli3-purpose still lack suggestions",
+        "Future: split build-website into landing/portfolio/ecommerce/blog",
+        "Future: split build-app into mobile/desktop/web"
+      ]
+    },
+    "organize": {
+      "last_audited": "2026-04-05",
+      "audit_count": 2,
+      "span_audit_count": 1,
+      "last_span_audit": "2026-04-05",
+      "status": "good",
+      "notes": "10 children, well-balanced. Span quality improved: added suggestions to 3 templates (reports, products, timeline), added 2 new spans each to schedule and notes templates.",
+      "pending_improvements": [
+        "organizeCsv and organizeDatabase still have only 1 span each — candidates for next span audit"
+      ]
+    },
+    "summarize": {
+      "last_audited": "2026-04-07",
+      "audit_count": 3,
+      "span_audit_count": 1,
+      "last_span_audit": "2026-04-07",
+      "status": "good",
+      "notes": "10 children (3 primary, 7 secondary). Phase A: added email and report leaves. Phase B: replaced OOO in summarizePodcast, added suggestions to summarizeArticle sa1-topic, added sm3-length span to summarizeMeeting. Only remaining diagnostic issue: summarizeBook sb1-title (free-form, skip per policy).",
+      "pending_improvements": [
+        "summarizeBook sb1-title has no suggestions — free-form field, skipped by policy"
+      ]
+    },
+    "debug": {
+      "last_audited": "2026-04-07",
+      "audit_count": 3,
+      "span_audit_count": 1,
+      "last_span_audit": "2026-04-07",
+      "status": "well-structured",
+      "notes": "10 children (5 primary, 5 secondary). Phase A: added testing and data pipeline leaves. Phase B: added suggestions to 5 spans (df2-error, db2-error, dd2-error, da1-endpoint, dv2-error). All spans now have suggestions, diagnostic returns [].",
+      "pending_improvements": []
+    },
+    "brainstorm": {
+      "last_audited": "2026-04-07",
+      "audit_count": 3,
+      "span_audit_count": 1,
+      "last_span_audit": "2026-04-07",
+      "status": "good",
+      "notes": "10 children (5 primary, 5 secondary), well-structured. Phase A skipped (10+ children). Phase B: added suggestions to 5 primary template topic spans (brainstormProduct, brainstormMarketing, brainstormContent, brainstormDesign, brainstormStrategy).",
+      "pending_improvements": [
+        "brainstormNaming bn1-what and brainstormProblemSolving bps1-problem still lack suggestions — candidates for next span audit"
+      ]
+    },
+    "learn": {
+      "last_audited": "2026-04-05",
+      "audit_count": 2,
+      "status": "good",
+      "notes": "Expanded from 5 to 10 children. Added history, design, music, cooking, finance as secondary.",
+      "pending_improvements": []
+    },
+    "write": {
+      "last_audited": "2026-04-05",
+      "audit_count": 2,
+      "status": "good",
+      "notes": "Expanded from 5 to 10 children. Added socialMedia, resume, report, copy, speech as secondary.",
+      "pending_improvements": [
+        "Future: split write-email into business/cold-outreach/follow-up/complaint/thank-you"
+      ]
+    },
+    "explain": {
+      "last_audited": "2026-04-05",
+      "audit_count": 2,
+      "status": "good",
+      "notes": "Expanded from 5 to 8 children. Added data, math, legal as secondary.",
+      "pending_improvements": []
+    }
+  },
+  "structural_issues": [
+    {
+      "issue": "read category mixes source types and analysis modes",
+      "priority": "medium",
+      "status": "resolved",
+      "recommendation": "Remove read-summary, read-keypoints, read-full; add read-contract, read-spreadsheet",
+      "resolved_date": "2026-04-05"
+    },
+    {
+      "issue": "write-email is too broad for one of the most common AI use cases",
+      "priority": "low",
+      "status": "future",
+      "recommendation": "Split into business/cold-outreach/follow-up/complaint/thank-you sub-branch"
+    },
+    {
+      "issue": "build-website and build-app could benefit from sub-branches",
+      "priority": "low",
+      "status": "future",
+      "recommendation": "Split website into landing/portfolio/ecommerce; app into mobile/desktop/web"
+    }
+  ],
+  "change_log": [
+    {
+      "date": "2026-04-05",
+      "agent_session": "session_01F7VJyxu8RUVEPLxa2tmSKz",
+      "changes": [
+        "write: +5 leaves (socialMedia, resume, report, copy, speech)",
+        "brainstorm: +5 leaves (naming, event, problemSolving, startup, sideProject)",
+        "learn: +5 leaves (history, design, music, cooking, finance)",
+        "debug: +3 leaves (performance, security, mobile)",
+        "explain: +3 leaves (data, math, legal)",
+        "summarize: +3 leaves (podcast, legal, conversation)",
+        "read: restructured — removed 3 analysis-mode leaves (summary, keypoints, fullAnalysis), added 2 source-type leaves (contract, spreadsheet)",
+        "Total: 101 nodes -> 124 nodes, 65 templates -> 88 templates"
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "agent_session": "session_01AHpjq5aRmAf6wEv59R5ZAX",
+      "changes": [
+        "build: +3 leaves (dashboard, automation, component)",
+        "Total: 124 nodes -> 127 nodes, 88 templates -> 91 templates"
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "agent_session": "session_01NybkEvu7XbsbYqpMq2Sqta",
+      "changes": [
+        "organize: added suggestions to organizeReports (or1-type), organizeProducts (op1-category), organizeTimeline (ot1-range)",
+        "organize: added 2 new editable spans to organizeSchedule (sortOrder on line2, priorities on line3)",
+        "organize: added 2 new editable spans to organizeNotes (groupBy on line2, outputFormat on line5)",
+        "organize: updated i18n for new spans across all 6 locales"
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "agent_session": "session_01PdTqm7vzTFL36pV5NYeAiR",
+      "changes": [
+        "brainstorm: added suggestions to 5 topic spans (bp1-product, bm1-product, bc1-niche, bd1-project, bst1-business)",
+        "brainstorm: Phase A skipped (already 10 children, well-structured)"
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "agent_session": "session_01VpiYQukUxhn44pBMm298Pb",
+      "changes": [
+        "build: Phase A skipped (13 children, well-structured)",
+        "build: replaced OOO placeholders in 5 templates (buildWebsite→'my portfolio site', buildApp→'my task manager app', buildApi→'my REST API', buildBot→'a customer support bot', buildScript→'automate data processing')",
+        "build: added suggestions to 7 spans (bw1-name, ba1-name, bapi1-name, bb1-name, bs1-task, bs3-input, bs4-output)"
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "agent_session": "session_016y8Q3L7wxzUAwoEwRgNC2i",
+      "changes": [
+        "debug: +2 leaves (testing, data pipeline) as secondary nodes",
+        "debug: added suggestions to 5 spans (df2-error, db2-error, dd2-error, da1-endpoint, dv2-error)",
+        "debug: replaced generic 'describe the error' placeholders with concrete defaults",
+        "Total: 127 -> 129 nodes, 91 -> 93 templates, debug: 8 -> 10 children"
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "agent_session": "session_01SXu6NqTUUvUchGGEPfShVQ",
+      "changes": [
+        "read: +2 leaves (resume, transcript) as secondary nodes",
+        "read: added editable spans to 5 templates (readFactCheck +2 spans, readEmail +1, readWebpage +1, readCompare +1, readDocument +1)",
+        "read: all new spans include suggestions or are number type",
+        "Total: 129 -> 131 nodes, 93 -> 95 templates, read: 9 -> 11 children"
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "agent_session": "session_01576BQabvtd1aGHGjvBo1Zo",
+      "changes": [
+        "summarize: +2 leaves (email, report) as secondary nodes",
+        "summarize: replaced OOO placeholder in summarizePodcast spc1-name → 'the podcast episode'",
+        "summarize: added 8 suggestions to summarizeArticle sa1-topic span",
+        "summarize: added sm3-length editable span to summarizeMeeting (overview length)",
+        "summarize: updated i18n for new span across all 6 locales",
+        "Total: 131 -> 133 nodes, 95 -> 97 templates, summarize: 8 -> 10 children"
+      ]
+    }
+  ]
+}

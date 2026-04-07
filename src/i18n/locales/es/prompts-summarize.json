@@ -13,7 +13,7 @@
     "summarizeMeeting": {
       "line1": "Resume la siguiente reunión de {{type}}",
       "line2": "Lista los asistentes y sus roles si se mencionan",
-      "line3": "Comienza con un resumen de 2 oraciones del propósito y resultado de la reunión",
+      "line3": "Comienza con un resumen de {{length}} del propósito y resultado de la reunión",
       "line4": "Lista todas las decisiones que se tomaron, enunciadas claramente",
       "line5": "Extrae elementos de acción en formato: [Responsable] — tarea — fecha límite",
       "line6": "Anota cualquier pregunta abierta o asunto que necesite seguimiento",
@@ -89,6 +89,28 @@
       "line8": "Capturar contexto o antecedentes importantes mencionados",
       "line9": "Listar enlaces, recursos o referencias compartidos",
       "line10": "Proporcionar un estado breve: qué está hecho, qué está pendiente, qué está bloqueado"
+    },
+    "summarizeEmail": {
+      "line1": "Resume este {{type}} para mí",
+      "line2": "Formato de salida: {{format}}",
+      "line3": "Identificar remitente(s), destinatario(s) y rango de fechas",
+      "line4": "Extraer el tema principal o propósito de la correspondencia",
+      "line5": "Listar todos los elementos de acción, solicitudes o peticiones con el responsable",
+      "line6": "Anotar las fechas límite, fechas o información urgente",
+      "line7": "Destacar las decisiones tomadas o acuerdos alcanzados",
+      "line8": "Marcar lo que requiere mi respuesta o seguimiento"
+    },
+    "summarizeReport": {
+      "line1": "Resume este informe {{type}}",
+      "line2": "Audiencia objetivo: {{audience}}",
+      "line3": "Proporcionar un resumen ejecutivo de 2-3 oraciones con los hallazgos clave",
+      "line4": "Listar las métricas, KPIs o datos más importantes",
+      "line5": "Destacar tendencias — qué mejora, qué empeora o qué no cambia",
+      "line6": "Resumir las recomendaciones o acciones propuestas",
+      "line7": "Señalar riesgos, preocupaciones o alertas mencionadas en el informe",
+      "line8": "Identificar al responsable de cada acción o seguimiento",
+      "line9": "Comparar con el período anterior si hay datos disponibles",
+      "line10": "Crear una tabla de referencia rápida con las cifras más críticas"
     }
   }
 }

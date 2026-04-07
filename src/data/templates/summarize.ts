@@ -12,7 +12,8 @@ const templates: PromptTemplate[] = [
           {
             "id": "sa1-topic",
             "placeholder": "the article topic",
-            "color": "yellow"
+            "color": "yellow",
+            "suggestions": ["technology", "business", "health & wellness", "science", "politics", "culture", "personal finance", "climate & environment"]
           }
         ]
       },
@@ -98,7 +99,15 @@ const templates: PromptTemplate[] = [
       {
         "id": "sm3",
         "textKey": "templates.summarizeMeeting.line3",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "sm3-length",
+            "placeholder": "2-sentence",
+            "color": "cyan",
+            "suggestions": ["1-sentence", "2-sentence", "1-paragraph", "brief"]
+          }
+        ]
       },
       {
         "id": "sm4",
@@ -367,7 +376,12 @@ const templates: PromptTemplate[] = [
         "textKey": "templates.summarizePodcast.line1",
         "type": "fixed",
         "editableSpans": [
-          { "id": "spc1-name", "placeholder": "OOO", "color": "yellow" }
+          {
+            "id": "spc1-name",
+            "placeholder": "the podcast episode",
+            "color": "yellow",
+            "suggestions": ["the podcast episode", "this interview", "the panel discussion", "this week's episode", "the solo episode"]
+          }
         ]
       },
       {
@@ -469,6 +483,82 @@ const templates: PromptTemplate[] = [
       { "id": "scv8", "textKey": "templates.summarizeConversation.line8", "type": "fixed" },
       { "id": "scv9", "textKey": "templates.summarizeConversation.line9", "type": "fixed" },
       { "id": "scv10", "textKey": "templates.summarizeConversation.line10", "type": "fixed" }
+    ]
+  },
+  {
+    "id": "summarizeEmail",
+    "sections": [
+      {
+        "id": "sem1",
+        "textKey": "templates.summarizeEmail.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "sem1-type",
+            "placeholder": "email thread",
+            "color": "yellow",
+            "suggestions": ["email thread", "newsletter", "email chain", "mailing list digest", "inbox batch", "customer email"]
+          }
+        ]
+      },
+      {
+        "id": "sem2",
+        "textKey": "templates.summarizeEmail.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "sem2-format",
+            "placeholder": "bullet points",
+            "color": "cyan",
+            "suggestions": ["bullet points", "one paragraph", "TL;DR only", "structured with headers", "action items list"]
+          }
+        ]
+      },
+      { "id": "sem3", "textKey": "templates.summarizeEmail.line3", "type": "fixed" },
+      { "id": "sem4", "textKey": "templates.summarizeEmail.line4", "type": "fixed" },
+      { "id": "sem5", "textKey": "templates.summarizeEmail.line5", "type": "fixed" },
+      { "id": "sem6", "textKey": "templates.summarizeEmail.line6", "type": "fixed" },
+      { "id": "sem7", "textKey": "templates.summarizeEmail.line7", "type": "fixed" },
+      { "id": "sem8", "textKey": "templates.summarizeEmail.line8", "type": "fixed" }
+    ]
+  },
+  {
+    "id": "summarizeReport",
+    "sections": [
+      {
+        "id": "srp1",
+        "textKey": "templates.summarizeReport.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "srp1-type",
+            "placeholder": "quarterly business",
+            "color": "yellow",
+            "suggestions": ["quarterly business", "annual financial", "technical", "market research", "project status", "audit", "incident"]
+          }
+        ]
+      },
+      {
+        "id": "srp2",
+        "textKey": "templates.summarizeReport.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "srp2-audience",
+            "placeholder": "executive leadership",
+            "color": "green",
+            "suggestions": ["executive leadership", "technical team", "investors", "board of directors", "general audience", "project stakeholders"]
+          }
+        ]
+      },
+      { "id": "srp3", "textKey": "templates.summarizeReport.line3", "type": "fixed" },
+      { "id": "srp4", "textKey": "templates.summarizeReport.line4", "type": "fixed" },
+      { "id": "srp5", "textKey": "templates.summarizeReport.line5", "type": "fixed" },
+      { "id": "srp6", "textKey": "templates.summarizeReport.line6", "type": "fixed" },
+      { "id": "srp7", "textKey": "templates.summarizeReport.line7", "type": "fixed" },
+      { "id": "srp8", "textKey": "templates.summarizeReport.line8", "type": "fixed" },
+      { "id": "srp9", "textKey": "templates.summarizeReport.line9", "type": "fixed" },
+      { "id": "srp10", "textKey": "templates.summarizeReport.line10", "type": "fixed" }
     ]
   }
 ];

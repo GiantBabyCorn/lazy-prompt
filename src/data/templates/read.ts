@@ -29,7 +29,15 @@ const templates: PromptTemplate[] = [
       {
         "id": "rw4",
         "textKey": "templates.readWebpage.line4",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "rw4-focus",
+            "placeholder": "claims and arguments",
+            "color": "green",
+            "suggestions": ["claims and arguments", "data points and statistics", "recommendations", "opinions and analysis", "product details", "instructions and steps"]
+          }
+        ]
       },
       {
         "id": "rw5",
@@ -104,7 +112,17 @@ const templates: PromptTemplate[] = [
       {
         "id": "rd7",
         "textKey": "templates.readDocument.line7",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "rd7-count",
+            "placeholder": "3",
+            "color": "cyan",
+            "inputType": "number",
+            "min": 1,
+            "max": 10
+          }
+        ]
       },
       {
         "id": "rd8",
@@ -129,7 +147,15 @@ const templates: PromptTemplate[] = [
       {
         "id": "re1",
         "textKey": "templates.readEmail.line1",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "re1-context",
+            "placeholder": "work",
+            "color": "green",
+            "suggestions": ["work", "personal", "sales", "customer support", "recruitment", "legal"]
+          }
+        ]
       },
       {
         "id": "re2",
@@ -426,7 +452,15 @@ const templates: PromptTemplate[] = [
       {
         "id": "rcm2",
         "textKey": "templates.readCompare.line2",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "rcm2-focus",
+            "placeholder": "key dimensions",
+            "color": "green",
+            "suggestions": ["key dimensions", "features and capabilities", "pricing and costs", "methodology", "conclusions", "strengths and weaknesses"]
+          }
+        ]
       },
       {
         "id": "rcm3",
@@ -466,7 +500,15 @@ const templates: PromptTemplate[] = [
       {
         "id": "rfc1",
         "textKey": "templates.readFactCheck.line1",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "rfc1-topic",
+            "placeholder": "news article",
+            "color": "yellow",
+            "suggestions": ["news article", "social media post", "political speech", "blog post", "press release", "advertisement"]
+          }
+        ]
       },
       {
         "id": "rfc2",
@@ -506,13 +548,103 @@ const templates: PromptTemplate[] = [
       {
         "id": "rfc9",
         "textKey": "templates.readFactCheck.line9",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "rfc9-count",
+            "placeholder": "3",
+            "color": "cyan",
+            "inputType": "number",
+            "min": 1,
+            "max": 10
+          }
+        ]
       },
       {
         "id": "rfc10",
         "textKey": "templates.readFactCheck.line10",
         "type": "fixed"
       }
+    ]
+  },
+  {
+    "id": "readResume",
+    "sections": [
+      {
+        "id": "rrs1",
+        "textKey": "templates.readResume.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "rrs1-role",
+            "placeholder": "software engineer",
+            "color": "yellow",
+            "suggestions": ["software engineer", "product manager", "data scientist", "designer", "marketing manager", "project manager", "sales representative"]
+          }
+        ]
+      },
+      {
+        "id": "rrs2",
+        "textKey": "templates.readResume.line2",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "rrs2-level",
+            "placeholder": "mid-level",
+            "color": "green",
+            "suggestions": ["junior", "mid-level", "senior", "lead", "principal", "executive"]
+          }
+        ]
+      },
+      { "id": "rrs3", "textKey": "templates.readResume.line3", "type": "fixed" },
+      { "id": "rrs4", "textKey": "templates.readResume.line4", "type": "fixed" },
+      { "id": "rrs5", "textKey": "templates.readResume.line5", "type": "fixed" },
+      { "id": "rrs6", "textKey": "templates.readResume.line6", "type": "fixed" },
+      { "id": "rrs7", "textKey": "templates.readResume.line7", "type": "fixed" },
+      { "id": "rrs8", "textKey": "templates.readResume.line8", "type": "fixed" },
+      { "id": "rrs9", "textKey": "templates.readResume.line9", "type": "fixed" },
+      { "id": "rrs10", "textKey": "templates.readResume.line10", "type": "fixed" }
+    ]
+  },
+  {
+    "id": "readTranscript",
+    "sections": [
+      {
+        "id": "rtr1",
+        "textKey": "templates.readTranscript.line1",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "rtr1-type",
+            "placeholder": "meeting",
+            "color": "yellow",
+            "suggestions": ["meeting", "interview", "podcast", "webinar", "phone call", "deposition", "lecture"]
+          }
+        ]
+      },
+      { "id": "rtr2", "textKey": "templates.readTranscript.line2", "type": "fixed" },
+      { "id": "rtr3", "textKey": "templates.readTranscript.line3", "type": "fixed" },
+      { "id": "rtr4", "textKey": "templates.readTranscript.line4", "type": "fixed" },
+      { "id": "rtr5", "textKey": "templates.readTranscript.line5", "type": "fixed" },
+      {
+        "id": "rtr6",
+        "textKey": "templates.readTranscript.line6",
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "rtr6-count",
+            "placeholder": "5",
+            "color": "cyan",
+            "inputType": "number",
+            "min": 3,
+            "max": 10
+          }
+        ]
+      },
+      { "id": "rtr7", "textKey": "templates.readTranscript.line7", "type": "fixed" },
+      { "id": "rtr8", "textKey": "templates.readTranscript.line8", "type": "fixed" },
+      { "id": "rtr9", "textKey": "templates.readTranscript.line9", "type": "fixed" },
+      { "id": "rtr10", "textKey": "templates.readTranscript.line10", "type": "fixed" }
     ]
   }
 ];

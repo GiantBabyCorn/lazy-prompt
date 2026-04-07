@@ -48,7 +48,9 @@
       "contract": "合約",
       "spreadsheet": "試算表",
       "compare": "比較",
-      "factCheck": "事實查核"
+      "factCheck": "事實查核",
+      "resume": "履歷",
+      "transcript": "會議記錄"
     },
     "organize": {
       "reports": "報告",
@@ -70,7 +72,9 @@
       "devops": "DevOps",
       "performance": "效能",
       "security": "安全",
-      "mobile": "行動裝置"
+      "mobile": "行動裝置",
+      "testing": "測試",
+      "data": "資料管線"
     },
     "brainstorm": {
       "product": "產品",
@@ -126,7 +130,9 @@
       "research": "研究論文",
       "podcast": "Podcast",
       "legal": "法律文件",
-      "conversation": "對話 / 討論串"
+      "conversation": "對話 / 討論串",
+      "email": "郵件 / 電子報",
+      "report": "報告"
     }
   },
   "descriptions": {
@@ -209,6 +215,30 @@
       "line8": "加入 Storybook 各變體的案例",
       "line9": "包含測試庫的單元測試",
       "line10": "加入透過 CSS 自訂屬性或設計令牌實現的主題支援"
+    },
+    "debugTesting": {
+      "line1": "幫我除錯這個失敗的{{type}}測試",
+      "line2": "測試框架：{{framework}}",
+      "line3": "描述失敗情況：測試預期的結果與實際結果分別是什麼？",
+      "line4": "這個測試是否具確定性？是否有時通過有時失敗（不穩定測試）？",
+      "line5": "檢查測試隔離性——測試是否依賴全域狀態、外部服務或執行順序？",
+      "line6": "審查測試的 setup/teardown——fixture、mock 和測試資料是否正確初始化？",
+      "line7": "檢查時序問題：非同步操作、競態條件或逾時時間不足",
+      "line8": "找出根本原因，並提供修復後的測試程式碼",
+      "line9": "建議如何讓這個測試更可靠、更易維護",
+      "line10": "推薦 CI 層面的策略：重試、平行化、測試排序"
+    },
+    "debugData": {
+      "line1": "幫我除錯這個{{pipeline}}資料管線問題",
+      "line2": "資料來源：{{source}}",
+      "line3": "描述問題：資料是遺失、重複、損壞還是延遲？",
+      "line4": "追蹤資料流——資料在哪個階段首次出現錯誤？",
+      "line5": "檢查 schema 相容性——上游 schema 最近是否有變更？",
+      "line6": "檢查 null/空值處理——邊界情況是否被正確處理？",
+      "line7": "檢查冪等性——重新執行管線是否產生相同的結果？",
+      "line8": "驗證資料量——問題是否由規模觸發（記錄太多或太少）？",
+      "line9": "提供修復方案，並說明如何驗證修正後的輸出",
+      "line10": "建議資料品質檢查和監控措施，以便及早發現問題"
     }
   }
 }

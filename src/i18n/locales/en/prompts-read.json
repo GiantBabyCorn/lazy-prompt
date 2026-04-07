@@ -7,7 +7,7 @@
       "line4": "Identify any inconsistencies, gaps, or potential issues in the content",
       "line5": "Extract all actionable items, recommendations, and next steps",
       "line6": "Note any references or citations worth following up",
-      "line7": "Summarize the main argument or thesis in 2-3 sentences",
+      "line7": "Summarize the main argument or thesis in {{count}} sentences",
       "line8": "Assess the source's reliability and note any bias or limitations",
       "line9": "Create a glossary of key terms if the document uses specialized vocabulary",
       "line10": "Suggest 3-5 follow-up questions based on the content"
@@ -16,14 +16,14 @@
       "line1": "Read and analyze the following webpage: {{url}}",
       "line2": "Extract only the main article content — ignore navigation, ads, sidebars, and footers",
       "line3": "Provide a structured summary with the page title, author (if found), and publication date",
-      "line4": "List the key claims or arguments made on the page",
+      "line4": "List the key {{focus}} made on the page",
       "line5": "Assess the source's credibility: check for author credentials, citations, and potential bias",
       "line6": "Extract any data, statistics, or quotes worth noting",
       "line7": "Identify any outbound links or references that seem important for further reading",
       "line8": "Rate the overall quality and usefulness of the content (1-10) with a brief justification"
     },
     "readEmail": {
-      "line1": "Read and analyze the following email",
+      "line1": "Read and analyze the following {{context}} email",
       "line2": "Identify the sender's intent: what do they want from me?",
       "line3": "Extract all action items and deadlines mentioned",
       "line4": "Analyze the tone — is it urgent, casual, formal, passive-aggressive, or friendly?",
@@ -82,7 +82,7 @@
     },
     "readCompare": {
       "line1": "Compare the following {{count}} documents/sources side by side",
-      "line2": "Create a comparison table with the key dimensions of each source",
+      "line2": "Create a comparison table with the {{focus}} of each source",
       "line3": "Identify where the sources agree and what they have in common",
       "line4": "Highlight where they contradict each other, with specific quotes if possible",
       "line5": "Assess which source is more credible on each point of disagreement",
@@ -90,8 +90,32 @@
       "line7": "Synthesize the sources into a unified understanding where possible",
       "line8": "Conclude with which source is most reliable overall and why"
     },
+    "readResume": {
+      "line1": "Analyze the following resume/CV for a {{role}} position",
+      "line2": "Evaluate against {{level}} level expectations",
+      "line3": "Summarize the candidate's background in 2-3 sentences",
+      "line4": "List key skills and technologies with years of experience where mentioned",
+      "line5": "Assess education and certifications relevance to the role",
+      "line6": "Evaluate work experience: career progression, achievements, and measurable impact",
+      "line7": "Flag any gaps, inconsistencies, or red flags in the timeline",
+      "line8": "Rate the resume's presentation: clarity, formatting, and conciseness",
+      "line9": "Suggest 5 interview questions tailored to this candidate",
+      "line10": "Overall assessment: key strengths, weaknesses, and hiring recommendation"
+    },
+    "readTranscript": {
+      "line1": "Analyze this {{type}} transcript",
+      "line2": "Identify all participants and their roles in the conversation",
+      "line3": "List the main topics discussed with timestamps if available",
+      "line4": "Extract all decisions made and who made them",
+      "line5": "List all action items with assigned owners and deadlines",
+      "line6": "Summarize the top {{count}} most important takeaways",
+      "line7": "Note any disagreements, tensions, or unresolved issues",
+      "line8": "Identify any commitments, promises, or follow-ups needed",
+      "line9": "Flag important quotes or statements worth highlighting",
+      "line10": "Provide a concise executive summary (3-5 sentences)"
+    },
     "readFactCheck": {
-      "line1": "Fact-check the following content claim by claim",
+      "line1": "Fact-check the following {{topic}} claim by claim",
       "line2": "List each factual claim made in the content",
       "line3": "For each claim, rate it: Verified / Mostly True / Misleading / False / Unverifiable",
       "line4": "Provide evidence or reasoning for each rating",
@@ -99,7 +123,7 @@
       "line6": "Check for logical fallacies: straw man, false dichotomy, appeal to authority, etc.",
       "line7": "Note any important context that the content omits",
       "line8": "Identify the overall framing or narrative bias",
-      "line9": "Suggest more reliable sources for the same topic",
+      "line9": "Suggest {{count}} more reliable sources for the same topic",
       "line10": "Give an overall accuracy score (1-10) with summary"
     }
   }

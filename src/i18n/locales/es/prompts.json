@@ -48,7 +48,9 @@
       "contract": "Contrato",
       "spreadsheet": "Hoja de Cálculo",
       "compare": "Comparar",
-      "factCheck": "Verificación de hechos"
+      "factCheck": "Verificación de hechos",
+      "resume": "Currículum",
+      "transcript": "Transcripción"
     },
     "organize": {
       "reports": "Informes",
@@ -70,7 +72,9 @@
       "devops": "DevOps",
       "performance": "Rendimiento",
       "security": "Seguridad",
-      "mobile": "Móvil"
+      "mobile": "Móvil",
+      "testing": "Testing",
+      "data": "Pipeline de datos"
     },
     "brainstorm": {
       "product": "Producto",
@@ -126,7 +130,9 @@
       "research": "Artículo de investigación",
       "podcast": "Podcast",
       "legal": "Documento Legal",
-      "conversation": "Conversación / Hilo"
+      "conversation": "Conversación / Hilo",
+      "email": "Correo / Boletín",
+      "report": "Informe"
     }
   },
   "descriptions": {
@@ -209,6 +215,30 @@
       "line8": "Agregar historias de Storybook para todas las variantes",
       "line9": "Incluir pruebas unitarias con testing library",
       "line10": "Agregar soporte de temas mediante propiedades CSS personalizadas o tokens de diseño"
+    },
+    "debugTesting": {
+      "line1": "Ayúdame a depurar este test {{type}} que falla",
+      "line2": "Framework de testing: {{framework}}",
+      "line3": "Describe el fallo: ¿qué espera el test vs. qué resultado obtiene realmente?",
+      "line4": "¿Es este test determinista? ¿Pasa a veces y falla otras (test inestable)?",
+      "line5": "Verifica el aislamiento del test — ¿depende de estado global, servicios externos u orden de ejecución?",
+      "line6": "Revisa el setup/teardown — ¿están los fixtures, mocks y datos de prueba correctamente inicializados?",
+      "line7": "Busca problemas de temporización: operaciones asíncronas, condiciones de carrera o timeouts insuficientes",
+      "line8": "Identifica la causa raíz y proporciona la corrección con el código de test corregido",
+      "line9": "Sugiere formas de hacer este test más confiable y mantenible",
+      "line10": "Recomienda estrategias a nivel de CI: reintentos, paralelización, orden de tests"
+    },
+    "debugData": {
+      "line1": "Ayúdame a depurar este problema en el pipeline de datos {{pipeline}}",
+      "line2": "Fuente de datos: {{source}}",
+      "line3": "Describe el problema: ¿los datos faltan, están duplicados, corruptos o retrasados?",
+      "line4": "Rastrea el flujo de datos — ¿en qué etapa los datos se vuelven incorrectos por primera vez?",
+      "line5": "Verifica la compatibilidad del esquema — ¿han cambiado esquemas upstream recientemente?",
+      "line6": "Revisa el manejo de null/vacíos — ¿se manejan correctamente los casos límite?",
+      "line7": "Verifica la idempotencia — ¿ejecutar el pipeline de nuevo produce los mismos resultados?",
+      "line8": "Verifica el volumen de datos — ¿el problema se activa por la escala (demasiados o muy pocos registros)?",
+      "line9": "Proporciona la corrección y explica cómo validar la salida corregida",
+      "line10": "Sugiere controles de calidad de datos y monitoreo para detectar problemas temprano"
     }
   }
 }
