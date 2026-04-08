@@ -34,7 +34,7 @@
     },
     "readCode": {
       "line1": "Review the following {{lang}} code",
-      "line2": "Explain what this code does in plain language (2-3 sentences overview)",
+      "line2": "Review focus: {{focus}}",
       "line3": "Identify any bugs, logic errors, or edge cases that aren't handled",
       "line4": "Check for security vulnerabilities (injection, XSS, auth issues, data exposure)",
       "line5": "Assess performance: any N+1 queries, unnecessary loops, or memory leaks?",
@@ -46,7 +46,7 @@
     },
     "readResearch": {
       "line1": "Analyze the following research paper in {{field}}",
-      "line2": "Summarize the research question and hypothesis",
+      "line2": "Analysis depth: {{depth}}",
       "line3": "Evaluate the methodology: is it sound? What are the limitations?",
       "line4": "List the key findings and whether they support the hypothesis",
       "line5": "Assess the sample size, statistical methods, and significance levels",

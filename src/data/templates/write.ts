@@ -12,7 +12,8 @@ const templates: PromptTemplate[] = [
           {
             "id": "we1-purpose",
             "placeholder": "follow up on a meeting",
-            "color": "yellow"
+            "color": "yellow",
+            "suggestions": ["follow up on a meeting", "request a deadline extension", "introduce yourself", "schedule a call", "thank someone", "share a project update", "ask for feedback"]
           }
         ]
       },
@@ -106,7 +107,8 @@ const templates: PromptTemplate[] = [
           {
             "id": "wb1-topic",
             "placeholder": "the future of AI in healthcare",
-            "color": "yellow"
+            "color": "yellow",
+            "suggestions": ["the future of AI in healthcare", "remote work best practices", "beginner's guide to investing", "sustainable living tips", "how to learn a new language", "productivity hacks for developers"]
           }
         ]
       },
@@ -197,8 +199,9 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "wd1-project",
-            "placeholder": "OOO",
-            "color": "yellow"
+            "placeholder": "my REST API",
+            "color": "yellow",
+            "suggestions": ["my REST API", "my React component library", "my CLI tool", "my Python package", "my mobile app", "my microservice"]
           }
         ]
       },
@@ -290,8 +293,9 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "wp1-project",
-            "placeholder": "OOO",
-            "color": "yellow"
+            "placeholder": "a new CRM system",
+            "color": "yellow",
+            "suggestions": ["a new CRM system", "a cloud migration plan", "a mobile app redesign", "an AI integration project", "a team expansion", "a process automation initiative"]
           }
         ]
       },
@@ -479,7 +483,7 @@ const templates: PromptTemplate[] = [
         "textKey": "templates.writeSocialMedia.line2",
         "type": "fixed",
         "editableSpans": [
-          { "id": "wsm2-topic", "placeholder": "our new product launch", "color": "cyan" }
+          { "id": "wsm2-topic", "placeholder": "our new product launch", "color": "cyan", "suggestions": ["our new product launch", "a company milestone", "an upcoming event", "a behind-the-scenes look", "an industry trend", "a customer success story"] }
         ]
       },
       {
@@ -525,7 +529,7 @@ const templates: PromptTemplate[] = [
         "textKey": "templates.writeResume.line2",
         "type": "fixed",
         "editableSpans": [
-          { "id": "wr2-role", "placeholder": "Senior Software Engineer", "color": "cyan" }
+          { "id": "wr2-role", "placeholder": "Senior Software Engineer", "color": "cyan", "suggestions": ["Senior Software Engineer", "Product Manager", "Data Scientist", "UX Designer", "Marketing Manager", "Project Manager", "DevOps Engineer"] }
         ]
       },
       {
@@ -571,7 +575,7 @@ const templates: PromptTemplate[] = [
         "textKey": "templates.writeReport.line2",
         "type": "fixed",
         "editableSpans": [
-          { "id": "wrp2-topic", "placeholder": "Q1 2026 sales performance", "color": "cyan" }
+          { "id": "wrp2-topic", "placeholder": "Q1 2026 sales performance", "color": "cyan", "suggestions": ["Q1 2026 sales performance", "customer satisfaction trends", "product launch results", "team productivity metrics", "marketing campaign ROI", "system outage post-mortem"] }
         ]
       },
       {
@@ -617,7 +621,7 @@ const templates: PromptTemplate[] = [
         "textKey": "templates.writeCopy.line2",
         "type": "fixed",
         "editableSpans": [
-          { "id": "wc2-product", "placeholder": "our AI writing assistant", "color": "cyan" }
+          { "id": "wc2-product", "placeholder": "our AI writing assistant", "color": "cyan", "suggestions": ["our AI writing assistant", "a fitness tracking app", "an online course platform", "a meal delivery service", "a project management tool", "a sustainable fashion brand"] }
         ]
       },
       {
@@ -663,7 +667,7 @@ const templates: PromptTemplate[] = [
         "textKey": "templates.writeSpeech.line2",
         "type": "fixed",
         "editableSpans": [
-          { "id": "wsp2-topic", "placeholder": "the future of remote work", "color": "cyan" }
+          { "id": "wsp2-topic", "placeholder": "the future of remote work", "color": "cyan", "suggestions": ["the future of remote work", "AI and the creative industry", "building resilient teams", "sustainability in tech", "lessons from failure", "the power of storytelling"] }
         ]
       },
       {

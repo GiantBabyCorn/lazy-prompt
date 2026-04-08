@@ -120,7 +120,10 @@
       "concept": "概念",
       "process": "流程",
       "error": "错误",
-      "architecture": "架构"
+      "architecture": "架构",
+      "data": "数据 / 图表",
+      "math": "数学 / 公式",
+      "legal": "法律 / 政策"
     },
     "summarize": {
       "article": "文章",
@@ -128,6 +131,9 @@
       "video": "视频 / 播客",
       "book": "书籍 / 章节",
       "research": "研究论文",
+      "podcast": "播客",
+      "legal": "法律文件",
+      "conversation": "对话 / 帖子",
       "email": "邮件 / 通讯",
       "report": "报告"
     }

@@ -1,4 +1,7 @@
 {
+  "bubble": {
+    "whatYouWant": "何をしたいですか？"
+  },
   "categories": {
     "translation": "翻訳",
     "read": "読む",

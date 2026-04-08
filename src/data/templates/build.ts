@@ -336,8 +336,9 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "bp1-topic",
-            "placeholder": "OOO",
-            "color": "yellow"
+            "placeholder": "a quarterly business review",
+            "color": "yellow",
+            "suggestions": ["a quarterly business review", "a product launch", "a technical architecture overview", "a team retrospective", "a sales pitch", "a conference talk"]
           }
         ]
       },
@@ -620,8 +621,9 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "bdb1-name",
-            "placeholder": "OOO",
-            "color": "yellow"
+            "placeholder": "a user management system",
+            "color": "yellow",
+            "suggestions": ["a user management system", "an e-commerce product catalog", "an inventory tracker", "a content management system", "a booking system", "an analytics data warehouse"]
           },
           {
             "id": "bdb1-engine",
@@ -978,8 +980,9 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "be1-name",
-            "placeholder": "OOO",
-            "color": "yellow"
+            "placeholder": "a tab manager extension",
+            "color": "yellow",
+            "suggestions": ["a tab manager extension", "a dark mode toggle", "an ad blocker", "a password manager", "a screenshot tool", "a productivity timer"]
           }
         ]
       },
@@ -1011,7 +1014,8 @@ const templates: PromptTemplate[] = [
           {
             "id": "be3-purpose",
             "placeholder": "enhance productivity on web pages",
-            "color": "green"
+            "color": "green",
+            "suggestions": ["enhance productivity on web pages", "block distracting content", "customize website appearance", "automate repetitive tasks", "manage browser tabs efficiently", "capture and annotate screenshots"]
           }
         ]
       },
@@ -1084,8 +1088,9 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "bg1-name",
-            "placeholder": "OOO",
-            "color": "yellow"
+            "placeholder": "a 2D puzzle platformer",
+            "color": "yellow",
+            "suggestions": ["a 2D puzzle platformer", "a card game", "a tower defense game", "a word puzzle game", "a multiplayer trivia quiz", "an endless runner"]
           },
           {
             "id": "bg1-genre",
@@ -1217,8 +1222,9 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "bcli1-name",
-            "placeholder": "OOO",
-            "color": "yellow"
+            "placeholder": "a project scaffolding tool",
+            "color": "yellow",
+            "suggestions": ["a project scaffolding tool", "a file organizer", "a database migration tool", "a log analyzer", "a deployment script", "a code generator"]
           }
         ]
       },
@@ -1252,7 +1258,8 @@ const templates: PromptTemplate[] = [
           {
             "id": "bcli3-purpose",
             "placeholder": "manage project scaffolding",
-            "color": "green"
+            "color": "green",
+            "suggestions": ["manage project scaffolding", "organize and rename files", "run database migrations", "parse and analyze logs", "automate deployments", "generate boilerplate code"]
           }
         ]
       },
@@ -1325,8 +1332,16 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "bdash1-name",
-            "placeholder": "OOO",
-            "color": "yellow"
+            "placeholder": "a sales analytics dashboard",
+            "color": "yellow",
+            "suggestions": [
+              "a sales analytics dashboard",
+              "an admin panel",
+              "a project management dashboard",
+              "a monitoring dashboard",
+              "a financial reporting dashboard",
+              "a customer insights dashboard"
+            ]
           }
         ]
       },
@@ -1453,8 +1468,16 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "baut1-name",
-            "placeholder": "OOO",
-            "color": "yellow"
+            "placeholder": "a CI/CD pipeline",
+            "color": "yellow",
+            "suggestions": [
+              "a CI/CD pipeline",
+              "a deployment workflow",
+              "a data backup script",
+              "a server provisioning setup",
+              "a testing automation pipeline",
+              "a scheduled report generator"
+            ]
           }
         ]
       },
@@ -1569,8 +1592,16 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "bcomp1-name",
-            "placeholder": "OOO",
-            "color": "yellow"
+            "placeholder": "a data table component",
+            "color": "yellow",
+            "suggestions": [
+              "a data table component",
+              "a modal dialog",
+              "a navigation sidebar",
+              "a file upload widget",
+              "a search autocomplete",
+              "a notification toast"
+            ]
           }
         ]
       },

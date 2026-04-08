@@ -238,7 +238,15 @@ const templates: PromptTemplate[] = [
       {
         "id": "rc2",
         "textKey": "templates.readCode.line2",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "rc2-focus",
+            "placeholder": "bugs and security",
+            "color": "cyan",
+            "suggestions": ["bugs and security", "performance optimization", "code readability", "architecture and design patterns", "error handling", "test coverage"]
+          }
+        ]
       },
       {
         "id": "rc3",
@@ -309,7 +317,15 @@ const templates: PromptTemplate[] = [
       {
         "id": "rr2",
         "textKey": "templates.readResearch.line2",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "rr2-depth",
+            "placeholder": "comprehensive",
+            "color": "cyan",
+            "suggestions": ["comprehensive", "quick overview", "methodology-focused", "findings-focused", "critical analysis", "literature comparison"]
+          }
+        ]
       },
       {
         "id": "rr3",

@@ -32,7 +32,15 @@ const templates: PromptTemplate[] = [
       {
         "id": "ec2",
         "textKey": "templates.explainCode.line2",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "ec2-depth",
+            "placeholder": "brief",
+            "color": "cyan",
+            "suggestions": ["brief", "detailed", "comprehensive", "beginner-friendly", "expert-level"]
+          }
+        ]
       },
       {
         "id": "ec3",
@@ -86,8 +94,9 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "ecn1-concept",
-            "placeholder": "the concept",
-            "color": "yellow"
+            "placeholder": "blockchain technology",
+            "color": "yellow",
+            "suggestions": ["blockchain technology", "machine learning", "REST APIs", "cloud computing", "object-oriented programming", "Docker containers"]
           }
         ]
       },
@@ -162,15 +171,24 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "ep1-process",
-            "placeholder": "the process",
-            "color": "yellow"
+            "placeholder": "deploying to production",
+            "color": "yellow",
+            "suggestions": ["deploying to production", "code review", "CI/CD pipeline", "database migration", "DNS propagation", "OAuth authentication", "hiring a developer"]
           }
         ]
       },
       {
         "id": "ep2",
         "textKey": "templates.explainProcess.line2",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "ep2-level",
+            "placeholder": "step-by-step",
+            "color": "cyan",
+            "suggestions": ["step-by-step", "high-level overview", "detailed with examples", "quick summary", "technical deep-dive"]
+          }
+        ]
       },
       {
         "id": "ep3",
@@ -305,8 +323,9 @@ const templates: PromptTemplate[] = [
         "editableSpans": [
           {
             "id": "ea1-system",
-            "placeholder": "this system/architecture",
-            "color": "yellow"
+            "placeholder": "a microservices backend",
+            "color": "yellow",
+            "suggestions": ["a microservices backend", "a serverless application", "a monolithic web app", "an event-driven system", "a data pipeline", "a real-time chat system"]
           }
         ]
       },
@@ -379,7 +398,7 @@ const templates: PromptTemplate[] = [
         "textKey": "templates.explainData.line1",
         "type": "fixed",
         "editableSpans": [
-          { "id": "exd1-data", "placeholder": "this sales dashboard", "color": "yellow" }
+          { "id": "exd1-data", "placeholder": "this sales dashboard", "color": "yellow", "suggestions": ["this sales dashboard", "this A/B test result", "this financial report", "this survey data", "this analytics report", "this performance benchmark"] }
         ]
       },
       {

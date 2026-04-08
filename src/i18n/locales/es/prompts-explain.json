@@ -2,7 +2,7 @@
   "templates": {
     "explainCode": {
       "line1": "Explica el siguiente código en {{lang}}",
-      "line2": "Comienza con un resumen de 2-3 oraciones de lo que hace el código y por qué",
+      "line2": "Comienza con un resumen {{depth}} de lo que hace el código y por qué",
       "line3": "Recorre el código línea por línea o bloque por bloque",
       "line4": "Explica el propósito de cada función, clase o módulo",
       "line5": "Destaca los patrones de diseño utilizados (observer, factory, singleton, etc.)",
@@ -26,7 +26,7 @@
     },
     "explainProcess": {
       "line1": "Explica el proceso de {{process}}",
-      "line2": "Comienza con un resumen de un párrafo de todo el proceso de principio a fin",
+      "line2": "Nivel de detalle: {{level}}",
       "line3": "Lista los prerequisitos: ¿qué necesita estar preparado antes de comenzar?",
       "line4": "Divídelo en pasos numerados — cada paso debe ser una instrucción clara y accionable",
       "line5": "Para cada paso, indica la entrada y salida esperadas",

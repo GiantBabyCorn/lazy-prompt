@@ -439,7 +439,15 @@ const templates: PromptTemplate[] = [
       {
         "id": "oc5",
         "textKey": "templates.organizeCsv.line5",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "oc5-sortBy",
+            "placeholder": "date",
+            "color": "green",
+            "suggestions": ["date", "name", "amount", "category", "status", "ID"]
+          }
+        ]
       },
       {
         "id": "oc6",
@@ -484,7 +492,15 @@ const templates: PromptTemplate[] = [
       {
         "id": "odb2",
         "textKey": "templates.organizeDatabase.line2",
-        "type": "fixed"
+        "type": "fixed",
+        "editableSpans": [
+          {
+            "id": "odb2-focus",
+            "placeholder": "normalization",
+            "color": "green",
+            "suggestions": ["normalization", "performance tuning", "data integrity", "query optimization", "storage efficiency", "schema simplification"]
+          }
+        ]
       },
       {
         "id": "odb3",

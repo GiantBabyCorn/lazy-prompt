@@ -14,7 +14,7 @@
     },
     "explainCode": {
       "line1": "Explain the following {{lang}} code",
-      "line2": "Start with a 2-3 sentence overview of what the code does and why",
+      "line2": "Start with a {{depth}} overview of what the code does and why",
       "line3": "Walk through the code line by line or block by block",
       "line4": "Explain the purpose of each function, class, or module",
       "line5": "Highlight any design patterns used (observer, factory, singleton, etc.)",
@@ -38,7 +38,7 @@
     },
     "explainProcess": {
       "line1": "Explain the process of {{process}}",
-      "line2": "Start with a one-paragraph overview of the entire process end to end",
+      "line2": "Detail level: {{level}}",
       "line3": "List the prerequisites: what needs to be in place before starting?",
       "line4": "Break it down into numbered steps — each step should be a clear, actionable instruction",
       "line5": "For each step, note the expected input and output",

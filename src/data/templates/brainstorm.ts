@@ -433,7 +433,8 @@ const templates: PromptTemplate[] = [
           {
             "id": "bn1-what",
             "placeholder": "a productivity app",
-            "color": "yellow"
+            "color": "yellow",
+            "suggestions": ["a productivity app", "a fitness tracker", "a SaaS platform", "a podcast", "a clothing brand", "an AI tool", "a coffee shop"]
           }
         ]
       },
@@ -533,7 +534,7 @@ const templates: PromptTemplate[] = [
         "textKey": "templates.brainstormProblemSolving.line1",
         "type": "fixed",
         "editableSpans": [
-          { "id": "bps1-problem", "placeholder": "user retention is dropping month over month", "color": "yellow" }
+          { "id": "bps1-problem", "placeholder": "user retention is dropping month over month", "color": "yellow", "suggestions": ["user retention is dropping month over month", "customer support tickets are increasing", "team productivity has declined", "conversion rates are below industry average", "onboarding completion rate is low", "costs are growing faster than revenue"] }
         ]
       },
       {

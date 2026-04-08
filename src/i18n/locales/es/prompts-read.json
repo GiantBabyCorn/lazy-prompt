@@ -34,7 +34,7 @@
     },
     "readCode": {
       "line1": "Revisa el siguiente código {{lang}}",
-      "line2": "Explica qué hace este código en lenguaje sencillo (resumen de 2-3 oraciones)",
+      "line2": "Enfoque de revisión: {{focus}}",
       "line3": "Identifica cualquier bug, error lógico o caso límite no manejado",
       "line4": "Verifica vulnerabilidades de seguridad (inyección, XSS, problemas de autenticación, exposición de datos)",
       "line5": "Evalúa el rendimiento: ¿hay consultas N+1, bucles innecesarios o fugas de memoria?",
@@ -46,7 +46,7 @@
     },
     "readResearch": {
       "line1": "Analiza el siguiente artículo de investigación en {{field}}",
-      "line2": "Resume la pregunta de investigación y la hipótesis",
+      "line2": "Profundidad del análisis: {{depth}}",
       "line3": "Evalúa la metodología: ¿es sólida? ¿Cuáles son las limitaciones?",
       "line4": "Enumera los hallazgos clave y si apoyan la hipótesis",
       "line5": "Evalúa el tamaño de la muestra, los métodos estadísticos y los niveles de significancia",

@@ -57,14 +57,14 @@
       "line2": "Identifica los encabezados de columna y los tipos de datos de cada columna",
       "line3": "Limpia los datos: corrige formatos inconsistentes, maneja valores faltantes, elimina duplicados",
       "line4": "Estandariza formatos de fecha, formatos numéricos y uso de mayúsculas/minúsculas",
-      "line5": "Ordena y filtra por las columnas más relevantes",
+      "line5": "Ordena y filtra por la columna {{sortBy}}",
       "line6": "Crea una tabla dinámica o vista resumen de las métricas clave",
       "line7": "Identifica problemas de calidad de datos y sugiere correcciones",
       "line8": "Muestra los datos limpios en una tabla con formato adecuado"
     },
     "organizeDatabase": {
       "line1": "Organiza y estructura estos datos de {{db}}",
-      "line2": "Analiza el esquema actual e identifica oportunidades de normalización",
+      "line2": "Analiza el esquema actual con enfoque en {{focus}}",
       "line3": "Sugiere relaciones de tablas adecuadas y foreign keys",
       "line4": "Identifica índices faltantes para patrones de consulta comunes",
       "line5": "Sugiere optimizaciones de tipos de datos para eficiencia de almacenamiento",

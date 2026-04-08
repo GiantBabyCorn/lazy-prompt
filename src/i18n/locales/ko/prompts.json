@@ -1,4 +1,7 @@
 {
+  "bubble": {
+    "whatYouWant": "무엇을 하고 싶으세요?"
+  },
   "categories": {
     "translation": "번역",
     "read": "읽기",
